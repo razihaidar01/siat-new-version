@@ -23,13 +23,13 @@ const WhyChooseSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Why SIAT Group</span>
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Why SIAT</span>
             <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mt-3 mb-6">
               SIAT Ko <span className="gradient-text">Kyun Chunein?</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-4">
               Ek decade se zyada ka experience — skill development, technology, aur institutional consulting mein.
-              SIAT Group Bihar ka sabse bharosemand naam hai career transformation aur business growth ke liye.
+              SIAT Bihar ka sabse bharosemand naam hai career transformation aur business growth ke liye.
             </p>
             <p className="text-muted-foreground/80 italic mb-8">
               "Humne hazaron students ki zindagi badli hai — ab aapki baari hai!"

@@ -46,19 +46,17 @@ const footerLinks = [
 const SiteFooter = () => {
   return (
     <footer className="bg-foreground text-background">
-      {/* Large brand text */}
       <div className="overflow-hidden py-12 border-b border-background/10">
         <p className="text-[6rem] md:text-[10rem] lg:text-[14rem] font-display font-black tracking-tighter text-background/[0.04] leading-none text-center select-none">
-          SIAT GROUP
+          SIAT
         </p>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        {/* Logo + tagline */}
         <div className="flex items-center gap-3 mb-12">
-          <img src={siatLogo} alt="SIAT Group Logo" className="w-14 h-14 rounded-full" />
+          <img src={siatLogo} alt="SIAT Logo" className="w-14 h-14 rounded-full" />
           <div>
-            <span className="font-display font-bold text-2xl text-background">SIAT Group</span>
+            <span className="font-display font-bold text-2xl text-background">SIAT</span>
             <p className="text-sm text-background/50">Bihar's Leading Training, IT & Consultancy Organization</p>
           </div>
         </div>
@@ -80,22 +78,23 @@ const SiteFooter = () => {
           ))}
         </div>
 
-        {/* Contact row */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-12 py-8 border-t border-background/10">
-          <a href="mailto:info@siat.in" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
-            <Mail className="w-4 h-4" /> info@siat.in
+          <a href="mailto:siat.sws@gmail.com" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
+            <Mail className="w-4 h-4" /> siat.sws@gmail.com
           </a>
-          <a href="tel:+919876543210" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
-            <Phone className="w-4 h-4" /> +91 98765 43210
+          <a href="tel:+917004216219" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
+            <Phone className="w-4 h-4" /> +91 7004216219
+          </a>
+          <a href="tel:+919342470019" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
+            <Phone className="w-4 h-4" /> +91 9342470019
           </a>
           <span className="flex items-center gap-2 text-sm text-background/60">
             <MapPin className="w-4 h-4" /> Saharsa, Bihar, India
           </span>
         </div>
 
-        {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-background/10 text-xs text-background/40">
-          <p>© {new Date().getFullYear()} SIAT Group. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} SIAT. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="hover:text-background transition-colors">Privacy Policy</Link>
             <Link to="/terms-conditions" className="hover:text-background transition-colors">Terms</Link>

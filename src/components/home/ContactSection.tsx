@@ -25,7 +25,7 @@ const ContactSection = () => {
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">Get In Touch</span>
           <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mt-3">
-            Contact <span className="gradient-text">SIAT Group</span>
+            Contact <span className="gradient-text">SIAT</span>
           </h2>
           <p className="text-muted-foreground mt-4">Koi bhi sawaal ho — humse baat karein, hum madad ke liye taiyaar hain!</p>
         </motion.div>
@@ -86,7 +86,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-foreground">Address</h4>
-                  <p className="text-sm text-muted-foreground mt-1">SIAT Group, Main Road, Saharsa, Bihar – 852201</p>
+                  <p className="text-sm text-muted-foreground mt-1">SIAT, Main Road, Saharsa, Bihar – 852201</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -95,7 +95,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-foreground">Phone</h4>
-                  <p className="text-sm text-muted-foreground mt-1">+91 98765 43210</p>
+                  <p className="text-sm text-muted-foreground mt-1">+91 7004216219, +91 9342470019</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -104,7 +104,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-foreground">Email</h4>
-                  <p className="text-sm text-muted-foreground mt-1">info@siat.in</p>
+                  <p className="text-sm text-muted-foreground mt-1">siat.sws@gmail.com</p>
                 </div>
               </div>
             </div>

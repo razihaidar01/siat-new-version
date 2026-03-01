@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import WhatsAppButton from "./WhatsAppButton";
+import AIChatWidget from "./AIChatWidget";
 
 const SiteLayout = () => {
   return (
@@ -12,6 +13,7 @@ const SiteLayout = () => {
       </main>
       <SiteFooter />
       <WhatsAppButton />
+      <AIChatWidget />
     </div>
   );
 };
