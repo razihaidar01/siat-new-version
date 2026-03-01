@@ -29,7 +29,7 @@ const AboutPage = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            SIAT Group is Bihar's leading organization in skill development, IT solutions, educational consultancy, and government project implementation.
+            SIAT is Bihar's leading organization in skill development, IT solutions, educational consultancy, and government project implementation.
           </motion.p>
         </div>
       </section>
@@ -86,7 +86,7 @@ const AboutPage = () => {
       {/* CTA */}
       <section className="section-padding bg-background text-center">
         <h2 className="text-3xl font-display font-black text-foreground mb-4">Ready to Transform Your Future?</h2>
-        <p className="text-muted-foreground mb-8">Join thousands of students and businesses who trust SIAT Group.</p>
+        <p className="text-muted-foreground mb-8">Join thousands of students and businesses who trust SIAT.</p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link to="/contact-us" className="btn-primary-glow">Contact Us</Link>
           <Link to="/training-institute" className="btn-outline-glow">Explore Courses</Link>

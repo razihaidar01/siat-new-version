@@ -27,7 +27,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="flex items-center gap-4 mb-6"
           >
-            <img src={siatLogo} alt="SIAT Group Logo" className="w-16 h-16 md:w-20 md:h-20 rounded-full shadow-lg" />
+            <img src={siatLogo} alt="SIAT Logo" className="w-16 h-16 md:w-20 md:h-20 rounded-full shadow-lg" />
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
               Bihar's Most Trusted Organization
             </span>
@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="text-4xl md:text-5xl lg:text-7xl font-display font-black leading-[1.1] text-foreground mb-6"
           >
-            SIAT Group –{" "}
+            SIAT –{" "}
             <span className="gradient-text">Bihar's Leading</span>{" "}
             Training, IT & Consultancy Organization
           </motion.h1>
