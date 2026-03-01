@@ -1,0 +1,19 @@
+import { Outlet } from "react-router-dom";
+import SiteHeader from "./SiteHeader";
+import SiteFooter from "./SiteFooter";
+import WhatsAppButton from "./WhatsAppButton";
+
+const SiteLayout = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SiteHeader />
+      <main className="flex-1 pt-16 md:pt-20">
+        <Outlet />
+      </main>
+      <SiteFooter />
+      <WhatsAppButton />
+    </div>
+  );
+};
+
+export default SiteLayout;
