@@ -106,7 +106,9 @@ const App = () => (
             <Route path="/government-projects/empanelment" element={<GenericPage title="Empanelment" description="Government empanelment details aur process." />} />
             
             {/* Other pages */}
+            <Route path="/verify" element={<VerifyCertificatePage />} />
             <Route path="/verify-certificate" element={<VerifyCertificatePage />} />
+            <Route path="/rhsoftware" element={<RHSoftwareHubPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/documents" element={<DocumentsPage />} />

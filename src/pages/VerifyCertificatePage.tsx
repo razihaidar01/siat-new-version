@@ -3,6 +3,13 @@ import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, CheckCircle, XCircle, ShieldCheck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import siatSeal from "@/assets/cert-siat-seal.png";
+
+const formatDate = (d: string | null) => {
+  if (!d) return null;
+  const dt = new Date(d);
+  return `${String(dt.getDate()).padStart(2, "0")}-${String(dt.getMonth() + 1).padStart(2, "0")}-${dt.getFullYear()}`;
+};
 
 const VerifyCertificatePage = () => {
   const [searchParams] = useSearchParams();
@@ -12,7 +19,7 @@ const VerifyCertificatePage = () => {
   const [searched, setSearched] = useState(false);
 
   useEffect(() => {
-    const id = searchParams.get("id");
+    const id = searchParams.get("cert") || searchParams.get("id");
     if (id) {
       setCertNumber(id);
       verifyNumber(id);
@@ -74,7 +81,7 @@ const VerifyCertificatePage = () => {
                 type="text"
                 value={certNumber}
                 onChange={(e) => setCertNumber(e.target.value)}
-                placeholder="e.g. SIAT-2026-001"
+                placeholder="e.g. SIAT/2015-16/113"
                 className="flex-1 px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
                 required
               />
@@ -89,20 +96,11 @@ const VerifyCertificatePage = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8">
               {result ? (
                 <div className="glass-card p-8 border-2 border-green-500/30">
-                  {/* SIAT Badge */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <CheckCircle className="w-8 h-8 text-green-500" />
                       <h3 className="text-xl font-display font-bold text-green-700">Certificate Verified ✓</h3>
                     </div>
-                    {result.is_valid && (
-                      <div className="flex flex-col items-center">
-                        <div className="w-16 h-16 rounded-full border-2 border-primary bg-primary/10 flex items-center justify-center">
-                          <ShieldCheck className="w-8 h-8 text-primary" />
-                        </div>
-                        <span className="text-[10px] font-bold text-primary mt-1">SIAT VERIFIED</span>
-                      </div>
-                    )}
                   </div>
                   <div className="space-y-1 text-sm">
                     <DetailRow label="Certificate No." value={result.certificate_number} />
@@ -110,10 +108,11 @@ const VerifyCertificatePage = () => {
                     <DetailRow label="Father's Name" value={result.father_name} />
                     <DetailRow label="Mother's Name" value={result.mother_name} />
                     <DetailRow label="Course" value={result.course_name} />
-                    <DetailRow label="Issue Date" value={result.issue_date} />
-                    <DetailRow label="Training From" value={result.training_from} />
-                    <DetailRow label="Training To" value={result.training_to} />
-                    {result.expiry_date && <DetailRow label="Valid Until" value={result.expiry_date} />}
+                    <DetailRow label="Grade" value={result.grade} />
+                    <DetailRow label="Issue Date" value={formatDate(result.issue_date)} />
+                    <DetailRow label="Training From" value={formatDate(result.training_from)} />
+                    <DetailRow label="Training To" value={formatDate(result.training_to)} />
+                    {result.expiry_date && <DetailRow label="Valid Until" value={formatDate(result.expiry_date)} />}
                     <div className="flex justify-between py-2">
                       <span className="text-muted-foreground">Status</span>
                       <span className={`font-bold ${result.is_valid ? "text-green-600" : "text-red-600"}`}>
@@ -121,6 +120,19 @@ const VerifyCertificatePage = () => {
                       </span>
                     </div>
                   </div>
+
+                  {/* SIAT Verified Badge */}
+                  {result.is_valid && (
+                    <div className="mt-6 flex justify-center">
+                      <div className="flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-primary/20 bg-primary/5">
+                        <img src={siatSeal} alt="SIAT Seal" className="w-20 h-20 object-contain" />
+                        <div className="text-center">
+                          <p className="text-xs font-bold text-primary tracking-widest uppercase">SIAT Verified</p>
+                          <p className="text-[10px] text-muted-foreground">Authentic Certificate</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="glass-card p-8 border-2 border-red-500/30 text-center">
