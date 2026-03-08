@@ -19,7 +19,7 @@ const divisions = [
     description: "Full-stack IT solutions — website, app, software, aur AI development. Bihar ke businesses ko digital banayein.",
     hinglish: "Apna business online le jaayein — website se app tak sab banwayein!",
     color: "from-accent to-sky",
-    href: "/rh-software",
+    href: "/rhsoftware",
     features: ["Web & Mobile Apps", "AI Solutions", "Enterprise Software"],
   },
   {

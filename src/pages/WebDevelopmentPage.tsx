@@ -117,8 +117,8 @@ const WebDevelopmentPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-display font-bold text-foreground mb-6">Explore More</h2>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/rh-software/portfolio" className="btn-outline-glow !py-3 !px-5 !text-sm">Our Portfolio</Link>
-            <Link to="/rh-software/app-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">App Development</Link>
+            <Link to="/rhsoftware/portfolio" className="btn-outline-glow !py-3 !px-5 !text-sm">Our Portfolio</Link>
+            <Link to="/rhsoftware/app-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">App Development</Link>
             <Link to="/contact-us" className="btn-primary-glow !py-3 !px-5 !text-sm">Contact Us</Link>
           </div>
         </div>
