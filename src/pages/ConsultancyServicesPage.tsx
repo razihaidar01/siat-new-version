@@ -32,6 +32,7 @@ const ConsultancyServicesPage = () => {
 
   return (
     <>
+      <SEOHead title="Education & Business Consultancy Services – SIAT Bihar" description="SIAT consultancy provides education admission guidance, ISO certification, MSME registration, and career counseling in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

@@ -46,6 +46,7 @@ const ACRepairingPage = () => {
 
   return (
     <>
+      <SEOHead title="AC Repairing Course in Bihar – SIAT Saharsa" description="Learn AC repairing at SIAT Saharsa. Split AC, window AC, inverter AC installation & repair training with hands-on practice and placement support in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

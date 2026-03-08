@@ -37,6 +37,7 @@ const CCTVInstallationPage = () => {
 
   return (
     <>
+      <SEOHead title="CCTV Installation Training in Bihar – SIAT Saharsa" description="Learn CCTV camera installation, DVR/NVR configuration, and network setup at SIAT Saharsa. Practical training with placement support in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

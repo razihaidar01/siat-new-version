@@ -29,6 +29,7 @@ const GovernmentProjectsPage = () => {
 
   return (
     <>
+      <SEOHead title="Government Skill Training Projects – SIAT Bihar" description="SIAT is Bihar's trusted government skill training partner. PMKVY, Skill India, CSR projects with proven track record." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

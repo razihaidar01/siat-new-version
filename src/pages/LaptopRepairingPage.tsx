@@ -40,6 +40,7 @@ const LaptopRepairingPage = () => {
 
   return (
     <>
+      <SEOHead title="Laptop Repairing Course in Bihar – SIAT Saharsa" description="Learn laptop repairing at SIAT Saharsa. Hardware, software, motherboard repair, BGA rework and data recovery training with ISO certification." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
