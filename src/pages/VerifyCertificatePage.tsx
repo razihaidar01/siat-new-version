@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Search, CheckCircle, XCircle, ShieldCheck } from "lucide-react";
+import { Search, CheckCircle, XCircle, ShieldCheck, FileText } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import siatSeal from "@/assets/cert-siat-seal.png";
 
@@ -16,6 +16,7 @@ const VerifyCertificatePage = () => {
   const [certNumber, setCertNumber] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [certDocUrl, setCertDocUrl] = useState<string | null>(null);
   const [searched, setSearched] = useState(false);
 
   useEffect(() => {
@@ -30,12 +31,28 @@ const VerifyCertificatePage = () => {
     if (!number.trim()) return;
     setLoading(true);
     setSearched(true);
+    setCertDocUrl(null);
+
+    // Fetch certificate details
     const { data } = await supabase
       .from("certificates")
       .select("*")
       .eq("certificate_number", number.trim())
       .maybeSingle();
     setResult(data);
+
+    // Fetch matching document (title = certificate number, category = certificate)
+    if (data) {
+      const { data: doc } = await supabase
+        .from("documents")
+        .select("file_url")
+        .eq("title", number.trim())
+        .maybeSingle();
+      if (doc) {
+        setCertDocUrl(doc.file_url);
+      }
+    }
+
     setLoading(false);
   };
 
@@ -120,6 +137,25 @@ const VerifyCertificatePage = () => {
                       </span>
                     </div>
                   </div>
+
+                  {/* Certificate Document Preview */}
+                  {certDocUrl && (
+                    <div className="mt-6 border-t border-border pt-6">
+                      <h4 className="text-sm font-bold text-foreground flex items-center gap-2 mb-3">
+                        <FileText className="w-4 h-4 text-primary" /> Certificate Document
+                      </h4>
+                      {certDocUrl.match(/\.(jpg|jpeg|png|webp)$/i) ? (
+                        <img src={certDocUrl} alt="Certificate" className="w-full rounded-xl border border-border" />
+                      ) : certDocUrl.match(/\.pdf$/i) ? (
+                        <iframe src={certDocUrl} className="w-full h-[500px] rounded-xl border border-border" title="Certificate PDF" />
+                      ) : (
+                        <a href={certDocUrl} target="_blank" rel="noopener noreferrer"
+                          className="btn-primary-glow !py-2.5 !px-5 inline-flex items-center gap-2">
+                          <FileText className="w-4 h-4" /> View Certificate Document
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   {/* SIAT Verified Badge */}
                   {result.is_valid && (
