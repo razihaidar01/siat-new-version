@@ -25,8 +25,6 @@ const ContactSection = () => {
     };
 
     const { error } = await supabase.from("contact_submissions").insert(payload);
-
-    // Send email notification (fire-and-forget)
     supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
 
     setLoading(false);
@@ -40,14 +38,17 @@ const ContactSection = () => {
     }
   };
 
+  const inputClass = "w-full px-4 py-3 rounded-xl outline-none transition-all text-white placeholder:text-white/30"
+    + " bg-white/[0.04] border border-white/[0.08] focus:border-[hsl(var(--neon-cyan))] focus:ring-2 focus:ring-[hsl(var(--neon-cyan))]/20";
+
   return (
-    <section className="section-padding relative overflow-hidden" style={{ background: "var(--gradient-section)" }}>
-      {/* Floating shapes */}
+    <section className="section-padding relative overflow-hidden" style={{ background: "hsl(215 50% 6%)" }}>
+      {/* Glow orbs */}
       <motion.div
-        className="absolute w-72 h-72 rounded-full opacity-[0.04] blur-3xl pointer-events-none"
-        style={{ background: "hsl(var(--accent))", top: "10%", left: "-5%" }}
-        animate={{ y: [0, 30, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute w-96 h-96 rounded-full opacity-[0.06] blur-[120px] pointer-events-none"
+        style={{ background: "hsl(var(--neon-cyan))", top: "10%", left: "-10%" }}
+        animate={{ y: [0, 40, 0] }}
+        transition={{ duration: 12, repeat: Infinity }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -58,11 +59,13 @@ const ContactSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Get In Touch</span>
-          <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mt-3">
+          <span className="section-label">Get In Touch</span>
+          <h2 className="section-heading mt-3">
             Contact <span className="gradient-text">SIAT</span>
           </h2>
-          <p className="text-muted-foreground mt-4">Koi bhi sawaal ho — humse baat karein, hum madad ke liye taiyaar hain!</p>
+          <p className="mt-4" style={{ color: "hsl(0 0% 100% / 0.5)" }}>
+            Koi bhi sawaal ho — humse baat karein, hum madad ke liye taiyaar hain!
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -75,21 +78,21 @@ const ContactSection = () => {
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
-                <input name="name" type="text" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="Apna naam likhein" />
+                <label className="text-sm font-medium mb-1.5 block" style={{ color: "hsl(0 0% 100% / 0.7)" }}>Name</label>
+                <input name="name" type="text" required className={inputClass} placeholder="Apna naam likhein" />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Phone</label>
-                <input name="phone" type="tel" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="+91" />
+                <label className="text-sm font-medium mb-1.5 block" style={{ color: "hsl(0 0% 100% / 0.7)" }}>Phone</label>
+                <input name="phone" type="tel" required className={inputClass} placeholder="+91" />
               </div>
             </div>
             <div>
-              <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
-              <input name="email" type="email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="your@email.com" />
+              <label className="text-sm font-medium mb-1.5 block" style={{ color: "hsl(0 0% 100% / 0.7)" }}>Email</label>
+              <input name="email" type="email" className={inputClass} placeholder="your@email.com" />
             </div>
             <div>
-              <label className="text-sm font-medium text-foreground mb-1.5 block">Interested In</label>
-              <select name="interest" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground">
+              <label className="text-sm font-medium mb-1.5 block" style={{ color: "hsl(0 0% 100% / 0.7)" }}>Interested In</label>
+              <select name="interest" className={inputClass}>
                 <option>Training Courses</option>
                 <option>Software Development</option>
                 <option>Consultancy Services</option>
@@ -98,8 +101,8 @@ const ContactSection = () => {
               </select>
             </div>
             <div>
-              <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
-              <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground resize-none" placeholder="Apni zaroorat batayein..." />
+              <label className="text-sm font-medium mb-1.5 block" style={{ color: "hsl(0 0% 100% / 0.7)" }}>Message</label>
+              <textarea name="message" rows={4} className={`${inputClass} resize-none`} placeholder="Apni zaroorat batayein..." />
             </div>
             <button type="submit" disabled={loading} className="btn-primary-glow w-full flex items-center justify-center gap-2 disabled:opacity-70">
               {submitted ? <><CheckCircle className="w-4 h-4" /> Bhej Diya! ✓</> : loading ? "Sending..." : <><Send className="w-4 h-4" /> Send Message</>}
@@ -125,12 +128,13 @@ const ContactSection = () => {
                   transition={{ delay: 0.4 + i * 0.1 }}
                   className="flex items-start gap-4 group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
-                    <item.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                    style={{ background: "hsl(0 0% 100% / 0.06)" }}>
+                    <item.icon className="w-5 h-5" style={{ color: "hsl(var(--neon-cyan))" }} />
                   </div>
                   <div>
-                    <h4 className="font-display font-bold text-foreground">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground mt-1">{item.text}</p>
+                    <h4 className="font-display font-bold" style={{ color: "white" }}>{item.title}</h4>
+                    <p className="text-sm mt-1" style={{ color: "hsl(0 0% 100% / 0.5)" }}>{item.text}</p>
                   </div>
                 </motion.div>
               ))}

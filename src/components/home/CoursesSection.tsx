@@ -13,11 +13,9 @@ const courses = [
 const CoursesSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const rotate = useTransform(scrollYProgress, [0, 1], [2, -2]);
 
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section className="section-padding overflow-hidden" style={{ background: "hsl(215 50% 7%)" }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -26,11 +24,11 @@ const CoursesSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Popular Programs</span>
-          <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mt-3">
+          <span className="section-label">Popular Programs</span>
+          <h2 className="section-heading mt-3">
             Skill Development <span className="gradient-text">Courses</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="mt-4 max-w-xl mx-auto" style={{ color: "hsl(0 0% 100% / 0.5)" }}>
             Industry-focused training with placement support aur QR-verified certificates.
           </p>
         </motion.div>
@@ -39,23 +37,28 @@ const CoursesSection = () => {
           {courses.map((course, i) => (
             <motion.div
               key={course.title}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.12, type: "spring", stiffness: 100 }}
-              whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.3 } }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.12, type: "spring", stiffness: 80 }}
             >
               <Link to={course.href} className="block glass-card-hover p-6 h-full group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
+                {/* Hover glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"
+                  style={{ background: "hsl(var(--neon-cyan))" }} />
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <course.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300"
+                    style={{ background: "hsl(0 0% 100% / 0.06)" }}>
+                    <course.icon className="w-6 h-6" style={{ color: "hsl(var(--neon-cyan))" }} />
                   </div>
-                  <h3 className="text-lg font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-display font-bold mb-1 transition-colors" style={{ color: "white" }}>
                     {course.title}
                   </h3>
-                  <motion.span style={{ rotate }} className="inline-block text-xs font-medium text-accent bg-accent/10 px-2 py-0.5 rounded-full">{course.duration}</motion.span>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{course.description}</p>
-                  <p className="text-xs text-primary/70 italic mt-2">{course.hinglish}</p>
+                  <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full mb-3"
+                    style={{ background: "hsl(var(--neon-cyan) / 0.1)", color: "hsl(var(--neon-cyan))" }}>
+                    {course.duration}
+                  </span>
+                  <p className="text-sm leading-relaxed" style={{ color: "hsl(0 0% 100% / 0.5)" }}>{course.description}</p>
+                  <p className="text-xs italic mt-2" style={{ color: "hsl(var(--primary) / 0.6)" }}>{course.hinglish}</p>
                 </div>
               </Link>
             </motion.div>

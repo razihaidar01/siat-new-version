@@ -11,6 +11,7 @@ const divisions = [
     hinglish: "Practical training se career banayein — job-ready skills seekhein!",
     href: "/training-institute",
     features: ["Practical Labs", "Certified Instructors", "Job Placement"],
+    glow: "hsl(185 90% 55%)",
   },
   {
     icon: Code2,
@@ -19,6 +20,7 @@ const divisions = [
     hinglish: "Apna business online le jaayein — website se app tak sab banwayein!",
     href: "/rh-software",
     features: ["Web & Mobile Apps", "AI Solutions", "Enterprise Software"],
+    glow: "hsl(260 70% 50%)",
   },
   {
     icon: Briefcase,
@@ -27,6 +29,7 @@ const divisions = [
     hinglish: "Admission se certification tak — sab kuch ek jagah!",
     href: "/consultancy-services",
     features: ["MBBS Admission", "ISO Certification", "Career Counseling"],
+    glow: "hsl(215 80% 48%)",
   },
   {
     icon: Landmark,
@@ -35,6 +38,7 @@ const divisions = [
     hinglish: "Sarkar ka bharosemand partner — skill training aur project delivery mein!",
     href: "/government-projects",
     features: ["PMKVY Center", "Skill India Partner", "Tender Compliance"],
+    glow: "hsl(40 85% 55%)",
   },
 ];
 
@@ -46,9 +50,10 @@ const DivisionsSection = () => {
 
   return (
     <section className="section-padding relative overflow-hidden" style={{ background: "var(--gradient-section)" }}>
-      {/* Parallax background text */}
+      {/* Giant background text */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none select-none flex items-center justify-center">
-        <p className="text-[12rem] md:text-[18rem] font-display font-black text-foreground/[0.02] leading-none">SIAT</p>
+        <p className="text-[12rem] md:text-[20rem] font-display font-black leading-none"
+          style={{ color: "hsl(0 0% 100% / 0.02)" }}>SIAT</p>
       </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -59,11 +64,11 @@ const DivisionsSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">What We Do</span>
-          <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mt-3">
+          <span className="section-label">What We Do</span>
+          <h2 className="section-heading mt-3">
             Our Four <span className="gradient-text">Divisions</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+          <p className="mt-4 max-w-2xl mx-auto text-lg" style={{ color: "hsl(0 0% 100% / 0.5)" }}>
             Ek complete ecosystem — Bihar ko education, technology, aur institutional growth se empower karna.
           </p>
         </motion.div>
@@ -72,28 +77,31 @@ const DivisionsSection = () => {
           {divisions.map((div, i) => (
             <motion.div
               key={div.title}
-              initial={{ opacity: 0, y: 50, rotateX: 5 }}
-              animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.15, type: "spring", stiffness: 80 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              style={{ perspective: "1000px" }}
+              initial={{ opacity: 0, y: 60 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: i * 0.15, type: "spring", stiffness: 70 }}
             >
-              <Link to={div.href} className="block glass-card-hover p-8 md:p-10 group relative overflow-hidden">
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Link to={div.href} className="block glow-card glass-card-hover p-8 md:p-10 group relative overflow-hidden">
+                {/* Glow orb on hover */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-20 blur-[60px] transition-opacity duration-700 pointer-events-none"
+                  style={{ background: div.glow }} />
+
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" style={{ background: "var(--gradient-blue)" }}>
-                    <div.icon className="w-7 h-7 text-primary-foreground" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110"
+                    style={{ background: "var(--gradient-glow)" }}>
+                    <div.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors flex items-center gap-2">
+                  <h3 className="text-2xl font-display font-bold mb-2 flex items-center gap-2 transition-colors"
+                    style={{ color: "white" }}>
                     {div.title}
                     <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                   </h3>
-                  <p className="text-sm text-primary/80 italic mb-3">{div.hinglish}</p>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{div.description}</p>
+                  <p className="text-sm italic mb-3" style={{ color: "hsl(var(--neon-cyan) / 0.7)" }}>{div.hinglish}</p>
+                  <p className="leading-relaxed mb-6" style={{ color: "hsl(0 0% 100% / 0.5)" }}>{div.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {div.features.map((f) => (
-                      <span key={f} className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                      <span key={f} className="px-3 py-1 text-xs font-medium rounded-full"
+                        style={{ background: "hsl(0 0% 100% / 0.06)", color: "hsl(0 0% 100% / 0.7)" }}>
                         {f}
                       </span>
                     ))}
