@@ -22,7 +22,6 @@ import ISOCertificationPage from "./pages/ISOCertificationPage";
 import GovSkillTrainingPage from "./pages/GovSkillTrainingPage";
 import VerifyCertificatePage from "./pages/VerifyCertificatePage";
 import GalleryPage from "./pages/GalleryPage";
-import GenericPage from "./pages/GenericPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPanelPage from "./pages/AdminPanelPage";
 import RHSoftwarePage from "./pages/RHSoftwarePage";
@@ -32,6 +31,47 @@ import RHPortfolioPage from "./pages/RHPortfolioPage";
 import RHContactPage from "./pages/RHContactPage";
 import RHBlogPage from "./pages/RHBlogPage";
 import NotFound from "./pages/NotFound";
+
+// Hub pages
+import TrainingInstitutePage from "./pages/TrainingInstitutePage";
+import ConsultancyServicesPage from "./pages/ConsultancyServicesPage";
+import GovernmentProjectsPage from "./pages/GovernmentProjectsPage";
+
+// Training subpages
+import ShortTermCoursesPage from "./pages/ShortTermCoursesPage";
+import TechnicalTrainingPage from "./pages/TechnicalTrainingPage";
+import CourseFeesPage from "./pages/CourseFeesPage";
+import PlacementSupportPage from "./pages/PlacementSupportPage";
+import StudentTestimonialsPage from "./pages/StudentTestimonialsPage";
+
+// Consultancy subpages
+import BestCollegePage from "./pages/BestCollegePage";
+import BTechAdmissionPage from "./pages/BTechAdmissionPage";
+import BCACollegePage from "./pages/BCACollegePage";
+import NursingCollegePage from "./pages/NursingCollegePage";
+import AdmissionAfter12thPage from "./pages/AdmissionAfter12thPage";
+import BiharStudentCreditCardPage from "./pages/BiharStudentCreditCardPage";
+import MSMERegistrationPage from "./pages/MSMERegistrationPage";
+
+// Government subpages
+import PMKVYPage from "./pages/PMKVYPage";
+import MSMEEducationTenderPage from "./pages/MSMEEducationTenderPage";
+import SkillIndiaPage from "./pages/SkillIndiaPage";
+import CSREducationPage from "./pages/CSREducationPage";
+import CapabilityStatementPage from "./pages/CapabilityStatementPage";
+import EmpanelmentPage from "./pages/EmpanelmentPage";
+
+// Misc pages
+import ChairmanMessagePage from "./pages/ChairmanMessagePage";
+import OurTeamPage from "./pages/OurTeamPage";
+import InfrastructurePage from "./pages/InfrastructurePage";
+import CertificationsPage from "./pages/CertificationsPage";
+import BrochurePage from "./pages/BrochurePage";
+import AdmissionFormPage from "./pages/AdmissionFormPage";
+import FAQsPage from "./pages/FAQsPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsConditionsPage from "./pages/TermsConditionsPage";
+import DisclaimerPage from "./pages/DisclaimerPage";
 
 const queryClient = new QueryClient();
 
@@ -51,59 +91,59 @@ const App = () => (
             <Route path="/contact-us" element={<ContactPage />} />
 
             {/* Training Institute */}
-            <Route path="/training-institute" element={<GenericPage title="Training Institute" description="Bihar ka sabse bharosemand technical training institute — practical learning aur placement support ke saath." />} />
+            <Route path="/training-institute" element={<TrainingInstitutePage />} />
             <Route path="/training-institute/mobile-repairing-course-bihar" element={<MobileRepairingPage />} />
             <Route path="/training-institute/ac-repairing-course-bihar" element={<ACRepairingPage />} />
             <Route path="/training-institute/laptop-repairing-course-bihar" element={<LaptopRepairingPage />} />
             <Route path="/training-institute/cctv-installation-training-bihar" element={<CCTVInstallationPage />} />
-            <Route path="/training-institute/short-term-job-courses-bihar" element={<GenericPage title="Short Term Job Courses in Bihar" description="Kam samay mein job-ready banein — SIAT ke short-term skill courses se." />} />
-            <Route path="/training-institute/technical-training-institute-saharsa" element={<GenericPage title="Technical Training Institute in Saharsa" description="Saharsa ka sabse achha technical training institute — SIAT mein seekhein, aage badhein." />} />
-            <Route path="/training-institute/course-fees" element={<GenericPage title="Course Fees" description="SIAT ke sabhi courses ki fees jaanein — affordable aur value-for-money training." />} />
-            <Route path="/training-institute/placement-support" element={<GenericPage title="Placement Support" description="Dedicated placement cell — course ke baad job dhundhne mein poori madad." />} />
-            <Route path="/training-institute/student-testimonials" element={<GenericPage title="Student Testimonials" description="Hamare students kya kehte hain — unke success stories padhein." />} />
+            <Route path="/training-institute/short-term-job-courses-bihar" element={<ShortTermCoursesPage />} />
+            <Route path="/training-institute/technical-training-institute-saharsa" element={<TechnicalTrainingPage />} />
+            <Route path="/training-institute/course-fees" element={<CourseFeesPage />} />
+            <Route path="/training-institute/placement-support" element={<PlacementSupportPage />} />
+            <Route path="/training-institute/student-testimonials" element={<StudentTestimonialsPage />} />
             <Route path="/training-institute/gallery" element={<Navigate to="/gallery" replace />} />
 
             {/* Consultancy */}
-            <Route path="/consultancy-services" element={<GenericPage title="Consultancy Services" description="Education, ISO certification aur career guidance — SIAT Consultancy ke saath." />} />
-            <Route path="/consultancy-services/best-college-in-bihar" element={<GenericPage title="Best College in Bihar" description="Bihar ke top colleges ki jaankari — admission guidance SIAT se paayein." />} />
+            <Route path="/consultancy-services" element={<ConsultancyServicesPage />} />
+            <Route path="/consultancy-services/best-college-in-bihar" element={<BestCollegePage />} />
             <Route path="/consultancy-services/mbbs-admission-bihar" element={<MBBSAdmissionPage />} />
-            <Route path="/consultancy-services/btech-admission-bihar" element={<GenericPage title="B.Tech Admission in Bihar" description="Engineering mein admission chahiye? SIAT se paayein best college guidance." />} />
-            <Route path="/consultancy-services/bca-college-bihar" element={<GenericPage title="BCA College in Bihar" description="Best BCA colleges ki jaankari aur admission support." />} />
-            <Route path="/consultancy-services/nursing-college-bihar" element={<GenericPage title="Nursing College in Bihar" description="Bihar ke top nursing colleges mein admission guidance." />} />
-            <Route path="/consultancy-services/admission-after-12th-bihar" element={<GenericPage title="Admission After 12th in Bihar" description="12th ke baad kya karein? Best career options aur admission guidance." />} />
-            <Route path="/consultancy-services/bihar-student-credit-card-admission" element={<GenericPage title="Bihar Student Credit Card Admission" description="Student Credit Card scheme se padhai karein — poori process jaanein." />} />
+            <Route path="/consultancy-services/btech-admission-bihar" element={<BTechAdmissionPage />} />
+            <Route path="/consultancy-services/bca-college-bihar" element={<BCACollegePage />} />
+            <Route path="/consultancy-services/nursing-college-bihar" element={<NursingCollegePage />} />
+            <Route path="/consultancy-services/admission-after-12th-bihar" element={<AdmissionAfter12thPage />} />
+            <Route path="/consultancy-services/bihar-student-credit-card-admission" element={<BiharStudentCreditCardPage />} />
             <Route path="/consultancy-services/iso-certification-bihar" element={<ISOCertificationPage />} />
-            <Route path="/consultancy-services/msme-registration" element={<GenericPage title="MSME Registration" description="MSME registration karwayein — benefits aur process ki poori jaankari." />} />
+            <Route path="/consultancy-services/msme-registration" element={<MSMERegistrationPage />} />
 
             {/* Government Projects */}
-            <Route path="/government-projects" element={<GenericPage title="Government Projects" description="SIAT — Bihar sarkar ka bharosemand skill training aur project implementation partner." />} />
+            <Route path="/government-projects" element={<GovernmentProjectsPage />} />
             <Route path="/government-projects/government-skill-training-bihar" element={<GovSkillTrainingPage />} />
-            <Route path="/government-projects/pmkvy-training-center-bihar" element={<GenericPage title="PMKVY Training Center in Bihar" description="Pradhan Mantri Kaushal Vikas Yojana training center — SIAT mein seekhein." />} />
-            <Route path="/government-projects/msme-education-tender" element={<GenericPage title="MSME Education Tender" description="MSME education tender participation — capability, compliance aur documentation." />} />
-            <Route path="/government-projects/skill-india-training-partner" element={<GenericPage title="Skill India Training Partner" description="SIAT — Skill India mission ka registered training partner." />} />
-            <Route path="/government-projects/csr-education-projects" element={<GenericPage title="CSR Education Projects" description="CSR ke through education projects — partnership opportunities." />} />
-            <Route path="/government-projects/capability-statement" element={<GenericPage title="Capability Statement" description="SIAT ki capabilities — infrastructure, experience aur certifications." />} />
-            <Route path="/government-projects/empanelment" element={<GenericPage title="Empanelment" description="Government empanelment details aur process." />} />
+            <Route path="/government-projects/pmkvy-training-center-bihar" element={<PMKVYPage />} />
+            <Route path="/government-projects/msme-education-tender" element={<MSMEEducationTenderPage />} />
+            <Route path="/government-projects/skill-india-training-partner" element={<SkillIndiaPage />} />
+            <Route path="/government-projects/csr-education-projects" element={<CSREducationPage />} />
+            <Route path="/government-projects/capability-statement" element={<CapabilityStatementPage />} />
+            <Route path="/government-projects/empanelment" element={<EmpanelmentPage />} />
 
             {/* Other pages */}
             <Route path="/verify-certificate" element={<VerifyCertificatePage />} />
             <Route path="/verify" element={<VerifyCertificatePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/chairman-message" element={<GenericPage title="Chairman's Message" description="SIAT ke Chairman ka sandesh — vision aur mission." />} />
-            <Route path="/our-team" element={<GenericPage title="Our Team" description="SIAT ki experienced team se milein." />} />
-            <Route path="/infrastructure" element={<GenericPage title="Infrastructure" description="SIAT ki modern infrastructure dekhein — labs, classrooms aur facilities." />} />
-            <Route path="/certifications" element={<GenericPage title="Certifications" description="SIAT ke certifications aur accreditations." />} />
-            <Route path="/downloads/brochure" element={<GenericPage title="Download Brochure" description="SIAT ka brochure download karein." />} />
-            <Route path="/downloads/admission-form" element={<GenericPage title="Admission Form" description="Admission form download karein aur apply karein." />} />
-            <Route path="/faqs" element={<GenericPage title="FAQs" description="Aksar poochhe jaane wale sawaal — sabhi jawab yahan milenge." />} />
-            <Route path="/privacy-policy" element={<GenericPage title="Privacy Policy" description="SIAT ki privacy policy padhein." />} />
-            <Route path="/terms-conditions" element={<GenericPage title="Terms & Conditions" description="SIAT ki terms aur conditions." />} />
-            <Route path="/disclaimer" element={<GenericPage title="Disclaimer" description="SIAT ka disclaimer." />} />
+            <Route path="/chairman-message" element={<ChairmanMessagePage />} />
+            <Route path="/our-team" element={<OurTeamPage />} />
+            <Route path="/infrastructure" element={<InfrastructurePage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/downloads/brochure" element={<BrochurePage />} />
+            <Route path="/downloads/admission-form" element={<AdmissionFormPage />} />
+            <Route path="/faqs" element={<FAQsPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+            <Route path="/disclaimer" element={<DisclaimerPage />} />
           </Route>
 
           {/* RH Software — separate dark-themed layout */}
           <Route element={<RHLayout />}>
-          <Route path="/rhsoftware" element={<RHSoftwarePage />} />
+            <Route path="/rhsoftware" element={<RHSoftwarePage />} />
             <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
             <Route path="/rhsoftware/services" element={<RHServicesPage />} />
             <Route path="/rhsoftware/website-development-company-bihar" element={<RHServicesPage />} />
