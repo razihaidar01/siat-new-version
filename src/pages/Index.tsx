@@ -10,21 +10,21 @@ import ContactSection from "@/components/home/ContactSection";
 
 const Index = () => {
   return (
-    <>
+    <div className="snap-y snap-mandatory">
       <SEOHead
         title="SIAT – Bihar's Leading Training, IT & Consultancy Organization | Saharsa"
         description="SIAT is Bihar's top training institute, IT company & consultancy. Mobile repairing, AC repair courses, website development, MBBS admission, ISO certification in Saharsa, Bihar."
         canonical="https://www.siat.in"
       />
-      <HeroSection />
-      <MarqueeSection />
-      <DivisionsSection />
-      <CoursesSection />
-      <WhyChooseSection />
-      <ISOSection />
-      <TestimonialsSection />
-      <ContactSection />
-    </>
+      <div className="snap-start"><HeroSection /></div>
+      <div className="snap-start"><MarqueeSection /></div>
+      <div className="snap-start"><DivisionsSection /></div>
+      <div className="snap-start"><CoursesSection /></div>
+      <div className="snap-start"><WhyChooseSection /></div>
+      <div className="snap-start"><ISOSection /></div>
+      <div className="snap-start"><TestimonialsSection /></div>
+      <div className="snap-start"><ContactSection /></div>
+    </div>
   );
 };
 
