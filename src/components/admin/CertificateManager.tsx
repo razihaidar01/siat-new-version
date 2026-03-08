@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Award, Trash2, Download, Plus, QrCode } from "lucide-react";
+import { Award, QrCode } from "lucide-react";
 import { toast } from "sonner";
 import QRCode from "qrcode";
 import JsBarcode from "jsbarcode";
