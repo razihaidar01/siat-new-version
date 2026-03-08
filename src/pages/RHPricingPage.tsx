@@ -65,7 +65,7 @@ const RHPricingPage = () => {
                 ))}
               </ul>
               <Link
-                to="/rh-software/contact"
+                to="/rhsoftware/contact"
                 className={`block text-center py-3 rounded-xl font-semibold transition-all ${
                   plan.popular
                     ? "bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]"

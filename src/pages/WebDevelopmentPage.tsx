@@ -52,7 +52,7 @@ const WebDevelopmentPage = () => {
           <p className="text-base text-muted-foreground/80 italic mb-8">"Apne business ko online le jaayein — professional website banwayein RH Software se!"</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/contact-us" className="btn-primary-glow">Get a Quote</Link>
-            <Link to="/rh-software/portfolio" className="btn-outline-glow">View Portfolio</Link>
+            <Link to="/rhsoftware/portfolio" className="btn-outline-glow">View Portfolio</Link>
           </div>
         </div>
       </section>
