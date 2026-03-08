@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { IndianRupee, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const fees = [
   { course: "Mobile Repairing (Basic)", duration: "3 Months", fee: "₹8,000", href: "/training-institute/mobile-repairing-course-bihar" },
@@ -26,6 +27,7 @@ const inclusions = [
 
 const CourseFeesPage = () => (
   <>
+    <SEOHead title="Course Fees Structure – SIAT Training Institute Bihar" description="SIAT training institute course fees for mobile repairing, AC repairing, laptop repairing, and CCTV installation courses in Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Training Institute</span>

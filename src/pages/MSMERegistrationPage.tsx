@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileCheck, CheckCircle, TrendingUp, Shield } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const benefits = ["Government tender eligibility", "Bank loan easy approval", "Tax benefits under MSME Act", "Subsidized patent & trademark", "Technology & marketing support", "Priority sector lending"];
 const process = ["Udyam Registration portal par jaayein", "Aadhar number enter karein", "Business details bharein", "OTP verification", "Certificate download karein"];
 
 const MSMERegistrationPage = () => (
   <>
+    <SEOHead title="MSME Registration – SIAT Business Services Bihar" description="Get MSME/Udyam registration with SIAT. Government tender eligibility, tax benefits, and subsidized services for businesses in Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Business Services</span>

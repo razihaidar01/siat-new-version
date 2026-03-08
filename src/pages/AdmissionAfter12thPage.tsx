@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Stethoscope, Code, Heart, Briefcase, TrendingUp } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const options = [
   { icon: Stethoscope, title: "Medical (MBBS/BDS)", desc: "NEET clear karke doctor banein. Bihar ke top medical colleges mein admission.", href: "/consultancy-services/mbbs-admission-bihar" },
@@ -13,6 +14,7 @@ const options = [
 
 const AdmissionAfter12thPage = () => (
   <>
+    <SEOHead title="Admission After 12th in Bihar – Career Guidance by SIAT" description="Best career options after 12th in Bihar. MBBS, B.Tech, BCA, Nursing admission guidance and counseling by SIAT." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Career Guidance</span>

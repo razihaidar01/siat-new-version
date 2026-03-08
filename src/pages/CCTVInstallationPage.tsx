@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Camera, Award, Briefcase, Wifi, Shield } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   { q: "What is the duration of the CCTV Installation course?", a: "The course is 2–3 months covering analog, IP cameras, DVR/NVR configuration, and networking." },
@@ -36,6 +37,7 @@ const CCTVInstallationPage = () => {
 
   return (
     <>
+      <SEOHead title="CCTV Installation Training in Bihar – SIAT Saharsa" description="Learn CCTV camera installation, DVR/NVR configuration, and network setup at SIAT Saharsa. Practical training with placement support in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

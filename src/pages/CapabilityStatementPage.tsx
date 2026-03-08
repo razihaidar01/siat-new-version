@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building, Award, Users, Wrench, MapPin, FileCheck, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const capabilities = [
   { icon: Building, title: "Infrastructure", desc: "5000+ sq ft training facility with modern labs, classrooms, aur workshop space." },
@@ -13,6 +14,7 @@ const capabilities = [
 
 const CapabilityStatementPage = () => (
   <>
+    <SEOHead title="Capability Statement – SIAT Bihar" description="SIAT's capability statement: infrastructure, faculty, certifications, and track record for government and corporate partnerships." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const empanelments = [
   "National Skill Development Corporation (NSDC)",
@@ -13,6 +14,7 @@ const empanelments = [
 
 const EmpanelmentPage = () => (
   <>
+    <SEOHead title="Government Empanelment – SIAT Bihar" description="SIAT is empanelled with NSDC, PMKVY, Skill India Mission, and Bihar Skill Development Mission for government training projects." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

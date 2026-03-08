@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Users } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const team = [
-  { name: "Chairman", role: "Founder & Chairman", desc: "Visionary leader with 15+ years in education aur skill development." },
-  { name: "Director", role: "Director - Operations", desc: "Manages day-to-day operations, training delivery aur quality control." },
-  { name: "Head - Training", role: "Head of Training", desc: "Curriculum design, faculty management aur training quality assurance." },
-  { name: "Head - Placement", role: "Head of Placement Cell", desc: "Industry connections, placement coordination aur career counseling." },
-  { name: "Sr. Trainer - Mobile", role: "Senior Trainer - Mobile Repairing", desc: "10+ years experience in mobile repair. Chip-level expert." },
-  { name: "Sr. Trainer - AC", role: "Senior Trainer - AC Repairing", desc: "Expert in split AC, inverter AC installation aur servicing." },
-  { name: "Sr. Trainer - Laptop", role: "Senior Trainer - Laptop Repairing", desc: "Hardware aur software expert. Motherboard level repair specialist." },
-  { name: "Head - Consultancy", role: "Head of Consultancy", desc: "Education admission guidance, ISO certification aur business consultancy." },
+  { name: "Chairman", role: "Founder & Chairman", desc: "SIAT ki vision aur direction ka neta — 15+ years ka experience." },
+  { name: "Director", role: "Managing Director", desc: "Operations aur strategic planning ke head." },
+  { name: "Academic Head", role: "Head of Training", desc: "Curriculum development aur training quality ke incharge." },
+  { name: "Placement Officer", role: "Placement Cell Head", desc: "Student placements aur industry connections manage karte hain." },
+  { name: "Senior Trainer – Mobile", role: "Mobile Repair Expert", desc: "10+ years ka chip-level repair experience." },
+  { name: "Senior Trainer – AC", role: "AC & Refrigeration Expert", desc: "HVAC specialist with industry certifications." },
+  { name: "IT Head", role: "Technology & IT", desc: "Website, software, aur digital infrastructure manage karte hain." },
+  { name: "Admin Officer", role: "Administration", desc: "Day-to-day operations aur student support handle karte hain." },
 ];
 
 const OurTeamPage = () => (
   <>
+    <SEOHead title="Our Team – SIAT Bihar" description="Meet the dedicated team behind SIAT. Experienced trainers, management, and support staff committed to quality education." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-foreground mt-4 mb-6">

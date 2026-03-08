@@ -1,28 +1,27 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
-  { q: "SIAT kya hai?", a: "SIAT (Saharsa Institute of Advanced Technology) Bihar ka leading technical training institute hai. Hum mobile repairing, AC repairing, laptop repairing, CCTV installation aur short-term job courses provide karte hain. Saath hi RH Software ke through web, app, AI development services bhi dete hain." },
-  { q: "SIAT mein admission kaise lein?", a: "SIAT mein admission ke liye humse phone ya WhatsApp par contact karein, ya directly institute visit karein. Admission process simple hai — course select karein, documents submit karein, fees pay karein aur training shuru!" },
-  { q: "Kya placement guaranteed hai?", a: "SIAT 100% placement guarantee nahi deta, lekin hamare dedicated placement cell ki wajah se 95% students ko course ke baad job milti hai. Hum resume building, interview preparation aur industry connections provide karte hain." },
-  { q: "Course ki fees kitni hai?", a: "Fees course aur duration ke hisaab se alag hoti hai — ₹5,000 se ₹18,000 tak. EMI option bhi available hai. Details ke liye Course Fees page dekhein." },
-  { q: "Kya certificate milta hai?", a: "Haan! SIAT ISO-verified certificate deta hai jismein QR code hota hai. Employer ya koi bhi online verify kar sakta hai humari website par." },
-  { q: "Course ki duration kitni hai?", a: "Courses 1 mahine se 6 mahine tak ke hain. Short-term courses 1-3 mahine ke hote hain, advanced courses 3-6 mahine ke." },
-  { q: "Kya hostel facility hai?", a: "SIAT ke campus mein hostel nahi hai, lekin hum nearby affordable hostel/PG ki recommendation karte hain bahar ke students ke liye." },
-  { q: "Kya online classes available hain?", a: "Hamare courses primarily hands-on practical training par focused hain isliye offline classes zaroori hain. Lekin kuch theoretical parts ke online resources available hain." },
-  { q: "Kya koi age limit hai?", a: "Nahi, koi age limit nahi hai. 15 saal se lekar 50+ saal tak ke students hamare courses join kar sakte hain." },
-  { q: "RH Software kya services deta hai?", a: "RH Software — SIAT ki IT division — website development, app development, AI solutions, aur custom software engineering services provide karta hai. Details ke liye RH Software page visit karein." },
-  { q: "Certificate verify kaise karein?", a: "Humari website par Verify Certificate page par jaayein, certificate number enter karein, aur instantly verify karein. QR code scan karke bhi verify kar sakte hain." },
-  { q: "ISO certification services available hain?", a: "Haan, SIAT Consultancy ISO 9001, 14001, 45001 aur other ISO certifications mein businesses ki madad karta hai." },
+  { q: "SIAT kya hai?", a: "SIAT (Society for Industrial & Applied Training) Bihar ka leading training institute, IT company aur consultancy organization hai — Saharsa mein headquartered." },
+  { q: "Kaunse courses available hain?", a: "Mobile Repairing, AC Repairing, Laptop Repairing, CCTV Installation, aur short-term job-oriented courses available hain." },
+  { q: "Course ki fees kitni hai?", a: "Course fees ₹5,000 se ₹35,000 tak hoti hai depending on course type aur duration. EMI facility bhi available hai." },
+  { q: "Certificate milta hai?", a: "Haan, ISO-verified certificate milta hai jismein QR code hota hai — employers online verify kar sakte hain." },
+  { q: "Placement support milta hai?", a: "Haan, SIAT ka dedicated placement cell hai — 95% placement rate ke saath Samsung, MI, Oppo service centers mein placement." },
+  { q: "Online classes available hain?", a: "Currently SIAT offline practical-based training par focus karta hai. Kuch theory modules online bhi available hain." },
+  { q: "Admission kaise lein?", a: "Contact form fill karein, WhatsApp karein, ya directly SIAT Saharsa office visit karein. Walk-in admission bhi available hai." },
+  { q: "Kya hostel facility hai?", a: "SIAT nearby affordable hostel aur PG accommodations suggest karta hai students ke liye." },
 ];
 
 const faqSchema = {
-  "@context": "https://schema.org", "@type": "FAQPage",
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
 const FAQsPage = () => (
   <>
+    <SEOHead title="FAQs – SIAT Training Institute Bihar" description="Frequently asked questions about SIAT training courses, fees, placement, certificates, and admission process in Bihar." />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, FileCheck, Building, Stethoscope, BookOpen, Award, Users, ArrowRight } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const services = [
   { icon: Stethoscope, title: "MBBS Admission", desc: "Top medical colleges mein admission guidance — India aur abroad dono options available.", href: "/consultancy-services/mbbs-admission-bihar" },
@@ -31,6 +32,7 @@ const ConsultancyServicesPage = () => {
 
   return (
     <>
+      <SEOHead title="Education & Business Consultancy Services – SIAT Bihar" description="SIAT consultancy provides education admission guidance, ISO certification, MSME registration, and career counseling in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>

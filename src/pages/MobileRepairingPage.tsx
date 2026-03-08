@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Smartphone, Award, Users, Briefcase } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   { q: "What is the duration of the Mobile Repairing Course?", a: "The course is available in 3-month and 6-month formats depending on the level — basic, advanced, or comprehensive." },
@@ -28,6 +29,7 @@ const MobileRepairingPage = () => {
 
   return (
     <>
+      <SEOHead title="Mobile Repairing Course in Bihar – SIAT Saharsa" description="Join Bihar's best mobile repairing course at SIAT Saharsa. Learn chip-level repair, software flashing, and get ISO-verified certificate with placement support." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}

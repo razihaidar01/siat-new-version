@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Code, Building, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const branches = ["Computer Science Engineering", "Mechanical Engineering", "Civil Engineering", "Electrical Engineering", "Electronics & Communication", "Information Technology"];
 const colleges = ["NIT Patna", "IIT Patna", "BIT Mesra", "Muzaffarpur Institute of Technology", "Bihar Engineering University", "LNMU Engineering Faculty"];
@@ -18,6 +19,7 @@ const faqSchema = {
 
 const BTechAdmissionPage = () => (
   <>
+    <SEOHead title="B.Tech Admission in Bihar – SIAT Consultancy" description="B.Tech admission guidance in Bihar. Top engineering colleges, JEE counseling, Student Credit Card support by SIAT." />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">

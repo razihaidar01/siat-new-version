@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, Award, Users, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const SkillIndiaPage = () => (
   <>
+    <SEOHead title="Skill India Training Partner – SIAT Bihar" description="SIAT is an authorized Skill India training partner in Bihar. Government-certified skill development programs." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

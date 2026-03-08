@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, BookOpen, Building, Award, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const programs = [
   { title: "ANM (Auxiliary Nurse Midwifery)", duration: "2 Years", desc: "Basic nursing care aur midwifery ki training." },
@@ -11,6 +12,7 @@ const programs = [
 
 const NursingCollegePage = () => (
   <>
+    <SEOHead title="Nursing College in Bihar – Admission Guide by SIAT" description="Top nursing colleges in Bihar. GNM, B.Sc, ANM admission guidance with Student Credit Card support by SIAT." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Consultancy Services</span>

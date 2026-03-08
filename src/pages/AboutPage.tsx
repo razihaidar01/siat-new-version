@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Target, Eye, Users, Award, Building2, ShieldCheck } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const AboutPage = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -9,6 +10,7 @@ const AboutPage = () => {
 
   return (
     <>
+      <SEOHead title="About SIAT – Bihar's Leading Training & Consultancy" description="Learn about SIAT, Bihar's premier training institute, IT company and consultancy organization based in Saharsa. Our mission, vision, and team." />
       {/* Hero */}
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
         <div className="max-w-4xl mx-auto text-center">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/SEOHead";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -22,6 +23,7 @@ const GalleryPage = () => {
 
   return (
     <>
+      <SEOHead title="Photo Gallery – SIAT Training Institute Bihar" description="Browse SIAT's photo gallery showcasing our training labs, classrooms, events, and student activities in Saharsa, Bihar." />
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Wind, Award, Users, Briefcase, Thermometer, Wrench, Zap } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   { q: "What is the duration of the AC Repairing Course?", a: "The course is available in 3-month (basic) and 6-month (advanced) formats covering split AC, window AC, and inverter technology." },
@@ -45,6 +46,7 @@ const ACRepairingPage = () => {
 
   return (
     <>
+      <SEOHead title="AC Repairing Course in Bihar – SIAT Saharsa" description="Learn AC repairing at SIAT Saharsa. Split AC, window AC, inverter AC installation & repair training with hands-on practice and placement support in Bihar." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
