@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Target, Eye, Users, Award, Building2, ShieldCheck } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const AboutPage = () => {
   const ref = useRef<HTMLDivElement>(null);
