@@ -39,6 +39,12 @@ const RHLayout = () => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
+            <Link
+              to="/"
+              className="px-4 py-2 text-sm font-medium rounded-lg transition-all text-white/60 hover:text-white hover:bg-white/5"
+            >
+              SIAT Home
+            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
