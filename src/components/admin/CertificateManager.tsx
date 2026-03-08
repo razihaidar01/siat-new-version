@@ -37,10 +37,7 @@ const formatDateDDMMYYYY = (dateStr: string | null): string => {
 };
 
 const CertificateManager = () => {
-  const [certificates, setCertificates] = useState<Certificate[]>([]);
-  const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [showForm, setShowForm] = useState(false);
 
   const [studentName, setStudentName] = useState("");
   const [fatherName, setFatherName] = useState("");
@@ -53,24 +50,6 @@ const CertificateManager = () => {
   const [grade, setGrade] = useState("A++");
   const [certNumber, setCertNumber] = useState(generateCertNumber());
 
-  const fetchCertificates = async () => {
-    setLoading(true);
-    const { data } = await supabase
-      .from("certificates")
-      .select("*")
-      .order("created_at", { ascending: false });
-    setCertificates((data as any) || []);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    fetchCertificates();
-    const channel = supabase
-      .channel("admin-certificates-live")
-      .on("postgres_changes", { event: "*", schema: "public", table: "certificates" }, () => fetchCertificates())
-      .subscribe();
-    return () => { supabase.removeChannel(channel); };
-  }, []);
 
   const getVerifyUrl = (certNum: string) => {
     return `${VERIFY_BASE_URL}?cert=${encodeURIComponent(certNum)}`;
@@ -119,7 +98,6 @@ const CertificateManager = () => {
       } else {
         toast.success("Certificate created! QR & Barcode ready for download.");
         resetForm();
-        fetchCertificates();
       }
     } catch (err: any) {
       toast.error("Error: " + err.message);
@@ -178,16 +156,7 @@ const CertificateManager = () => {
       .update({ is_valid: !cert.is_valid })
       .eq("id", cert.id);
     if (error) toast.error("Update failed: " + error.message);
-    else { toast.success(`Certificate ${!cert.is_valid ? "activated" : "revoked"}.`); fetchCertificates(); }
-  };
-
-  const handleDelete = async (cert: Certificate) => {
-    if (!confirm(`Delete certificate ${cert.certificate_number}?`)) return;
-    const fileName = `qr-${cert.certificate_number.replace(/\//g, "_")}.png`;
-    await supabase.storage.from("certificates").remove([fileName]);
-    const { error } = await supabase.from("certificates").delete().eq("id", cert.id);
-    if (error) toast.error("Delete failed: " + error.message);
-    else { toast.success("Certificate deleted."); fetchCertificates(); }
+    else { toast.success(`Certificate ${!cert.is_valid ? "activated" : "revoked"}.`); }
   };
 
   return (
@@ -279,72 +248,6 @@ const CertificateManager = () => {
         )}
       </div>
 
-      {/* Certificates List */}
-      <div>
-        <h3 className="text-lg font-display font-bold text-foreground mb-4">
-          All Certificates ({certificates.length})
-        </h3>
-        {loading ? (
-          <div className="text-center py-12 text-muted-foreground">Loading...</div>
-        ) : certificates.length === 0 ? (
-          <div className="text-center py-12 text-muted-foreground">No certificates yet.</div>
-        ) : (
-          <div className="space-y-3">
-            {certificates.map((cert) => (
-              <div key={cert.id} className="glass-card p-4 rounded-xl flex flex-col md:flex-row md:items-center gap-4">
-                {cert.qr_code_url && (
-                  <img src={cert.qr_code_url} alt="QR" className="w-16 h-16 rounded-lg bg-white p-1 shrink-0" />
-                )}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <p className="font-mono text-sm text-primary font-medium">{cert.certificate_number}</p>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                      cert.is_valid ? "bg-green-500/10 text-green-600" : "bg-destructive/10 text-destructive"
-                    }`}>
-                      {cert.is_valid ? "Valid" : "Revoked"}
-                    </span>
-                  </div>
-                  <p className="text-foreground font-medium">{cert.student_name}</p>
-                  <p className="text-sm text-muted-foreground">{cert.course_name} • {cert.issue_date}</p>
-                  {(cert.father_name || cert.mother_name) && (
-                    <p className="text-xs text-muted-foreground">
-                      {cert.father_name && `Father: ${cert.father_name}`}
-                      {cert.father_name && cert.mother_name && " • "}
-                      {cert.mother_name && `Mother: ${cert.mother_name}`}
-                    </p>
-                  )}
-                  {cert.training_from && cert.training_to && (
-                    <p className="text-xs text-muted-foreground">Training: {formatDateDDMMYYYY(cert.training_from)} to {formatDateDDMMYYYY(cert.training_to)}</p>
-                  )}
-                  <p className="text-xs text-muted-foreground mt-1 font-mono break-all">
-                    Verify: {getVerifyUrl(cert.certificate_number)}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 shrink-0 flex-wrap">
-                  <button onClick={() => downloadQR(cert)}
-                    className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors" title="Download QR Code">
-                    <QrCode className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => downloadBarcode(cert)}
-                    className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors" title="Download Barcode">
-                    <Download className="w-4 h-4" />
-                  </button>
-                  <button onClick={() => handleToggleValid(cert)}
-                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors ${
-                      cert.is_valid ? "bg-orange-500/10 text-orange-600 hover:bg-orange-500/20" : "bg-green-500/10 text-green-600 hover:bg-green-500/20"
-                    }`}>
-                    {cert.is_valid ? "Revoke" : "Activate"}
-                  </button>
-                  <button onClick={() => handleDelete(cert)}
-                    className="p-2 rounded-lg bg-destructive/10 text-destructive hover:bg-destructive/20 transition-colors" title="Delete">
-                    <Trash2 className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
     </div>
   );
 };
