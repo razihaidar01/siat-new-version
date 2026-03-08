@@ -3,6 +3,7 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import WhatsAppButton from "./WhatsAppButton";
 import AIChatWidget from "./AIChatWidget";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const SiteLayout = () => {
   return (
@@ -14,6 +15,7 @@ const SiteLayout = () => {
       <SiteFooter />
       <WhatsAppButton />
       <AIChatWidget />
+      <ScrollToTopButton />
     </div>
   );
 };
