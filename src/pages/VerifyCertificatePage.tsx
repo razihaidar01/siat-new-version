@@ -41,15 +41,11 @@ const VerifyCertificatePage = () => {
       .maybeSingle();
     setResult(data);
 
-    // Fetch matching document (title = certificate number, category = certificate)
+    // Fetch matching document via secure function (works for private docs too)
     if (data) {
-      const { data: doc } = await supabase
-        .from("documents")
-        .select("file_url")
-        .eq("title", number.trim())
-        .maybeSingle();
-      if (doc) {
-        setCertDocUrl(doc.file_url);
+      const { data: url } = await supabase.rpc("get_certificate_document_url", { cert_number: number.trim() });
+      if (url) {
+        setCertDocUrl(url);
       }
     }
 
