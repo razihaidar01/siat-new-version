@@ -30,13 +30,14 @@ const ISOSection = () => {
     <section ref={ref} className="section-padding overflow-hidden relative" style={{ background: "hsl(215 50% 7%)" }}>
       {/* Sliding background text */}
       <div className="absolute inset-0 flex flex-col justify-center pointer-events-none select-none overflow-hidden">
-        <motion.p style={{ x: x1 }} className="text-[8rem] md:text-[12rem] font-display font-black whitespace-nowrap leading-none"
+        <motion.p className="text-[8rem] md:text-[12rem] font-display font-black whitespace-nowrap leading-none"
           style={{ color: "hsl(0 0% 100% / 0.02)", x: x1 }}>
           ISO CERTIFIED · QUALITY · TRUST · EXCELLENCE ·
         </motion.p>
-        <motion.p style={{ x: x2 }} className="text-[8rem] md:text-[12rem] font-display font-black whitespace-nowrap leading-none"
+        <motion.p className="text-[8rem] md:text-[12rem] font-display font-black whitespace-nowrap leading-none"
           style={{ color: "hsl(0 0% 100% / 0.02)", x: x2 }}>
           · STANDARDS · COMPLIANCE · ASSURANCE · RELIABILITY
+        </motion.p>
         </motion.p>
       </div>
 
