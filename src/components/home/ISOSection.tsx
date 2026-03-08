@@ -38,7 +38,6 @@ const ISOSection = () => {
           style={{ color: "hsl(0 0% 100% / 0.02)", x: x2 }}>
           · STANDARDS · COMPLIANCE · ASSURANCE · RELIABILITY
         </motion.p>
-        </motion.p>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
