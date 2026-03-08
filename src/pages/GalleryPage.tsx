@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SEOHead from "@/components/SEOHead";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
