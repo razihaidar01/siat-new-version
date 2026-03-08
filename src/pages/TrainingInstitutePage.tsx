@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Smartphone, Wind, Laptop, Camera, Award, Users, Briefcase, BookOpen, CheckCircle } from "lucide-react";
-
+import SEOHead from "@/components/SEOHead";
 const courses = [
   { icon: Smartphone, title: "Mobile Repairing Course", desc: "Basic se advanced chip-level repair seekhein — Bihar ka sabse popular technical course.", href: "/training-institute/mobile-repairing-course-bihar", duration: "3-6 Months" },
   { icon: Wind, title: "AC Repairing Course", desc: "Split AC, window AC, inverter AC — installation aur repairing ki complete training.", href: "/training-institute/ac-repairing-course-bihar", duration: "3-6 Months" },
