@@ -77,6 +77,9 @@ const RHLayout = () => {
               className="md:hidden overflow-hidden bg-black/95 backdrop-blur-xl border-t border-white/5"
             >
               <div className="px-6 py-4 space-y-1">
+                <Link to="/" className="block px-4 py-3 text-white/80 hover:text-white font-medium rounded-lg hover:bg-white/5">
+                  SIAT Home
+                </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} to={link.href} className="block px-4 py-3 text-white/80 hover:text-white font-medium rounded-lg hover:bg-white/5">
                     {link.label}
