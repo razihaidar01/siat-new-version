@@ -1,70 +1,28 @@
-import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, CheckCircle, XCircle, ShieldCheck, FileText } from "lucide-react";
+import { Search, CheckCircle, XCircle, ShieldCheck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import siatSeal from "@/assets/cert-siat-seal.png";
-
-const formatDate = (d: string | null) => {
-  if (!d) return null;
-  const dt = new Date(d);
-  return `${String(dt.getDate()).padStart(2, "0")}-${String(dt.getMonth() + 1).padStart(2, "0")}-${dt.getFullYear()}`;
-};
 
 const VerifyCertificatePage = () => {
-  const [searchParams] = useSearchParams();
   const [certNumber, setCertNumber] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
-  const [certDocUrl, setCertDocUrl] = useState<string | null>(null);
   const [searched, setSearched] = useState(false);
-
-  useEffect(() => {
-    const id = searchParams.get("cert") || searchParams.get("id");
-    if (id) {
-      setCertNumber(id);
-      verifyNumber(id);
-    }
-  }, [searchParams]);
-
-  const verifyNumber = async (number: string) => {
-    if (!number.trim()) return;
-    setLoading(true);
-    setSearched(true);
-    setCertDocUrl(null);
-
-    // Fetch certificate details
-    const { data } = await supabase
-      .from("certificates")
-      .select("*")
-      .eq("certificate_number", number.trim())
-      .maybeSingle();
-    setResult(data);
-
-    // Fetch matching document via secure function (works for private docs too)
-    if (data) {
-      const { data: url } = await supabase.rpc("get_certificate_document_url", { cert_number: number.trim() });
-      if (url) {
-        setCertDocUrl(url);
-      }
-    }
-
-    setLoading(false);
-  };
 
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
-    verifyNumber(certNumber);
-  };
+    if (!certNumber.trim()) return;
+    setLoading(true);
+    setSearched(true);
 
-  const DetailRow = ({ label, value }: { label: string; value: string | null | undefined }) => {
-    if (!value) return null;
-    return (
-      <div className="flex justify-between py-2 border-b border-border">
-        <span className="text-muted-foreground">{label}</span>
-        <span className="font-medium text-foreground">{value}</span>
-      </div>
-    );
+    const { data, error } = await supabase
+      .from("certificates")
+      .select("*")
+      .eq("certificate_number", certNumber.trim())
+      .maybeSingle();
+
+    setResult(data);
+    setLoading(false);
   };
 
   return (
@@ -94,7 +52,7 @@ const VerifyCertificatePage = () => {
                 type="text"
                 value={certNumber}
                 onChange={(e) => setCertNumber(e.target.value)}
-                placeholder="e.g. SIAT/2015-16/113"
+                placeholder="e.g. SIAT-2026-001"
                 className="flex-1 px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
                 required
               />
@@ -109,62 +67,34 @@ const VerifyCertificatePage = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8">
               {result ? (
                 <div className="glass-card p-8 border-2 border-green-500/30">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-8 h-8 text-green-500" />
-                      <h3 className="text-xl font-display font-bold text-green-700">Certificate Verified ✓</h3>
-                    </div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <CheckCircle className="w-8 h-8 text-green-500" />
+                    <h3 className="text-xl font-display font-bold text-green-700">Certificate Verified ✓</h3>
                   </div>
-                  <div className="space-y-1 text-sm">
-                    <DetailRow label="Certificate No." value={result.certificate_number} />
-                    <DetailRow label="Student Name" value={result.student_name} />
-                    <DetailRow label="Father's Name" value={result.father_name} />
-                    <DetailRow label="Mother's Name" value={result.mother_name} />
-                    <DetailRow label="Course" value={result.course_name} />
-                    <DetailRow label="Grade" value={result.grade} />
-                    <DetailRow label="Issue Date" value={formatDate(result.issue_date)} />
-                    <DetailRow label="Training From" value={formatDate(result.training_from)} />
-                    <DetailRow label="Training To" value={formatDate(result.training_to)} />
-                    {result.expiry_date && <DetailRow label="Valid Until" value={formatDate(result.expiry_date)} />}
+                  <div className="space-y-3 text-sm">
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="text-muted-foreground">Certificate No.</span>
+                      <span className="font-medium text-foreground">{result.certificate_number}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="text-muted-foreground">Student Name</span>
+                      <span className="font-medium text-foreground">{result.student_name}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="text-muted-foreground">Course</span>
+                      <span className="font-medium text-foreground">{result.course_name}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-border">
+                      <span className="text-muted-foreground">Issue Date</span>
+                      <span className="font-medium text-foreground">{result.issue_date}</span>
+                    </div>
                     <div className="flex justify-between py-2">
                       <span className="text-muted-foreground">Status</span>
                       <span className={`font-bold ${result.is_valid ? "text-green-600" : "text-red-600"}`}>
-                        {result.is_valid ? "Valid ✓" : "Revoked ✗"}
+                        {result.is_valid ? "Valid ✓" : "Expired ✗"}
                       </span>
                     </div>
                   </div>
-
-                  {/* Certificate Document Preview */}
-                  {certDocUrl && (
-                    <div className="mt-6 border-t border-border pt-6">
-                      <h4 className="text-sm font-bold text-foreground flex items-center gap-2 mb-3">
-                        <FileText className="w-4 h-4 text-primary" /> Certificate Document
-                      </h4>
-                      {certDocUrl.match(/\.(jpg|jpeg|png|webp)$/i) ? (
-                        <img src={certDocUrl} alt="Certificate" className="w-full rounded-xl border border-border" />
-                      ) : certDocUrl.match(/\.pdf$/i) ? (
-                        <iframe src={certDocUrl} className="w-full h-[500px] rounded-xl border border-border" title="Certificate PDF" />
-                      ) : (
-                        <a href={certDocUrl} target="_blank" rel="noopener noreferrer"
-                          className="btn-primary-glow !py-2.5 !px-5 inline-flex items-center gap-2">
-                          <FileText className="w-4 h-4" /> View Certificate Document
-                        </a>
-                      )}
-                    </div>
-                  )}
-
-                  {/* SIAT Verified Badge */}
-                  {result.is_valid && (
-                    <div className="mt-6 flex justify-center">
-                      <div className="flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-primary/20 bg-primary/5">
-                        <img src={siatSeal} alt="SIAT Seal" className="w-20 h-20 object-contain" />
-                        <div className="text-center">
-                          <p className="text-xs font-bold text-primary tracking-widest uppercase">SIAT Verified</p>
-                          <p className="text-[10px] text-muted-foreground">Authentic Certificate</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               ) : (
                 <div className="glass-card p-8 border-2 border-red-500/30 text-center">

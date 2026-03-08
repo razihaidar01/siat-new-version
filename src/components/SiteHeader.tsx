@@ -6,7 +6,6 @@ import siatLogo from "@/assets/siat-logo.png";
 
 const navItems = [
   { label: "About", href: "/about-us" },
-  { label: "Gallery", href: "/gallery" },
   {
     label: "Training",
     href: "/training-institute",
@@ -80,9 +79,8 @@ const SiteHeader = () => {
         <Link to="/" className="flex items-center gap-2">
           <img src={siatLogo} alt="SIAT Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-full" />
           <div>
-            <span className="font-display font-bold text-xl" style={{ color: "white" }}>SIAT</span>
-            <span className="hidden md:block text-[10px] leading-none -mt-0.5"
-              style={{ color: "hsl(0 0% 100% / 0.4)" }}>Training · IT · Consultancy</span>
+            <span className="font-display font-bold text-xl text-foreground">SIAT</span>
+            <span className="hidden md:block text-[10px] text-muted-foreground leading-none -mt-0.5">Training · IT · Consultancy</span>
           </div>
         </Link>
 
@@ -97,10 +95,7 @@ const SiteHeader = () => {
             >
               <Link
                 to={item.href}
-                className="px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 rounded-lg"
-                style={{ color: "hsl(0 0% 100% / 0.65)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(0 0% 100% / 0.65)")}
+                className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors flex items-center gap-1 rounded-lg hover:bg-secondary"
               >
                 {item.label}
                 {item.children && <ChevronDown className="w-3 h-3" />}
@@ -116,16 +111,7 @@ const SiteHeader = () => {
                       <Link
                         key={child.href}
                         to={child.href}
-                        className="block px-4 py-2.5 text-sm rounded-lg transition-colors"
-                        style={{ color: "hsl(0 0% 100% / 0.6)" }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = "white";
-                          e.currentTarget.style.background = "hsl(0 0% 100% / 0.06)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.color = "hsl(0 0% 100% / 0.6)";
-                          e.currentTarget.style.background = "transparent";
-                        }}
+                        className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-secondary rounded-lg transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -144,8 +130,7 @@ const SiteHeader = () => {
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg transition-colors"
-            style={{ color: "white" }}
+            className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -159,8 +144,7 @@ const SiteHeader = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden"
-            style={{ borderTop: "1px solid hsl(0 0% 100% / 0.06)", background: "hsl(215 50% 8% / 0.98)" }}
+            className="lg:hidden overflow-hidden border-t border-border bg-background"
           >
             <div className="px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {navItems.map((item) => (
@@ -168,8 +152,7 @@ const SiteHeader = () => {
                   {item.children ? (
                     <button
                       onClick={() => setMobileDropdown(mobileDropdown === item.label ? null : item.label)}
-                      className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg"
-                      style={{ color: "hsl(0 0% 100% / 0.8)" }}
+                      className="w-full flex items-center justify-between px-4 py-3 text-foreground font-medium rounded-lg hover:bg-secondary"
                     >
                       {item.label}
                       <ChevronDown className={`w-4 h-4 transition-transform ${mobileDropdown === item.label ? "rotate-180" : ""}`} />
@@ -177,22 +160,25 @@ const SiteHeader = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="block px-4 py-3 font-medium rounded-lg"
-                      style={{ color: "hsl(0 0% 100% / 0.8)" }}
+                      className="block px-4 py-3 text-foreground font-medium rounded-lg hover:bg-secondary"
                     >
                       {item.label}
                     </Link>
                   )}
                   {item.children && mobileDropdown === item.label && (
                     <div className="pl-6 space-y-1 pb-2">
-                      <Link to={item.href} className="block px-4 py-2 text-sm font-medium"
-                        style={{ color: "hsl(var(--neon-cyan))" }}>
+                      <Link
+                        to={item.href}
+                        className="block px-4 py-2 text-sm text-primary font-medium hover:text-primary"
+                      >
                         View All →
                       </Link>
                       {item.children.map((child) => (
-                        <Link key={child.href} to={child.href}
-                          className="block px-4 py-2 text-sm"
-                          style={{ color: "hsl(0 0% 100% / 0.5)" }}>
+                        <Link
+                          key={child.href}
+                          to={child.href}
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary"
+                        >
                           {child.label}
                         </Link>
                       ))}
