@@ -16,6 +16,7 @@ const testimonials = [
 
 const StudentTestimonialsPage = () => (
   <>
+    <SEOHead title="Student Testimonials – SIAT Training Institute Bihar" description="Hear from SIAT graduates about their training experience, placement success, and career growth after completing technical courses in Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Student Success Stories</span>

@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 
 const TechnicalTrainingPage = () => (
   <>
+    <SEOHead title="Technical Training Institute in Saharsa – SIAT" description="SIAT Saharsa ka premier technical training institute. Modern labs, expert faculty, aur 95% placement support ke saath career banayein." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Training Institute</span>

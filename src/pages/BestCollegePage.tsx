@@ -12,6 +12,7 @@ const colleges = [
 
 const BestCollegePage = () => (
   <>
+    <SEOHead title="Best Colleges in Bihar – Admission Guidance by SIAT" description="Find the best colleges in Bihar for MBBS, B.Tech, BCA, Nursing. SIAT provides complete admission guidance and counseling." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Consultancy Services</span>

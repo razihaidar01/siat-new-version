@@ -7,6 +7,7 @@ const subjects = ["Programming (C, C++, Java, Python)", "Database Management Sys
 
 const BCACollegePage = () => (
   <>
+    <SEOHead title="BCA College in Bihar – Admission Guide by SIAT" description="Best BCA colleges in Bihar. Complete admission guidance for Bachelor of Computer Applications with placement support." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Consultancy Services</span>

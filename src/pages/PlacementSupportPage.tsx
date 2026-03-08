@@ -14,6 +14,7 @@ const partners = ["Samsung Service Center", "MI Service Center", "Oppo Service C
 
 const PlacementSupportPage = () => (
   <>
+    <SEOHead title="Placement Support – SIAT Training Institute Bihar" description="95% placement rate at SIAT. Dedicated placement cell connecting graduates with Samsung, MI, Oppo service centers and IT companies across Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Training Institute</span>
