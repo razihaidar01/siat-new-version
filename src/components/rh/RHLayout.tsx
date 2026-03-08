@@ -39,6 +39,12 @@ const RHLayout = () => {
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
+            <Link
+              to="/"
+              className="px-4 py-2 text-sm font-medium rounded-lg transition-all text-white/60 hover:text-white hover:bg-white/5"
+            >
+              SIAT Home
+            </Link>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -71,6 +77,9 @@ const RHLayout = () => {
               className="md:hidden overflow-hidden bg-black/95 backdrop-blur-xl border-t border-white/5"
             >
               <div className="px-6 py-4 space-y-1">
+                <Link to="/" className="block px-4 py-3 text-white/80 hover:text-white font-medium rounded-lg hover:bg-white/5">
+                  SIAT Home
+                </Link>
                 {navLinks.map((link) => (
                   <Link key={link.href} to={link.href} className="block px-4 py-3 text-white/80 hover:text-white font-medium rounded-lg hover:bg-white/5">
                     {link.label}
