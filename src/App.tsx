@@ -2,8 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout";
+import ScrollToTop from "./components/ScrollToTop";
+import LoadingScreen from "./components/LoadingScreen";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -18,7 +20,10 @@ import MBBSAdmissionPage from "./pages/MBBSAdmissionPage";
 import ISOCertificationPage from "./pages/ISOCertificationPage";
 import GovSkillTrainingPage from "./pages/GovSkillTrainingPage";
 import VerifyCertificatePage from "./pages/VerifyCertificatePage";
+import GalleryPage from "./pages/GalleryPage";
 import GenericPage from "./pages/GenericPage";
+import AdminLoginPage from "./pages/AdminLoginPage";
+import AdminPanelPage from "./pages/AdminPanelPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,7 +33,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <LoadingScreen />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Index />} />
@@ -46,10 +53,11 @@ const App = () => (
             <Route path="/training-institute/course-fees" element={<GenericPage title="Course Fees" description="SIAT ke sabhi courses ki fees jaanein — affordable aur value-for-money training." />} />
             <Route path="/training-institute/placement-support" element={<GenericPage title="Placement Support" description="Dedicated placement cell — course ke baad job dhundhne mein poori madad." />} />
             <Route path="/training-institute/student-testimonials" element={<GenericPage title="Student Testimonials" description="Hamare students kya kehte hain — unke success stories padhein." />} />
-            <Route path="/training-institute/gallery" element={<GenericPage title="Gallery" description="SIAT ki labs, classrooms aur events ki photos dekhein." />} />
+            <Route path="/training-institute/gallery" element={<Navigate to="/gallery" replace />} />
             
             {/* RH Software */}
             <Route path="/rh-software" element={<GenericPage title="RH Software – IT Solutions" description="Bihar ki leading IT company — website, app, software aur AI development services." />} />
+            <Route path="/rhsoftware" element={<Navigate to="/rh-software" replace />} />
             <Route path="/rh-software/website-development-company-bihar" element={<WebDevelopmentPage />} />
             <Route path="/rh-software/app-development-company-bihar" element={<AppDevelopmentPage />} />
             <Route path="/rh-software/software-development-company-bihar" element={<GenericPage title="Software Development Company in Bihar" description="Custom software solutions — ERP, CRM aur business automation Bihar mein." />} />
@@ -83,8 +91,8 @@ const App = () => (
             
             {/* Other pages */}
             <Route path="/verify-certificate" element={<VerifyCertificatePage />} />
-            <Route path="/blog" element={<GenericPage title="Blog" description="Career guidance, skill development, technology updates aur government schemes ki latest jaankari." />} />
-            <Route path="/gallery" element={<GenericPage title="Gallery" description="SIAT ki photos — labs, events, training sessions aur infrastructure." />} />
+            <Route path="/verify" element={<VerifyCertificatePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/chairman-message" element={<GenericPage title="Chairman's Message" description="SIAT ke Chairman ka sandesh — vision aur mission." />} />
             <Route path="/our-team" element={<GenericPage title="Our Team" description="SIAT ki experienced team se milein." />} />
             <Route path="/infrastructure" element={<GenericPage title="Infrastructure" description="SIAT ki modern infrastructure dekhein — labs, classrooms aur facilities." />} />
@@ -96,6 +104,11 @@ const App = () => (
             <Route path="/terms-conditions" element={<GenericPage title="Terms & Conditions" description="SIAT ki terms aur conditions." />} />
             <Route path="/disclaimer" element={<GenericPage title="Disclaimer" description="SIAT ka disclaimer." />} />
           </Route>
+          
+          {/* Admin routes - outside SiteLayout */}
+          <Route path="/admin-login" element={<AdminLoginPage />} />
+          <Route path="/adminarea" element={<AdminPanelPage />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
