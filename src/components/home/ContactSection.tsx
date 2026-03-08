@@ -16,13 +16,18 @@ const ContactSection = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const { error } = await supabase.from("contact_submissions").insert({
+    const payload = {
       name: formData.get("name") as string,
       phone: formData.get("phone") as string,
       email: (formData.get("email") as string) || null,
       interest: formData.get("interest") as string,
       message: (formData.get("message") as string) || null,
-    });
+    };
+
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+
+    // Send email notification (fire-and-forget)
+    supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
 
     setLoading(false);
     if (error) {

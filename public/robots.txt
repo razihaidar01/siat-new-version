@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /adminarea
 Disallow: /admin-login
+Disallow: /adminarea
 
 Sitemap: https://www.siat.in/sitemap.xml
 
