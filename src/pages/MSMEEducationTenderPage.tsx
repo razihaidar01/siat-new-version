@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText, CheckCircle, Building2 } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const capabilities = ["MSME sector mein education aur skill training", "Tender compliance documentation", "Quality training delivery", "Infrastructure & lab facilities", "Experienced faculty pool", "Post-training placement support"];
 
 const MSMEEducationTenderPage = () => (
   <>
+    <SEOHead title="MSME Education Tender – SIAT Government Projects" description="SIAT participates in MSME education tenders for skill development and training projects in Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, GraduationCap, Users, Building } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const areas = [
   { title: "Skill Development Training", desc: "Technical aur vocational training programs for underprivileged youth." },
@@ -11,6 +12,7 @@ const areas = [
 
 const CSREducationPage = () => (
   <>
+    <SEOHead title="CSR Education Projects – SIAT Bihar" description="Partner with SIAT for CSR education projects in Bihar. Skill development, digital literacy, and women empowerment programs." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

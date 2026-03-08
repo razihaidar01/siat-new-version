@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Award, Users, Building, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const sectors = ["IT/ITES Training", "Healthcare Training", "Electronics & Hardware", "Construction Skills", "Retail & Sales", "Automotive Skills", "Beauty & Wellness", "Agriculture Skills"];
 
 const PMKVYPage = () => (
   <>
+    <SEOHead title="PMKVY Training Center in Bihar – SIAT" description="SIAT is a registered PMKVY training center in Bihar. Free government skill training in IT, healthcare, electronics, and more sectors." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Government Projects</span>

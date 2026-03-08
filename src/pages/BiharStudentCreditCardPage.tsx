@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CreditCard, CheckCircle, FileText } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const benefits = ["₹4 lakh tak education loan", "0% interest rate", "No collateral required", "42 approved courses covered", "Both Bihar aur bahar ke colleges", "Simple online application process"];
 const documents = ["Aadhar Card (Student + Parents)", "12th Marksheet & Certificate", "College Admission Letter", "Family Income Certificate", "Bank Account Details", "Passport Size Photos"];
@@ -8,6 +9,7 @@ const steps = ["BSCC portal par online apply karein", "Documents upload karein",
 
 const BiharStudentCreditCardPage = () => (
   <>
+    <SEOHead title="Bihar Student Credit Card – SIAT Admission Guide" description="Complete guide to Bihar Student Credit Card scheme. ₹4 lakh education loan at 0% interest. Application process, documents, and eligibility." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <span className="text-sm font-semibold text-primary uppercase tracking-wider">Financial Support</span>
