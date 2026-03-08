@@ -241,7 +241,7 @@ const CertificateManager = () => {
               <QrCode className="w-4 h-4" /> {saving ? "Generating..." : "Create Certificate + Generate QR & Barcode"}
             </button>
           </form>
-        )}
+
       </div>
 
     </div>
