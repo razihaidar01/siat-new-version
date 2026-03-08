@@ -16,10 +16,10 @@ const footerLinks = [
   {
     title: "RH Software",
     links: [
-      { label: "Website Development", href: "/rh-software/website-development-company-bihar" },
-      { label: "App Development", href: "/rh-software/app-development-company-bihar" },
-      { label: "AI Development", href: "/rh-software/ai-development-company-bihar" },
-      { label: "Portfolio", href: "/rh-software/portfolio" },
+      { label: "Website Development", href: "/rhsoftware/website-development-company-bihar" },
+      { label: "App Development", href: "/rhsoftware/app-development-company-bihar" },
+      { label: "AI Development", href: "/rhsoftware/ai-development-company-bihar" },
+      { label: "Portfolio", href: "/rhsoftware/portfolio" },
     ],
   },
   {

@@ -57,7 +57,7 @@ const RHServicesPage = () => {
           </div>
 
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-20">
-            <Link to="/rh-software/contact" className="px-8 py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all inline-block">
+            <Link to="/rhsoftware/contact" className="px-8 py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all inline-block">
               Start Your Project
             </Link>
           </motion.div>

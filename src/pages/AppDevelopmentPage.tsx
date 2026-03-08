@@ -50,7 +50,7 @@ const AppDevelopmentPage = () => {
           <p className="text-base text-muted-foreground/80 italic mb-8">"Apna idea app mein badlein — startup ho ya business, sab ke liye solutions!"</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/contact-us" className="btn-primary-glow">Get a Quote</Link>
-            <Link to="/rh-software/portfolio" className="btn-outline-glow">View Portfolio</Link>
+            <Link to="/rhsoftware/portfolio" className="btn-outline-glow">View Portfolio</Link>
           </div>
         </div>
       </section>
@@ -101,8 +101,8 @@ const AppDevelopmentPage = () => {
       <section className="section-padding" style={{ background: "var(--gradient-section)" }}>
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/rh-software/website-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">Website Development</Link>
-            <Link to="/rh-software/ai-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">AI Development</Link>
+            <Link to="/rhsoftware/website-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">Website Development</Link>
+            <Link to="/rhsoftware/ai-development-company-bihar" className="btn-outline-glow !py-3 !px-5 !text-sm">AI Development</Link>
             <Link to="/contact-us" className="btn-primary-glow !py-3 !px-5 !text-sm">Contact Us</Link>
           </div>
         </div>

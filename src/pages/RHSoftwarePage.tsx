@@ -92,13 +92,13 @@ const RHSoftwarePage = () => {
 
             <div className="flex flex-wrap gap-4 mt-10">
               <Link
-                to="/rh-software/contact"
+                to="/rhsoftware/contact"
                 className="group px-8 py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 transition-all duration-300 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] hover:-translate-y-0.5"
               >
                 Start Your Project <ArrowRight className="inline w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/rh-software/services"
+                to="/rhsoftware/services"
                 className="px-8 py-4 rounded-xl font-semibold text-lg border border-white/20 text-white/80 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all duration-300 hover:-translate-y-0.5"
               >
                 Explore Services
@@ -182,7 +182,7 @@ const RHSoftwarePage = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to="/rh-software/portfolio" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors font-medium">
+            <Link to="/rhsoftware/portfolio" className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors font-medium">
               View Full Portfolio <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -204,10 +204,10 @@ const RHSoftwarePage = () => {
               Let's turn your vision into reality. Share your project idea and we'll craft the perfect digital solution.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/rh-software/contact" className="px-8 py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all hover:-translate-y-0.5">
+              <Link to="/rhsoftware/contact" className="px-8 py-4 rounded-xl font-semibold text-lg bg-gradient-to-r from-purple-600 to-cyan-500 hover:shadow-[0_0_40px_rgba(139,92,246,0.4)] transition-all hover:-translate-y-0.5">
                 Start Your Project
               </Link>
-              <Link to="/rh-software/pricing" className="px-8 py-4 rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/5 transition-all hover:-translate-y-0.5">
+              <Link to="/rhsoftware/pricing" className="px-8 py-4 rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/5 transition-all hover:-translate-y-0.5">
                 View Pricing
               </Link>
             </div>
@@ -242,7 +242,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <Link to="/rh-software/services" className="block group">
+      <Link to="/rhsoftware/services" className="block group">
         <div
           className="relative p-8 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm overflow-hidden transition-all duration-500 hover:border-white/20 hover:-translate-y-1"
           style={{ boxShadow: `0 0 0px ${service.glow}` }}

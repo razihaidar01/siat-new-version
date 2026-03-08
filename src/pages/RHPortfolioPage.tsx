@@ -80,7 +80,7 @@ const RHPortfolioPage = () => {
                 <span key={t} className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 text-sm">{t}</span>
               ))}
             </div>
-            <a href="/rh-software/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 font-semibold text-sm">
+            <a href="/rhsoftware/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 font-semibold text-sm">
               Build Something Similar <ExternalLink className="w-4 h-4" />
             </a>
           </motion.div>

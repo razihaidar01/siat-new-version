@@ -5,12 +5,12 @@ import { Menu, X, ArrowUp } from "lucide-react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const navLinks = [
-  { label: "Home", href: "/rh-software" },
-  { label: "Services", href: "/rh-software/services" },
-  { label: "Portfolio", href: "/rh-software/portfolio" },
-  { label: "Pricing", href: "/rh-software/pricing" },
-  { label: "Blog", href: "/rh-software/blog" },
-  { label: "Contact", href: "/rh-software/contact" },
+  { label: "Home", href: "/rhsoftware" },
+  { label: "Services", href: "/rhsoftware/services" },
+  { label: "Portfolio", href: "/rhsoftware/portfolio" },
+  { label: "Pricing", href: "/rhsoftware/pricing" },
+  { label: "Blog", href: "/rhsoftware/blog" },
+  { label: "Contact", href: "/rhsoftware/contact" },
 ];
 
 const RHLayout = () => {
@@ -31,7 +31,7 @@ const RHLayout = () => {
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/5" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-          <Link to="/rh-software" className="flex items-center gap-2">
+          <Link to="/rhsoftware" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">
               RH
             </div>
@@ -53,7 +53,7 @@ const RHLayout = () => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link to="/rh-software/contact" className="hidden md:block px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+            <Link to="/rhsoftware/contact" className="hidden md:block px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 transition-all hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]">
               Start Your Project
             </Link>
             <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 text-white/60 hover:text-white">
@@ -76,7 +76,7 @@ const RHLayout = () => {
                     {link.label}
                   </Link>
                 ))}
-                <Link to="/rh-software/contact" className="block text-center mt-4 px-5 py-3 font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500">
+                <Link to="/rhsoftware/contact" className="block text-center mt-4 px-5 py-3 font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500">
                   Start Your Project
                 </Link>
               </div>
@@ -101,8 +101,8 @@ const RHLayout = () => {
             <p>© {new Date().getFullYear()} RH Software. All rights reserved.</p>
             <div className="flex gap-6">
               <Link to="/" className="hover:text-white transition-colors">SIAT Home</Link>
-              <Link to="/rh-software/services" className="hover:text-white transition-colors">Services</Link>
-              <Link to="/rh-software/contact" className="hover:text-white transition-colors">Contact</Link>
+              <Link to="/rhsoftware/services" className="hover:text-white transition-colors">Services</Link>
+              <Link to="/rhsoftware/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
         </div>
