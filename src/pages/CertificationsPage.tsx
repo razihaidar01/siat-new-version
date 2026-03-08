@@ -2,7 +2,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Award, Shield, CheckCircle } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-// ... keep existing code
+
+const certs = [
+  { title: "ISO 9001:2015", desc: "International quality management certification — globally recognized standard for excellence in education and training." },
+  { title: "NSDC Registration", desc: "National Skill Development Corporation registered training partner for government skill programs." },
+  { title: "Skill India Partner", desc: "Official partner under Skill India Mission for vocational training and skill development." },
+  { title: "Bihar Skill Development Mission", desc: "Empanelled with Bihar government for state-level skill training programs." },
+];
+
 const CertificationsPage = () => (
   <>
     <SEOHead title="Certifications – SIAT Bihar" description="SIAT's ISO 9001:2015 certification, NSDC registration, and government empanelments. Internationally recognized training certificates." />

@@ -1,7 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-// ... keep existing code
+
+const faqs = [
+  { q: "SIAT kya hai?", a: "SIAT (Society for Industrial & Applied Training) Bihar ka leading training institute, IT company aur consultancy organization hai — Saharsa mein headquartered." },
+  { q: "Kaunse courses available hain?", a: "Mobile Repairing, AC Repairing, Laptop Repairing, CCTV Installation, aur short-term job-oriented courses available hain." },
+  { q: "Course ki fees kitni hai?", a: "Course fees ₹5,000 se ₹35,000 tak hoti hai depending on course type aur duration. EMI facility bhi available hai." },
+  { q: "Certificate milta hai?", a: "Haan, ISO-verified certificate milta hai jismein QR code hota hai — employers online verify kar sakte hain." },
+  { q: "Placement support milta hai?", a: "Haan, SIAT ka dedicated placement cell hai — 95% placement rate ke saath Samsung, MI, Oppo service centers mein placement." },
+  { q: "Online classes available hain?", a: "Currently SIAT offline practical-based training par focus karta hai. Kuch theory modules online bhi available hain." },
+  { q: "Admission kaise lein?", a: "Contact form fill karein, WhatsApp karein, ya directly SIAT Saharsa office visit karein. Walk-in admission bhi available hai." },
+  { q: "Kya hostel facility hai?", a: "SIAT nearby affordable hostel aur PG accommodations suggest karta hai students ke liye." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
 const FAQsPage = () => (
   <>
     <SEOHead title="FAQs – SIAT Training Institute Bihar" description="Frequently asked questions about SIAT training courses, fees, placement, certificates, and admission process in Bihar." />

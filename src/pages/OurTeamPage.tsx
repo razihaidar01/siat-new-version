@@ -2,7 +2,18 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Users } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-// ... keep existing code
+
+const team = [
+  { name: "Chairman", role: "Founder & Chairman", desc: "SIAT ki vision aur direction ka neta — 15+ years ka experience." },
+  { name: "Director", role: "Managing Director", desc: "Operations aur strategic planning ke head." },
+  { name: "Academic Head", role: "Head of Training", desc: "Curriculum development aur training quality ke incharge." },
+  { name: "Placement Officer", role: "Placement Cell Head", desc: "Student placements aur industry connections manage karte hain." },
+  { name: "Senior Trainer – Mobile", role: "Mobile Repair Expert", desc: "10+ years ka chip-level repair experience." },
+  { name: "Senior Trainer – AC", role: "AC & Refrigeration Expert", desc: "HVAC specialist with industry certifications." },
+  { name: "IT Head", role: "Technology & IT", desc: "Website, software, aur digital infrastructure manage karte hain." },
+  { name: "Admin Officer", role: "Administration", desc: "Day-to-day operations aur student support handle karte hain." },
+];
+
 const OurTeamPage = () => (
   <>
     <SEOHead title="Our Team – SIAT Bihar" description="Meet the dedicated team behind SIAT. Experienced trainers, management, and support staff committed to quality education." />

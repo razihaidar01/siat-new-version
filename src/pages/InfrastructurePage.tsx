@@ -2,7 +2,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building, Monitor, Wrench, BookOpen, Wifi, Shield } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
-// ... keep existing code
+
+const facilities = [
+  { icon: Monitor, title: "Computer Lab", desc: "50+ computers with latest software for IT training aur digital literacy." },
+  { icon: Wrench, title: "Mobile Repair Lab", desc: "Chip-level repair equipment, microscopes, aur soldering stations." },
+  { icon: Building, title: "AC Training Unit", desc: "Split AC, window AC, aur inverter units for hands-on practice." },
+  { icon: BookOpen, title: "Smart Classrooms", desc: "Projector-equipped classrooms for theory sessions aur presentations." },
+  { icon: Wifi, title: "CCTV Lab", desc: "Working CCTV setup with DVR, NVR, IP cameras for practical training." },
+  { icon: Shield, title: "Library", desc: "Technical books, reference material, aur online learning resources." },
+];
+
 const InfrastructurePage = () => (
   <>
     <SEOHead title="Infrastructure – SIAT Training Institute Bihar" description="Modern infrastructure at SIAT: computer labs, AC training units, CCTV lab, smart classrooms, and library facilities in Saharsa." />
