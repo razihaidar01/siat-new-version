@@ -116,7 +116,7 @@ const CertificateManager = () => {
     setTrainingTo("");
     setGrade("A++");
     setCertNumber(generateCertNumber());
-    setShowForm(false);
+    
   };
 
   const downloadQR = async (cert: Certificate) => {
@@ -163,16 +163,12 @@ const CertificateManager = () => {
     <div className="space-y-8">
       {/* Create Certificate */}
       <div className="glass-card p-6 rounded-xl">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center mb-4">
           <h3 className="text-lg font-display font-bold text-foreground flex items-center gap-2">
-            <Award className="w-5 h-5 text-primary" /> Certificate Management
+            <Award className="w-5 h-5 text-primary" /> Create Certificate
           </h3>
-          <button onClick={() => setShowForm(!showForm)} className="btn-primary-glow !py-2 !px-4 text-sm flex items-center gap-1">
-            <Plus className="w-4 h-4" /> {showForm ? "Cancel" : "New Certificate"}
-          </button>
         </div>
 
-        {showForm && (
           <form onSubmit={handleCreate} className="space-y-4 border-t border-border pt-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
