@@ -29,6 +29,7 @@ const MobileRepairingPage = () => {
 
   return (
     <>
+      <SEOHead title="Mobile Repairing Course in Bihar – SIAT Saharsa" description="Join Bihar's best mobile repairing course at SIAT Saharsa. Learn chip-level repair, software flashing, and get ISO-verified certificate with placement support." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
