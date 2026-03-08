@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Plus, Download, Trash2 } from "lucide-react";
+import { Download, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { generateBarcodeDataUrl, getQRUrl } from "@/lib/codegen";
 
 const AdminCertificates = () => {
   const { toast } = useToast();
@@ -18,7 +19,6 @@ const AdminCertificates = () => {
     training_to: "",
     grade: "A++",
   });
-  const [generating, setGenerating] = useState(false);
   const [qrUrl, setQrUrl] = useState("");
   const [barcodeUrl, setBarcodeUrl] = useState("");
 
@@ -29,20 +29,14 @@ const AdminCertificates = () => {
 
   useEffect(() => { loadCerts(); }, []);
 
-  const generateCodes = (certNumber: string) => {
-    const verifyUrl = `https://www.siat.in/verify?cert=${encodeURIComponent(certNumber)}`;
-    const qr = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(verifyUrl)}`;
-    const barcode = `https://barcodes4.me/barcode/c128b/${encodeURIComponent(certNumber)}.png?height=80&resolution=2`;
-    return { qr, barcode };
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setQrUrl("");
     setBarcodeUrl("");
 
-    const { qr, barcode } = generateCodes(form.certificate_number);
+    const qr = getQRUrl(form.certificate_number);
+    const barcode = generateBarcodeDataUrl(form.certificate_number);
 
     const { error } = await supabase.from("certificates").insert({
       ...form,
@@ -73,7 +67,6 @@ const AdminCertificates = () => {
     const a = document.createElement("a");
     a.href = url;
     a.download = name;
-    a.target = "_blank";
     a.click();
   };
 
@@ -125,7 +118,6 @@ const AdminCertificates = () => {
         </button>
       </form>
 
-      {/* Generated codes */}
       {(qrUrl || barcodeUrl) && (
         <div className="glass-card p-6">
           <h3 className="font-display font-bold text-foreground mb-4">Generated Codes — Download & use in Photoshop</h3>
@@ -140,7 +132,7 @@ const AdminCertificates = () => {
             )}
             {barcodeUrl && (
               <div className="text-center">
-                <img src={barcodeUrl} alt="Barcode" className="h-20 border border-border rounded-lg" />
+                <img src={barcodeUrl} alt="Barcode" className="h-24 border border-border rounded-lg" />
                 <button onClick={() => downloadImage(barcodeUrl, "barcode.png")} className="mt-2 flex items-center gap-1 text-sm text-primary mx-auto">
                   <Download className="w-3 h-3" /> Download Barcode
                 </button>
@@ -150,7 +142,6 @@ const AdminCertificates = () => {
         </div>
       )}
 
-      {/* Recent certs */}
       <div>
         <h3 className="font-display font-bold text-foreground mb-4">Recent Certificates</h3>
         <div className="space-y-2">

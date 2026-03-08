@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Search, Download, Trash2, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { generateBarcodeDataUrl, getQRUrl } from "@/lib/codegen";
 
 const AdminCertSearch = () => {
   const { toast } = useToast();
@@ -11,16 +12,16 @@ const AdminCertSearch = () => {
 
   const handleSearch = async (e?: React.FormEvent) => {
     e?.preventDefault();
+    setLoading(true);
     if (!query.trim()) {
       const { data } = await supabase.from("certificates").select("*").order("created_at", { ascending: false }).limit(50);
       if (data) setResults(data);
-      return;
+    } else {
+      const { data } = await supabase.from("certificates").select("*")
+        .or(`certificate_number.ilike.%${query}%,student_name.ilike.%${query}%,course_name.ilike.%${query}%`)
+        .order("created_at", { ascending: false }).limit(50);
+      if (data) setResults(data);
     }
-    setLoading(true);
-    const { data } = await supabase.from("certificates").select("*")
-      .or(`certificate_number.ilike.%${query}%,student_name.ilike.%${query}%,course_name.ilike.%${query}%`)
-      .order("created_at", { ascending: false }).limit(50);
-    if (data) setResults(data);
     setLoading(false);
   };
 
@@ -33,11 +34,12 @@ const AdminCertSearch = () => {
     toast({ title: "Deleted" });
   };
 
-  const getQR = (certNum: string) => 
-    `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`https://www.siat.in/verify?cert=${encodeURIComponent(certNum)}`)}`;
-  
-  const getBarcode = (certNum: string) =>
-    `https://barcodes4.me/barcode/c128b/${encodeURIComponent(certNum)}.png?height=80&resolution=2`;
+  const downloadImage = (url: string, name: string) => {
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    a.click();
+  };
 
   return (
     <div className="space-y-6">
@@ -81,18 +83,18 @@ const AdminCertSearch = () => {
                 </button>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-end">
               <div className="text-center">
-                <img src={getQR(cert.certificate_number)} alt="QR" className="w-24 h-24 border border-border rounded" />
-                <a href={getQR(cert.certificate_number)} download className="text-xs text-primary flex items-center gap-1 justify-center mt-1">
+                <img src={getQRUrl(cert.certificate_number)} alt="QR" className="w-24 h-24 border border-border rounded" />
+                <button onClick={() => downloadImage(getQRUrl(cert.certificate_number), `qr-${cert.certificate_number}.png`)} className="text-xs text-primary flex items-center gap-1 justify-center mt-1">
                   <Download className="w-3 h-3" /> QR
-                </a>
+                </button>
               </div>
               <div className="text-center">
-                <img src={getBarcode(cert.certificate_number)} alt="Barcode" className="h-16 border border-border rounded" />
-                <a href={getBarcode(cert.certificate_number)} download className="text-xs text-primary flex items-center gap-1 justify-center mt-1">
+                <img src={generateBarcodeDataUrl(cert.certificate_number)} alt="Barcode" className="h-20 border border-border rounded" />
+                <button onClick={() => downloadImage(generateBarcodeDataUrl(cert.certificate_number), `barcode-${cert.certificate_number}.png`)} className="text-xs text-primary flex items-center gap-1 justify-center mt-1">
                   <Download className="w-3 h-3" /> Barcode
-                </a>
+                </button>
               </div>
             </div>
           </div>
