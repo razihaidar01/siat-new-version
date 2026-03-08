@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, FileCheck, Building, Stethoscope, BookOpen, Award, Users, ArrowRight } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const services = [
   { icon: Stethoscope, title: "MBBS Admission", desc: "Top medical colleges mein admission guidance — India aur abroad dono options available.", href: "/consultancy-services/mbbs-admission-bihar" },

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Camera, Award, Briefcase, Wifi, Shield } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   { q: "What is the duration of the CCTV Installation course?", a: "The course is 2–3 months covering analog, IP cameras, DVR/NVR configuration, and networking." },

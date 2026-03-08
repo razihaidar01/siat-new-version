@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building2, FileCheck, Users, Award, Shield, Landmark, ArrowRight } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const projects = [
   { icon: Users, title: "Government Skill Training", desc: "Bihar sarkar ke saath partnership mein skill development programs.", href: "/government-projects/government-skill-training-bihar" },
