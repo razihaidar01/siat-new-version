@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircle, Smartphone, Award, Users, Briefcase } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const faqs = [
   { q: "What is the duration of the Mobile Repairing Course?", a: "The course is available in 3-month and 6-month formats depending on the level — basic, advanced, or comprehensive." },

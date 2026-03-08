@@ -37,6 +37,7 @@ const TrainingInstitutePage = () => {
 
   return (
     <>
+      <SEOHead title="Training Institute in Bihar – SIAT Saharsa" description="Bihar ka sabse bharosemand technical training institute. Mobile repairing, AC repairing, laptop repairing aur CCTV installation courses with 95% placement support." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
