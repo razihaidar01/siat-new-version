@@ -103,19 +103,19 @@ const App = () => (
 
           {/* RH Software — separate dark-themed layout */}
           <Route element={<RHLayout />}>
-            <Route path="/rh-software" element={<RHSoftwarePage />} />
-            <Route path="/rhsoftware" element={<Navigate to="/rh-software" replace />} />
-            <Route path="/rh-software/services" element={<RHServicesPage />} />
-            <Route path="/rh-software/website-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rh-software/app-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rh-software/software-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rh-software/ai-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rh-software/erp-crm-development" element={<RHServicesPage />} />
-            <Route path="/rh-software/portfolio" element={<RHPortfolioPage />} />
-            <Route path="/rh-software/case-studies" element={<RHPortfolioPage />} />
-            <Route path="/rh-software/pricing" element={<RHPricingPage />} />
-            <Route path="/rh-software/contact" element={<RHContactPage />} />
-            <Route path="/rh-software/blog" element={<RHBlogPage />} />
+          <Route path="/rhsoftware" element={<RHSoftwarePage />} />
+            <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
+            <Route path="/rhsoftware/services" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/website-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/app-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/software-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/ai-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/erp-crm-development" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/portfolio" element={<RHPortfolioPage />} />
+            <Route path="/rhsoftware/case-studies" element={<RHPortfolioPage />} />
+            <Route path="/rhsoftware/pricing" element={<RHPricingPage />} />
+            <Route path="/rhsoftware/contact" element={<RHContactPage />} />
+            <Route path="/rhsoftware/blog" element={<RHBlogPage />} />
           </Route>
 
           {/* Admin routes */}
