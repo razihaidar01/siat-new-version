@@ -1,20 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Users } from "lucide-react";
-
-const team = [
-  { name: "Chairman", role: "Founder & Chairman", desc: "Visionary leader with 15+ years in education aur skill development." },
-  { name: "Director", role: "Director - Operations", desc: "Manages day-to-day operations, training delivery aur quality control." },
-  { name: "Head - Training", role: "Head of Training", desc: "Curriculum design, faculty management aur training quality assurance." },
-  { name: "Head - Placement", role: "Head of Placement Cell", desc: "Industry connections, placement coordination aur career counseling." },
-  { name: "Sr. Trainer - Mobile", role: "Senior Trainer - Mobile Repairing", desc: "10+ years experience in mobile repair. Chip-level expert." },
-  { name: "Sr. Trainer - AC", role: "Senior Trainer - AC Repairing", desc: "Expert in split AC, inverter AC installation aur servicing." },
-  { name: "Sr. Trainer - Laptop", role: "Senior Trainer - Laptop Repairing", desc: "Hardware aur software expert. Motherboard level repair specialist." },
-  { name: "Head - Consultancy", role: "Head of Consultancy", desc: "Education admission guidance, ISO certification aur business consultancy." },
-];
-
+import SEOHead from "@/components/SEOHead";
+// ... keep existing code
 const OurTeamPage = () => (
   <>
+    <SEOHead title="Our Team – SIAT Bihar" description="Meet the dedicated team behind SIAT. Experienced trainers, management, and support staff committed to quality education." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-foreground mt-4 mb-6">

@@ -1,20 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building, Monitor, Wrench, BookOpen, Wifi, Shield } from "lucide-react";
-
-const facilities = [
-  { icon: Monitor, title: "Computer Lab", desc: "30+ computers with latest software — programming, Tally, internet training ke liye." },
-  { icon: Wrench, title: "Mobile Repair Lab", desc: "Advanced tools — microscope, soldering station, BGA rework machine ke saath fully-equipped lab." },
-  { icon: Building, title: "AC Training Lab", desc: "Real split AC, window AC, inverter AC units par hands-on practice." },
-  { icon: Monitor, title: "Laptop Repair Lab", desc: "Motherboard repair tools, diagnostic equipment aur testing stations." },
-  { icon: Shield, title: "CCTV Lab", desc: "Different types ke cameras, DVR/NVR systems aur networking equipment." },
-  { icon: BookOpen, title: "Classroom", desc: "AC classrooms with projector, whiteboard aur comfortable seating." },
-  { icon: Wifi, title: "High-Speed Internet", desc: "Campus-wide Wi-Fi for research, online learning aur practice." },
-  { icon: Building, title: "Library", desc: "Technical books, manuals, aur study materials ka collection." },
-];
-
+import SEOHead from "@/components/SEOHead";
+// ... keep existing code
 const InfrastructurePage = () => (
   <>
+    <SEOHead title="Infrastructure – SIAT Training Institute Bihar" description="Modern infrastructure at SIAT: computer labs, AC training units, CCTV lab, smart classrooms, and library facilities in Saharsa." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-foreground mt-4 mb-6">

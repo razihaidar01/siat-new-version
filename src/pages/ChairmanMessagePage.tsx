@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Quote } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const ChairmanMessagePage = () => (
   <>
+    <SEOHead title="Chairman's Message – SIAT Bihar" description="Read the Chairman's message about SIAT's vision, mission, and commitment to empowering Bihar's youth through technical education." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-foreground mt-4 mb-6">

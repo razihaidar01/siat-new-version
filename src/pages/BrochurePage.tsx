@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Download, FileText } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const BrochurePage = () => (
   <>
+    <SEOHead title="Download Brochure – SIAT Bihar" description="Download SIAT's official brochure with course details, fees, and admission information for training programs in Bihar." />
     <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-5xl lg:text-6xl font-display font-black text-foreground mt-4 mb-6">
