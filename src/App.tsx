@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout";
+import RHLayout from "./components/rh/RHLayout";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
 import Index from "./pages/Index";
@@ -24,6 +25,12 @@ import GalleryPage from "./pages/GalleryPage";
 import GenericPage from "./pages/GenericPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPanelPage from "./pages/AdminPanelPage";
+import RHSoftwarePage from "./pages/RHSoftwarePage";
+import RHServicesPage from "./pages/RHServicesPage";
+import RHPricingPage from "./pages/RHPricingPage";
+import RHPortfolioPage from "./pages/RHPortfolioPage";
+import RHContactPage from "./pages/RHContactPage";
+import RHBlogPage from "./pages/RHBlogPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,11 +44,12 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
+          {/* SIAT Main Site */}
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
-            
+
             {/* Training Institute */}
             <Route path="/training-institute" element={<GenericPage title="Training Institute" description="Bihar ka sabse bharosemand technical training institute — practical learning aur placement support ke saath." />} />
             <Route path="/training-institute/mobile-repairing-course-bihar" element={<MobileRepairingPage />} />
@@ -54,19 +62,7 @@ const App = () => (
             <Route path="/training-institute/placement-support" element={<GenericPage title="Placement Support" description="Dedicated placement cell — course ke baad job dhundhne mein poori madad." />} />
             <Route path="/training-institute/student-testimonials" element={<GenericPage title="Student Testimonials" description="Hamare students kya kehte hain — unke success stories padhein." />} />
             <Route path="/training-institute/gallery" element={<Navigate to="/gallery" replace />} />
-            
-            {/* RH Software */}
-            <Route path="/rh-software" element={<GenericPage title="RH Software – IT Solutions" description="Bihar ki leading IT company — website, app, software aur AI development services." />} />
-            <Route path="/rhsoftware" element={<Navigate to="/rh-software" replace />} />
-            <Route path="/rh-software/website-development-company-bihar" element={<WebDevelopmentPage />} />
-            <Route path="/rh-software/app-development-company-bihar" element={<AppDevelopmentPage />} />
-            <Route path="/rh-software/software-development-company-bihar" element={<GenericPage title="Software Development Company in Bihar" description="Custom software solutions — ERP, CRM aur business automation Bihar mein." />} />
-            <Route path="/rh-software/ai-development-company-bihar" element={<AIDevelopmentPage />} />
-            <Route path="/rh-software/erp-crm-development" element={<GenericPage title="ERP & CRM Development" description="Business ko smart banayein — custom ERP aur CRM solutions." />} />
-            <Route path="/rh-software/portfolio" element={<GenericPage title="Our Portfolio" description="Hamare successful projects dekhein — websites, apps aur software solutions." />} />
-            <Route path="/rh-software/case-studies" element={<GenericPage title="Case Studies" description="Real projects, real results — jaanein kaise humne businesses ko transform kiya." />} />
-            <Route path="/rh-software/pricing" element={<GenericPage title="Pricing" description="Transparent pricing — apne budget mein best IT solutions paayein." />} />
-            
+
             {/* Consultancy */}
             <Route path="/consultancy-services" element={<GenericPage title="Consultancy Services" description="Education, ISO certification aur career guidance — SIAT Consultancy ke saath." />} />
             <Route path="/consultancy-services/best-college-in-bihar" element={<GenericPage title="Best College in Bihar" description="Bihar ke top colleges ki jaankari — admission guidance SIAT se paayein." />} />
@@ -78,7 +74,7 @@ const App = () => (
             <Route path="/consultancy-services/bihar-student-credit-card-admission" element={<GenericPage title="Bihar Student Credit Card Admission" description="Student Credit Card scheme se padhai karein — poori process jaanein." />} />
             <Route path="/consultancy-services/iso-certification-bihar" element={<ISOCertificationPage />} />
             <Route path="/consultancy-services/msme-registration" element={<GenericPage title="MSME Registration" description="MSME registration karwayein — benefits aur process ki poori jaankari." />} />
-            
+
             {/* Government Projects */}
             <Route path="/government-projects" element={<GenericPage title="Government Projects" description="SIAT — Bihar sarkar ka bharosemand skill training aur project implementation partner." />} />
             <Route path="/government-projects/government-skill-training-bihar" element={<GovSkillTrainingPage />} />
@@ -88,7 +84,7 @@ const App = () => (
             <Route path="/government-projects/csr-education-projects" element={<GenericPage title="CSR Education Projects" description="CSR ke through education projects — partnership opportunities." />} />
             <Route path="/government-projects/capability-statement" element={<GenericPage title="Capability Statement" description="SIAT ki capabilities — infrastructure, experience aur certifications." />} />
             <Route path="/government-projects/empanelment" element={<GenericPage title="Empanelment" description="Government empanelment details aur process." />} />
-            
+
             {/* Other pages */}
             <Route path="/verify-certificate" element={<VerifyCertificatePage />} />
             <Route path="/verify" element={<VerifyCertificatePage />} />
@@ -104,11 +100,28 @@ const App = () => (
             <Route path="/terms-conditions" element={<GenericPage title="Terms & Conditions" description="SIAT ki terms aur conditions." />} />
             <Route path="/disclaimer" element={<GenericPage title="Disclaimer" description="SIAT ka disclaimer." />} />
           </Route>
-          
-          {/* Admin routes - outside SiteLayout */}
+
+          {/* RH Software — separate dark-themed layout */}
+          <Route element={<RHLayout />}>
+            <Route path="/rh-software" element={<RHSoftwarePage />} />
+            <Route path="/rhsoftware" element={<Navigate to="/rh-software" replace />} />
+            <Route path="/rh-software/services" element={<RHServicesPage />} />
+            <Route path="/rh-software/website-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rh-software/app-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rh-software/software-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rh-software/ai-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rh-software/erp-crm-development" element={<RHServicesPage />} />
+            <Route path="/rh-software/portfolio" element={<RHPortfolioPage />} />
+            <Route path="/rh-software/case-studies" element={<RHPortfolioPage />} />
+            <Route path="/rh-software/pricing" element={<RHPricingPage />} />
+            <Route path="/rh-software/contact" element={<RHContactPage />} />
+            <Route path="/rh-software/blog" element={<RHBlogPage />} />
+          </Route>
+
+          {/* Admin routes */}
           <Route path="/admin-login" element={<AdminLoginPage />} />
           <Route path="/adminarea" element={<AdminPanelPage />} />
-          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
