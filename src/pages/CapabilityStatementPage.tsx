@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Building, Award, Users, Wrench, MapPin, FileCheck, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const capabilities = [
   { icon: Building, title: "Infrastructure", desc: "5000+ sq ft training facility with modern labs, classrooms, aur workshop space." },

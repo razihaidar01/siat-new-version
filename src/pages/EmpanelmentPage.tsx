@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Shield, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const empanelments = [
   "National Skill Development Corporation (NSDC)",
