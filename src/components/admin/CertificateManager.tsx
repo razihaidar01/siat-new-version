@@ -64,14 +64,6 @@ const CertificateManager = () => {
     setSaving(true);
     try {
       const verifyUrl = getVerifyUrl(certNumber);
-      const qrDataUrl = await QRCode.toDataURL(verifyUrl, {
-        width: 400, margin: 2, color: { dark: "#1a1a2e", light: "#ffffff" },
-      });
-
-      const qrBlob = await (await fetch(qrDataUrl)).blob();
-      const qrFileName = `qr-${certNumber.replace(/\//g, "_")}.png`;
-      await supabase.storage.from("certificates").upload(qrFileName, qrBlob, { contentType: "image/png", upsert: true });
-      const { data: qrUrl } = supabase.storage.from("certificates").getPublicUrl(qrFileName);
 
       const { error } = await supabase.from("certificates").insert({
         certificate_number: certNumber,
@@ -79,7 +71,7 @@ const CertificateManager = () => {
         course_name: courseName.trim(),
         issue_date: issueDate,
         expiry_date: expiryDate || null,
-        qr_code_url: qrUrl.publicUrl,
+        qr_code_url: verifyUrl,
         is_valid: true,
         father_name: fatherName.trim() || null,
         mother_name: motherName.trim() || null,
