@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Star, Quote } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const testimonials = [
   { name: "Rahul Kumar", course: "Mobile Repairing", location: "Saharsa", text: "SIAT se mobile repairing seekhne ke baad maine apni khud ki shop kholi hai. Ab mahine ka ₹25,000+ kama raha hoon. Best decision of my life!", rating: 5 },

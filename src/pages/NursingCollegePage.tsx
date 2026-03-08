@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, BookOpen, Building, Award, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const programs = [
   { title: "ANM (Auxiliary Nurse Midwifery)", duration: "2 Years", desc: "Basic nursing care aur midwifery ki training." },

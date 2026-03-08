@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { IndianRupee, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const fees = [
   { course: "Mobile Repairing (Basic)", duration: "3 Months", fee: "₹8,000", href: "/training-institute/mobile-repairing-course-bihar" },

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Building, Star, MapPin, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const colleges = [
   { type: "Medical", examples: "AIIMS Patna, PMCH, Darbhanga Medical College, NMCH Patna", href: "/consultancy-services/mbbs-admission-bihar" },

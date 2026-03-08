@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Briefcase, Building2, Users, TrendingUp, CheckCircle, MapPin } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const steps = [
   { num: "01", title: "Course Completion", desc: "Successfully complete your chosen course with practical assessment." },

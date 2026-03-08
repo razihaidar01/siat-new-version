@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Clock, Zap, Award, Briefcase, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const courses = [
   { title: "Basic Mobile Repair", duration: "1 Month", desc: "Screen replacement, battery change, software issues — basic repairs seekhein." },
@@ -30,6 +31,7 @@ const ShortTermCoursesPage = () => {
 
   return (
     <>
+      <SEOHead title="Short Term Job Courses in Bihar – SIAT" description="Quick 1-6 month job-oriented courses in Bihar. Mobile repairing, AC repairing, laptop repair & CCTV training at SIAT Saharsa." />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
         <div className="max-w-4xl mx-auto text-center">

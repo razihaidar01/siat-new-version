@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap, Stethoscope, Code, Heart, Briefcase, TrendingUp } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const options = [
   { icon: Stethoscope, title: "Medical (MBBS/BDS)", desc: "NEET clear karke doctor banein. Bihar ke top medical colleges mein admission.", href: "/consultancy-services/mbbs-admission-bihar" },

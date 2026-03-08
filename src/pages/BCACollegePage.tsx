@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Monitor, BookOpen, Building, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const subjects = ["Programming (C, C++, Java, Python)", "Database Management Systems", "Data Structures & Algorithms", "Web Development", "Computer Networks", "Software Engineering", "Operating Systems", "Cyber Security Basics"];
 

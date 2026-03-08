@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MapPin, BookOpen, Award, Users, Wrench, CheckCircle } from "lucide-react";
+import SEOHead from "@/components/SEOHead";
 
 const TechnicalTrainingPage = () => (
   <>
