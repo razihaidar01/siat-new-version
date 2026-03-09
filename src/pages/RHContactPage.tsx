@@ -12,19 +12,27 @@ const RHContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const { error } = await supabase.from("contact_submissions").insert({
+
+    const payload = {
       name: form.name.trim(),
       phone: form.phone.trim(),
       email: form.email.trim() || null,
       interest: "RH Software Inquiry",
       message: form.message.trim(),
-    });
+    };
+
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+
     if (error) {
       toast({ title: "Error", description: error.message, variant: "destructive" });
     } else {
+      // Send email notification (fire-and-forget)
+      supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
+
       toast({ title: "Message sent!", description: "We'll get back to you soon." });
       setForm({ name: "", email: "", phone: "", message: "" });
     }
+
     setLoading(false);
   };
 
