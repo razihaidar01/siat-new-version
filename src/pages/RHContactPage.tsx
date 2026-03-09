@@ -21,16 +21,13 @@ const RHContactPage = () => {
       message: form.message.trim(),
     };
 
-    const { error } = await supabase.from("contact_submissions").insert(payload);
-
-    if (error) {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
-    } else {
-      // Send email notification (fire-and-forget)
-      supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
-
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", { body: payload });
+      if (error) throw error;
       toast({ title: "Message sent!", description: "We'll get back to you soon." });
       setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err: any) {
+      toast({ title: "Error", description: "Failed to send message. Please try again.", variant: "destructive" });
     }
 
     setLoading(false);
@@ -94,8 +91,8 @@ const RHContactPage = () => {
                 <a href="tel:+919342470019" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
                   <Phone className="w-5 h-5 text-purple-400" /> +91 9342470019
                 </a>
-                <a href="mailto:siat.sws@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
-                  <Mail className="w-5 h-5 text-purple-400" /> siat.sws@gmail.com
+                <a href="mailto:siatgroup.sws@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
+                  <Mail className="w-5 h-5 text-purple-400" /> siatgroup.sws@gmail.com
                 </a>
                 <div className="flex items-center gap-3 text-white/50">
                   <MapPin className="w-5 h-5 text-purple-400" /> Saharsa, Bihar, India
