@@ -73,7 +73,7 @@ const SEOHead = ({
 
     // Scroll GA pageview
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-XXXXXXXXXX", { page_path: pathname });
+      (window as any).gtag("config", "G-V3QTW8QZN5", { page_path: pathname });
     }
   }, [fullTitle, description, fullCanonical, fullOgImage, type, noIndex, pathname]);
 
