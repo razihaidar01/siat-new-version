@@ -1,15 +1,45 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMsg(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      email: (formData.get("email") as string) || null,
+      interest: formData.get("interest") as string,
+      message: (formData.get("message") as string) || null,
+    };
+
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+
+    // Send email notification (fire-and-forget)
+    supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
+
+    setLoading(false);
+
+    if (error) {
+      setErrorMsg("Kuch galat ho gaya. Dobara koshish karein.");
+      return;
+    }
+
     setSubmitted(true);
+    form.reset();
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -42,20 +72,40 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
-                <input type="text" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="Apna naam likhein" />
+                <input
+                  name="name"
+                  type="text"
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
+                  placeholder="Apna naam likhein"
+                />
               </div>
               <div>
                 <label className="text-sm font-medium text-foreground mb-1.5 block">Phone</label>
-                <input type="tel" required className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="+91" />
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
+                  placeholder="+91"
+                />
               </div>
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
-              <input type="email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground" placeholder="your@email.com" />
+              <input
+                name="email"
+                type="email"
+                className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
+                placeholder="your@email.com"
+              />
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">Interested In</label>
-              <select className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground">
+              <select
+                name="interest"
+                className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
+              >
                 <option>Training Courses</option>
                 <option>Software Development</option>
                 <option>Consultancy Services</option>
@@ -65,10 +115,28 @@ const ContactSection = () => {
             </div>
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
-              <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground resize-none" placeholder="Apni zaroorat batayein..." />
+              <textarea
+                name="message"
+                rows={4}
+                className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground resize-none"
+                placeholder="Apni zaroorat batayein..."
+              />
             </div>
-            <button type="submit" className="btn-primary-glow w-full flex items-center justify-center gap-2">
-              {submitted ? "Bhej Diya! ✓" : <><Send className="w-4 h-4" /> Send Message</>}
+
+            {errorMsg && (
+              <p className="text-sm text-red-500">{errorMsg}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary-glow w-full flex items-center justify-center gap-2 disabled:opacity-60"
+            >
+              {submitted
+                ? "Bhej Diya! ✓"
+                : loading
+                ? "Bhej rahe hain..."
+                : <><Send className="w-4 h-4" /> Send Message</>}
             </button>
           </motion.form>
 
