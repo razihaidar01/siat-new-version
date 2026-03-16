@@ -72,6 +72,7 @@ import FAQsPage from "./pages/FAQsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsConditionsPage from "./pages/TermsConditionsPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
+import OpeningPage from "./pages/OpeningPage";
 
 const queryClient = new QueryClient();
 
