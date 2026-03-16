@@ -11,7 +11,7 @@ import ContactSection from "@/components/home/ContactSection";
 const Index = () => {
   return (
     <>
-      <SEOHead title="SIAT – Bihar's Leading Training, IT & Consultancy Organization" description="SIAT is Bihar's top training institute, IT company & consultancy. Mobile repairing, AC repair courses, website development, MBBS admission, ISO certification in Saharsa, Bihar." />
+      <SEOHead title="Saharsa Institute of Advance Technology (SIAT) – Bihar's Leading Training, IT & Consultancy Organization" description="SIAT is Bihar's top training institute, IT company & consultancy. Mobile repairing, AC repair courses, website development, MBBS admission, ISO certification in Saharsa, Bihar." />
       <HeroSection />
       <MarqueeSection />
       <DivisionsSection />
