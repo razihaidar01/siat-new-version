@@ -1,3 +1,4 @@
+import LocationServicePage from "./pages/LocationServicePage";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -87,6 +88,7 @@ const App = () => (
         <Routes>
           {/* SIAT Main Site */}
           <Route element={<SiteLayout />}>
+            <Route path="/bihar/:location/:service" element={<LocationServicePage />} />
             <Route path="/" element={<Index />} />
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
