@@ -23,7 +23,7 @@ const SEOHead = ({
   const { pathname } = useLocation();
   const fullCanonical = canonical || `${BASE_URL}${pathname}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
-  const fullTitle = title.includes("SIAT") ? title : `${title} | SIAT`;
+  const fullTitle = title.includes("SIAT") ? title.replace("SIAT", "Saharsa Institute of Advance Technology (SIAT)") : `${title} | Saharsa Institute of Advance Technology (SIAT)`;
 
   useEffect(() => {
     // Title
@@ -54,7 +54,7 @@ const SEOHead = ({
     setMeta("property", "og:type", type);
     setMeta("property", "og:url", fullCanonical);
     setMeta("property", "og:image", fullOgImage);
-    setMeta("property", "og:site_name", "SIAT");
+    setMeta("property", "og:site_name", "Saharsa Institute of Advance Technology - SIAT");
 
     // Twitter
     setMeta("name", "twitter:card", "summary_large_image");
