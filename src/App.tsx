@@ -139,6 +139,7 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-conditions" element={<TermsConditionsPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/opening" element={<OpeningPage />} />
           </Route>
 
           {/* RH Software — separate dark-themed layout */}
