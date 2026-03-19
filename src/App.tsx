@@ -74,6 +74,7 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsConditionsPage from "./pages/TermsConditionsPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
 import OpeningPage from "./pages/OpeningPage";
+import CelebrationPage from "./pages/CelebrationPage";
 
 const queryClient = new QueryClient();
 
@@ -143,6 +144,7 @@ const App = () => (
             <Route path="/terms-conditions" element={<TermsConditionsPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/opening" element={<OpeningPage />} />
+            <Route path="/celebration" element={<CelebrationPage />} />
           </Route>
 
           {/* RH Software — separate dark-themed layout */}
