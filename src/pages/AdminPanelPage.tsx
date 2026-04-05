@@ -9,6 +9,7 @@ import AdminGallery from "@/components/admin/AdminGallery";
 import AdminDocuments from "@/components/admin/AdminDocuments";
 import AdminContacts from "@/components/admin/AdminContacts";
 import AdminCertSearch from "@/components/admin/AdminCertSearch";
+import AdminCreditCardLeads from "@/components/admin/AdminCreditCardLeads";
 
 const tabs = [
   { id: "certificates", label: "Certificates", icon: Award },
