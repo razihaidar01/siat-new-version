@@ -4,11 +4,34 @@ import { motion, useInView } from "framer-motion";
 import {
   CheckCircle2, FileText, Users, IndianRupee, Clock, Shield,
   Phone, Globe, MapPin, ChevronDown, ChevronUp, ArrowRight,
-  GraduationCap, AlertCircle, Send
+  GraduationCap, AlertCircle, Send, Star, BookOpen, Filter
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import siatLogo from "@/assets/siat-logo.png";
 import { supabase } from "@/integrations/supabase/client";
+
+/* ─── Partner Colleges Data ─────────────────────────────── */
+const COLLEGES = [
+  { name: "Maharishi Markandeshwar University", grade: "A++", location: "Ambala, Haryana", state: "Haryana", rating: 4.5, courses: 6, fee: "₹2,00,000/yr" },
+  { name: "Vivekanand Global University", grade: "A+", location: "Jaipur, Rajasthan", state: "Rajasthan", rating: 4.3, courses: 8, fee: "₹1,75,000/yr" },
+  { name: "Mewar University", grade: "A+", location: "Chittorgarh, Rajasthan", state: "Rajasthan", rating: 4.0, courses: 7, fee: "₹82,500/yr" },
+  { name: "Ganpat University", grade: "A", location: "Mehsana, Gujarat", state: "Gujarat", rating: 4.2, courses: 5, fee: "₹1,50,000/yr" },
+  { name: "Noida International University", grade: "A", location: "Greater Noida, Uttar Pradesh", state: "Uttar Pradesh", rating: 4.1, courses: 5, fee: "₹1,50,000/yr" },
+  { name: "IIBS Bangalore", grade: "A", location: "Bangalore, Karnataka", state: "Karnataka", rating: 4.4, courses: 4, fee: "₹2,00,000/yr" },
+  { name: "SRM University Ghaziabad", grade: "A++", location: "Ghaziabad, Uttar Pradesh", state: "Uttar Pradesh", rating: 4.6, courses: 9, fee: "₹1,96,000/yr" },
+  { name: "Sandip University Madhubani", grade: "A", location: "Madhubani, Bihar", state: "Bihar", rating: 4.0, courses: 6, fee: "₹1,00,000/yr" },
+  { name: "Tula's Institute", grade: "A+", location: "Dehradun, Uttarakhand", state: "Uttarakhand", rating: 4.3, courses: 5, fee: "₹1,39,000/yr" },
+  { name: "SRM University Sonepat", grade: "A+", location: "Sonepat, Haryana", state: "Haryana", rating: 4.4, courses: 5, fee: "₹2,57,000/yr" },
+  { name: "Shobhit University", grade: "A", location: "Meerut, Uttar Pradesh", state: "Uttar Pradesh", rating: 4.0, courses: 5, fee: "₹1,20,000/yr" },
+  { name: "Guru Kashi University", grade: "A", location: "Talwandi Sabo, Punjab", state: "Punjab", rating: 4.0, courses: 5, fee: "₹1,20,000/yr" },
+  { name: "Oxford Business College", grade: "B+", location: "Patna, Bihar", state: "Bihar", rating: 3.8, courses: 3, fee: "₹65,000/yr" },
+  { name: "MGM Group Patna", grade: "B+", location: "Patna, Bihar", state: "Bihar", rating: 3.8, courses: 6, fee: "₹64,125/yr" },
+  { name: "MATS University", grade: "A+", location: "Raipur, Chhattisgarh", state: "Chhattisgarh", rating: 4.3, courses: 13, fee: "₹2,50,000/yr" },
+  { name: "Desh Bhagat University", grade: "A+", location: "Mandi Gobindgarh, Punjab", state: "Punjab", rating: 4.3, courses: 30, fee: "₹1,89,000/yr" },
+  { name: "K.R. Mangalam University", grade: "A", location: "Gurugram, Haryana", state: "Haryana", rating: 4.4, courses: 40, fee: "₹1,60,000/yr" },
+];
+
+const STATES = ["All States", "Bihar", "Chhattisgarh", "Gujarat", "Haryana", "Karnataka", "Punjab", "Rajasthan", "Uttar Pradesh", "Uttarakhand"];
 
 /* ─── Reveal wrapper ─────────────────────────────────────── */
 function Reveal({ children, delay = 0, className = "" }: {
