@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
-import { LogOut, Award, Image, FileText, MessageSquare, Search } from "lucide-react";
+import { LogOut, Award, Image, FileText, MessageSquare, Search, CreditCard } from "lucide-react";
 import siatLogo from "@/assets/siat-logo.png";
 import AdminCertificates from "@/components/admin/AdminCertificates";
 import AdminGallery from "@/components/admin/AdminGallery";
