@@ -103,6 +103,7 @@ const AdminPanelPage = () => {
           {activeTab === "gallery" && <AdminGallery />}
           {activeTab === "documents" && <AdminDocuments />}
           {activeTab === "contacts" && <AdminContacts />}
+          {activeTab === "creditcard" && <AdminCreditCardLeads />}
         </motion.div>
       </div>
     </div>
