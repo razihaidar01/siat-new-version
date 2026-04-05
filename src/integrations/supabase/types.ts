@@ -95,6 +95,54 @@ export type Database = {
         }
         Relationships: []
       }
+      credit_card_applications: {
+        Row: {
+          class_12_year: string | null
+          college_name: string | null
+          course_applied: string | null
+          created_at: string
+          date_of_birth: string | null
+          district: string | null
+          email: string | null
+          family_income: string | null
+          id: string
+          message: string | null
+          phone: string
+          status: string | null
+          student_name: string
+        }
+        Insert: {
+          class_12_year?: string | null
+          college_name?: string | null
+          course_applied?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          district?: string | null
+          email?: string | null
+          family_income?: string | null
+          id?: string
+          message?: string | null
+          phone: string
+          status?: string | null
+          student_name: string
+        }
+        Update: {
+          class_12_year?: string | null
+          college_name?: string | null
+          course_applied?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          district?: string | null
+          email?: string | null
+          family_income?: string | null
+          id?: string
+          message?: string | null
+          phone?: string
+          status?: string | null
+          student_name?: string
+        }
+        Relationships: []
+      }
       documents: {
         Row: {
           category: string | null
