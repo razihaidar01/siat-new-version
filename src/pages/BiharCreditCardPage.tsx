@@ -133,7 +133,7 @@ export default function BiharCreditCardPage() {
       family_income: (fd.get("family_income") as string) || null,
       message: (fd.get("message") as string) || null,
     };
-    const { error } = await supabase.from("credit_card_applications").insert(payload);
+    const { error } = await (supabase as any).from("credit_card_applications").insert(payload);
     setFormLoading(false);
     if (error) {
       setFormError("Kuch galat ho gaya. Dobara koshish karein ya WhatsApp pe contact karein.");
