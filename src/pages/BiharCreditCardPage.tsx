@@ -140,25 +140,43 @@ export default function BiharCreditCardPage() {
       return;
     }
     setFormSuccess(true);
+    setLeadCaptured(true);
     (e.target as HTMLFormElement).reset();
   };
 
-  return (
-    <>
-      <SEOHead
-        title="Bihar Student Credit Card Yojana — Free Help | SIAT"
-        description="Bihar Student Credit Card Yojana ke liye free apply karein. Up to ₹4 lakh education loan. SIAT aapki poori application process bilkul FREE mein karega."
-      />
+  /* ─── Lead capture gate: name, phone, course ─────────── */
+  const [leadCaptured, setLeadCaptured] = useState(false);
+  const [quickForm, setQuickForm] = useState({ name: "", phone: "", course: "" });
+  const [quickError, setQuickError] = useState<string | null>(null);
+  const [quickLoading, setQuickLoading] = useState(false);
+  const [stateFilter, setStateFilter] = useState("All States");
 
-      <div className="min-h-screen bg-white overflow-x-hidden">
+  const handleQuickSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!quickForm.name.trim() || !quickForm.phone.trim() || !quickForm.course.trim()) {
+      setQuickError("Please fill all required fields.");
+      return;
+    }
+    if (!/^[0-9+\-\s()]{10,}$/.test(quickForm.phone.trim())) {
+      setQuickError("Please enter a valid phone number.");
+      return;
+    }
+    setQuickLoading(true);
+    setQuickError(null);
+    const { error } = await (supabase as any).from("credit_card_applications").insert({
+      student_name: quickForm.name.trim(),
+      phone: quickForm.phone.trim(),
+      course_applied: quickForm.course.trim(),
+    });
+    setQuickLoading(false);
+    if (error) {
+      setQuickError("Something went wrong. Please try again.");
+      return;
+    }
+    setLeadCaptured(true);
+  };
 
-        {/* ── HERO ─────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-          {/* Bg orbs */}
-          <div aria-hidden className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-blue-500/30" />
-            <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-indigo-500/20" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-white/5" />
+  const filteredColleges = stateFilter === "All States" ? COLLEGES : COLLEGES.filter(c => c.state === stateFilter);
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-14 sm:py-20 text-center">
