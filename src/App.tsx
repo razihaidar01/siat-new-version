@@ -75,6 +75,7 @@ import TermsConditionsPage from "./pages/TermsConditionsPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
 import OpeningPage from "./pages/OpeningPage";
 import CelebrationPage from "./pages/CelebrationPage";
+import BiharCreditCardPage from "./pages/BiharCreditCardPage";
 
 const queryClient = new QueryClient();
 
@@ -145,6 +146,7 @@ const App = () => (
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/opening" element={<OpeningPage />} />
             <Route path="/celebration" element={<CelebrationPage />} />
+            <Route path="/creditcard" element={<BiharCreditCardPage />} />
           </Route>
 
           {/* RH Software — separate dark-themed layout */}
