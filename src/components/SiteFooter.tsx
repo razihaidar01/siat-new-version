@@ -37,6 +37,7 @@ const footerLinks = [
       { label: "About Us", href: "/about-us" },
       { label: "Gallery", href: "/gallery" },
       { label: "Verify Certificate", href: "/verify-certificate" },
+      { label: "Staff Portal", href: "/staff" },
       { label: "Contact", href: "/contact-us" },
     ],
   },

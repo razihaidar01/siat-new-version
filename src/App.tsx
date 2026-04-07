@@ -77,6 +77,7 @@ import OpeningPage from "./pages/OpeningPage";
 import CelebrationPage from "./pages/CelebrationPage";
 import BiharCreditCardPage from "./pages/BiharCreditCardPage";
 import StaffProfilePage from "./pages/StaffProfilePage";
+import StaffLandingPage from "./pages/StaffLandingPage";
 
 const queryClient = new QueryClient();
 
@@ -151,6 +152,7 @@ const App = () => (
 
           {/* Hidden standalone pages */}
           <Route path="/creditcard" element={<BiharCreditCardPage />} />
+          <Route path="/staff" element={<StaffLandingPage />} />
           <Route path="/staff/:employeeId" element={<StaffProfilePage />} />
 
           {/* RH Software — separate dark-themed layout */}
