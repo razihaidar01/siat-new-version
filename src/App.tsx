@@ -77,6 +77,7 @@ import OpeningPage from "./pages/OpeningPage";
 import CelebrationPage from "./pages/CelebrationPage";
 import BiharCreditCardPage from "./pages/BiharCreditCardPage";
 import StaffProfilePage from "./pages/StaffProfilePage";
+import StaffLandingPage from "./pages/StaffLandingPage";
 
 const queryClient = new QueryClient();
 
