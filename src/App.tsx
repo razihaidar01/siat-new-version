@@ -147,8 +147,11 @@ const App = () => (
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/opening" element={<OpeningPage />} />
             <Route path="/celebration" element={<CelebrationPage />} />
-            <Route path="/creditcard" element={<BiharCreditCardPage />} />
           </Route>
+
+          {/* Hidden standalone pages */}
+          <Route path="/creditcard" element={<BiharCreditCardPage />} />
+          <Route path="/staff/:employeeId" element={<StaffProfilePage />} />
 
           {/* RH Software — separate dark-themed layout */}
           <Route element={<RHLayout />}>
