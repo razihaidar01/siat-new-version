@@ -81,14 +81,14 @@ const SiteFooter = () => {
           <a href="mailto:siat.sws@gmail.com" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
             <Mail className="w-4 h-4" /> siat.sws@gmail.com
           </a>
+          <a href="tel:+919942115058" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
+            <Phone className="w-4 h-4" /> +91 99421 15058
+          </a>
           <a href="tel:+917004216219" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
             <Phone className="w-4 h-4" /> +91 7004216219
           </a>
-          <a href="tel:+919342470019" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors">
-            <Phone className="w-4 h-4" /> +91 9342470019
-          </a>
           <span className="flex items-center gap-2 text-sm text-background/60">
-            <MapPin className="w-4 h-4" /> Saharsa, Bihar, India
+            <MapPin className="w-4 h-4" /> B/O Station Road, Gamhariya, Bajnathpur Chowk, Saharsa, Bihar
           </span>
         </div>
 
