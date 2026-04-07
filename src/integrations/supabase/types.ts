@@ -200,6 +200,78 @@ export type Database = {
         }
         Relationships: []
       }
+      staff_profiles: {
+        Row: {
+          aadhaar_number: string | null
+          address: string | null
+          blood_group: string | null
+          created_at: string
+          date_of_birth: string | null
+          date_of_joining: string | null
+          department: string
+          designation: string
+          email: string | null
+          emergency_contact: string | null
+          employee_id: string
+          extra_info: Json | null
+          father_name: string | null
+          full_name: string
+          id: string
+          is_active: boolean | null
+          mother_name: string | null
+          pan_number: string | null
+          phone: string | null
+          photo_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          aadhaar_number?: string | null
+          address?: string | null
+          blood_group?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          date_of_joining?: string | null
+          department: string
+          designation: string
+          email?: string | null
+          emergency_contact?: string | null
+          employee_id: string
+          extra_info?: Json | null
+          father_name?: string | null
+          full_name: string
+          id?: string
+          is_active?: boolean | null
+          mother_name?: string | null
+          pan_number?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          aadhaar_number?: string | null
+          address?: string | null
+          blood_group?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          date_of_joining?: string | null
+          department?: string
+          designation?: string
+          email?: string | null
+          emergency_contact?: string | null
+          employee_id?: string
+          extra_info?: Json | null
+          father_name?: string | null
+          full_name?: string
+          id?: string
+          is_active?: boolean | null
+          mother_name?: string | null
+          pan_number?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string

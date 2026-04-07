@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { motion } from "framer-motion";
-import { LogOut, Award, Image, FileText, MessageSquare, Search, CreditCard } from "lucide-react";
+import { LogOut, Award, Image, FileText, MessageSquare, Search, CreditCard, Users } from "lucide-react";
 import siatLogo from "@/assets/siat-logo.png";
 import AdminCertificates from "@/components/admin/AdminCertificates";
 import AdminGallery from "@/components/admin/AdminGallery";
@@ -10,6 +10,7 @@ import AdminDocuments from "@/components/admin/AdminDocuments";
 import AdminContacts from "@/components/admin/AdminContacts";
 import AdminCertSearch from "@/components/admin/AdminCertSearch";
 import AdminCreditCardLeads from "@/components/admin/AdminCreditCardLeads";
+import AdminStaff from "@/components/admin/AdminStaff";
 
 const tabs = [
   { id: "certificates", label: "Certificates", icon: Award },
@@ -18,6 +19,7 @@ const tabs = [
   { id: "documents", label: "Documents", icon: FileText },
   { id: "contacts", label: "Contact Leads", icon: MessageSquare },
   { id: "creditcard", label: "Student Leads", icon: CreditCard },
+  { id: "staff", label: "Staff", icon: Users },
 ];
 
 const AdminPanelPage = () => {
@@ -104,6 +106,7 @@ const AdminPanelPage = () => {
           {activeTab === "documents" && <AdminDocuments />}
           {activeTab === "contacts" && <AdminContacts />}
           {activeTab === "creditcard" && <AdminCreditCardLeads />}
+          {activeTab === "staff" && <AdminStaff />}
         </motion.div>
       </div>
     </div>
