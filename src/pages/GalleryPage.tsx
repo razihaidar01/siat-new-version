@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import SEOHead from "@/components/SEOHead";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { X } from "lucide-react";
 
 const GalleryPage = () => {
   const [images, setImages] = useState<any[]>([]);
   const [category, setCategory] = useState("all");
+  const [lightbox, setLightbox] = useState<any>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -39,7 +41,6 @@ const GalleryPage = () => {
 
       <section ref={ref} className="section-padding bg-background">
         <div className="max-w-7xl mx-auto">
-          {/* Category filter */}
           <div className="flex flex-wrap gap-2 justify-center mb-12">
             {categories.map((cat) => (
               <button
@@ -64,7 +65,8 @@ const GalleryPage = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.05 }}
-                  className="glass-card-hover overflow-hidden group"
+                  className="glass-card-hover overflow-hidden group cursor-pointer"
+                  onClick={() => setLightbox(img)}
                 >
                   <div className="aspect-square relative overflow-hidden">
                     <img
@@ -86,6 +88,36 @@ const GalleryPage = () => {
           )}
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <button onClick={() => setLightbox(null)} className="absolute top-4 right-4 text-white/80 hover:text-white z-50">
+              <X className="w-8 h-8" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={lightbox.file_url}
+              alt={lightbox.title}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+              onClick={e => e.stopPropagation()}
+            />
+            <div className="absolute bottom-6 text-center text-white">
+              <p className="font-medium">{lightbox.title}</p>
+              {lightbox.category && <p className="text-sm text-white/60">{lightbox.category}</p>}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
