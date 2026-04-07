@@ -19,6 +19,7 @@ const tabs = [
   { id: "documents", label: "Documents", icon: FileText },
   { id: "contacts", label: "Contact Leads", icon: MessageSquare },
   { id: "creditcard", label: "Student Leads", icon: CreditCard },
+  { id: "staff", label: "Staff", icon: Users },
 ];
 
 const AdminPanelPage = () => {
