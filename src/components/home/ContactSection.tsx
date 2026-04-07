@@ -154,7 +154,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-foreground">Address</h4>
-                  <p className="text-sm text-muted-foreground mt-1">SIAT, Main Road, Saharsa, Bihar – 852201</p>
+                  <p className="text-sm text-muted-foreground mt-1">B/O Station Road, Gamhariya, Bajnathpur Chowk, Saharsa, Bihar</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
