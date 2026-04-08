@@ -92,6 +92,10 @@ const ContactSection = () => {
                   name="name"
                   type="text"
                   required
+                  maxLength={100}
+                  minLength={2}
+                  pattern="[A-Za-z\s.'\-]+"
+                  title="Only letters, spaces, dots and hyphens allowed"
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
                   placeholder="Apna naam likhein"
                 />
@@ -102,6 +106,9 @@ const ContactSection = () => {
                   name="phone"
                   type="tel"
                   required
+                  pattern="(\+91)?[6-9][0-9]{9}"
+                  maxLength={13}
+                  title="Enter a valid 10-digit Indian mobile number"
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground"
                   placeholder="+91"
                 />
