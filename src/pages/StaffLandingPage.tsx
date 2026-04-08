@@ -175,7 +175,7 @@ const StaffLandingPage = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-3">
                 <img src={siatLogo} alt="SIAT" className="w-10 h-10 rounded-full" />
-                <span className="font-bold text-lg">SIAT Group</span>
+                <span className="font-bold text-lg">SIAT</span>
               </div>
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +91 99421 15058</span>
