@@ -98,17 +98,39 @@ export default function BiharCreditCardPage() {
     setFormLoading(true);
     setFormError(null);
     const fd = new FormData(e.currentTarget);
+
+    const studentName = (fd.get("student_name") as string).trim();
+    const phone = (fd.get("phone") as string).trim();
+    const email = (fd.get("email") as string)?.trim() || null;
+
+    // Validation
+    if (studentName.length < 2 || studentName.length > 100 || !/^[A-Za-z\s.'-]+$/.test(studentName)) {
+      setFormError("Please enter a valid name (letters only, 2-100 characters)."); setFormLoading(false); return;
+    }
+    const cleanPhone = phone.replace(/[\s\-()]/g, "");
+    if (!/^(\+91)?[6-9]\d{9}$/.test(cleanPhone)) {
+      setFormError("Please enter a valid 10-digit Indian mobile number."); setFormLoading(false); return;
+    }
+    if (email && !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)) {
+      setFormError("Please enter a valid email address."); setFormLoading(false); return;
+    }
+    const message = (fd.get("message") as string)?.trim() || null;
+    const spamPattern = /(\b(fuck|shit|ass|bitch|damn|sex|porn|xxx|hack|free money|lottery|viagra)\b)/i;
+    if ((message && spamPattern.test(message)) || spamPattern.test(studentName)) {
+      setFormError("Please use appropriate language."); setFormLoading(false); return;
+    }
+
     const payload = {
-      student_name: fd.get("student_name") as string,
-      phone: fd.get("phone") as string,
-      email: (fd.get("email") as string) || null,
+      student_name: studentName,
+      phone: cleanPhone,
+      email,
       date_of_birth: (fd.get("dob") as string) || null,
-      district: (fd.get("district") as string) || null,
+      district: (fd.get("district") as string)?.trim() || null,
       course_applied: (fd.get("course") as string) || null,
-      college_name: (fd.get("college") as string) || null,
-      class_12_year: (fd.get("class12_year") as string) || null,
+      college_name: (fd.get("college") as string)?.trim() || null,
+      class_12_year: (fd.get("class12_year") as string)?.trim() || null,
       family_income: (fd.get("family_income") as string) || null,
-      message: (fd.get("message") as string) || null,
+      message,
     };
     const { error } = await supabase.from("credit_card_applications").insert(payload);
     setFormLoading(false);

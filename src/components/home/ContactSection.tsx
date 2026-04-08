@@ -18,26 +18,42 @@ const ContactSection = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const payload = {
-      name: formData.get("name") as string,
-      phone: formData.get("phone") as string,
-      email: (formData.get("email") as string) || null,
-      interest: formData.get("interest") as string,
-      message: (formData.get("message") as string) || null,
-    };
+    const name = (formData.get("name") as string).trim();
+    const phone = (formData.get("phone") as string).trim();
+    const email = (formData.get("email") as string)?.trim() || null;
+    const interest = formData.get("interest") as string;
+    const message = (formData.get("message") as string)?.trim() || null;
+
+    // Validation
+    if (name.length < 2 || name.length > 100 || !/^[A-Za-z\s.'-]+$/.test(name)) {
+      setErrorMsg("Please enter a valid name (letters only, 2-100 characters)."); setLoading(false); return;
+    }
+    const cleanPhone = phone.replace(/[\s\-()]/g, "");
+    if (!/^(\+91)?[6-9]\d{9}$/.test(cleanPhone)) {
+      setErrorMsg("Please enter a valid 10-digit Indian mobile number."); setLoading(false); return;
+    }
+    if (email && !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)) {
+      setErrorMsg("Please enter a valid email address."); setLoading(false); return;
+    }
+    if (message && message.length > 500) {
+      setErrorMsg("Message is too long (max 500 characters)."); setLoading(false); return;
+    }
+    // Block spam/abusive patterns
+    const spamPattern = /(\b(fuck|shit|ass|bitch|damn|sex|porn|xxx|hack|free money|lottery|viagra)\b)/i;
+    if ((message && spamPattern.test(message)) || spamPattern.test(name)) {
+      setErrorMsg("Please use appropriate language."); setLoading(false); return;
+    }
+
+    const payload = { name, phone: cleanPhone, email, interest, message };
 
     const { error } = await supabase.from("contact_submissions").insert(payload);
-
-    // Send email notification (fire-and-forget)
     supabase.functions.invoke("send-contact-email", { body: payload }).catch(() => {});
 
     setLoading(false);
-
     if (error) {
       setErrorMsg("Kuch galat ho gaya. Dobara koshish karein.");
       return;
     }
-
     setSubmitted(true);
     form.reset();
     setTimeout(() => setSubmitted(false), 3000);
