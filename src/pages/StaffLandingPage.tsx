@@ -183,7 +183,7 @@ const StaffLandingPage = () => {
                 <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Saharsa, Bihar</span>
               </div>
             </div>
-            <p className="text-center text-xs text-gray-600 mt-6">© {new Date().getFullYear()} SIAT Group. All rights reserved.</p>
+            <p className="text-center text-xs text-gray-600 mt-6">© {new Date().getFullYear()} SIAT. All rights reserved.</p>
           </div>
         </footer>
       </div>

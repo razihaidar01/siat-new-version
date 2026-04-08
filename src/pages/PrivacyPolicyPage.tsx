@@ -24,7 +24,7 @@ const PrivacyPolicyPage = () => (
           { title: "Your Rights", content: "Aap apni personal information ka access, correction, ya deletion request kar sakte hain. Iske liye humse contact karein." },
           { title: "Children's Privacy", content: "Hum jaanboojhkar 13 saal se chhote bachchon ki jaankari collect nahi karte. Agar aapko lagta hai ki kisi bachche ki jaankari humre paas hai, toh humse contact karein." },
           { title: "Changes to This Policy", content: "Hum is privacy policy ko samay-samay par update kar sakte hain. Changes is page par post ki jaayengi." },
-          { title: "Contact Us", content: "Privacy se related koi bhi sawaal ho toh humse contact karein: siatgroup.sws@gmail.com" },
+          { title: "Contact Us", content: "Privacy se related koi bhi sawaal ho toh humse contact karein: siat.sws@gmail.com" },
         ].map((section) => (
           <div key={section.title}>
             <h2 className="text-xl font-display font-bold text-foreground mb-3">{section.title}</h2>

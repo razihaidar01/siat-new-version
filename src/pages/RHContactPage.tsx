@@ -91,8 +91,8 @@ const RHContactPage = () => {
                 <a href="tel:+919342470019" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
                   <Phone className="w-5 h-5 text-purple-400" /> +91 9342470019
                 </a>
-                <a href="mailto:siatgroup.sws@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
-                  <Mail className="w-5 h-5 text-purple-400" /> siatgroup.sws@gmail.com
+                <a href="mailto:siat.sws@gmail.com" className="flex items-center gap-3 text-white/50 hover:text-white transition-colors">
+                  <Mail className="w-5 h-5 text-purple-400" /> siat.sws@gmail.com
                 </a>
                 <div className="flex items-center gap-3 text-white/50">
                   <MapPin className="w-5 h-5 text-purple-400" /> Saharsa, Bihar, India

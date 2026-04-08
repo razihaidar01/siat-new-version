@@ -332,8 +332,8 @@ const LocationServicePage = () => {
           </div>
           <div className="mt-8 flex flex-wrap gap-3 justify-center text-sm text-muted-foreground">
             <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-primary" /> Saharsa, Bihar</span>
-            <span className="flex items-center gap-1"><Mail className="w-4 h-4 text-primary" /> siatgroup.sws@gmail.com</span>
-            <span className="flex items-center gap-1"><Phone className="w-4 h-4 text-primary" /> +91 9342470019</span>
+            <span className="flex items-center gap-1"><Mail className="w-4 h-4 text-primary" /> siat.sws@gmail.com</span>
+            <span className="flex items-center gap-1"><Phone className="w-4 h-4 text-primary" /> +91 99421 15058</span>
           </div>
         </div>
       </section>
