@@ -141,6 +141,7 @@ const ContactSection = () => {
               <textarea
                 name="message"
                 rows={4}
+                maxLength={500}
                 className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-foreground resize-none"
                 placeholder="Apni zaroorat batayein..."
               />
