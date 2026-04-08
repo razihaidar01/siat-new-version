@@ -71,7 +71,7 @@ const StaffProfilePage = () => {
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-5 flex items-center gap-3">
           <img src={siatLogo} alt="SIAT" className="w-12 h-12 rounded-full border-2 border-white/30" />
           <div>
-            <h2 className="text-white font-bold text-lg leading-tight">SIAT Group</h2>
+            <h2 className="text-white font-bold text-lg leading-tight">SIAT</h2>
             <p className="text-blue-200 text-xs">Employee Identity Card</p>
           </div>
         </div>
