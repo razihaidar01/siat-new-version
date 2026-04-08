@@ -573,7 +573,7 @@ export default function BiharCreditCardPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">Any Questions / Message</label>
-                    <textarea name="message" rows={3} placeholder="Koi sawaal ho to yahan likhein..."
+                    <textarea name="message" rows={3} placeholder="Koi sawaal ho to yahan likhein..." maxLength={500}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all resize-none" />
                   </div>
 
