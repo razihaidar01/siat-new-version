@@ -27,7 +27,7 @@ const StaffLandingPage = () => {
 
   return (
     <>
-      <SEOHead title="Staff Portal – SIAT Group" description="Verify SIAT employee identity. Enter employee ID to view staff profile and details." />
+      <SEOHead title="Staff Portal – SIAT" description="Verify SIAT employee identity. Enter employee ID to view staff profile and details." />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
         {/* Header */}
         <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
