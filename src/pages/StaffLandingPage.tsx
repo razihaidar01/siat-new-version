@@ -83,7 +83,7 @@ const StaffLandingPage = () => {
           <div className="max-w-6xl mx-auto px-6 py-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">About SIAT Group</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">About SIAT</h3>
                 <p className="text-gray-500 max-w-3xl mx-auto">
                   SIAT (Society for Innovative & Advanced Training) is a multi-division organization based in Saharsa, Bihar, 
                   working across education, technology, government projects, and consultancy services since its establishment.
