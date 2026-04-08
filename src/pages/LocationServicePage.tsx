@@ -273,7 +273,7 @@ const LocationServicePage = () => {
             {[
               {
                 q: `${cityName} mein ${serviceData.title.toLowerCase()} ke liye SIAT se kaise contact karein?`,
-                a: `Aap humse directly call kar sakte hain: +91 7004216219 ya +91 9342470019. Email: siatgroup.sws@gmail.com. Hum ${cityName} aur poore ${locationData.district} district mein service dete hain.`
+                a: `Aap humse directly call kar sakte hain: +91 7004216219 ya +91 99421 15058. Email: siat.sws@gmail.com. Hum ${cityName} aur poore ${locationData.district} district mein service dete hain.`
               },
               {
                 q: `Kya SIAT ${cityName} mein on-site service deta hai?`,
