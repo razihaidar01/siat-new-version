@@ -98,17 +98,39 @@ export default function BiharCreditCardPage() {
     setFormLoading(true);
     setFormError(null);
     const fd = new FormData(e.currentTarget);
+
+    const studentName = (fd.get("student_name") as string).trim();
+    const phone = (fd.get("phone") as string).trim();
+    const email = (fd.get("email") as string)?.trim() || null;
+
+    // Validation
+    if (studentName.length < 2 || studentName.length > 100 || !/^[A-Za-z\s.'-]+$/.test(studentName)) {
+      setFormError("Please enter a valid name (letters only, 2-100 characters)."); setFormLoading(false); return;
+    }
+    const cleanPhone = phone.replace(/[\s\-()]/g, "");
+    if (!/^(\+91)?[6-9]\d{9}$/.test(cleanPhone)) {
+      setFormError("Please enter a valid 10-digit Indian mobile number."); setFormLoading(false); return;
+    }
+    if (email && !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email)) {
+      setFormError("Please enter a valid email address."); setFormLoading(false); return;
+    }
+    const message = (fd.get("message") as string)?.trim() || null;
+    const spamPattern = /(\b(fuck|shit|ass|bitch|damn|sex|porn|xxx|hack|free money|lottery|viagra)\b)/i;
+    if ((message && spamPattern.test(message)) || spamPattern.test(studentName)) {
+      setFormError("Please use appropriate language."); setFormLoading(false); return;
+    }
+
     const payload = {
-      student_name: fd.get("student_name") as string,
-      phone: fd.get("phone") as string,
-      email: (fd.get("email") as string) || null,
+      student_name: studentName,
+      phone: cleanPhone,
+      email,
       date_of_birth: (fd.get("dob") as string) || null,
-      district: (fd.get("district") as string) || null,
+      district: (fd.get("district") as string)?.trim() || null,
       course_applied: (fd.get("course") as string) || null,
-      college_name: (fd.get("college") as string) || null,
-      class_12_year: (fd.get("class12_year") as string) || null,
+      college_name: (fd.get("college") as string)?.trim() || null,
+      class_12_year: (fd.get("class12_year") as string)?.trim() || null,
       family_income: (fd.get("family_income") as string) || null,
-      message: (fd.get("message") as string) || null,
+      message,
     };
     const { error } = await supabase.from("credit_card_applications").insert(payload);
     setFormLoading(false);
@@ -490,11 +512,13 @@ export default function BiharCreditCardPage() {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1.5">Student Name *</label>
                       <input name="student_name" type="text" required placeholder="Apna poora naam likhein"
+                        maxLength={100} minLength={2} pattern="[A-Za-z\s.'\-]+" title="Only letters allowed"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number *</label>
                       <input name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
+                        maxLength={13} pattern="(\+91)?[6-9][0-9]{9}" title="Enter valid 10-digit Indian mobile number"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all" />
                     </div>
                   </div>
@@ -549,7 +573,7 @@ export default function BiharCreditCardPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1.5">Any Questions / Message</label>
-                    <textarea name="message" rows={3} placeholder="Koi sawaal ho to yahan likhein..."
+                    <textarea name="message" rows={3} placeholder="Koi sawaal ho to yahan likhein..." maxLength={500}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all resize-none" />
                   </div>
 

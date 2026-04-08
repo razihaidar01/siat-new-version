@@ -25,7 +25,7 @@ const TermsConditionsPage = () => (
           { title: "Limitation of Liability", content: "SIAT placement guarantee nahi deta. Hum best efforts se placement support provide karte hain lekin actual placement company aur candidate ke beech ka matter hai." },
           { title: "Website Use", content: "SIAT ki website ka misuse — hacking, spam, unauthorized access — strictly prohibited hai. Aisi activity karne par legal action liya ja sakta hai." },
           { title: "Governing Law", content: "Ye terms & conditions India ke laws ke under governed hain. Koi bhi dispute Saharsa, Bihar ke courts mein resolve hoga." },
-          { title: "Contact", content: "Terms se related koi bhi sawaal ho toh humse contact karein: siatgroup.sws@gmail.com" },
+          { title: "Contact", content: "Terms se related koi bhi sawaal ho toh humse contact karein: siat.sws@gmail.com" },
         ].map((section) => (
           <div key={section.title}>
             <h2 className="text-xl font-display font-bold text-foreground mb-3">{section.title}</h2>

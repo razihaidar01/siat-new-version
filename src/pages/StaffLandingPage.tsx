@@ -27,14 +27,14 @@ const StaffLandingPage = () => {
 
   return (
     <>
-      <SEOHead title="Staff Portal – SIAT Group" description="Verify SIAT employee identity. Enter employee ID to view staff profile and details." />
+      <SEOHead title="Staff Portal – SIAT" description="Verify SIAT employee identity. Enter employee ID to view staff profile and details." />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
         {/* Header */}
         <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
           <div className="max-w-6xl mx-auto px-6 py-6 flex items-center gap-4">
             <img src={siatLogo} alt="SIAT" className="w-14 h-14 rounded-full border-2 border-white/30" />
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">SIAT Group</h1>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">SIAT</h1>
               <p className="text-blue-200 text-sm">Bihar's Leading Training, IT & Consultancy Organization</p>
             </div>
           </div>
@@ -83,7 +83,7 @@ const StaffLandingPage = () => {
           <div className="max-w-6xl mx-auto px-6 py-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">About SIAT Group</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">About SIAT</h3>
                 <p className="text-gray-500 max-w-3xl mx-auto">
                   SIAT (Society for Innovative & Advanced Training) is a multi-division organization based in Saharsa, Bihar, 
                   working across education, technology, government projects, and consultancy services since its establishment.
@@ -175,7 +175,7 @@ const StaffLandingPage = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-3">
                 <img src={siatLogo} alt="SIAT" className="w-10 h-10 rounded-full" />
-                <span className="font-bold text-lg">SIAT Group</span>
+                <span className="font-bold text-lg">SIAT</span>
               </div>
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" /> +91 99421 15058</span>
@@ -183,7 +183,7 @@ const StaffLandingPage = () => {
                 <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Saharsa, Bihar</span>
               </div>
             </div>
-            <p className="text-center text-xs text-gray-600 mt-6">© {new Date().getFullYear()} SIAT Group. All rights reserved.</p>
+            <p className="text-center text-xs text-gray-600 mt-6">© {new Date().getFullYear()} SIAT. All rights reserved.</p>
           </div>
         </footer>
       </div>

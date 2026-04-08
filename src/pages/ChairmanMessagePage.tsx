@@ -25,7 +25,7 @@ const ChairmanMessagePage = () => (
             <p>SIAT sirf ek training institute nahi hai — ye ek parivaar hai. Yahan har student ko personal attention milta hai, har doubt clear hota hai, aur har kamiyaabi celebrate hoti hai.</p>
             <p>Hum technology aur innovation ko apnaate hue aage badh rahe hain. RH Software ke through hum AI, web, aur app development mein bhi Bihar ko national level par le jaana chahte hain.</p>
             <p>Aayiye, saath milkar ek skilled aur aatmanirbhar Bihar ka nirman karein!</p>
-            <p className="font-display font-bold text-foreground mt-8">— Chairman, SIAT Group</p>
+            <p className="font-display font-bold text-foreground mt-8">— Chairman, SIAT</p>
           </div>
         </div>
       </div>
