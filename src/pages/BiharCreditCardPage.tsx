@@ -512,11 +512,13 @@ export default function BiharCreditCardPage() {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1.5">Student Name *</label>
                       <input name="student_name" type="text" required placeholder="Apna poora naam likhein"
+                        maxLength={100} minLength={2} pattern="[A-Za-z\s.'\-]+" title="Only letters allowed"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number *</label>
                       <input name="phone" type="tel" required placeholder="+91 XXXXX XXXXX"
+                        maxLength={13} pattern="(\+91)?[6-9][0-9]{9}" title="Enter valid 10-digit Indian mobile number"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-gray-800 text-sm transition-all" />
                     </div>
                   </div>
