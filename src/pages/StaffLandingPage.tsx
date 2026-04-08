@@ -34,7 +34,7 @@ const StaffLandingPage = () => {
           <div className="max-w-6xl mx-auto px-6 py-6 flex items-center gap-4">
             <img src={siatLogo} alt="SIAT" className="w-14 h-14 rounded-full border-2 border-white/30" />
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">SIAT Group</h1>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">SIAT</h1>
               <p className="text-blue-200 text-sm">Bihar's Leading Training, IT & Consultancy Organization</p>
             </div>
           </div>
