@@ -316,7 +316,7 @@ const Hero = () => {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const textY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const textBlur = useTransform(scrollYProgress, [0, 0.6], [0, 8]);
+  const textFilter = useTransform(scrollYProgress, [0, 0.6], ["blur(0px)", "blur(8px)"]);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -358,7 +358,7 @@ const Hero = () => {
 
       <motion.div
         className="max-w-7xl mx-auto w-full relative z-10 py-20"
-        style={{ y: textY, opacity: textOpacity, filter: useTransform(textBlur, (v) => `blur(${v}px)`) }}
+        style={{ y: textY, opacity: textOpacity, filter: textFilter }}
       >
         <motion.div
           initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
