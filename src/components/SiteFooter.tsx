@@ -54,7 +54,9 @@ const SiteFooter = () => {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="flex items-center gap-3 mb-12">
-          <img src={siatLogo} alt="SIAT Logo" className="w-14 h-14 rounded-full" />
+          <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg ring-2 ring-background/20 flex-shrink-0">
+            <img src={siatLogo} alt="SIAT Logo" className="w-full h-full rounded-full object-contain" />
+          </div>
           <div>
             <span className="font-display font-bold text-2xl text-background">SIAT</span>
             <p className="text-sm text-background/50">Bihar's Leading Training, IT & Consultancy Organization</p>

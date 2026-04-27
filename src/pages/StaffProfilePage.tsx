@@ -45,7 +45,9 @@ const StaffProfilePage = () => {
 
   if (notFound) return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-white gap-4">
-      <img src={siatLogo} alt="SIAT" className="w-16 h-16 rounded-full" />
+      <div className="w-16 h-16 rounded-full bg-white p-1 shadow-md ring-2 ring-blue-200">
+        <img src={siatLogo} alt="SIAT" className="w-full h-full rounded-full object-contain" />
+      </div>
       <h1 className="text-2xl font-bold text-gray-800">Employee Not Found</h1>
       <p className="text-gray-500">No staff profile matches this ID.</p>
     </div>
@@ -69,7 +71,9 @@ const StaffProfilePage = () => {
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border border-blue-100">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-5 flex items-center gap-3">
-          <img src={siatLogo} alt="SIAT" className="w-12 h-12 rounded-full border-2 border-white/30" />
+          <div className="w-12 h-12 rounded-full bg-white p-0.5 ring-2 ring-white/40 flex-shrink-0">
+            <img src={siatLogo} alt="SIAT" className="w-full h-full rounded-full object-contain" />
+          </div>
           <div>
             <h2 className="text-white font-bold text-lg leading-tight">SIAT</h2>
             <p className="text-blue-200 text-xs">Employee Identity Card</p>
