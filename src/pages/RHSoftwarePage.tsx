@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Brain, Globe, Smartphone, Code2, Sparkles, ArrowRight, Database, Cpu,
   Rocket, Layers, Shield, Zap, ChevronRight, Github, Linkedin, Mail,
 } from "lucide-react";
+
+const RHHeroScene = lazy(() => import("@/components/rh/RHHeroScene"));
 
 /* ---------------- Helpers ---------------- */
 
@@ -309,8 +311,16 @@ const RHSoftwarePage = () => {
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const textBlur = useTransform(scrollYProgress, [0, 0.6], [0, 8]);
 
   useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
     const handle = (e: MouseEvent) => {
       const cx = window.innerWidth / 2;
       const cy = window.innerHeight / 2;
@@ -321,48 +331,68 @@ const Hero = () => {
   }, []);
 
   const floatingCards = [
-    { label: "Projects Built", end: 40, pos: "top-[12%] left-[4%]", depth: 1 },
-    { label: "Years Experience", end: 5, pos: "top-[18%] right-[4%]", depth: -1.2 },
-    { label: "Technologies", end: 30, pos: "bottom-[18%] left-[6%]", depth: 1.4 },
-    { label: "Happy Clients", end: 25, pos: "bottom-[14%] right-[6%]", depth: -1 },
+    { label: "Projects Built", end: 40, pos: "top-[10%] left-[2%]", depth: 1 },
+    { label: "Years Experience", end: 5, pos: "top-[14%] right-[2%]", depth: -1.2 },
+    { label: "Technologies", end: 30, pos: "bottom-[20%] left-[4%]", depth: 1.4 },
+    { label: "Happy Clients", end: 25, pos: "bottom-[16%] right-[4%]", depth: -1 },
   ];
 
   return (
-    <section ref={heroRef} className="relative min-h-[92vh] flex items-center overflow-hidden px-6 md:px-10">
-      <div className="max-w-7xl mx-auto w-full relative z-10 py-20">
+    <section ref={heroRef} className="relative min-h-[100vh] flex items-center overflow-hidden px-6 md:px-10">
+      {/* 3D Scene Background */}
+      {!reducedMotion && (
+        <Suspense fallback={null}>
+          <RHHeroScene />
+        </Suspense>
+      )}
+
+      {/* Vignette to keep text readable over 3D scene */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(2,4,8,0.7) 75%, rgba(2,4,8,0.95) 100%), linear-gradient(180deg, rgba(2,4,8,0.4) 0%, transparent 30%, transparent 70%, rgba(2,4,8,0.6) 100%)",
+        }}
+      />
+
+      <motion.div
+        className="max-w-7xl mx-auto w-full relative z-10 py-20"
+        style={{ y: textY, opacity: textOpacity, filter: useTransform(textBlur, (v) => `blur(${v}px)`) }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-400/25 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-7">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-400/25 bg-indigo-500/10 backdrop-blur-xl text-indigo-200 text-xs font-medium mb-7 shadow-[0_0_30px_rgba(99,102,241,0.25)]">
             <Sparkles className="w-3.5 h-3.5" /> AI · Web · Mobile · Software · Cloud
           </div>
 
           <h1
-            className="text-5xl md:text-7xl lg:text-[5.8rem] font-black leading-[1.02] tracking-tight max-w-5xl"
+            className="text-5xl md:text-7xl lg:text-[6.2rem] font-black leading-[1.02] tracking-tight max-w-5xl drop-shadow-[0_8px_40px_rgba(99,102,241,0.35)]"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             We Build Things{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-300 to-purple-400">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-300 to-purple-400 animate-gradient-x">
               That Scale.
             </span>
           </h1>
 
-          <p className="text-base md:text-xl text-white/55 max-w-2xl mt-7 leading-relaxed">
+          <p className="text-base md:text-xl text-white/70 max-w-2xl mt-7 leading-relaxed drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
             Full-Stack Engineering · EdTech SaaS · AI Products · Built in India for the world.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-9">
             <Link
               to="/rhsoftware/portfolio"
-              className="group px-7 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 transition-all hover:shadow-[0_0_40px_rgba(99,102,241,0.45)] hover:-translate-y-0.5"
+              className="group px-7 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 transition-all hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:-translate-y-0.5"
             >
               See Our Work <ArrowRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/rhsoftware/contact"
-              className="px-7 py-3.5 rounded-xl font-semibold border border-white/15 text-white/85 hover:text-white hover:border-white/30 hover:bg-white/[0.04] transition-all hover:-translate-y-0.5"
+              className="px-7 py-3.5 rounded-xl font-semibold border border-white/20 bg-white/[0.03] backdrop-blur-xl text-white/90 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all hover:-translate-y-0.5"
             >
               Hire Us
             </Link>
@@ -382,7 +412,7 @@ const Hero = () => {
             <StatPill key={s.label} label={s.label} end={s.end} suffix={s.suffix} />
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -391,8 +421,8 @@ const Hero = () => {
         transition={{ delay: 1.4 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 rounded-full border-2 border-white/15 flex justify-center pt-2">
-          <div className="w-1.5 h-3 rounded-full bg-white/40" />
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2 backdrop-blur-sm">
+          <div className="w-1.5 h-3 rounded-full bg-white/50" />
         </motion.div>
       </motion.div>
     </section>
