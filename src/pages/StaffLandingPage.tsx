@@ -32,7 +32,9 @@ const StaffLandingPage = () => {
         {/* Header */}
         <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
           <div className="max-w-6xl mx-auto px-6 py-6 flex items-center gap-4">
-            <img src={siatLogo} alt="SIAT" className="w-14 h-14 rounded-full border-2 border-white/30" />
+            <div className="w-14 h-14 rounded-full bg-white p-0.5 ring-2 ring-white/40 flex-shrink-0">
+              <img src={siatLogo} alt="SIAT" className="w-full h-full rounded-full object-contain" />
+            </div>
             <div>
               <h1 className="text-2xl md:text-3xl font-bold tracking-tight">SIAT</h1>
               <p className="text-blue-200 text-sm">Bihar's Leading Training, IT & Consultancy Organization</p>
