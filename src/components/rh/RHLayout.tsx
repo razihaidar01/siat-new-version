@@ -2,6 +2,7 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X, ArrowUp } from "lucide-react";
+import rhLogo from "@/assets/rh-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/rhsoftware" },
@@ -98,9 +99,9 @@ const RHLayout = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-          <Link to="/rhsoftware" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-emerald-400 flex items-center justify-center text-white font-black text-sm shadow-[0_0_20px_rgba(99,102,241,0.4)]">
-              RH
+          <Link to="/rhsoftware" className="flex items-center gap-2.5 group">
+            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-xl flex items-center justify-center p-1 shadow-[0_0_30px_rgba(99,102,241,0.25)] group-hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] transition-shadow">
+              <img src={rhLogo} alt="RH Software" className="w-full h-full object-contain drop-shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
             </div>
             <span className="font-bold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-purple-300">
               RH Software
