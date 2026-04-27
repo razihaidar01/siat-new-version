@@ -178,24 +178,36 @@ export type Database = {
           category: string | null
           created_at: string
           description: string | null
+          duration_seconds: number | null
+          file_size_bytes: number | null
           file_url: string
           id: string
+          media_type: string
+          thumbnail_url: string | null
           title: string
         }
         Insert: {
           category?: string | null
           created_at?: string
           description?: string | null
+          duration_seconds?: number | null
+          file_size_bytes?: number | null
           file_url: string
           id?: string
+          media_type?: string
+          thumbnail_url?: string | null
           title: string
         }
         Update: {
           category?: string | null
           created_at?: string
           description?: string | null
+          duration_seconds?: number | null
+          file_size_bytes?: number | null
           file_url?: string
           id?: string
+          media_type?: string
+          thumbnail_url?: string | null
           title?: string
         }
         Relationships: []
