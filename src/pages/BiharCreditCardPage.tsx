@@ -763,7 +763,9 @@ export default function BiharCreditCardPage() {
             <Reveal delay={0.3}>
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 text-white text-center">
                 <div className="flex items-center justify-center gap-3 mb-4">
-                  <img src={siatLogo} alt="SIAT" className="w-10 h-10 rounded-xl object-contain" />
+                  <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/30 flex items-center justify-center p-1">
+                    <img src={siatLogo} alt="SIAT" className="w-full h-full object-contain" />
+                  </div>
                   <div className="text-left">
                     <p className="font-bold text-sm">SIAT</p>
                     <p className="text-blue-200 text-xs">Saharsa Institute of Advance Technology</p>
@@ -790,7 +792,9 @@ export default function BiharCreditCardPage() {
         {/* ── FOOTER ────────────────────────────────────────── */}
         <footer className="bg-gray-900 text-white py-8 px-4 text-center">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <img src={siatLogo} alt="SIAT" className="w-8 h-8 rounded-lg object-contain" />
+            <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center p-0.5">
+              <img src={siatLogo} alt="SIAT" className="w-full h-full object-contain" />
+            </div>
             <div className="text-left">
               <p className="font-bold text-sm">SIAT</p>
               <p className="text-gray-400 text-xs">Saharsa Institute of Advance Technology</p>
