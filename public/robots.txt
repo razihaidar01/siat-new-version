@@ -1,8 +1,27 @@
+# ════════════════════════════════════════════
+# STEP 2 — OPTIMIZED robots.txt for siat.in
+# Replace: public/robots.txt
+# ════════════════════════════════════════════
+# WHY THIS IS BETTER THAN YOUR CURRENT ONE:
+# 1. Blocks admin/private pages from Google indexing
+# 2. Allows all major crawlers
+# 3. Points to sitemap clearly
+# 4. Prevents crawl waste on useless pages
+# ════════════════════════════════════════════
+
 User-agent: Googlebot
 Allow: /
+Disallow: /adminarea
+Disallow: /admin-login
+Disallow: /staff/
+Disallow: /creditcard
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Disallow: /adminarea
+Disallow: /admin-login
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -10,7 +29,20 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
+User-agent: WhatsApp
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /adminarea
+Disallow: /admin-login
+Disallow: /staff/
+Disallow: /creditcard
+Crawl-delay: 2
+
+# ─── SITEMAPS ───
 Sitemap: https://www.siat.in/sitemap.xml
+Sitemap: https://www.siat.in/sitemap-city.xml
