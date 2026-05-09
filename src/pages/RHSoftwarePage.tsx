@@ -488,8 +488,10 @@ const EngineeringProof = () => (
             </div>
             <span className="text-[11px] rh-text-dim font-mono">api/checkout.ts</span>
           </div>
-          <pre className="rh-code px-5 py-5 m-0 overflow-x-auto">
-{`<span class="tk-com">// idempotent + typed end-to-end</span>
+          <pre
+            className="rh-code px-5 py-5 m-0 overflow-x-auto"
+            dangerouslySetInnerHTML={{
+              __html: `<span class="tk-com">// idempotent + typed end-to-end</span>
 <span class="tk-key">export const</span> <span class="tk-fn">createCheckout</span> = <span class="tk-fn">handler</span>({
   schema: z.object({
     cartId: z.<span class="tk-fn">string</span>().<span class="tk-fn">uuid</span>(),
@@ -501,8 +503,9 @@ const EngineeringProof = () => (
     log.<span class="tk-fn">info</span>(<span class="tk-str">"checkout.created"</span>, { id: session.id });
     <span class="tk-key">return</span> { url: session.url };
   },
-});` }
-          </pre>
+});`,
+            }}
+          />
           {/* Faux terminal */}
           <div className="border-t border-white/[0.06] px-5 py-4 bg-black/40">
             <div className="rh-code text-[12px]">
