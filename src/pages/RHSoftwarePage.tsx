@@ -1,49 +1,27 @@
-import { useEffect, useRef, useState, lazy, Suspense } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  Brain, Globe, Smartphone, Code2, Sparkles, ArrowRight, Database, Cpu,
-  Rocket, Layers, Shield, Zap, ChevronRight, Github, Linkedin, Mail,
+  ArrowRight, ArrowUpRight, Brain, Code2, Cpu, Database, Globe,
+  Smartphone, Sparkles, Zap, Workflow, LayoutGrid, Terminal,
+  CheckCircle2, Quote, Star, Activity,
 } from "lucide-react";
 
-const RHHeroScene = lazy(() => import("@/components/rh/RHHeroScene"));
+/* ============================================================
+   Small primitives
+   ============================================================ */
 
-/* ---------------- Helpers ---------------- */
-
-const useCountUp = (end: number, duration = 1500) => {
-  const [val, setVal] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  useEffect(() => {
-    if (!inView) return;
-    let raf = 0;
-    const start = performance.now();
-    const step = (t: number) => {
-      const p = Math.min((t - start) / duration, 1);
-      setVal(Math.floor(p * end));
-      if (p < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, end, duration]);
-  return { ref, val };
-};
-
-const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <section className={`py-24 md:py-32 px-6 md:px-10 relative ${className}`}>
-    <div className="max-w-7xl mx-auto relative z-10">{children}</div>
-  </section>
-);
-
-const FadeUp = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
+const FadeUp = ({
+  children, delay = 0, className = "", y = 24,
+}: { children: React.ReactNode; delay?: number; className?: string; y?: number }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -51,478 +29,616 @@ const FadeUp = ({ children, delay = 0, className = "" }: { children: React.React
   );
 };
 
-const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div
-    className={`relative rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl transition-all duration-500 hover:border-indigo-400/30 hover:bg-white/[0.06] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(99,102,241,0.45)] ${className}`}
-  >
-    {children}
-  </div>
+const Section = ({
+  children, className = "", id,
+}: { children: React.ReactNode; className?: string; id?: string }) => (
+  <section id={id} className={`py-20 md:py-28 px-6 md:px-10 relative ${className}`}>
+    <div className="max-w-7xl mx-auto relative z-10">{children}</div>
+  </section>
 );
 
-/* ---------------- Page ---------------- */
+const SectionHead = ({
+  eyebrow, title, accent, sub,
+}: { eyebrow: string; title: string; accent?: string; sub?: string }) => (
+  <FadeUp className="max-w-2xl mb-14">
+    <span className="rh-eyebrow"><span className="dot" />{eyebrow}</span>
+    <h2 className="text-[34px] md:text-[44px] leading-[1.05] font-semibold mt-5">
+      {title}{" "}
+      {accent && (
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
+          {accent}
+        </span>
+      )}
+    </h2>
+    {sub && <p className="rh-text-muted mt-4 text-[15px] leading-relaxed max-w-xl">{sub}</p>}
+  </FadeUp>
+);
 
-const services = [
-  { icon: Brain, title: "AI Development", desc: "ML models, NLP engines, intelligent automation.", grad: "from-purple-500 to-violet-600" },
-  { icon: Globe, title: "Web Development", desc: "Fast, SEO-rich web platforms with modern UX.", grad: "from-cyan-500 to-blue-600" },
-  { icon: Smartphone, title: "App Development", desc: "Cross-platform iOS & Android apps that scale.", grad: "from-blue-500 to-indigo-600" },
-  { icon: Code2, title: "Custom Software", desc: "ERP, CRM, SaaS — engineered for your workflow.", grad: "from-emerald-500 to-teal-600" },
-  { icon: Database, title: "Cloud & Infra", desc: "AWS / GCP / Azure architecture, autoscaling.", grad: "from-orange-500 to-red-600" },
-  { icon: Cpu, title: "IoT Solutions", desc: "Connected devices, dashboards, edge compute.", grad: "from-pink-500 to-rose-600" },
-];
-
-const stats = [
-  { label: "Projects Delivered", end: 40, suffix: "+" },
-  { label: "Years of Engineering", end: 5, suffix: "+" },
-  { label: "Technologies Mastered", end: 30, suffix: "+" },
-  { label: "Happy Clients", end: 25, suffix: "+" },
-];
-
-const techStack = ["React", "Next.js", "Node.js", "Python", "TensorFlow", "Flutter", "PostgreSQL", "Supabase", "AWS", "Docker", "Tailwind", "TypeScript"];
-
-const portfolioItems = [
-  { title: "AI Analytics Dashboard", category: "AI / Web", grad: "from-indigo-500 to-purple-600", span: "lg:col-span-7" },
-  { title: "Hospital Management System", category: "Software", grad: "from-emerald-500 to-teal-600", span: "lg:col-span-5" },
-  { title: "Learning Management System", category: "EdTech", grad: "from-amber-500 to-orange-600", span: "lg:col-span-4" },
-  { title: "Fleet Tracking Platform", category: "IoT / Web", grad: "from-rose-500 to-pink-600", span: "lg:col-span-4" },
-  { title: "Banking AI Chatbot", category: "AI", grad: "from-blue-500 to-cyan-600", span: "lg:col-span-4" },
-];
-
-const testimonials = [
-  { name: "Rajeev Singh", role: "Founder, EduNova", quote: "RH Software delivered our LMS ahead of schedule. The AI-driven test engine is a game changer." },
-  { name: "Priya Mehta", role: "CTO, MediCare+", quote: "From design to deployment, an absolute pleasure. Our HMS handles 10k+ patients seamlessly." },
-  { name: "Arjun Verma", role: "Director, FleetIQ", quote: "Real-time fleet tracking with zero downtime. They simply get logistics tech." },
-  { name: "Sneha Kapoor", role: "PM, ShopSphere", quote: "Beautiful mobile app, blazing fast. Conversions up 38% in the first month." },
-  { name: "Vikram Rao", role: "CEO, AgroTech", quote: "Their IoT dashboards transformed how we monitor 500+ field sensors." },
-];
-
-const RHSoftwarePage = () => {
-  return (
-    <>
-      {/* HERO */}
-      <Hero />
-
-      {/* MARQUEE */}
-      <section className="py-12 overflow-hidden border-y border-white/[0.05]">
-        <div className="flex gap-16 animate-marquee whitespace-nowrap">
-          {Array.from({ length: 2 }).map((_, k) => (
-            ["YOUR IDEAS · OUR TECHNOLOGY", "AI · APPS · SOFTWARE", "BUILT FOR THE FUTURE", "DESIGN · DEVELOP · DEPLOY"].map((text, i) => (
-              <span
-                key={`${k}-${i}`}
-                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white/[0.05] select-none"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
-              >
-                {text}
-              </span>
-            ))
-          ))}
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <FadeUp>
-            <span className="inline-block px-3 py-1 rounded-full border border-indigo-400/30 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-5 uppercase tracking-wider">
-              About RH Software
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-              Engineering teams that <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300">ship at scale.</span>
-            </h2>
-            <p className="text-white/55 mt-6 leading-relaxed">
-              We're a product engineering studio building AI platforms, EdTech SaaS, mobile apps, and enterprise software for ambitious founders and institutions across India. We pair design with deep engineering — from idea to launch.
-            </p>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {["Open to Projects", "Based in India", "Available Full-Time"].map((b) => (
-                <span key={b} className="px-3 py-1.5 rounded-full text-xs font-medium border border-emerald-400/25 bg-emerald-500/10 text-emerald-300">
-                  ● {b}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-2 mt-5">
-              {techStack.map((t) => (
-                <span key={t} className="px-3 py-1.5 rounded-lg text-xs font-medium border border-white/[0.08] bg-white/[0.04] text-white/70">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.15}>
-            <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-indigo-500/30 via-purple-500/20 to-emerald-500/20 blur-3xl" />
-              <GlassCard className="relative h-full rounded-[2rem] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10" />
-                <div className="text-center relative z-10 p-10">
-                  <div className="w-24 h-24 mx-auto rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-4xl font-black mb-6 shadow-[0_0_60px_rgba(99,102,241,0.5)]">
-                    RH
-                  </div>
-                  <p className="text-2xl font-bold tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                    A small team.<br />A big toolbox.
-                  </p>
-                  <p className="text-white/40 mt-3 text-sm">Design · Engineering · AI · Cloud</p>
-                </div>
-              </GlassCard>
-            </div>
-          </FadeUp>
-        </div>
-      </Section>
-
-      {/* SKILLS BENTO */}
-      <Section>
-        <FadeUp className="text-center mb-16">
-          <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] text-white/60 text-xs font-medium mb-5 uppercase tracking-wider">
-            What We Build
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Six disciplines. <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300">One studio.</span>
-          </h2>
-        </FadeUp>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s, i) => (
-            <FadeUp key={s.title} delay={i * 0.05}>
-              <Link to="/rhsoftware/services">
-                <GlassCard className="p-7 h-full">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.grad} flex items-center justify-center mb-5 shadow-[0_10px_30px_-10px_rgba(99,102,241,0.5)]`}>
-                    <s.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>{s.title}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{s.desc}</p>
-                  <div className="mt-5 h-1 rounded-full bg-white/[0.06] overflow-hidden">
-                    <div className={`h-full bg-gradient-to-r ${s.grad}`} style={{ width: `${75 + (i % 3) * 8}%` }} />
-                  </div>
-                </GlassCard>
-              </Link>
-            </FadeUp>
-          ))}
-        </div>
-      </Section>
-
-      {/* PROJECTS BENTO */}
-      <Section>
-        <FadeUp className="text-center mb-16">
-          <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] text-white/60 text-xs font-medium mb-5 uppercase tracking-wider">
-            Selected Work
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Things we've <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-purple-300">put into the world.</span>
-          </h2>
-        </FadeUp>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {portfolioItems.map((p, i) => (
-            <FadeUp key={p.title} delay={i * 0.06} className={`col-span-1 ${p.span}`}>
-              <GlassCard className="overflow-hidden h-full min-h-[260px] flex flex-col">
-                <div className={`relative flex-1 bg-gradient-to-br ${p.grad} flex items-center justify-center min-h-[160px]`}>
-                  <div className="absolute inset-0 opacity-20" style={{
-                    backgroundImage: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 50%)"
-                  }} />
-                  <Code2 className="w-14 h-14 text-white/30" />
-                </div>
-                <div className="p-6">
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-indigo-300">{p.category}</span>
-                  <h3 className="text-lg font-bold mt-1.5" style={{ fontFamily: "'Outfit', sans-serif" }}>{p.title}</h3>
-                </div>
-              </GlassCard>
-            </FadeUp>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link to="/rhsoftware/portfolio" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors font-medium">
-            View Full Portfolio <ChevronRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </Section>
-
-      {/* TIMELINE */}
-      <Section>
-        <FadeUp className="text-center mb-16">
-          <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/[0.04] text-white/60 text-xs font-medium mb-5 uppercase tracking-wider">
-            Our Journey
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Built brick <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-cyan-300">by brick.</span>
-          </h2>
-        </FadeUp>
-        <Timeline />
-      </Section>
-
-      {/* TESTIMONIALS MARQUEE */}
-      <Section className="py-16">
-        <FadeUp className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Trusted by founders & institutions
-          </h2>
-        </FadeUp>
-        <div className="overflow-hidden relative">
-          <div className="flex gap-5 animate-marquee whitespace-nowrap">
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="inline-block w-[340px] whitespace-normal">
-                <GlassCard className="p-6 h-full">
-                  <p className="text-white/80 leading-relaxed text-sm">"{t.quote}"</p>
-                  <div className="mt-5 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-sm">
-                      {t.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm">{t.name}</p>
-                      <p className="text-xs text-white/40">{t.role}</p>
-                    </div>
-                  </div>
-                </GlassCard>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* CONTACT CTA */}
-      <Section>
-        <GlassCard className="p-10 md:p-16 text-center">
-          <FadeUp>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-              Let's build something <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300">together.</span>
-            </h2>
-            <p className="text-white/50 mt-5 max-w-xl mx-auto">
-              Share your idea — we'll come back with a roadmap and a price within 24 hours.
-            </p>
-            <div className="flex flex-wrap gap-3 justify-center mt-9">
-              <Link to="/rhsoftware/contact" className="px-7 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.45)] transition-all hover:-translate-y-0.5">
-                Start a Project
-              </Link>
-              <Link to="/rhsoftware/pricing" className="px-7 py-3.5 rounded-xl font-semibold border border-white/15 hover:bg-white/5 transition-all hover:-translate-y-0.5">
-                See Pricing
-              </Link>
-            </div>
-            <div className="flex justify-center gap-4 mt-9 text-white/40">
-              <a href="mailto:siat.sws@gmail.com" className="p-2.5 rounded-xl border border-white/[0.08] hover:text-white hover:border-indigo-400/40 transition-all"><Mail className="w-4 h-4" /></a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="p-2.5 rounded-xl border border-white/[0.08] hover:text-white hover:border-indigo-400/40 transition-all"><Github className="w-4 h-4" /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-2.5 rounded-xl border border-white/[0.08] hover:text-white hover:border-indigo-400/40 transition-all"><Linkedin className="w-4 h-4" /></a>
-            </div>
-          </FadeUp>
-        </GlassCard>
-      </Section>
-    </>
-  );
-};
-
-/* ---------------- Hero ---------------- */
+/* ============================================================
+   HERO — Bento composition
+   ============================================================ */
 
 const Hero = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-  const textFilter = useTransform(scrollYProgress, [0, 0.6], ["blur(0px)", "blur(8px)"]);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mq.matches);
-    const handle = (e: MouseEvent) => {
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      setParallax({ x: (e.clientX - cx) / 60, y: (e.clientY - cy) / 60 });
-    };
-    window.addEventListener("pointermove", handle);
-    return () => window.removeEventListener("pointermove", handle);
-  }, []);
-
-  const floatingCards = [
-    { label: "Projects Built", end: 40, pos: "top-[10%] left-[2%]", depth: 1 },
-    { label: "Years Experience", end: 5, pos: "top-[14%] right-[2%]", depth: -1.2 },
-    { label: "Technologies", end: 30, pos: "bottom-[20%] left-[4%]", depth: 1.4 },
-    { label: "Happy Clients", end: 25, pos: "bottom-[16%] right-[4%]", depth: -1 },
-  ];
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   return (
-    <section ref={heroRef} className="relative min-h-[100vh] flex items-center overflow-hidden px-6 md:px-10">
-      {/* 3D Scene Background */}
-      {!reducedMotion && (
-        <Suspense fallback={null}>
-          <RHHeroScene />
-        </Suspense>
-      )}
-
-      {/* Vignette to keep text readable over 3D scene */}
+    <section ref={ref} className="relative pt-10 md:pt-16 pb-16 md:pb-24 px-6 md:px-10">
+      {/* Soft hero aurora — single, restrained layer */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-[1]"
+        className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 0%, transparent 35%, rgba(2,4,8,0.7) 75%, rgba(2,4,8,0.95) 100%), linear-gradient(180deg, rgba(2,4,8,0.4) 0%, transparent 30%, transparent 70%, rgba(2,4,8,0.6) 100%)",
+            "radial-gradient(800px 380px at 20% 10%, rgba(124,58,237,0.22), transparent 65%), radial-gradient(700px 320px at 85% 30%, rgba(34,211,238,0.10), transparent 65%)",
         }}
       />
 
-      <motion.div
-        className="max-w-7xl mx-auto w-full relative z-10 py-20"
-        style={{ y: textY, opacity: textOpacity, filter: textFilter }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-400/25 bg-indigo-500/10 backdrop-blur-xl text-indigo-200 text-xs font-medium mb-7 shadow-[0_0_30px_rgba(99,102,241,0.25)]">
-            <Sparkles className="w-3.5 h-3.5" /> AI · Web · Mobile · Software · Cloud
+      <div className="max-w-7xl mx-auto">
+        <motion.div style={{ y }} className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          {/* LEFT — copy */}
+          <div className="lg:col-span-6">
+            <FadeUp>
+              <span className="rh-eyebrow">
+                <span className="dot" />
+                Engineering Studio · Available for projects
+              </span>
+            </FadeUp>
+
+            <FadeUp delay={0.06}>
+              <h1 className="mt-6 text-[42px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em]">
+                Software that{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#C4B5FD] to-[#22D3EE]">
+                  scales businesses
+                </span>{" "}
+                <span className="rh-text-dim italic font-normal">— not just websites.</span>
+              </h1>
+            </FadeUp>
+
+            <FadeUp delay={0.12}>
+              <p className="mt-6 text-[16px] md:text-[17px] leading-relaxed rh-text-muted max-w-[560px]">
+                We're a product engineering studio shipping production-grade SaaS,
+                AI systems, mobile apps, and internal automation for ambitious
+                teams across India and beyond.
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.18}>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-primary">
+                  See our work <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link to="/rhsoftware/contact" className="rh-btn rh-btn-ghost">
+                  Book a strategy call
+                </Link>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.24}>
+              <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+                {[
+                  { k: "40+", v: "Products shipped" },
+                  { k: "10k+", v: "End users served" },
+                  { k: "99.9%", v: "Uptime delivered" },
+                ].map((s) => (
+                  <div key={s.v}>
+                    <div className="text-[24px] md:text-[28px] font-semibold tracking-tight text-white">{s.k}</div>
+                    <div className="text-[12px] rh-text-dim mt-0.5 leading-tight">{s.v}</div>
+                  </div>
+                ))}
+              </div>
+            </FadeUp>
           </div>
 
-          <h1
-            className="text-5xl md:text-7xl lg:text-[6.2rem] font-black leading-[1.02] tracking-tight max-w-5xl drop-shadow-[0_8px_40px_rgba(99,102,241,0.35)]"
-            style={{ fontFamily: "'Outfit', sans-serif" }}
-          >
-            We Build Things{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-300 to-purple-400 animate-gradient-x">
-              That Scale.
-            </span>
-          </h1>
-
-          <p className="text-base md:text-xl text-white/70 max-w-2xl mt-7 leading-relaxed drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
-            Full-Stack Engineering · EdTech SaaS · AI Products · Built in India for the world.
-          </p>
-
-          <div className="flex flex-wrap gap-3 mt-9">
-            <Link
-              to="/rhsoftware/portfolio"
-              className="group px-7 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 transition-all hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:-translate-y-0.5"
-            >
-              See Our Work <ArrowRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/rhsoftware/contact"
-              className="px-7 py-3.5 rounded-xl font-semibold border border-white/20 bg-white/[0.03] backdrop-blur-xl text-white/90 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all hover:-translate-y-0.5"
-            >
-              Hire Us
-            </Link>
+          {/* RIGHT — Bento mockup composition */}
+          <div className="lg:col-span-6">
+            <BentoMockups />
           </div>
         </motion.div>
-
-        {/* Floating stat cards */}
-        <div className="hidden lg:block">
-          {floatingCards.map((c, i) => (
-            <FloatingStat key={c.label} {...c} parallax={parallax} index={i} />
-          ))}
-        </div>
-
-        {/* Mobile stats */}
-        <div className="lg:hidden grid grid-cols-2 gap-3 mt-12">
-          {stats.map((s) => (
-            <StatPill key={s.label} label={s.label} end={s.end} suffix={s.suffix} />
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2 backdrop-blur-sm">
-          <div className="w-1.5 h-3 rounded-full bg-white/50" />
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
 
-const FloatingStat = ({
-  label, end, pos, depth, parallax, index,
-}: { label: string; end: number; pos: string; depth: number; parallax: { x: number; y: number }; index: number }) => {
-  const { ref, val } = useCountUp(end);
+/* Realistic faux product mockups (no images, all CSS) */
+const BentoMockups = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.8 + index * 0.12, duration: 0.7 }}
-      style={{
-        transform: `translate(${parallax.x * depth}px, ${parallax.y * depth}px)`,
-      }}
-      className={`absolute ${pos}`}
-    >
-      <div
-        className="rounded-2xl border border-white/[0.08] bg-white/[0.05] backdrop-blur-2xl px-5 py-4 shadow-[0_20px_60px_-20px_rgba(99,102,241,0.45)]"
-        style={{ animation: `float 6s ease-in-out ${index * 0.5}s infinite` }}
-      >
-        <p className="text-2xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-          <span ref={ref}>{val}</span>+
-        </p>
-        <p className="text-xs text-white/50 mt-1">{label}</p>
+    <FadeUp delay={0.1} y={36}>
+      <div className="relative grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 aspect-[1/1] md:aspect-[5/4]">
+        {/* Dashboard card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="rh-surface col-span-6 row-span-4 p-4 md:p-5 overflow-hidden relative"
+        >
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+            </div>
+            <div className="text-[10px] rh-text-dim font-mono">app.rhsoftware.io</div>
+          </div>
+
+          <div className="flex items-baseline justify-between">
+            <div>
+              <div className="text-[11px] rh-text-dim uppercase tracking-wider">Monthly Revenue</div>
+              <div className="text-[26px] md:text-[32px] font-semibold mt-1 tracking-tight">₹ 18,42,500</div>
+            </div>
+            <div className="px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 font-medium">
+              ▲ 24.6%
+            </div>
+          </div>
+
+          {/* Sparkline */}
+          <svg viewBox="0 0 300 80" className="w-full h-20 mt-4">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,60 C30,55 50,30 80,35 C110,40 130,15 160,20 C190,25 215,55 240,40 C265,25 285,30 300,18 L300,80 L0,80 Z"
+              fill="url(#g1)"
+            />
+            <path
+              d="M0,60 C30,55 50,30 80,35 C110,40 130,15 160,20 C190,25 215,55 240,40 C265,25 285,30 300,18"
+              fill="none" stroke="#A78BFA" strokeWidth="1.5"
+            />
+          </svg>
+
+          <div className="grid grid-cols-3 gap-2 mt-2">
+            {[
+              { l: "Active users", v: "8,412" },
+              { l: "Conversion", v: "4.8%" },
+              { l: "MRR growth", v: "+12.1%" },
+            ].map((m) => (
+              <div key={m.l} className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-2.5">
+                <div className="text-[10px] rh-text-dim">{m.l}</div>
+                <div className="text-[13px] font-semibold mt-0.5">{m.v}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Mobile app mock */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="rh-surface col-span-3 row-span-2 p-3 relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-transparent" />
+          <div className="relative flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#22D3EE] flex items-center justify-center">
+              <Smartphone className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <div className="text-[11px] rh-text-dim">Mobile SDK</div>
+              <div className="text-[13px] font-semibold">v3.4 shipped</div>
+            </div>
+          </div>
+          <div className="mt-3 flex gap-1.5">
+            {[40, 70, 55, 85, 60, 90].map((h, i) => (
+              <div key={i} className="flex-1 rounded-sm bg-white/[0.08]" style={{ height: 4 + h / 4 }} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Code chip */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="rh-surface col-span-3 row-span-2 p-3 relative overflow-hidden"
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <Terminal className="w-3.5 h-3.5 text-[#22D3EE]" />
+            <span className="text-[11px] rh-text-dim font-mono">deploy.sh</span>
+          </div>
+          <pre className="rh-code text-[11px] leading-[1.5] m-0">
+{`$ rh deploy --prod
+`}<span className="tk-com">→ build · 12.4s</span>{`
+`}<span className="tk-com">→ tests · 142 ✓</span>{`
+`}<span className="tk-str">✓ live in 28s</span>
+          </pre>
+        </motion.div>
       </div>
-    </motion.div>
+    </FadeUp>
   );
 };
 
-const StatPill = ({ label, end, suffix }: { label: string; end: number; suffix: string }) => {
-  const { ref, val } = useCountUp(end);
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+
+const Trust = () => {
+  const items = [
+    "Reduced manual ops by 70%",
+    "Scaled to 10k+ users",
+    "Improved booking speed 3×",
+    "Zero downtime in 18 months",
+    "Cut cloud spend by 42%",
+  ];
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl p-4">
-      <p className="text-2xl font-black" style={{ fontFamily: "'Outfit', sans-serif" }}>
-        <span ref={ref}>{val}</span>{suffix}
-      </p>
-      <p className="text-xs text-white/50 mt-0.5">{label}</p>
-    </div>
+    <section className="py-10 border-y border-white/[0.05] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <div className="text-[11px] rh-text-dim uppercase tracking-[0.18em] mb-6 text-center">
+          Outcomes we've delivered for clients
+        </div>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          {items.map((i) => (
+            <div key={i} className="flex items-center gap-2 text-[13px] text-white/70">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              {i}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-/* ---------------- Timeline ---------------- */
+/* ============================================================
+   SERVICES BENTO
+   ============================================================ */
 
-const timelineEntries = [
-  {
-    year: "2024 — Now",
-    title: "RH Software · Studio Era",
-    role: "Building EdTech SaaS, AI tools, and enterprise apps for clients across India.",
-    icon: Rocket,
-    color: "from-indigo-500 to-purple-500",
-  },
-  {
-    year: "2023",
-    title: "EduCore Platform Launch",
-    role: "Multi-tenant LMS supporting 500+ institutes, 2L+ students, live classes, payments.",
-    icon: Layers,
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    year: "2022",
-    title: "AI Products & Cloud",
-    role: "Shipped chatbots, recommendation engines, and cloud-native deployments.",
-    icon: Brain,
-    color: "from-emerald-500 to-cyan-500",
-  },
-  {
-    year: "2021",
-    title: "Foundations",
-    role: "First freelance projects in web & mobile. Set the bar for craft and delivery.",
-    icon: Zap,
-    color: "from-amber-500 to-orange-500",
-  },
+const services = [
+  { icon: Globe, title: "Web Development", desc: "Marketing sites, web apps & dashboards engineered for speed and SEO.", span: "md:col-span-2" },
+  { icon: Smartphone, title: "App Development", desc: "Native-feeling iOS & Android products with real offline-first thinking.", span: "" },
+  { icon: Brain, title: "AI Development", desc: "RAG, agents, NLP pipelines, and bespoke ML — wired into your workflow.", span: "" },
+  { icon: Database, title: "SaaS Engineering", desc: "Multi-tenant architecture, billing, RBAC, observability — production-grade.", span: "md:col-span-2" },
+  { icon: Workflow, title: "Business Automation", desc: "Internal tools, integrations and workflow engines that remove drudgery.", span: "" },
+  { icon: LayoutGrid, title: "UI/UX Systems", desc: "Design systems, prototypes, and product experiences that users actually keep.", span: "" },
 ];
 
-const Timeline = () => (
-  <div className="relative max-w-3xl mx-auto">
-    <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/40 via-purple-500/30 to-transparent" />
-    <div className="space-y-10">
-      {timelineEntries.map((entry, i) => (
-        <FadeUp key={entry.year} delay={i * 0.08}>
-          <div className={`relative flex md:items-center gap-6 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-            <div className="flex-shrink-0 relative z-10 md:absolute md:left-1/2 md:-translate-x-1/2">
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${entry.color} flex items-center justify-center shadow-[0_0_25px_rgba(99,102,241,0.4)]`}>
-                <entry.icon className="w-5 h-5 text-white" />
-              </div>
+const Services = () => (
+  <Section id="services">
+    <SectionHead eyebrow="What we build" title="Six disciplines." accent="One team." sub="No outsourced black box. Strategy, design and engineering live in the same room." />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+      {services.map((s, i) => (
+        <FadeUp key={s.title} delay={i * 0.04} className={s.span}>
+          <div className="rh-surface rh-card-hover p-6 h-full">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-5">
+              <s.icon className="w-4.5 h-4.5 text-[#A78BFA]" strokeWidth={1.7} />
             </div>
-            <GlassCard className="p-6 flex-1 md:w-[44%]">
-              <span className="text-xs uppercase tracking-wider text-indigo-300 font-semibold">{entry.year}</span>
-              <h4 className="text-lg font-bold mt-1" style={{ fontFamily: "'Outfit', sans-serif" }}>{entry.title}</h4>
-              <p className="text-sm text-white/55 mt-2 leading-relaxed">{entry.role}</p>
-            </GlassCard>
+            <h3 className="text-[18px] font-semibold tracking-tight">{s.title}</h3>
+            <p className="text-[14px] rh-text-muted mt-2 leading-relaxed">{s.desc}</p>
           </div>
         </FadeUp>
       ))}
     </div>
-  </div>
+  </Section>
 );
+
+/* ============================================================
+   FEATURED PORTFOLIO
+   ============================================================ */
+
+const projects = [
+  {
+    title: "Hospital Management System",
+    category: "Healthcare SaaS",
+    outcome: "Digitized 15+ operational workflows",
+    stack: ["Next.js", "Postgres", "Redis", "AWS"],
+    tone: "from-[#7C3AED] to-[#22D3EE]",
+  },
+  {
+    title: "EduNova LMS",
+    category: "EdTech Platform",
+    outcome: "Scaled to 10,000 concurrent learners",
+    stack: ["React", "Node", "Mux", "Supabase"],
+    tone: "from-[#22D3EE] to-[#10B981]",
+  },
+  {
+    title: "FleetIQ Tracker",
+    category: "Logistics IoT",
+    outcome: "Real-time tracking, 99.9% uptime",
+    stack: ["Flutter", "Mapbox", "MQTT", "Go"],
+    tone: "from-[#F59E0B] to-[#7C3AED]",
+  },
+  {
+    title: "Banking AI Assistant",
+    category: "Conversational AI",
+    outcome: "Resolved 64% queries without human",
+    stack: ["LangChain", "GPT", "FastAPI"],
+    tone: "from-[#10B981] to-[#22D3EE]",
+  },
+];
+
+const ProjectCard = ({ p }: { p: typeof projects[number] }) => (
+  <FadeUp>
+    <div className="rh-surface rh-card-hover overflow-hidden h-full flex flex-col">
+      {/* Visual */}
+      <div className="relative h-56 md:h-64 overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${p.tone} opacity-30`} />
+        <div className="absolute inset-0" style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+          maskImage: "radial-gradient(ellipse at center, black 50%, transparent 90%)",
+        }} />
+        {/* Faux app window */}
+        <div className="absolute left-6 right-6 bottom-6 rh-surface-elevated p-3">
+          <div className="flex items-center gap-1.5 mb-2">
+            <span className="w-2 h-2 rounded-full bg-white/20" />
+            <span className="w-2 h-2 rounded-full bg-white/20" />
+            <span className="w-2 h-2 rounded-full bg-white/20" />
+          </div>
+          <div className="space-y-1.5">
+            <div className="h-2 rounded bg-white/10 w-2/3" />
+            <div className="h-2 rounded bg-white/[0.06] w-full" />
+            <div className="h-2 rounded bg-white/[0.06] w-5/6" />
+          </div>
+        </div>
+      </div>
+      {/* Meta */}
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="text-[11px] rh-text-dim uppercase tracking-[0.18em]">{p.category}</div>
+        <h3 className="text-[20px] font-semibold mt-2 tracking-tight">{p.title}</h3>
+        <p className="text-[13.5px] rh-text-muted mt-2">{p.outcome}</p>
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {p.stack.map((t) => (
+            <span key={t} className="text-[11px] px-2 py-1 rounded-md border border-white/[0.08] bg-white/[0.03] text-white/70">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </FadeUp>
+);
+
+const Portfolio = () => (
+  <Section>
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <SectionHead eyebrow="Selected work" title="Real products." accent="Real outcomes." />
+      <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-ghost self-start md:self-auto">
+        View all <ArrowRight className="w-4 h-4" />
+      </Link>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {projects.map((p) => <ProjectCard key={p.title} p={p} />)}
+    </div>
+  </Section>
+);
+
+/* ============================================================
+   PROCESS TIMELINE
+   ============================================================ */
+
+const steps = [
+  { n: "01", t: "Discovery", d: "Workshops, audits, and clear problem framing." },
+  { n: "02", t: "Strategy", d: "Architecture, roadmap, and measurable success." },
+  { n: "03", t: "Design", d: "Systems-led product design and prototypes." },
+  { n: "04", t: "Development", d: "Sprint-shipped, tested, reviewed code." },
+  { n: "05", t: "Launch", d: "CI/CD, observability, and a confident go-live." },
+  { n: "06", t: "Scale", d: "Performance, hiring support, and roadmap evolution." },
+];
+
+const Process = () => (
+  <Section>
+    <SectionHead eyebrow="How we work" title="A process built for" accent="shipping." />
+    <div className="relative">
+      <div className="absolute left-0 right-0 top-9 hidden lg:block h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
+        {steps.map((s, i) => (
+          <FadeUp key={s.n} delay={i * 0.05}>
+            <div className="relative">
+              <div className="relative w-9 h-9 rounded-full bg-[#0D0D12] border border-white/[0.12] flex items-center justify-center text-[12px] font-semibold text-[#A78BFA] mx-auto lg:mx-0">
+                {s.n}
+              </div>
+              <div className="mt-5">
+                <h4 className="text-[15px] font-semibold">{s.t}</h4>
+                <p className="text-[13px] rh-text-muted mt-1.5 leading-relaxed">{s.d}</p>
+              </div>
+            </div>
+          </FadeUp>
+        ))}
+      </div>
+    </div>
+  </Section>
+);
+
+/* ============================================================
+   ENGINEERING PROOF
+   ============================================================ */
+
+const EngineeringProof = () => (
+  <Section>
+    <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <FadeUp>
+        <div className="h-full">
+          <span className="rh-eyebrow"><span className="dot" />Engineering proof</span>
+          <h2 className="text-[34px] md:text-[42px] font-semibold mt-5 tracking-tight leading-[1.1]">
+            We write the kind of code we'd{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#A78BFA] to-[#22D3EE]">trust on call.</span>
+          </h2>
+          <p className="rh-text-muted mt-5 text-[15px] leading-relaxed max-w-lg">
+            Typed end-to-end. Tested where it counts. Observable in production.
+            Reviewed by humans before it touches your users.
+          </p>
+          <div className="mt-7 grid grid-cols-2 gap-3 max-w-md">
+            {[
+              { k: "TypeScript-first", icon: Code2 },
+              { k: "Tested & reviewed", icon: CheckCircle2 },
+              { k: "Observable", icon: Activity },
+              { k: "Performance-budgeted", icon: Zap },
+            ].map(({ k, icon: I }) => (
+              <div key={k} className="rh-surface p-3 flex items-center gap-2.5">
+                <I className="w-4 h-4 text-[#A78BFA]" strokeWidth={1.8} />
+                <span className="text-[13px] text-white/80">{k}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeUp>
+
+      <FadeUp delay={0.1}>
+        <div className="rh-surface-elevated overflow-hidden">
+          {/* Editor header */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+            </div>
+            <span className="text-[11px] rh-text-dim font-mono">api/checkout.ts</span>
+          </div>
+          <pre className="rh-code px-5 py-5 m-0 overflow-x-auto">
+{`<span class="tk-com">// idempotent + typed end-to-end</span>
+<span class="tk-key">export const</span> <span class="tk-fn">createCheckout</span> = <span class="tk-fn">handler</span>({
+  schema: z.object({
+    cartId: z.<span class="tk-fn">string</span>().<span class="tk-fn">uuid</span>(),
+    plan:   z.<span class="tk-fn">enum</span>([<span class="tk-str">"starter"</span>, <span class="tk-str">"pro"</span>, <span class="tk-str">"enterprise"</span>]),
+  }),
+  rateLimit: { perMinute: <span class="tk-num">30</span> },
+  <span class="tk-key">async</span> <span class="tk-fn">run</span>({ input, ctx }) {
+    <span class="tk-key">const</span> session = <span class="tk-key">await</span> billing.<span class="tk-fn">checkout</span>(input);
+    log.<span class="tk-fn">info</span>(<span class="tk-str">"checkout.created"</span>, { id: session.id });
+    <span class="tk-key">return</span> { url: session.url };
+  },
+});` }
+          </pre>
+          {/* Faux terminal */}
+          <div className="border-t border-white/[0.06] px-5 py-4 bg-black/40">
+            <div className="rh-code text-[12px]">
+              <div className="rh-text-dim">$ pnpm test --filter checkout</div>
+              <div className="text-emerald-300 mt-1">✓ 24 passed · 0 failed · 1.2s</div>
+              <div className="rh-text-dim mt-2">$ rh deploy --prod</div>
+              <div className="text-emerald-300 mt-1">✓ live · checkout.api · region: ap-south-1</div>
+            </div>
+          </div>
+        </div>
+      </FadeUp>
+    </div>
+  </Section>
+);
+
+/* ============================================================
+   FOUNDER NOTE
+   ============================================================ */
+
+const Founder = () => (
+  <Section>
+    <FadeUp>
+      <div className="rh-surface p-8 md:p-12 grid md:grid-cols-[160px_1fr] gap-8 items-center">
+        <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden mx-auto md:mx-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#A78BFA] to-[#22D3EE]" />
+          <div className="absolute inset-0 flex items-center justify-center text-[44px] font-semibold text-white/95"
+               style={{ fontFamily: "var(--rh-font-display)" }}>
+            RH
+          </div>
+        </div>
+        <div>
+          <Quote className="w-6 h-6 text-[#A78BFA]/60" />
+          <p className="text-[18px] md:text-[20px] leading-relaxed mt-4 text-white/85">
+            I started RH Software because most agencies hand over a polished demo
+            and disappear. We're built differently — small, senior, and accountable
+            to outcomes long after launch. If you want a partner who treats your
+            product like our own, you'll feel that on day one.
+          </p>
+          <div className="mt-5 flex items-center gap-2 text-[13px]">
+            <span className="font-semibold text-white">Founder</span>
+            <span className="rh-text-dim">· RH Software, a SIAT engineering studio</span>
+          </div>
+        </div>
+      </div>
+    </FadeUp>
+  </Section>
+);
+
+/* ============================================================
+   PRICING TEASER
+   ============================================================ */
+
+const tiers = [
+  { name: "Starter", price: "₹ 60k+", desc: "Marketing sites, MVPs, landing systems.", features: ["Up to 2 weeks", "Design + dev", "1 round of revisions"] },
+  { name: "Growth", price: "₹ 2.5L+", desc: "Web apps, SaaS MVPs, internal tools.", features: ["6–8 week build", "Auth, DB, payments", "30-day post-launch"], highlight: true },
+  { name: "Enterprise", price: "Custom", desc: "Long-term product partnerships.", features: ["Dedicated team", "Custom architecture", "SLAs & on-call"] },
+];
+
+const Pricing = () => (
+  <Section>
+    <SectionHead eyebrow="Engagements" title="Built for the stage" accent="you're at." />
+    <div className="grid md:grid-cols-3 gap-5">
+      {tiers.map((t) => (
+        <FadeUp key={t.name}>
+          <div className={`rh-surface rh-card-hover p-7 h-full relative ${t.highlight ? "ring-1 ring-[#7C3AED]/40" : ""}`}>
+            {t.highlight && (
+              <span className="absolute -top-3 left-7 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#7C3AED] text-white">
+                Recommended
+              </span>
+            )}
+            <div className="text-[14px] rh-text-muted">{t.name}</div>
+            <div className="text-[32px] font-semibold mt-1.5 tracking-tight">{t.price}</div>
+            <p className="text-[13.5px] rh-text-muted mt-2 leading-relaxed">{t.desc}</p>
+            <ul className="mt-6 space-y-2.5">
+              {t.features.map((f) => (
+                <li key={f} className="flex items-center gap-2 text-[13.5px] text-white/80">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> {f}
+                </li>
+              ))}
+            </ul>
+            <Link to="/rhsoftware/contact" className={`mt-7 rh-btn w-full justify-center ${t.highlight ? "rh-btn-primary" : "rh-btn-ghost"}`}>
+              {t.name === "Enterprise" ? "Book consultation" : "Start a project"}
+            </Link>
+          </div>
+        </FadeUp>
+      ))}
+    </div>
+  </Section>
+);
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+
+const CTABand = () => (
+  <Section>
+    <FadeUp>
+      <div className="relative rh-surface-elevated overflow-hidden p-10 md:p-16 text-center">
+        <div aria-hidden className="absolute inset-0 opacity-60"
+          style={{ background: "radial-gradient(600px 240px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
+        <div className="relative">
+          <h2 className="text-[34px] md:text-[52px] font-semibold tracking-tight leading-[1.05]">
+            Have an idea worth building?{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] to-[#22D3EE]">Let's talk.</span>
+          </h2>
+          <p className="rh-text-muted mt-5 max-w-xl mx-auto text-[15px]">
+            Tell us where you are. We'll come back with a roadmap, a price, and a clear next step — usually within 24 hours.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">Book a strategy call</Link>
+            <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-ghost">See our work</Link>
+          </div>
+        </div>
+      </div>
+    </FadeUp>
+  </Section>
+);
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+const RHSoftwarePage = () => {
+  return (
+    <>
+      <Hero />
+      <Trust />
+      <Services />
+      <Portfolio />
+      <Process />
+      <EngineeringProof />
+      <Founder />
+      <Pricing />
+      <CTABand />
+    </>
+  );
+};
 
 export default RHSoftwarePage;
