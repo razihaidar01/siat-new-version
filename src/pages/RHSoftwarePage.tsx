@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, ArrowUpRight, Brain, Code2, Cpu, Database, Globe,
-  Smartphone, Sparkles, Zap, Workflow, LayoutGrid, Terminal,
-  CheckCircle2, Quote, Star, Activity,
+  ArrowRight, ArrowUpRight, Brain, Code2, Database, Globe,
+  Smartphone, Zap, Workflow, LayoutGrid, Terminal,
+  CheckCircle2, Quote, Activity,
 } from "lucide-react";
 
 /* ============================================================
