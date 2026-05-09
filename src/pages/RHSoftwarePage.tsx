@@ -303,7 +303,7 @@ const Services = () => (
         <FadeUp key={s.title} delay={i * 0.04} className={s.span}>
           <div className="rh-surface rh-card-hover p-6 h-full">
             <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-5">
-              <s.icon className="w-4.5 h-4.5 text-[#A78BFA]" strokeWidth={1.7} />
+              <s.icon className="w-5 h-5 text-[#A78BFA]" strokeWidth={1.7} />
             </div>
             <h3 className="text-[18px] font-semibold tracking-tight">{s.title}</h3>
             <p className="text-[14px] rh-text-muted mt-2 leading-relaxed">{s.desc}</p>
