@@ -1,67 +1,272 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Calendar } from "lucide-react";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Calendar, Clock, ArrowRight } from "lucide-react";
+import { RH_IMAGES } from "@/lib/rhPlaceholders";
 
-const posts = [
-  { title: "How AI is Transforming Small Businesses in Bihar", category: "AI", date: "March 2026", excerpt: "Discover how artificial intelligence is revolutionizing local businesses — from predictive analytics to automated customer service.", grad: "from-purple-500 to-violet-600" },
-  { title: "The Future of Mobile App Development in 2026", category: "Mobile", date: "March 2026", excerpt: "Cross-platform frameworks, AI integration, and the rise of super-apps — what's shaping mobile development this year.", grad: "from-blue-500 to-indigo-600" },
-  { title: "Why Every Business Needs a Digital Presence", category: "Web", date: "February 2026", excerpt: "From credibility to customer acquisition — the ROI of investing in professional website development.", grad: "from-cyan-500 to-blue-600" },
-  { title: "Building Scalable SaaS Products: A Technical Guide", category: "Software", date: "February 2026", excerpt: "Architecture patterns, tech stack choices, and scaling strategies for successful SaaS applications.", grad: "from-emerald-500 to-teal-600" },
-  { title: "Machine Learning for E-Commerce: Practical Applications", category: "AI", date: "January 2026", excerpt: "Recommendation engines, dynamic pricing, fraud detection — ML use cases that drive e-commerce growth.", grad: "from-amber-500 to-orange-600" },
-  { title: "React Native vs Flutter: Which to Choose in 2026", category: "Mobile", date: "January 2026", excerpt: "A comprehensive comparison of the two leading cross-platform mobile development frameworks.", grad: "from-rose-500 to-pink-600" },
+const FadeUp = ({ children, delay = 0, className = "" }: any) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+type Post = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  author: string;
+  image: string;
+  featured?: boolean;
+};
+
+const posts: Post[] = [
+  {
+    slug: "shipping-ai-without-vendor-lockin",
+    title: "Shipping AI products without vendor lock-in",
+    excerpt: "How we architect LLM-powered features that survive model swaps, price hikes, and silent provider changes.",
+    category: "AI",
+    date: "May 4, 2026",
+    readTime: "9 min",
+    author: "Rishabh K.",
+    image: RH_IMAGES.blogAi,
+    featured: true,
+  },
+  {
+    slug: "scaling-saas-from-100-to-10k-users",
+    title: "Scaling a SaaS from 100 to 10,000 users without a rewrite",
+    excerpt: "The five architectural decisions we make at week one that hold up well past product-market fit.",
+    category: "Engineering",
+    date: "April 28, 2026",
+    readTime: "11 min",
+    author: "Aman P.",
+    image: RH_IMAGES.blogSaas,
+  },
+  {
+    slug: "performance-budget-real-devices",
+    title: "Designing a performance budget for real devices, not lab tests",
+    excerpt: "Lab scores lie. Here's the field-data approach we use to keep our products feeling fast on a 4-year-old phone.",
+    category: "Performance",
+    date: "April 18, 2026",
+    readTime: "7 min",
+    author: "Riya S.",
+    image: RH_IMAGES.blogPerformance,
+  },
+  {
+    slug: "react-native-vs-flutter-2026",
+    title: "React Native vs Flutter in 2026: an opinionated guide",
+    excerpt: "Both are great. The honest answer to which one you should pick depends on three questions most teams skip.",
+    category: "Mobile",
+    date: "April 6, 2026",
+    readTime: "8 min",
+    author: "Aman P.",
+    image: RH_IMAGES.blogMobile,
+  },
+  {
+    slug: "edge-rendering-decision-tree",
+    title: "Edge rendering: a practical decision tree",
+    excerpt: "When edge actually pays off — and when it just adds operational pain for negligible wins.",
+    category: "Web",
+    date: "March 25, 2026",
+    readTime: "6 min",
+    author: "Rishabh K.",
+    image: RH_IMAGES.blogWeb,
+  },
+  {
+    slug: "modern-design-systems-shipping",
+    title: "Modern design systems that actually ship",
+    excerpt: "Why most design systems die in Figma — and the lightweight setup we use to keep ours alive in production.",
+    category: "Design",
+    date: "March 14, 2026",
+    readTime: "10 min",
+    author: "Riya S.",
+    image: RH_IMAGES.blogUxSystems,
+  },
+  {
+    slug: "devops-for-three-engineer-startups",
+    title: "DevOps for three-engineer startups",
+    excerpt: "The minimum-viable platform setup that won't slow you down — or wake you up at 3am.",
+    category: "DevOps",
+    date: "March 2, 2026",
+    readTime: "9 min",
+    author: "Aman P.",
+    image: RH_IMAGES.blogDevops,
+  },
+  {
+    slug: "architecting-multi-tenant-postgres",
+    title: "Architecting multi-tenant Postgres without regrets",
+    excerpt: "Schema-per-tenant, RLS, or shared schema? A founder-friendly walk-through of the real tradeoffs.",
+    category: "Engineering",
+    date: "February 19, 2026",
+    readTime: "12 min",
+    author: "Rishabh K.",
+    image: RH_IMAGES.blogArchitecture,
+  },
 ];
 
-const RHBlogPage = () => {
-  return (
-    <section className="py-28 md:py-32 px-6 md:px-10 relative">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-3.5 py-1.5 rounded-full border border-indigo-400/25 bg-indigo-500/10 text-indigo-300 text-xs font-medium mb-6 uppercase tracking-wider">
-            Insights
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Tech <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-emerald-300">Blog.</span>
-          </h1>
-          <p className="text-base md:text-lg text-white/50 mt-5 max-w-xl mx-auto">
-            Insights, tutorials, and tech news from the RH Software team.
-          </p>
-        </motion.div>
+const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {posts.map((post, i) => (
-            <motion.article
-              key={post.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="group rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-xl hover:border-indigo-400/30 hover:bg-white/[0.06] hover:-translate-y-1 hover:shadow-[0_25px_60px_-20px_rgba(99,102,241,0.4)] transition-all duration-500 overflow-hidden cursor-pointer"
-            >
-              <div className={`aspect-[16/9] bg-gradient-to-br ${post.grad} relative`}>
-                <div className="absolute inset-0 opacity-30" style={{
-                  backgroundImage: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 50%)"
-                }} />
-              </div>
-              <div className="p-6">
-                <span className="text-[10px] uppercase tracking-[0.18em] font-semibold text-indigo-300">{post.category}</span>
-                <h3 className="text-lg font-bold mt-2 mb-3 group-hover:text-indigo-200 transition-colors leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>{post.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed mb-4">{post.excerpt}</p>
-                <div className="flex items-center justify-between pt-3 border-t border-white/[0.06]">
-                  <span className="text-xs text-white/40 flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
-                  <span className="text-sm text-white/55 group-hover:text-indigo-300 transition-colors flex items-center gap-1 font-medium">
-                    Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </div>
-              </div>
-            </motion.article>
-          ))}
+/* ------------------------------------------------------------------ */
+const Hero = () => (
+  <section className="pt-10 md:pt-16 pb-10 px-6 md:px-10">
+    <div className="max-w-7xl mx-auto">
+      <FadeUp>
+        <span className="rh-eyebrow"><span className="dot" />Engineering insights</span>
+      </FadeUp>
+      <FadeUp delay={0.06}>
+        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
+          Field notes from{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
+            building real products.
+          </span>
+        </h1>
+      </FadeUp>
+      <FadeUp delay={0.12}>
+        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
+          Practical writing on engineering, design, and the trade-offs we live with daily.
+          No filler. No clickbait.
+        </p>
+      </FadeUp>
+    </div>
+  </section>
+);
+
+/* ------------------------------------------------------------------ */
+const FeaturedPost = ({ p }: { p: Post }) => (
+  <FadeUp>
+    <article className="group rh-surface rh-card-hover overflow-hidden grid md:grid-cols-2 cursor-pointer">
+      <div className="relative h-64 md:h-full overflow-hidden">
+        <img src={p.image} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0D0D12] via-transparent to-transparent" />
+        <span className="absolute top-5 left-5 px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">
+          Featured · {p.category}
+        </span>
+      </div>
+      <div className="p-7 md:p-10 flex flex-col justify-center">
+        <div className="flex items-center gap-3 text-[12px] rh-text-dim">
+          <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {p.date}</span>
+          <span>·</span>
+          <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> {p.readTime}</span>
+        </div>
+        <h2 className="text-[26px] md:text-[34px] font-semibold tracking-tight mt-4 leading-tight group-hover:text-[#C4B5FD] transition-colors">
+          {p.title}
+        </h2>
+        <p className="rh-text-muted mt-4 text-[15px] leading-relaxed">{p.excerpt}</p>
+        <div className="mt-7 flex items-center justify-between">
+          <span className="text-[13px] text-white/65">By {p.author}</span>
+          <span className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-[#C4B5FD] group-hover:text-white transition-colors">
+            Read article <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </span>
         </div>
       </div>
-    </section>
+    </article>
+  </FadeUp>
+);
+
+/* ------------------------------------------------------------------ */
+const PostCard = ({ p, i }: { p: Post; i: number }) => (
+  <FadeUp delay={i * 0.04} className="group">
+    <article className="rh-surface rh-card-hover overflow-hidden h-full flex flex-col cursor-pointer">
+      <div className="relative h-48 overflow-hidden">
+        <img src={p.image} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D12]/80 via-transparent to-transparent" />
+        <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">
+          {p.category}
+        </span>
+      </div>
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 text-[11px] rh-text-dim">
+          <Calendar className="w-3 h-3" /> {p.date}
+          <span>·</span>
+          <Clock className="w-3 h-3" /> {p.readTime}
+        </div>
+        <h3 className="text-[17px] font-semibold tracking-tight mt-3 leading-snug group-hover:text-[#C4B5FD] transition-colors">
+          {p.title}
+        </h3>
+        <p className="rh-text-muted text-[13.5px] mt-2.5 leading-relaxed line-clamp-2 flex-1">{p.excerpt}</p>
+        <div className="mt-5 pt-4 border-t border-white/[0.05] flex items-center justify-between">
+          <span className="text-[12px] text-white/55">{p.author}</span>
+          <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#C4B5FD] group-hover:translate-x-0.5 transition-all" />
+        </div>
+      </div>
+    </article>
+  </FadeUp>
+);
+
+/* ------------------------------------------------------------------ */
+const RHBlogPage = () => {
+  const [filter, setFilter] = useState("All");
+  const filtered = filter === "All" ? posts : posts.filter((p) => p.category === filter);
+  const featured = filtered.find((p) => p.featured) || filtered[0];
+  const rest = filtered.filter((p) => p !== featured);
+
+  return (
+    <>
+      <Hero />
+
+      <section className="px-6 md:px-10 pb-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap gap-2 mb-10">
+            {categories.map((c) => (
+              <button
+                key={c}
+                onClick={() => setFilter(c)}
+                className={`px-4 py-2 rounded-full text-[13px] font-medium transition-all ${
+                  filter === c
+                    ? "bg-white text-[#07070A]"
+                    : "border border-white/[0.1] bg-white/[0.03] text-white/65 hover:text-white hover:border-white/20"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          {featured && (
+            <div className="mb-8">
+              <FeaturedPost p={featured} />
+            </div>
+          )}
+
+          {rest.length > 0 && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {rest.map((p, i) => <PostCard key={p.slug} p={p} i={i} />)}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Newsletter / CTA */}
+      <section className="py-20 px-6 md:px-10">
+        <div className="max-w-4xl mx-auto rh-surface p-10 md:p-14 text-center relative overflow-hidden">
+          <div className="absolute inset-0 -z-10 opacity-50"
+               style={{ background: "radial-gradient(600px 280px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
+          <h2 className="text-[28px] md:text-[36px] font-semibold tracking-tight">
+            Building something interesting?
+          </h2>
+          <p className="rh-text-muted mt-4 max-w-xl mx-auto">
+            We'd love to hear about it. Book a free 30-minute call with our engineering team.
+          </p>
+          <div className="mt-7 flex justify-center">
+            <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">
+              Book a call <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
