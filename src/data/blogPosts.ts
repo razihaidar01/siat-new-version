@@ -53,8 +53,8 @@ export const blogCategories: { name: string; slug: string }[] = [
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
 
-export const getRelatedPosts = (slug: string, limit = 3): BlogPost[] =>
-  blogPosts.filter((p) => p.slug !== slug).slice(0, limit);
+export const getRelatedPosts = (slug: string, _categoryOrLimit?: string | number, limit = 3): BlogPost[] =>
+  blogPosts.filter((p) => p.slug !== slug).slice(0, typeof _categoryOrLimit === "number" ? _categoryOrLimit : limit);
 
 export const getPostsByCategory = (categorySlug: string): BlogPost[] =>
   blogPosts.filter((p) => p.categorySlug === categorySlug);
