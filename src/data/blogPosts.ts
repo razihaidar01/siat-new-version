@@ -15,6 +15,7 @@ export interface BlogPostFAQ {
 }
 
 export interface BlogPost {
+  faqs?: BlogPostFAQ[];
   slug: string;
   title: string;
   metaTitle?: string;
@@ -35,6 +36,8 @@ export interface BlogPost {
     intro: string;
     sections: BlogPostSection[];
     faqs?: BlogPostFAQ[];
+    conclusion?: string;
+    cta?: string;
   };
 }
 
