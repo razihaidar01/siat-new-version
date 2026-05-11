@@ -320,18 +320,36 @@ const EnterpriseBand = () => (
 );
 
 /* ------------------------------------------------------------------ */
-const RHPricingPage = () => (
-  <>
-    <Hero />
-    <section className="px-6 md:px-10 pb-8">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-5 items-stretch">
-        {plans.map((p) => <PlanCard key={p.name} p={p} />)}
-      </div>
-    </section>
-    <ComparisonTable />
-    <EnterpriseBand />
-    <FAQs />
-  </>
-);
+const RHPricingPage = () => {
+  useSEO({
+    title: "Pricing | RH Software — Web, App & SaaS Development Cost in Bihar",
+    description:
+      "Transparent pricing for website, mobile app and SaaS development across Bihar. Launch from ₹60k, Scale plan ₹2.5L+, custom Enterprise engagements. Trusted by clients in Patna, Saharsa, Madhepura, Purnia & all Bihar.",
+    keywords: "website cost bihar, app development cost patna, software pricing bihar, RH Software pricing, software development cost saharsa",
+    canonical: `${RH_BASE_URL}/rhsoftware/pricing`,
+    schema: [
+      rhOrganizationSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+        { name: "Pricing", url: `${RH_BASE_URL}/rhsoftware/pricing` },
+      ]),
+    ],
+  });
+
+  return (
+    <>
+      <Hero />
+      <section className="px-6 md:px-10 pb-8">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-5 items-stretch">
+          {plans.map((p) => <PlanCard key={p.name} p={p} />)}
+        </div>
+      </section>
+      <ComparisonTable />
+      <EnterpriseBand />
+      <FAQs />
+    </>
+  );
+};
 
 export default RHPricingPage;
