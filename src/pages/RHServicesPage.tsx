@@ -6,6 +6,10 @@ import {
   ArrowRight, ArrowUpRight, CheckCircle2, Sparkles,
 } from "lucide-react";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import {
+  RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb, rhServiceSchema,
+} from "@/lib/rhSeo";
 
 /* ------------------------------------------------------------------ */
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
