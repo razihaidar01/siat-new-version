@@ -3,6 +3,8 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, X, ExternalLink, TrendingUp, Users, Zap, CheckCircle2 } from "lucide-react";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb } from "@/lib/rhSeo";
 
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
   const ref = useRef(null);
