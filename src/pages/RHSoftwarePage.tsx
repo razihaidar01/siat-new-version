@@ -6,6 +6,16 @@ import {
   Smartphone, Zap, Workflow, LayoutGrid, Terminal,
   CheckCircle2, Quote, Activity,
 } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
+import {
+  RH_BASE_URL,
+  rhOrganizationSchema,
+  rhLocalBusinessSchema,
+  rhWebsiteSchema,
+  rhBreadcrumb,
+  rhFaqSchema,
+} from "@/lib/rhSeo";
+import raziHaidarImg from "@/assets/razi-haidar-founder.jpg";
 
 /* ============================================================
    Small primitives
