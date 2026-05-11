@@ -31,6 +31,9 @@ import RHPricingPage from "./pages/RHPricingPage";
 import RHPortfolioPage from "./pages/RHPortfolioPage";
 import RHContactPage from "./pages/RHContactPage";
 import RHBlogPage from "./pages/RHBlogPage";
+import RHBlogPostPage from "./pages/RHBlogPostPage";
+import RHCaseStudyPage from "./pages/RHCaseStudyPage";
+import RHCityPage from "./pages/RHCityPage";
 import NotFound from "./pages/NotFound";
 
 // Hub pages
