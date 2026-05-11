@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Calendar, Clock, ArrowRight } from "lucide-react";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb } from "@/lib/rhSeo";
 
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
   const ref = useRef(null);
@@ -211,6 +213,29 @@ const RHBlogPage = () => {
   const filtered = filter === "All" ? posts : posts.filter((p) => p.category === filter);
   const featured = filtered.find((p) => p.featured) || filtered[0];
   const rest = filtered.filter((p) => p !== featured);
+
+  useSEO({
+    title: "Blog | RH Software — Web, App, AI & Tech Insights for Bihar",
+    description:
+      "Engineering insights, case studies and guides from RH Software (by SIAT). Learn about web, mobile, AI and SaaS development tailored for businesses in Patna, Saharsa, Madhepura, Purnia and all Bihar.",
+    keywords: "RH Software blog, software development blog bihar, web development tips patna, AI insights bihar",
+    canonical: `${RH_BASE_URL}/rhsoftware/blog`,
+    schema: [
+      rhOrganizationSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+        { name: "Blog", url: `${RH_BASE_URL}/rhsoftware/blog` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "RH Software Blog",
+        url: `${RH_BASE_URL}/rhsoftware/blog`,
+        publisher: { "@id": `${RH_BASE_URL}/rhsoftware#organization` },
+      },
+    ],
+  });
 
   return (
     <>

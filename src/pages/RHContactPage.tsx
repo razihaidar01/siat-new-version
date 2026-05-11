@@ -7,6 +7,10 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import {
+  RH_BASE_URL, rhOrganizationSchema, rhLocalBusinessSchema, rhBreadcrumb,
+} from "@/lib/rhSeo";
 
 const spamPattern = /(\b(fuck|shit|bitch|sex|porn|hack|free money|asshole)\b)/i;
 
@@ -52,6 +56,29 @@ const RHContactPage = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  useSEO({
+    title: "Contact RH Software | Hire Best Software Developer in Bihar",
+    description:
+      "Talk to RH Software (by SIAT). Free strategy call, 24-hour response. Hire Bihar's top website, app and AI developers. Serving Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga and all Bihar.",
+    keywords: "contact RH Software, hire web developer bihar, software company contact patna, app developer contact saharsa",
+    canonical: `${RH_BASE_URL}/rhsoftware/contact`,
+    schema: [
+      rhOrganizationSchema,
+      rhLocalBusinessSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+        { name: "Contact", url: `${RH_BASE_URL}/rhsoftware/contact` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        url: `${RH_BASE_URL}/rhsoftware/contact`,
+        name: "Contact RH Software",
+      },
+    ],
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

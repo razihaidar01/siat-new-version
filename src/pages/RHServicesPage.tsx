@@ -6,6 +6,10 @@ import {
   ArrowRight, ArrowUpRight, CheckCircle2, Sparkles,
 } from "lucide-react";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import {
+  RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb, rhServiceSchema,
+} from "@/lib/rhSeo";
 
 /* ------------------------------------------------------------------ */
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
@@ -265,17 +269,51 @@ const CTABand = () => (
 );
 
 /* ------------------------------------------------------------------ */
-const RHServicesPage = () => (
-  <>
-    <Hero />
-    <section className="px-6 md:px-10 pb-10">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {allServices.map((s, i) => <ServiceBlock key={s.title} s={s} i={i} />)}
-      </div>
-    </section>
-    <ProcessStrip />
-    <CTABand />
-  </>
-);
+const RHServicesPage = () => {
+  useSEO({
+    title: "Web, App & AI Development Services in Bihar | RH Software (by SIAT)",
+    description:
+      "End-to-end software services in Bihar — website development, mobile app development, AI/ML, SaaS engineering, automation and UI/UX. Serving Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga and all Bihar.",
+    keywords:
+      "website development bihar, app development patna, AI development company bihar, software development services saharsa, mobile app developer madhepura, SaaS development bihar, वेबसाइट डेवलपमेंट बिहार",
+    canonical: `${RH_BASE_URL}/rhsoftware/services`,
+    schema: [
+      rhOrganizationSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+        { name: "Services", url: `${RH_BASE_URL}/rhsoftware/services` },
+      ]),
+      rhServiceSchema(
+        "Website Development",
+        "Custom websites, landing pages and marketing sites engineered for speed and SEO across Bihar.",
+        `${RH_BASE_URL}/rhsoftware/services#web`,
+      ),
+      rhServiceSchema(
+        "Mobile App Development",
+        "Native-feeling iOS & Android apps for startups and enterprises in Patna, Saharsa, Madhepura and across Bihar.",
+        `${RH_BASE_URL}/rhsoftware/services#app`,
+      ),
+      rhServiceSchema(
+        "AI Development",
+        "RAG, LLM agents, NLP pipelines and bespoke ML solutions wired into real business workflows.",
+        `${RH_BASE_URL}/rhsoftware/services#ai`,
+      ),
+    ],
+  });
+
+  return (
+    <>
+      <Hero />
+      <section className="px-6 md:px-10 pb-10">
+        <div className="max-w-7xl mx-auto space-y-6">
+          {allServices.map((s, i) => <ServiceBlock key={s.title} s={s} i={i} />)}
+        </div>
+      </section>
+      <ProcessStrip />
+      <CTABand />
+    </>
+  );
+};
 
 export default RHServicesPage;
