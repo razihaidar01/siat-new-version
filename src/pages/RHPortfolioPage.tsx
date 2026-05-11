@@ -346,6 +346,33 @@ const RHPortfolioPage = () => {
   const featured = filtered.filter((p) => p.featured);
   const rest = filtered.filter((p) => !p.featured);
 
+  useSEO({
+    title: "Portfolio | RH Software — Bihar's Top Web, App & SaaS Projects",
+    description:
+      "Explore real-world projects shipped by RH Software (by SIAT) — hospital management, EdTech, fintech, logistics IoT and SaaS platforms built for clients across Patna, Saharsa, Madhepura, Purnia and all Bihar.",
+    keywords: "RH Software portfolio, software case studies bihar, web app projects bihar, SaaS projects patna, hospital management software bihar",
+    canonical: `${RH_BASE_URL}/rhsoftware/portfolio`,
+    schema: [
+      rhOrganizationSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+        { name: "Portfolio", url: `${RH_BASE_URL}/rhsoftware/portfolio` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "RH Software Portfolio",
+        url: `${RH_BASE_URL}/rhsoftware/portfolio`,
+        hasPart: projects.map((p) => ({
+          "@type": "CreativeWork",
+          name: p.title,
+          about: p.category,
+        })),
+      },
+    ],
+  });
+
   return (
     <>
       <Hero count={projects.length} />
