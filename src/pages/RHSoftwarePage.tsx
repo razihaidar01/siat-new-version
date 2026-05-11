@@ -645,6 +645,43 @@ const CTABand = () => (
    ============================================================ */
 
 const RHSoftwarePage = () => {
+  useSEO({
+    title: "RH Software | Best Website, App & AI Development Company in Bihar",
+    description:
+      "RH Software (by SIAT) — Bihar's #1 software company. Best website developer, app developer & AI development company in Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga & all Bihar. 40+ products shipped. Get a free quote.",
+    keywords:
+      "RH Software, best software company in Bihar, website developer in Bihar, app developer in Patna, AI development company Bihar, software company Saharsa, software company Madhepura, website banane wali company Bihar, वेबसाइट डेवलपर बिहार, ऐप डेवलपर पटना, सॉफ्टवेयर कंपनी बिहार",
+    canonical: `${RH_BASE_URL}/rhsoftware`,
+    ogType: "website",
+    schema: [
+      rhOrganizationSchema,
+      rhLocalBusinessSchema,
+      rhWebsiteSchema,
+      rhBreadcrumb([
+        { name: "Home", url: RH_BASE_URL },
+        { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
+      ]),
+      rhFaqSchema([
+        {
+          q: "Which is the best software company in Bihar?",
+          a: "RH Software (by SIAT) is widely recognized among the best software companies in Bihar, delivering web, mobile, AI and SaaS products to clients across Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga and beyond.",
+        },
+        {
+          q: "Do you build websites and apps for clients in Patna and Saharsa?",
+          a: "Yes. RH Software serves every major Bihar city — including Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga, Katihar, Bhagalpur and Muzaffarpur — with on-call support and remote-first delivery.",
+        },
+        {
+          q: "How much does a website or app cost from RH Software?",
+          a: "Marketing sites start from ₹60,000. SaaS MVPs and web apps typically range ₹2.5L–₹10L. Long-term enterprise engagements are custom-scoped. Book a free strategy call for an exact quote.",
+        },
+        {
+          q: "Do you offer AI development services in Bihar?",
+          a: "Yes. We build production-grade AI systems including RAG pipelines, LLM agents, NLP automation and custom ML — wired into real business workflows for Bihar-based and pan-India clients.",
+        },
+      ]),
+    ],
+  });
+
   return (
     <>
       <Hero />
