@@ -33,7 +33,13 @@ interface SEOConfig {
   ogType?: string;
   schema?: object | object[];
   noIndex?: boolean;
+  /** language code, e.g. "en-IN" or "hi-IN" */
+  locale?: string;
+  /** alternate language URLs for hreflang tags */
+  hreflang?: { lang: string; url: string }[];
 }
+
+const HREFLANG_GROUP_ID = "page-hreflang";
 
 export const useSEO = ({
   title,
@@ -44,41 +50,57 @@ export const useSEO = ({
   ogType = "website",
   schema,
   noIndex = false,
+  locale = "en-IN",
+  hreflang,
 }: SEOConfig) => {
   useEffect(() => {
-    /* ── Title ── */
     document.title = title;
 
-    /* ── Meta helper ── */
     const setMeta = (selector: string, content: string) => {
       const el = document.querySelector(selector);
       if (el) el.setAttribute("content", content);
     };
 
-    /* ── Standard meta ── */
     setMeta('meta[name="description"]', description);
     if (keywords) setMeta('meta[name="keywords"]', keywords);
     setMeta('meta[name="robots"]', noIndex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large");
 
-    /* ── Canonical ── */
+    document.documentElement.setAttribute("lang", locale.split("-")[0]);
+
     if (canonical) {
       const canonicalEl = document.querySelector('link[rel="canonical"]');
       if (canonicalEl) canonicalEl.setAttribute("href", canonical);
     }
 
-    /* ── Open Graph ── */
     setMeta('meta[property="og:title"]', title);
     setMeta('meta[property="og:description"]', description);
     setMeta('meta[property="og:type"]', ogType);
     setMeta('meta[property="og:image"]', ogImage);
+    setMeta('meta[property="og:locale"]', locale.replace("-", "_"));
     if (canonical) setMeta('meta[property="og:url"]', canonical);
 
-    /* ── Twitter ── */
     setMeta('meta[name="twitter:title"]', title);
     setMeta('meta[name="twitter:description"]', description);
     setMeta('meta[name="twitter:image"]', ogImage);
 
-    /* ── JSON-LD Schema ── */
+    document.querySelectorAll(`link[data-group="${HREFLANG_GROUP_ID}"]`).forEach((n) => n.remove());
+    if (hreflang?.length) {
+      hreflang.forEach(({ lang, url }) => {
+        const link = document.createElement("link");
+        link.setAttribute("rel", "alternate");
+        link.setAttribute("hreflang", lang);
+        link.setAttribute("href", url);
+        link.setAttribute("data-group", HREFLANG_GROUP_ID);
+        document.head.appendChild(link);
+      });
+      const xDefault = document.createElement("link");
+      xDefault.setAttribute("rel", "alternate");
+      xDefault.setAttribute("hreflang", "x-default");
+      xDefault.setAttribute("href", hreflang[0].url);
+      xDefault.setAttribute("data-group", HREFLANG_GROUP_ID);
+      document.head.appendChild(xDefault);
+    }
+
     if (schema) {
       const schemaId = "page-schema";
       const existing = document.getElementById(schemaId);
@@ -95,12 +117,12 @@ export const useSEO = ({
       document.head.appendChild(script);
     }
 
-    /* ── Cleanup ── */
     return () => {
       const schemaEl = document.getElementById("page-schema");
       if (schemaEl) schemaEl.remove();
+      document.querySelectorAll(`link[data-group="${HREFLANG_GROUP_ID}"]`).forEach((n) => n.remove());
     };
-  }, [title, description, keywords, canonical, ogImage, ogType, schema, noIndex]);
+  }, [title, description, keywords, canonical, ogImage, ogType, schema, noIndex, locale, hreflang]);
 };
 
 

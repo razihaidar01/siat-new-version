@@ -31,6 +31,9 @@ import RHPricingPage from "./pages/RHPricingPage";
 import RHPortfolioPage from "./pages/RHPortfolioPage";
 import RHContactPage from "./pages/RHContactPage";
 import RHBlogPage from "./pages/RHBlogPage";
+import RHBlogPostPage from "./pages/RHBlogPostPage";
+import RHCaseStudyPage from "./pages/RHCaseStudyPage";
+import RHCityPage from "./pages/RHCityPage";
 import NotFound from "./pages/NotFound";
 
 // Hub pages
@@ -170,6 +173,10 @@ const App = () => (
             <Route path="/rhsoftware/pricing" element={<RHPricingPage />} />
             <Route path="/rhsoftware/contact" element={<RHContactPage />} />
             <Route path="/rhsoftware/blog" element={<RHBlogPage />} />
+            <Route path="/rhsoftware/blog/:slug" element={<RHBlogPostPage />} />
+            <Route path="/rhsoftware/portfolio/:slug" element={<RHCaseStudyPage />} />
+            <Route path="/rhsoftware/bihar/:city" element={<RHCityPage />} />
+            <Route path="/rhsoftware/bihar/:city/:lang" element={<RHCityPage />} />
           </Route>
 
           {/* Admin routes */}
