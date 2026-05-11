@@ -7,6 +7,10 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { RH_IMAGES } from "@/lib/rhPlaceholders";
+import { useSEO } from "@/hooks/useSEO";
+import {
+  RH_BASE_URL, rhOrganizationSchema, rhLocalBusinessSchema, rhBreadcrumb,
+} from "@/lib/rhSeo";
 
 const spamPattern = /(\b(fuck|shit|bitch|sex|porn|hack|free money|asshole)\b)/i;
 
