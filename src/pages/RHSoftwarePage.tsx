@@ -538,12 +538,18 @@ const EngineeringProof = () => (
 const Founder = () => (
   <Section>
     <FadeUp>
-      <div className="rh-surface p-8 md:p-12 grid md:grid-cols-[160px_1fr] gap-8 items-center">
-        <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden mx-auto md:mx-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#A78BFA] to-[#22D3EE]" />
-          <div className="absolute inset-0 flex items-center justify-center text-[44px] font-semibold text-white/95"
-               style={{ fontFamily: "var(--rh-font-display)" }}>
-            RH
+      <div className="rh-surface p-8 md:p-12 grid md:grid-cols-[220px_1fr] gap-8 md:gap-10 items-center">
+        <div className="relative w-44 h-56 md:w-[220px] md:h-[280px] rounded-2xl overflow-hidden mx-auto md:mx-0 ring-1 ring-white/10">
+          <img
+            src={raziHaidarImg}
+            alt="Razi Haidar — Founder & CEO of RH Software (by SIAT), Bihar"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute bottom-3 left-3 right-3">
+            <div className="text-[14px] font-semibold text-white leading-tight">Razi Haidar</div>
+            <div className="text-[11px] text-white/70">Founder & CEO</div>
           </div>
         </div>
         <div>
@@ -554,9 +560,9 @@ const Founder = () => (
             to outcomes long after launch. If you want a partner who treats your
             product like our own, you'll feel that on day one.
           </p>
-          <div className="mt-5 flex items-center gap-2 text-[13px]">
-            <span className="font-semibold text-white">Founder</span>
-            <span className="rh-text-dim">· RH Software, a SIAT engineering studio</span>
+          <div className="mt-5 flex items-center gap-2 text-[13px] flex-wrap">
+            <span className="font-semibold text-white">Razi Haidar</span>
+            <span className="rh-text-dim">· Founder & CEO, RH Software (a SIAT engineering studio)</span>
           </div>
         </div>
       </div>
