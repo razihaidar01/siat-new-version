@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -36,7 +37,13 @@ const GovSkillTrainingPage = () => {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <SEOHead
+        title="Government Skill Training in Bihar | PMKVY & Skill India | SIAT Saharsa"
+        description="SIAT is Bihar's trusted government skill training partner. We implement PMKVY, Skill India, MSME training projects across Bihar. ISO certified, experienced trainers, proven infrastructure."
+        canonical="https://www.siat.in/government-projects/government-skill-training-bihar"
+        keywords="government skill training bihar, PMKVY training center bihar, skill india partner saharsa, government training institute bihar, sarkari skill training bihar, SIAT government projects"
+      />
+      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
         <div className="max-w-4xl mx-auto text-center">
