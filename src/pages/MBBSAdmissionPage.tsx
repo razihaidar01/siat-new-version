@@ -1,3 +1,4 @@
+import SEOHead from "@/components/SEOHead";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -38,6 +39,12 @@ const MBBSAdmissionPage = () => {
 
   return (
     <>
+      <SEOHead
+        title="MBBS Admission in Bihar 2025 | Best Medical College Guidance | SIAT"
+        description="Get expert MBBS admission guidance in Bihar. SIAT helps with NEET counseling, best medical college selection, Bihar Student Credit Card for MBBS, documentation. PMCH, NMCH, DMCH admissions."
+        canonical="https://www.siat.in/consultancy-services/mbbs-admission-bihar"
+        keywords="MBBS admission bihar, NEET counseling bihar, best medical college bihar, MBBS fee bihar, PMCH admission, Bihar Student Credit Card MBBS, medical college saharsa, MBBS guidance patna"
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="section-padding" style={{ background: "var(--gradient-hero)" }}>
