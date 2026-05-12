@@ -8,6 +8,8 @@ interface SEOHeadProps {
   ogImage?: string;
   type?: string;
   noIndex?: boolean;
+  keywords?: string;
+  schema?: object | object[];
 }
 
 const BASE_URL = "https://www.siat.in";
@@ -19,17 +21,20 @@ const SEOHead = ({
   ogImage = "/og-image.png",
   type = "website",
   noIndex = false,
+  keywords,
+  schema,
 }: SEOHeadProps) => {
   const { pathname } = useLocation();
   const fullCanonical = canonical || `${BASE_URL}${pathname}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
-  const fullTitle = title.includes("SIAT") ? title.replace("SIAT", "Saharsa Institute of Advance Technology (SIAT)") : `${title} | Saharsa Institute of Advance Technology (SIAT)`;
+
+  // ✅ FIX 1: Clean title — no ugly "Saharsa Institute of Advance Technology" suffix
+  // Just use the title as-is (all page titles already include "SIAT" or "RH Software")
+  const fullTitle = title;
 
   useEffect(() => {
-    // Title
     document.title = fullTitle;
 
-    // Helper to set/create meta tags
     const setMeta = (attr: string, key: string, content: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -42,11 +47,14 @@ const SEOHead = ({
 
     // Standard meta
     setMeta("name", "description", description);
-    if (noIndex) {
-      setMeta("name", "robots", "noindex, nofollow");
-    } else {
-      setMeta("name", "robots", "index, follow");
-    }
+    if (keywords) setMeta("name", "keywords", keywords);
+    setMeta(
+      "name",
+      "robots",
+      noIndex
+        ? "noindex, nofollow"
+        : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    );
 
     // Open Graph
     setMeta("property", "og:title", fullTitle);
@@ -54,7 +62,12 @@ const SEOHead = ({
     setMeta("property", "og:type", type);
     setMeta("property", "og:url", fullCanonical);
     setMeta("property", "og:image", fullOgImage);
-    setMeta("property", "og:site_name", "Saharsa Institute of Advance Technology - SIAT");
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:locale", "en_IN");
+
+    // ✅ FIX 2: og:site_name = "SIAT (RH Software)" — this is what Google shows
+    setMeta("property", "og:site_name", "SIAT (RH Software)");
 
     // Twitter
     setMeta("name", "twitter:card", "summary_large_image");
@@ -62,7 +75,7 @@ const SEOHead = ({
     setMeta("name", "twitter:description", description);
     setMeta("name", "twitter:image", fullOgImage);
 
-    // Canonical link
+    // Canonical
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
@@ -71,11 +84,32 @@ const SEOHead = ({
     }
     link.setAttribute("href", fullCanonical);
 
-    // Scroll GA pageview
+    // ✅ FIX 3: Schema / JSON-LD injection (was completely missing before)
+    if (schema) {
+      const schemaId = "seohead-schema";
+      const existing = document.getElementById(schemaId);
+      if (existing) existing.remove();
+      const schemas = Array.isArray(schema) ? schema : [schema];
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = schemaId;
+      script.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": schemas,
+      });
+      document.head.appendChild(script);
+    }
+
+    // GA pageview
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("config", "G-V3QTW8QZN5", { page_path: pathname });
     }
-  }, [fullTitle, description, fullCanonical, fullOgImage, type, noIndex, pathname]);
+
+    return () => {
+      const s = document.getElementById("seohead-schema");
+      if (s) s.remove();
+    };
+  }, [fullTitle, description, keywords, fullCanonical, fullOgImage, type, noIndex, schema, pathname]);
 
   return null;
 };
