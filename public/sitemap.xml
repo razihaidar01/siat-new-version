@@ -2,366 +2,387 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ===== CORE PAGES ===== -->
-  <url><loc>https://www.siat.in/</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.siat.in/about-us</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/contact-us</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/gallery</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.siat.in/verify-certificate</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/faqs</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.siat.in/training-institute</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/training-institute/mobile-repairing-course-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/training-institute/ac-repairing-course-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/training-institute/laptop-repairing-course-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/training-institute/cctv-installation-training-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/training-institute/short-term-job-courses-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/training-institute/technical-training-institute-saharsa</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/training-institute/course-fees</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/training-institute/placement-support</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/training-institute/student-testimonials</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/iso-certification-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/msme-registration</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/best-college-in-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/mbbs-admission-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/btech-admission-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/bca-college-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/nursing-college-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/admission-after-12th-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/consultancy-services/bihar-student-credit-card-admission</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/government-projects</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/government-projects/government-skill-training-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/government-projects/pmkvy-training-center-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/government-projects/msme-education-tender</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/government-projects/skill-india-training-partner</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/government-projects/csr-education-projects</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/government-projects/capability-statement</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.siat.in/government-projects/empanelment</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/services</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/website-development-company-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/app-development-company-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/software-development-company-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/ai-development-company-bihar</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/erp-crm-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/portfolio</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/case-studies</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/pricing</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/contact</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/blog</loc><lastmod>2026-03-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.siat.in/chairman-message</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.siat.in/our-team</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.siat.in/infrastructure</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.siat.in/certifications</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.siat.in/downloads/brochure</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.siat.in/downloads/admission-form</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.siat.in/privacy-policy</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://www.siat.in/terms-conditions</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://www.siat.in/disclaimer</loc><lastmod>2026-03-09</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.siat.in/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.siat.in/about-us</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/contact-us</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/gallery</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.siat.in/verify-certificate</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/faqs</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.siat.in/training-institute</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/training-institute/mobile-repairing-course-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/training-institute/ac-repairing-course-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/training-institute/laptop-repairing-course-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/training-institute/cctv-installation-training-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/training-institute/short-term-job-courses-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/training-institute/technical-training-institute-saharsa</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/training-institute/course-fees</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/training-institute/placement-support</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/training-institute/student-testimonials</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/iso-certification-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/msme-registration</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/best-college-in-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/mbbs-admission-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/btech-admission-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/bca-college-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/nursing-college-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/admission-after-12th-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/consultancy-services/bihar-student-credit-card-admission</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/government-projects</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/government-projects/government-skill-training-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/government-projects/pmkvy-training-center-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/government-projects/msme-education-tender</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/government-projects/skill-india-training-partner</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/government-projects/csr-education-projects</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/government-projects/capability-statement</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.siat.in/government-projects/empanelment</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/services</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/website-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/app-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/software-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/ai-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/erp-crm-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/case-studies</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/pricing</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/contact</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.siat.in/chairman-message</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.siat.in/our-team</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.siat.in/infrastructure</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.siat.in/certifications</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.siat.in/downloads/brochure</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.siat.in/downloads/admission-form</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.siat.in/privacy-policy</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.siat.in/terms-conditions</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.siat.in/disclaimer</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
   <!-- ===== LOCATION SEO PAGES — ALL BIHAR DISTRICTS ===== -->
 
   <!-- Saharsa -->
-  <url><loc>https://www.siat.in/bihar/saharsa/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/saharsa/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/saharsa/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/saharsa/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/saharsa/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/saharsa/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/saharsa/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Supaul -->
-  <url><loc>https://www.siat.in/bihar/supaul/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/supaul/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/supaul/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/supaul/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/supaul/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/supaul/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/supaul/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Madhepura -->
-  <url><loc>https://www.siat.in/bihar/madhepura/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhepura/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhepura/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhepura/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhepura/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhepura/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhepura/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Purnia -->
-  <url><loc>https://www.siat.in/bihar/purnia/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/purnia/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/purnia/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/purnia/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/purnia/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/purnia/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/purnia/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Katihar -->
-  <url><loc>https://www.siat.in/bihar/katihar/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/katihar/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/katihar/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/katihar/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/katihar/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/katihar/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/katihar/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Araria -->
-  <url><loc>https://www.siat.in/bihar/araria/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/araria/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/araria/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/araria/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/araria/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/araria/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/araria/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Kishanganj -->
-  <url><loc>https://www.siat.in/bihar/kishanganj/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kishanganj/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kishanganj/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kishanganj/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kishanganj/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kishanganj/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kishanganj/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Khagaria -->
-  <url><loc>https://www.siat.in/bihar/khagaria/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/khagaria/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/khagaria/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/khagaria/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/khagaria/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/khagaria/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/khagaria/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Begusarai -->
-  <url><loc>https://www.siat.in/bihar/begusarai/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/begusarai/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/begusarai/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/begusarai/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/begusarai/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/begusarai/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/begusarai/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Munger -->
-  <url><loc>https://www.siat.in/bihar/munger/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/munger/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/munger/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/munger/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/munger/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/munger/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/munger/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Bhagalpur -->
-  <url><loc>https://www.siat.in/bihar/bhagalpur/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhagalpur/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhagalpur/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhagalpur/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhagalpur/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhagalpur/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhagalpur/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Banka -->
-  <url><loc>https://www.siat.in/bihar/banka/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/banka/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/banka/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/banka/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/banka/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/banka/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/banka/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Darbhanga -->
-  <url><loc>https://www.siat.in/bihar/darbhanga/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/darbhanga/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/darbhanga/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/darbhanga/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/darbhanga/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/darbhanga/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/darbhanga/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Madhubani -->
-  <url><loc>https://www.siat.in/bihar/madhubani/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhubani/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhubani/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhubani/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhubani/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/madhubani/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/madhubani/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Sitamarhi -->
-  <url><loc>https://www.siat.in/bihar/sitamarhi/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sitamarhi/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sitamarhi/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sitamarhi/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sitamarhi/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sitamarhi/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sitamarhi/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Sheohar -->
-  <url><loc>https://www.siat.in/bihar/sheohar/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheohar/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheohar/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheohar/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheohar/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheohar/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheohar/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Muzaffarpur -->
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/muzaffarpur/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/muzaffarpur/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- East Champaran -->
-  <url><loc>https://www.siat.in/bihar/east-champaran/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/east-champaran/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/east-champaran/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/east-champaran/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/east-champaran/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/east-champaran/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/east-champaran/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- West Champaran -->
-  <url><loc>https://www.siat.in/bihar/west-champaran/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/west-champaran/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/west-champaran/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/west-champaran/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/west-champaran/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/west-champaran/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/west-champaran/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Patna -->
-  <url><loc>https://www.siat.in/bihar/patna/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/patna/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/patna/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/patna/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/patna/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/patna/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/patna/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Nalanda -->
-  <url><loc>https://www.siat.in/bihar/nalanda/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nalanda/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nalanda/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nalanda/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nalanda/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nalanda/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nalanda/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Gaya -->
-  <url><loc>https://www.siat.in/bihar/gaya/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/gaya/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/gaya/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/gaya/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/gaya/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/bihar/gaya/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/bihar/gaya/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- Nawada -->
-  <url><loc>https://www.siat.in/bihar/nawada/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nawada/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nawada/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nawada/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nawada/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/nawada/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/nawada/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Aurangabad -->
-  <url><loc>https://www.siat.in/bihar/aurangabad/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/aurangabad/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/aurangabad/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/aurangabad/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/aurangabad/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/aurangabad/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/aurangabad/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Jehanabad -->
-  <url><loc>https://www.siat.in/bihar/jehanabad/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jehanabad/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jehanabad/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jehanabad/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jehanabad/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jehanabad/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jehanabad/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Arwal -->
-  <url><loc>https://www.siat.in/bihar/arwal/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/arwal/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/arwal/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/arwal/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/arwal/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/arwal/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/arwal/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Chapra -->
-  <url><loc>https://www.siat.in/bihar/chapra/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/chapra/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/chapra/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/chapra/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/chapra/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/chapra/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/chapra/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Siwan -->
-  <url><loc>https://www.siat.in/bihar/siwan/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/siwan/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/siwan/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/siwan/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/siwan/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/siwan/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/siwan/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Gopalganj -->
-  <url><loc>https://www.siat.in/bihar/gopalganj/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/gopalganj/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/gopalganj/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/gopalganj/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/gopalganj/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/gopalganj/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/gopalganj/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Vaishali -->
-  <url><loc>https://www.siat.in/bihar/vaishali/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/vaishali/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/vaishali/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/vaishali/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/vaishali/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/vaishali/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/vaishali/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Hajipur -->
-  <url><loc>https://www.siat.in/bihar/hajipur/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/hajipur/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/hajipur/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/hajipur/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/hajipur/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/hajipur/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/hajipur/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Buxar -->
-  <url><loc>https://www.siat.in/bihar/buxar/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/buxar/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/buxar/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/buxar/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/buxar/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/buxar/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/buxar/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Bhojpur -->
-  <url><loc>https://www.siat.in/bihar/bhojpur/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhojpur/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhojpur/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhojpur/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhojpur/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/bhojpur/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/bhojpur/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Rohtas -->
-  <url><loc>https://www.siat.in/bihar/rohtas/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/rohtas/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/rohtas/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/rohtas/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/rohtas/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/rohtas/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/rohtas/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Kaimur -->
-  <url><loc>https://www.siat.in/bihar/kaimur/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kaimur/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kaimur/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kaimur/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kaimur/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/kaimur/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/kaimur/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Jamui -->
-  <url><loc>https://www.siat.in/bihar/jamui/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jamui/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jamui/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jamui/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jamui/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/jamui/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/jamui/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Lakhisarai -->
-  <url><loc>https://www.siat.in/bihar/lakhisarai/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/lakhisarai/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/lakhisarai/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/lakhisarai/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/lakhisarai/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/lakhisarai/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/lakhisarai/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Sheikhpura -->
-  <url><loc>https://www.siat.in/bihar/sheikhpura/website-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheikhpura/app-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheikhpura/software-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheikhpura/ai-development</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheikhpura/iso-certification</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.siat.in/bihar/sheikhpura/training</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/website-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/app-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/software-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/ai-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/iso-certification</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/bihar/sheikhpura/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+
+  <!-- RH Software dedicated service pages -->
+  <url><loc>https://www.siat.in/rhsoftware/website-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/app-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/ai-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/software-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/erp-crm-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://www.siat.in/rhsoftware/blog/best-website-developer-saharsa-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/website-development-cost-bihar-2025</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/iso-certification-bihar-guide</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/app-development-bihar-hindi-guide</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/msme-udyam-registration-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/best-software-company-madhepura-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/gmp-certification-bihar-food-pharma</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/company-registration-bihar-pvt-ltd-llp</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/seo-website-ranking-bihar-hindi-guide</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/web-designer-darbhanga-bhagalpur-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/ai-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/best-software-company-supaul-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 </urlset>
