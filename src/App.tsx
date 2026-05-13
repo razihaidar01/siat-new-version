@@ -163,10 +163,10 @@ const App = () => (
             <Route path="/rhsoftware" element={<RHSoftwarePage />} />
             <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
             <Route path="/rhsoftware/services" element={<RHServicesPage />} />
-            <Route path="/rhsoftware/website-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rhsoftware/app-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/website-development-company-bihar" element={<WebDevelopmentPage />} />
+            <Route path="/rhsoftware/app-development-company-bihar" element={<AppDevelopmentPage />} />
             <Route path="/rhsoftware/software-development-company-bihar" element={<RHServicesPage />} />
-            <Route path="/rhsoftware/ai-development-company-bihar" element={<RHServicesPage />} />
+            <Route path="/rhsoftware/ai-development-company-bihar" element={<AIDevelopmentPage />} />
             <Route path="/rhsoftware/erp-crm-development" element={<RHServicesPage />} />
             <Route path="/rhsoftware/portfolio" element={<RHPortfolioPage />} />
             <Route path="/rhsoftware/case-studies" element={<RHPortfolioPage />} />
