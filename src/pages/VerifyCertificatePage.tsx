@@ -4,6 +4,8 @@ import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, CheckCircle, XCircle, ShieldCheck, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { reportBackendDown } from "@/lib/backendAlert";
+
 import siatLogo from "@/assets/siat-logo.png";
 
 const VerifyCertificatePage = () => {
