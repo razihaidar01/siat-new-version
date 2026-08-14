@@ -15,7 +15,7 @@ const StaffProfilePage = () => {
       if (!employeeId) { setNotFound(true); setLoading(false); return; }
       const { data, error } = await supabase
         .from("staff_profiles")
-        .select("*")
+        .select("id, employee_id, full_name, designation, department, photo_url, blood_group, date_of_joining, is_active")
         .ilike("employee_id", employeeId)
         .maybeSingle();
       if (error || !data) { setNotFound(true); } else { setStaff(data); }
@@ -23,19 +23,6 @@ const StaffProfilePage = () => {
     };
     load();
   }, [employeeId]);
-
-  const maskAadhaar = (val: string | null) => {
-    if (!val) return null;
-    const digits = val.replace(/\s/g, "");
-    if (digits.length < 4) return val;
-    return "XXXX XXXX " + digits.slice(-4);
-  };
-
-  const maskPan = (val: string | null) => {
-    if (!val) return null;
-    if (val.length < 4) return val;
-    return "XXXXXX" + val.slice(-4);
-  };
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
