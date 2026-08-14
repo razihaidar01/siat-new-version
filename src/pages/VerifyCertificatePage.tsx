@@ -13,10 +13,12 @@ const VerifyCertificatePage = () => {
   const [result, setResult] = useState<any>(null);
   const [docUrl, setDocUrl] = useState<string | null>(null);
   const [searched, setSearched] = useState(false);
+  const [lookupError, setLookupError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (searchParams.get("cert")) {
-      handleVerify(undefined, searchParams.get("cert")!);
+    const certificateFromUrl = searchParams.get("cert");
+    if (certificateFromUrl) {
+      handleVerify(undefined, certificateFromUrl);
     }
   }, []);
 
@@ -28,12 +30,29 @@ const VerifyCertificatePage = () => {
     setLoading(true);
     setSearched(true);
     setDocUrl(null);
+    setResult(null);
+    setLookupError(null);
 
-    const { data } = await supabase
+    const lookupCertificate = () => supabase
       .from("certificates")
       .select("*")
       .eq("certificate_number", num)
       .maybeSingle();
+
+    let response = await lookupCertificate();
+
+    if (response.error) {
+      await new Promise((resolve) => window.setTimeout(resolve, 1500));
+      response = await lookupCertificate();
+    }
+
+    if (response.error) {
+      setLookupError("Certificate service is temporarily unavailable. Please try again in a moment.");
+      setLoading(false);
+      return;
+    }
+
+    const data = response.data;
 
     setResult(data);
 
@@ -86,7 +105,16 @@ const VerifyCertificatePage = () => {
 
           {searched && !loading && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mt-8">
-              {result ? (
+              {lookupError ? (
+                <div className="glass-card p-8 border-2 border-primary/30 text-center">
+                  <XCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2">Verification Service Unavailable</h3>
+                  <p className="text-sm text-muted-foreground mb-5">{lookupError}</p>
+                  <button type="button" onClick={() => handleVerify()} className="btn-primary-glow !py-3 !px-5">
+                    Try Again
+                  </button>
+                </div>
+              ) : result ? (
                 <div className="glass-card p-8 border-2 border-green-500/30">
                   <div className="flex items-center gap-3 mb-6">
                     <CheckCircle className="w-8 h-8 text-green-500" />
