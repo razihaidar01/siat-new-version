@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import siatLogo from "@/assets/siat-logo.png";
-import { Phone, Mail, MapPin, Calendar, User, Heart, Shield, Droplets } from "lucide-react";
+import { Calendar, User, Shield, Droplets } from "lucide-react";
 
 const StaffProfilePage = () => {
   const { employeeId } = useParams<{ employeeId: string }>();
