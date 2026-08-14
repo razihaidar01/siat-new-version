@@ -97,16 +97,9 @@ const StaffProfilePage = () => {
         {/* Details */}
         <div className="px-6 pb-6">
           <div className="bg-blue-50/50 rounded-xl p-4">
-            <InfoRow icon={Phone} label="Phone" value={staff.phone} />
-            <InfoRow icon={Mail} label="Email" value={staff.email} />
-            <InfoRow icon={Calendar} label="Date of Birth" value={staff.date_of_birth} />
+            <InfoRow icon={User} label="Designation" value={staff.designation} />
+            <InfoRow icon={Shield} label="Department" value={staff.department} />
             <InfoRow icon={Calendar} label="Date of Joining" value={staff.date_of_joining} />
-            <InfoRow icon={User} label="Father's Name" value={staff.father_name} />
-            <InfoRow icon={User} label="Mother's Name" value={staff.mother_name} />
-            <InfoRow icon={Phone} label="Emergency Contact" value={staff.emergency_contact} />
-            <InfoRow icon={MapPin} label="Address" value={staff.address} />
-            <InfoRow icon={Shield} label="Aadhaar Number" value={maskAadhaar(staff.aadhaar_number)} />
-            <InfoRow icon={Shield} label="PAN Number" value={maskPan(staff.pan_number)} />
           </div>
         </div>
 
