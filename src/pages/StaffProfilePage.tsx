@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import siatLogo from "@/assets/siat-logo.png";
-import { Phone, Mail, MapPin, Calendar, User, Heart, Shield, Droplets } from "lucide-react";
+import { Calendar, User, Shield, Droplets } from "lucide-react";
 
 const StaffProfilePage = () => {
   const { employeeId } = useParams<{ employeeId: string }>();
@@ -15,7 +15,7 @@ const StaffProfilePage = () => {
       if (!employeeId) { setNotFound(true); setLoading(false); return; }
       const { data, error } = await supabase
         .from("staff_profiles")
-        .select("*")
+        .select("id, employee_id, full_name, designation, department, photo_url, blood_group, date_of_joining, is_active")
         .ilike("employee_id", employeeId)
         .maybeSingle();
       if (error || !data) { setNotFound(true); } else { setStaff(data); }
@@ -23,19 +23,6 @@ const StaffProfilePage = () => {
     };
     load();
   }, [employeeId]);
-
-  const maskAadhaar = (val: string | null) => {
-    if (!val) return null;
-    const digits = val.replace(/\s/g, "");
-    if (digits.length < 4) return val;
-    return "XXXX XXXX " + digits.slice(-4);
-  };
-
-  const maskPan = (val: string | null) => {
-    if (!val) return null;
-    if (val.length < 4) return val;
-    return "XXXXXX" + val.slice(-4);
-  };
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
@@ -110,16 +97,9 @@ const StaffProfilePage = () => {
         {/* Details */}
         <div className="px-6 pb-6">
           <div className="bg-blue-50/50 rounded-xl p-4">
-            <InfoRow icon={Phone} label="Phone" value={staff.phone} />
-            <InfoRow icon={Mail} label="Email" value={staff.email} />
-            <InfoRow icon={Calendar} label="Date of Birth" value={staff.date_of_birth} />
+            <InfoRow icon={User} label="Designation" value={staff.designation} />
+            <InfoRow icon={Shield} label="Department" value={staff.department} />
             <InfoRow icon={Calendar} label="Date of Joining" value={staff.date_of_joining} />
-            <InfoRow icon={User} label="Father's Name" value={staff.father_name} />
-            <InfoRow icon={User} label="Mother's Name" value={staff.mother_name} />
-            <InfoRow icon={Phone} label="Emergency Contact" value={staff.emergency_contact} />
-            <InfoRow icon={MapPin} label="Address" value={staff.address} />
-            <InfoRow icon={Shield} label="Aadhaar Number" value={maskAadhaar(staff.aadhaar_number)} />
-            <InfoRow icon={Shield} label="PAN Number" value={maskPan(staff.pan_number)} />
           </div>
         </div>
 
