@@ -61,7 +61,7 @@ serve(async (req) => {
     }
 
     const now = Date.now();
-    if (now - lastSentAt < COOLDOWN_MS) {
+    if (!forceTest && now - lastSentAt < COOLDOWN_MS) {
       return new Response(
         JSON.stringify({ alerted: false, reason: "cooldown" }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } },
