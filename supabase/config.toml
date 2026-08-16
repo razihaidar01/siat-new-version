@@ -2,3 +2,6 @@ project_id = "bdnwtfpudpgjywmsufek"
 
 [functions.chat]
 verify_jwt = false
+
+[functions.notify-backend-down]
+verify_jwt = false

@@ -49,6 +49,7 @@ const VerifyCertificatePage = () => {
     }
 
     if (response.error) {
+      reportBackendDown("Certificate verification", response.error.message);
       setLookupError("Certificate service is temporarily unavailable. Please try again in a moment.");
       setLoading(false);
       return;
