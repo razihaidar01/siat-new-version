@@ -5,7 +5,8 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const ALERT_EMAIL = "info.razihaidar@gmail.com";
+// Resend only delivers to the account owner until a domain is verified.
+const ALERT_EMAIL = "siatgroup.sws@gmail.com";
 const COOLDOWN_MS = 15 * 60 * 1000;
 
 // Per-instance throttle so a burst of visitors does not send a burst of emails
