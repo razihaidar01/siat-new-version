@@ -27,6 +27,7 @@ serve(async (req) => {
     const context = typeof body.context === "string" ? body.context.slice(0, 200) : "unknown";
     const detail = typeof body.detail === "string" ? body.detail.slice(0, 500) : "";
     const pageUrl = typeof body.pageUrl === "string" ? body.pageUrl.slice(0, 300) : "";
+    const forceTest = body.test === true;
 
     // Independently confirm the database really is unreachable before alerting
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
@@ -52,7 +53,7 @@ serve(async (req) => {
       }
     }
 
-    if (dbReachable) {
+    if (dbReachable && !forceTest) {
       return new Response(
         JSON.stringify({ alerted: false, reason: "database_healthy", dbStatus }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } },
