@@ -5,7 +5,8 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-const ALERT_EMAIL = "info.razihaidar@gmail.com";
+// Resend only delivers to the account owner until a domain is verified.
+const ALERT_EMAIL = "siatgroup.sws@gmail.com";
 const COOLDOWN_MS = 15 * 60 * 1000;
 
 // Per-instance throttle so a burst of visitors does not send a burst of emails
@@ -27,6 +28,7 @@ serve(async (req) => {
     const context = typeof body.context === "string" ? body.context.slice(0, 200) : "unknown";
     const detail = typeof body.detail === "string" ? body.detail.slice(0, 500) : "";
     const pageUrl = typeof body.pageUrl === "string" ? body.pageUrl.slice(0, 300) : "";
+    const forceTest = body.test === true;
 
     // Independently confirm the database really is unreachable before alerting
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
@@ -52,7 +54,7 @@ serve(async (req) => {
       }
     }
 
-    if (dbReachable) {
+    if (dbReachable && !forceTest) {
       return new Response(
         JSON.stringify({ alerted: false, reason: "database_healthy", dbStatus }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } },
@@ -60,7 +62,7 @@ serve(async (req) => {
     }
 
     const now = Date.now();
-    if (now - lastSentAt < COOLDOWN_MS) {
+    if (!forceTest && now - lastSentAt < COOLDOWN_MS) {
       return new Response(
         JSON.stringify({ alerted: false, reason: "cooldown" }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } },
