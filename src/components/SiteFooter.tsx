@@ -95,6 +95,15 @@ const SiteFooter = () => {
           </span>
         </div>
 
+        <div className="py-6 border-t border-background/10">
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-xs text-background/50">
+            <span>Reg. No. SH-6061 (Saharsa)</span>
+            <span>UDYAM-BR-29-0035052</span>
+            <span>GSTN 10AGQPA2133G1Z4</span>
+            <span>GeM Seller ID YD6U260014809187</span>
+          </div>
+        </div>
+
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-background/10 text-xs text-background/40">
           <p>© {new Date().getFullYear()} SIAT. All rights reserved. Director: Md Parwez Alam</p>
           <div className="flex gap-6">

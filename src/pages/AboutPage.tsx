@@ -1,8 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, Eye, Users, Award, Building2, ShieldCheck } from "lucide-react";
+import { Target, Eye, Users, Award, Building2, ShieldCheck, FileText, BadgeCheck, ShoppingCart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+
+const registrations = [
+  { icon: Building2, title: "Reg. No.", value: "SH-6061 (Saharsa)" },
+  { icon: BadgeCheck, title: "UDYAM", value: "UDYAM-BR-29-0035052" },
+  { icon: FileText, title: "GST", value: "10AGQPA2133G1Z4" },
+  { icon: ShoppingCart, title: "GeM", value: "YD6U260014809187" },
+];
 
 const AboutPage = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -79,6 +86,31 @@ const AboutPage = () => {
                 </div>
                 <h3 className="font-display font-bold text-foreground mb-1">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Government Registrations */}
+      <section className="section-padding bg-background">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-display font-black text-foreground mb-4">
+              Registered & <span className="gradient-text">Compliant</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              SIAT is officially registered for government projects, marketplace services, and tax compliance across India.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {registrations.map((reg) => (
+              <div key={reg.title} className="glass-card p-6 text-center">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <reg.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-bold text-foreground mb-1">{reg.title}</h3>
+                <p className="text-sm font-semibold text-primary">{reg.value}</p>
               </div>
             ))}
           </div>
