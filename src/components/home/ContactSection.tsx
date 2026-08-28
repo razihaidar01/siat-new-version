@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { Send, MapPin, Phone, Mail, FileText, BadgeCheck, Building2, ShoppingCart } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
