@@ -1,8 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Target, Eye, Users, Award, Building2, ShieldCheck } from "lucide-react";
+import { Target, Eye, Users, Award, Building2, ShieldCheck, FileText, BadgeCheck, ShoppingCart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+
+const registrations = [
+  { icon: Building2, title: "Reg. No.", value: "SH-6061 (Saharsa)" },
+  { icon: BadgeCheck, title: "UDYAM", value: "UDYAM-BR-29-0035052" },
+  { icon: FileText, title: "GST", value: "10AGQPA2133G1Z4" },
+  { icon: ShoppingCart, title: "GeM", value: "YD6U260014809187" },
+];
 
 const AboutPage = () => {
   const ref = useRef<HTMLDivElement>(null);
