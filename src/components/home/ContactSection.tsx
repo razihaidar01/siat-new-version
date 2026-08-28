@@ -199,6 +199,27 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground mt-1">siat.sws@gmail.com</p>
                 </div>
               </div>
+              <div className="pt-4 border-t border-border/50 space-y-3">
+                <h4 className="font-display font-bold text-foreground text-sm">Registrations & Compliance</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>Reg. No. SH-6061</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <BadgeCheck className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>UDYAM-BR-29-0035052</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>GSTN 10AGQPA2133G1Z4</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ShoppingCart className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>GeM YD6U260014809187</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="glass-card overflow-hidden h-[280px]">
