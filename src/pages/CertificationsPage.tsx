@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Award, Shield, CheckCircle } from "lucide-react";
+import { Award, Shield, CheckCircle, FileText, Building2, ShoppingCart, BadgeCheck } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const certs = [
@@ -8,6 +8,13 @@ const certs = [
   { title: "NSDC Registration", desc: "National Skill Development Corporation registered training partner for government skill programs." },
   { title: "Skill India Partner", desc: "Official partner under Skill India Mission for vocational training and skill development." },
   { title: "Bihar Skill Development Mission", desc: "Empanelled with Bihar government for state-level skill training programs." },
+];
+
+const registrations = [
+  { icon: Building2, title: "Registration No.", value: "SH-6061 (Saharsa)" },
+  { icon: BadgeCheck, title: "UDYAM Registration", value: "UDYAM-BR-29-0035052" },
+  { icon: FileText, title: "GST Number", value: "10AGQPA2133G1Z4" },
+  { icon: ShoppingCart, title: "GeM Seller ID", value: "YD6U260014809187" },
 ];
 
 const CertificationsPage = () => (
