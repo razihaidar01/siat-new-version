@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { getSiatPageSeo } from "@/lib/siatSeo";
 
 interface SEOHeadProps {
   title: string;
