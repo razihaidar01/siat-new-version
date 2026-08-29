@@ -54,7 +54,7 @@ const SEOHead = ({
 
     // Standard meta
     setMeta("name", "description", description);
-    if (keywords) setMeta("name", "keywords", keywords);
+    if (finalKeywords) setMeta("name", "keywords", finalKeywords);
     setMeta(
       "name",
       "robots",
@@ -92,11 +92,11 @@ const SEOHead = ({
     link.setAttribute("href", fullCanonical);
 
     // ✅ FIX 3: Schema / JSON-LD injection (was completely missing before)
-    if (schema) {
+    if (finalSchema) {
       const schemaId = "seohead-schema";
       const existing = document.getElementById(schemaId);
       if (existing) existing.remove();
-      const schemas = Array.isArray(schema) ? schema : [schema];
+      const schemas = Array.isArray(finalSchema) ? finalSchema : [finalSchema];
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.id = schemaId;
@@ -116,7 +116,7 @@ const SEOHead = ({
       const s = document.getElementById("seohead-schema");
       if (s) s.remove();
     };
-  }, [fullTitle, description, keywords, fullCanonical, fullOgImage, type, noIndex, schema, pathname]);
+  }, [fullTitle, description, finalKeywords, fullCanonical, fullOgImage, type, noIndex, finalSchema, pathname]);
 
   return null;
 };
