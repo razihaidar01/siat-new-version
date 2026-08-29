@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, X, Sparkles, ArrowUpRight, ChevronDown, MessageCircle, Building2, Rocket, Layers } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
-import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb } from "@/lib/rhSeo";
+import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb, rhFaqSchema } from "@/lib/rhSeo";
 
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
   const ref = useRef(null);
