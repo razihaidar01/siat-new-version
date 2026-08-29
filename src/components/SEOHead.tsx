@@ -29,6 +29,12 @@ const SEOHead = ({
   const fullCanonical = canonical || `${BASE_URL}${pathname}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
 
+  // Advanced per-route SEO layer: keywords + JSON-LD (Breadcrumb, Service, Course).
+  // Page-level props always win; the map fills whatever a page didn't supply.
+  const routeSeo = getSiatPageSeo(pathname);
+  const finalKeywords = keywords ?? routeSeo?.keywords;
+  const finalSchema = schema ?? routeSeo?.schema;
+
   // ✅ FIX 1: Clean title — no ugly "Saharsa Institute of Advance Technology" suffix
   // Just use the title as-is (all page titles already include "SIAT" or "RH Software")
   const fullTitle = title;
