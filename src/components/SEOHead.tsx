@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { getSiatPageSeo } from "@/lib/siatSeo";
 
 interface SEOHeadProps {
   title: string;
@@ -28,6 +29,12 @@ const SEOHead = ({
   const fullCanonical = canonical || `${BASE_URL}${pathname}`;
   const fullOgImage = ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`;
 
+  // Advanced per-route SEO layer: keywords + JSON-LD (Breadcrumb, Service, Course).
+  // Page-level props always win; the map fills whatever a page didn't supply.
+  const routeSeo = getSiatPageSeo(pathname);
+  const finalKeywords = keywords ?? routeSeo?.keywords;
+  const finalSchema = schema ?? routeSeo?.schema;
+
   // ✅ FIX 1: Clean title — no ugly "Saharsa Institute of Advance Technology" suffix
   // Just use the title as-is (all page titles already include "SIAT" or "RH Software")
   const fullTitle = title;
@@ -47,7 +54,7 @@ const SEOHead = ({
 
     // Standard meta
     setMeta("name", "description", description);
-    if (keywords) setMeta("name", "keywords", keywords);
+    if (finalKeywords) setMeta("name", "keywords", finalKeywords);
     setMeta(
       "name",
       "robots",
@@ -85,11 +92,11 @@ const SEOHead = ({
     link.setAttribute("href", fullCanonical);
 
     // ✅ FIX 3: Schema / JSON-LD injection (was completely missing before)
-    if (schema) {
+    if (finalSchema) {
       const schemaId = "seohead-schema";
       const existing = document.getElementById(schemaId);
       if (existing) existing.remove();
-      const schemas = Array.isArray(schema) ? schema : [schema];
+      const schemas = Array.isArray(finalSchema) ? finalSchema : [finalSchema];
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.id = schemaId;
@@ -109,7 +116,7 @@ const SEOHead = ({
       const s = document.getElementById("seohead-schema");
       if (s) s.remove();
     };
-  }, [fullTitle, description, keywords, fullCanonical, fullOgImage, type, noIndex, schema, pathname]);
+  }, [fullTitle, description, finalKeywords, fullCanonical, fullOgImage, type, noIndex, finalSchema, pathname]);
 
   return null;
 };
