@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- ===== CORE PAGES ===== -->
   <url><loc>https://www.siat.in/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
@@ -365,13 +366,6 @@
   <url><loc>https://www.siat.in/bihar/sheikhpura/training</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 
-  <!-- RH Software dedicated service pages -->
-  <url><loc>https://www.siat.in/rhsoftware/website-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/app-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/ai-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/software-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/erp-crm-development</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-
   <!-- Blog posts -->
   <url><loc>https://www.siat.in/rhsoftware/blog/best-website-developer-saharsa-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.siat.in/rhsoftware/blog/website-development-cost-bihar-2025</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -382,7 +376,145 @@
   <url><loc>https://www.siat.in/rhsoftware/blog/gmp-certification-bihar-food-pharma</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.siat.in/rhsoftware/blog/company-registration-bihar-pvt-ltd-llp</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://www.siat.in/rhsoftware/blog/seo-website-ranking-bihar-hindi-guide</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/blog/web-designer-darbhanga-bhagalpur-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/web-designer-purnia-supaul-katihar-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.83</priority></url>
   <url><loc>https://www.siat.in/rhsoftware/blog/ai-development-company-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
-  <url><loc>https://www.siat.in/rhsoftware/blog/best-software-company-supaul-bihar</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/blog/trademark-registration-bihar-brand-protection</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- ===== RH SOFTWARE — CITY LANDING PAGES (EN + HI) ===== -->
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/patna</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/patna"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/patna/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/patna"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/patna/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/patna"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/patna/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/patna"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/saharsa</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/saharsa"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/saharsa/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/saharsa"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/saharsa/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/saharsa"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/saharsa/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/saharsa"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/madhepura</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/madhepura"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/madhepura/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/madhepura"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/madhepura/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/madhepura"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/madhepura/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/madhepura"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/purnea</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/purnea"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/purnea/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/purnea"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/purnea/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/purnea"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/purnea/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/purnea"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/supaul</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/supaul"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/supaul/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/supaul"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/supaul/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/supaul"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/supaul/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/supaul"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/darbhanga</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/darbhanga"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/darbhanga/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/darbhanga"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/darbhanga/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/darbhanga"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/darbhanga/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/darbhanga"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/katihar</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/katihar"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/katihar/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/katihar"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/katihar/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/katihar"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/katihar/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/katihar"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/bhagalpur</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/bhagalpur"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/bhagalpur/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/bhagalpur"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/bhagalpur/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/bhagalpur"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/bhagalpur/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/bhagalpur"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/muzaffarpur</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.siat.in/rhsoftware/bihar/muzaffarpur/hi</loc>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur/hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siat.in/rhsoftware/bihar/muzaffarpur"/>
+    <lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
+  </url>
+
+  <!-- ===== RH SOFTWARE — CASE STUDIES ===== -->
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/medicore-hospital-management-system</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/edunova-lms-platform</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/fleetiq-tracker-iot</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/banking-ai-assistant</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/lumora-analytics-saas</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/kasa-realty-platform</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/shopswift-mobile-commerce</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.siat.in/rhsoftware/portfolio/inventiq-inventory-saas</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

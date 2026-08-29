@@ -3,7 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, X, Sparkles, ArrowUpRight, ChevronDown, MessageCircle, Building2, Rocket, Layers } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
-import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb } from "@/lib/rhSeo";
+import { RH_BASE_URL, rhOrganizationSchema, rhBreadcrumb, rhFaqSchema } from "@/lib/rhSeo";
 
 const FadeUp = ({ children, delay = 0, className = "" }: any) => {
   const ref = useRef(null);
@@ -324,8 +324,8 @@ const RHPricingPage = () => {
   useSEO({
     title: "Pricing | RH Software — Web, App & SaaS Development Cost in Bihar",
     description:
-      "Transparent pricing for website, mobile app and SaaS development across Bihar. Launch from ₹60k, Scale plan ₹2.5L+, custom Enterprise engagements. Trusted by clients in Patna, Saharsa, Madhepura, Purnia & all Bihar.",
-    keywords: "website cost bihar, app development cost patna, software pricing bihar, RH Software pricing, software development cost saharsa",
+      "Transparent pricing for website, mobile app and SaaS development across Bihar. Launch plan from ₹14,999, Scale plan from ₹49,999, custom Enterprise engagements. Trusted by clients in Patna, Saharsa, Madhepura, Purnia & all Bihar.",
+    keywords: "website cost bihar, website development price bihar, app development cost patna, software pricing bihar, RH Software pricing, software development cost saharsa, website ka kharcha bihar",
     canonical: `${RH_BASE_URL}/rhsoftware/pricing`,
     schema: [
       rhOrganizationSchema,
@@ -334,6 +334,42 @@ const RHPricingPage = () => {
         { name: "RH Software", url: `${RH_BASE_URL}/rhsoftware` },
         { name: "Pricing", url: `${RH_BASE_URL}/rhsoftware/pricing` },
       ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        "@id": `${RH_BASE_URL}/rhsoftware/pricing#offers`,
+        name: "RH Software Development Pricing",
+        url: `${RH_BASE_URL}/rhsoftware/pricing`,
+        provider: { "@id": `${RH_BASE_URL}/rhsoftware#organization` },
+        itemListElement: [
+          {
+            "@type": "Offer",
+            name: "Launch — Website Development",
+            description: "Premium landing or marketing site with SEO setup, analytics and 1 month support.",
+            price: "14999",
+            priceCurrency: "INR",
+            url: `${RH_BASE_URL}/rhsoftware/pricing`,
+            itemOffered: { "@type": "Service", name: "Website Development" },
+          },
+          {
+            "@type": "Offer",
+            name: "Scale — Custom Web Application",
+            description: "Full custom web application with admin dashboard, auth, database, API design and 3 months priority support.",
+            price: "49999",
+            priceCurrency: "INR",
+            url: `${RH_BASE_URL}/rhsoftware/pricing`,
+            itemOffered: { "@type": "Service", name: "Web Application Development" },
+          },
+          {
+            "@type": "Offer",
+            name: "Enterprise — Custom Software Architecture",
+            description: "Multi-tenant SaaS, AI/ML integration, native apps and a dedicated engineering team. Priced per engagement.",
+            url: `${RH_BASE_URL}/rhsoftware/pricing`,
+            itemOffered: { "@type": "Service", name: "Enterprise Software Development" },
+          },
+        ],
+      },
+      rhFaqSchema(faqs),
     ],
   });
 
