@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Search, CheckCircle, XCircle, ShieldCheck, Download } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { reportBackendDown } from "@/lib/backendAlert";
+import { getPinnedCertificate } from "@/data/pinnedCertificates";
 
 import siatLogo from "@/assets/siat-logo.png";
 
@@ -48,14 +49,22 @@ const VerifyCertificatePage = () => {
       response = await lookupCertificate();
     }
 
+    const pinned = getPinnedCertificate(num);
+
     if (response.error) {
       reportBackendDown("Certificate verification", response.error.message);
+      if (pinned) {
+        // Critical certificate — always verifiable, even if the cloud is paused.
+        setResult(pinned);
+        setLoading(false);
+        return;
+      }
       setLookupError("Certificate service is temporarily unavailable. Please try again in a moment.");
       setLoading(false);
       return;
     }
 
-    const data = response.data;
+    const data = response.data || pinned;
 
     setResult(data);
 
