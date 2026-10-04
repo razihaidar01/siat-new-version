@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import KageLandingPage from "@designcodeio/threeui/components/KageLandingPage";
+import { KageLandingPage } from "@designcodeio/threeui/components/KageLandingPage";
 import "@designcodeio/threeui/style.css";
 import "@/styles/rh-theme.css";
 import rhLogo from "@/assets/rh-logo.png";
