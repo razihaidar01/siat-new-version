@@ -25,6 +25,7 @@ import VerifyCertificatePage from "./pages/VerifyCertificatePage";
 import GalleryPage from "./pages/GalleryPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPanelPage from "./pages/AdminPanelPage";
+import RHKageHomePage from "./pages/RHKageHomePage";
 import RHSoftwarePage from "./pages/RHSoftwarePage";
 import RHServicesPage from "./pages/RHServicesPage";
 import RHPricingPage from "./pages/RHPricingPage";
