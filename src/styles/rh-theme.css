@@ -162,6 +162,21 @@
 .rh-text-muted { color: var(--rh-text-muted); }
 .rh-text-dim   { color: var(--rh-text-dim); }
 
+/* ---------- Kage landing frame (ThreeUI) ---------- */
+.shader-frame {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #080808;
+}
+.shader-frame .threeui-background,
+.shader-frame .landing-page-frame {
+  width: 100%;
+  height: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rh-root *,
   .rh-root *::before,
