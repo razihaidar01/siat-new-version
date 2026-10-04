@@ -651,7 +651,7 @@ const RHSoftwarePage = () => {
       "RH Software (by SIAT) — Bihar's #1 software company. Best website developer, app developer & AI development company in Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga & all Bihar. 40+ products shipped. Get a free quote.",
     keywords:
       "RH Software, best software company in Bihar, website developer in Bihar, app developer in Patna, AI development company Bihar, software company Saharsa, software company Madhepura, website banane wali company Bihar, वेबसाइट डेवलपर बिहार, ऐप डेवलपर पटना, सॉफ्टवेयर कंपनी बिहार",
-    canonical: `${RH_BASE_URL}/rhsoftware`,
+    canonical: `${RH_BASE_URL}/rhsoftware/studio`,
     ogType: "website",
     schema: [
       rhOrganizationSchema,

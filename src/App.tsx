@@ -159,10 +159,13 @@ const App = () => (
           <Route path="/staff" element={<StaffLandingPage />} />
           <Route path="/staff/:employeeId" element={<StaffProfilePage />} />
 
+          {/* RH Software — Kage landing experience (standalone full-screen) */}
+          <Route path="/rhsoftware" element={<RHKageHomePage />} />
+          <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
+
           {/* RH Software — separate dark-themed layout */}
           <Route element={<RHLayout />}>
-            <Route path="/rhsoftware" element={<RHSoftwarePage />} />
-            <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
+            <Route path="/rhsoftware/studio" element={<RHSoftwarePage />} />
             <Route path="/rhsoftware/services" element={<RHServicesPage />} />
             <Route path="/rhsoftware/website-development-company-bihar" element={<WebDevelopmentPage />} />
             <Route path="/rhsoftware/app-development-company-bihar" element={<AppDevelopmentPage />} />
