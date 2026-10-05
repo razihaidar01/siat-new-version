@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -114,27 +115,9 @@ const faqs = [
 
 /* ------------------------------------------------------------------ */
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10">
-    <div className="max-w-7xl mx-auto text-center">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Pricing</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] mx-auto max-w-3xl">
-          Honest pricing,{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            engineered to scale.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-5 text-[16px] md:text-[17px] rh-text-muted max-w-2xl mx-auto leading-relaxed">
-          Three engagement models. No hidden fees. Pick the one that matches your stage —
-          we'll only recommend up if your roadmap genuinely needs it.
-        </p>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="04 / ENGAGEMENTS" eyebrow="Pricing"
+    title={<> Honest pricing, <span className="rh-cinematic-title-line">engineered to scale.</span></>}
+    description="Three engagement models. No hidden fees. Pick the one that matches your stage \u2014 we'll only recommend up if your roadmap genuinely needs it." />
 );
 
 /* ------------------------------------------------------------------ */

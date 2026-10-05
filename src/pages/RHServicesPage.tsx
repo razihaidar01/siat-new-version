@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -105,37 +106,9 @@ const allServices: Service[] = [
 
 /* ------------------------------------------------------------------ */
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10 relative">
-    <div className="max-w-7xl mx-auto">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Our services</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-          Six engineering disciplines.{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            One studio shipping outcomes.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-          Strategy, design and engineering live in the same room. No outsourced black box —
-          you talk to the people building your product.
-        </p>
-      </FadeUp>
-      <FadeUp delay={0.18}>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">
-            Book a strategy call <ArrowUpRight className="w-4 h-4" />
-          </Link>
-          <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-ghost">
-            See our work
-          </Link>
-        </div>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="02 / CAPABILITIES" eyebrow="Our services"
+    title={<> Six engineering disciplines. <span className="rh-cinematic-title-line">One studio shipping outcomes.</span></>}
+    description="Strategy, design and engineering live in the same room. No outsourced black box \u2014 you talk to the people building your product." />
 );
 
 /* ------------------------------------------------------------------ */

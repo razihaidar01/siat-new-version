@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 /**
  * RHBlogPage.tsx — COMPLETE REPLACEMENT
  * File: src/pages/RHBlogPage.tsx
@@ -101,26 +102,9 @@ const allCategories = ["All", "Web Development", "Mobile", "AI", "Certification"
 
 /* ─────────────────────────────────── */
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-10 px-6 md:px-10">
-    <div className="max-w-7xl mx-auto">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Bihar Tech Insights & Guides</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-          Guides for{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            Bihar businesses.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-          Practical guides on websites, apps, AI, ISO certification, MSME registration and more — written for businesses in Saharsa, Madhepura, Purnia, Supaul and all of Bihar.
-        </p>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="05 / JOURNAL" eyebrow="Bihar Tech Insights & Guides"
+    title={<> Guides for <span className="rh-cinematic-title-line">Bihar businesses.</span></>}
+    description="Practical guides on websites, apps, AI, ISO certification, MSME registration and more \u2014 written for businesses in Saharsa, Madhepura, Purnia, Supaul and all of Bihar." />
 );
 
 /* ─── SEO Post Card (for Bihar keyword posts) ─── */

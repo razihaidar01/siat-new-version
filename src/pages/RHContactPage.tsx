@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import {
@@ -125,31 +126,9 @@ const RHContactPage = () => {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-10 md:pt-16 pb-10 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto">
-          <FadeUp>
-            <span className="rh-eyebrow">
-              <span className="dot" />
-              Available for projects · Q3 2026
-            </span>
-          </FadeUp>
-          <FadeUp delay={0.06}>
-            <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-              Let's build something{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-                people actually use.
-              </span>
-            </h1>
-          </FadeUp>
-          <FadeUp delay={0.12}>
-            <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-              Tell us about your project. You'll hear back from a senior engineer within a few hours
-              with concrete next steps — not a sales pitch.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
+      <RHCinematicHero chapter="06 / START A CONVERSATION" eyebrow="Available for projects"
+        title={<>Let's build something<span className="rh-cinematic-title-line">people actually use.</span></>}
+        description="Tell us what you're building. We'll come back with a clear roadmap, a price, and a next step." />
 
       <section className="px-6 md:px-10 pb-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 items-start">

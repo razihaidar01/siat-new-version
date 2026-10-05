@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -171,27 +172,9 @@ const projects: Project[] = [
 
 /* ------------------------------------------------------------------ */
 const Hero = ({ count }: { count: number }) => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10">
-    <div className="max-w-7xl mx-auto">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Selected work</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-          Real products,{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            real outcomes.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-          {count}+ shipped products across SaaS, AI, mobile, healthcare, fintech and logistics.
-          Each one built to move a business metric.
-        </p>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="03 / SELECTED WORK" eyebrow="Selected work"
+    title={<> Real products, <span className="rh-cinematic-title-line">real outcomes.</span></>}
+    description={`${count}+ shipped products across SaaS, AI, mobile, healthcare, fintech and logistics. Each one built to move a business metric.`} />
 );
 
 /* ------------------------------------------------------------------ */

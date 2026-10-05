@@ -15,6 +15,8 @@ import {
   rhBreadcrumb,
   rhFaqSchema,
 } from "@/lib/rhSeo";
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
+import { Button } from "@/components/ui/button";
 import raziHaidarImg from "@/assets/razi-haidar-founder.jpg";
 
 /* ============================================================
@@ -68,88 +70,19 @@ const SectionHead = ({
    HERO — Bento composition
    ============================================================ */
 
-const Hero = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
-  return (
-    <section ref={ref} className="relative pt-10 md:pt-16 pb-16 md:pb-24 px-6 md:px-10">
-      {/* Soft hero aurora — single, restrained layer */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(800px 380px at 20% 10%, rgba(124,58,237,0.22), transparent 65%), radial-gradient(700px 320px at 85% 30%, rgba(34,211,238,0.10), transparent 65%)",
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto">
-        <motion.div style={{ y }} className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
-          {/* LEFT — copy */}
-          <div className="lg:col-span-6">
-            <FadeUp>
-              <span className="rh-eyebrow">
-                <span className="dot" />
-                Engineering Studio · Available for projects
-              </span>
-            </FadeUp>
-
-            <FadeUp delay={0.06}>
-              <h1 className="mt-6 text-[42px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em]">
-                Software that{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#C4B5FD] to-[#22D3EE]">
-                  scales businesses
-                </span>{" "}
-                <span className="rh-text-dim italic font-normal">— not just websites.</span>
-              </h1>
-            </FadeUp>
-
-            <FadeUp delay={0.12}>
-              <p className="mt-6 text-[16px] md:text-[17px] leading-relaxed rh-text-muted max-w-[560px]">
-                We're a product engineering studio shipping production-grade SaaS,
-                AI systems, mobile apps, and internal automation for ambitious
-                teams across India and beyond.
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.18}>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-primary">
-                  See our work <ArrowUpRight className="w-4 h-4" />
-                </Link>
-                <Link to="/rhsoftware/contact" className="rh-btn rh-btn-ghost">
-                  Book a strategy call
-                </Link>
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.24}>
-              <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
-                {[
-                  { k: "40+", v: "Products shipped" },
-                  { k: "10k+", v: "End users served" },
-                  { k: "99.9%", v: "Uptime delivered" },
-                ].map((s) => (
-                  <div key={s.v}>
-                    <div className="text-[24px] md:text-[28px] font-semibold tracking-tight text-white">{s.k}</div>
-                    <div className="text-[12px] rh-text-dim mt-0.5 leading-tight">{s.v}</div>
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-          </div>
-
-          {/* RIGHT — Bento mockup composition */}
-          <div className="lg:col-span-6">
-            <BentoMockups />
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+const Hero = () => (
+  <RHCinematicHero home chapter="01 / THE STUDIO" eyebrow="Engineering Studio · Available for projects"
+    title={<>RH Software<span className="rh-cinematic-title-line">Software that scales businesses.</span></>}
+    description="We're a product engineering studio shipping production-grade SaaS, AI systems, mobile apps, and internal automation for ambitious teams across India and beyond.">
+    <div className="flex flex-wrap gap-3">
+      <Button asChild className="rh-btn rh-btn-primary"><Link to="/rhsoftware/portfolio">See our work <ArrowUpRight /></Link></Button>
+      <Button asChild variant="outline" className="rh-btn rh-btn-ghost"><Link to="/rhsoftware/contact">Book a strategy call</Link></Button>
+    </div>
+    <div className="rh-hero-stats">
+      {[{k:"40+",v:"Products shipped"},{k:"10k+",v:"End users served"},{k:"99.9%",v:"Uptime delivered"}].map(s => <div key={s.v}><strong>{s.k}</strong><span>{s.v}</span></div>)}
+    </div>
+  </RHCinematicHero>
+);
 
 /* Realistic faux product mockups (no images, all CSS) */
 const BentoMockups = () => {
@@ -651,7 +584,7 @@ const RHSoftwarePage = () => {
       "RH Software (by SIAT) — Bihar's #1 software company. Best website developer, app developer & AI development company in Patna, Saharsa, Madhepura, Purnia, Supaul, Darbhanga & all Bihar. 40+ products shipped. Get a free quote.",
     keywords:
       "RH Software, best software company in Bihar, website developer in Bihar, app developer in Patna, AI development company Bihar, software company Saharsa, software company Madhepura, website banane wali company Bihar, वेबसाइट डेवलपर बिहार, ऐप डेवलपर पटना, सॉफ्टवेयर कंपनी बिहार",
-    canonical: `${RH_BASE_URL}/rhsoftware/studio`,
+    canonical: `${RH_BASE_URL}/rhsoftware`,
     ogType: "website",
     schema: [
       rhOrganizationSchema,
@@ -686,6 +619,7 @@ const RHSoftwarePage = () => {
     <>
       <Hero />
       <Trust />
+      <Section><div className="grid lg:grid-cols-2 items-center gap-12"><SectionHead eyebrow="Product engineering" title="Software that scales businesses" accent="— not just websites." /><BentoMockups /></div></Section>
       <Services />
       <Portfolio />
       <Process />
