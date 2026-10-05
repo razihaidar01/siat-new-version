@@ -51,18 +51,19 @@ const RHCaseStudyPage = () => {
   });
 
   return (
-    <div className="px-6 md:px-10 py-12 md:py-16">
+    <div className="px-6 md:px-10 py-0">
       <div className="max-w-5xl mx-auto">
+        <div className="rh-detail-intro">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-[12px] text-white/40 mb-8 flex-wrap">
-          <Link to="/rhsoftware" className="hover:text-white/70">RH Software</Link>
+        <nav className="flex items-center gap-2 text-[12px] text-foreground/40 mb-8 flex-wrap">
+          <Link to="/rhsoftware" className="hover:text-foreground/70">RH Software</Link>
           <ChevronRight className="w-3 h-3" />
-          <Link to="/rhsoftware/portfolio" className="hover:text-white/70">Portfolio</Link>
+          <Link to="/rhsoftware/portfolio" className="hover:text-foreground/70">Portfolio</Link>
           <ChevronRight className="w-3 h-3" />
-          <span className="text-white/70">{project.title}</span>
+          <span className="text-foreground/70">{project.title}</span>
         </nav>
 
-        <Link to="/rhsoftware/portfolio" className="inline-flex items-center gap-1.5 text-[13px] text-white/50 hover:text-white mb-6">
+        <Link to="/rhsoftware/portfolio" className="inline-flex items-center gap-1.5 text-[13px] text-foreground/50 hover:text-foreground mb-6">
           <ArrowLeft className="w-3.5 h-3.5" /> All case studies
         </Link>
 
@@ -77,8 +78,9 @@ const RHCaseStudyPage = () => {
         </motion.h1>
         <p className="mt-5 text-[16px] md:text-[18px] rh-text-muted max-w-3xl leading-relaxed">{project.outcome}</p>
 
+        </div>
         {/* Hero image */}
-        <div className="relative mt-10 rounded-2xl overflow-hidden border border-white/[0.06] aspect-[16/9]">
+        <div className="relative mt-10 rounded-md overflow-hidden border border-foreground/[0.06] aspect-[16/9]">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-20`} />
           <img src={project.image} alt={`${project.title} — ${project.industry} project by RH Software`} loading="lazy" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity" />
         </div>
@@ -108,9 +110,9 @@ const RHCaseStudyPage = () => {
             <p className="mt-3 rh-text-muted leading-relaxed text-[15.5px] max-w-3xl">{project.outcome}</p>
             <ul className="mt-5 grid sm:grid-cols-2 gap-2 max-w-2xl">
               {project.metrics.map((m) => (
-                <li key={m.label} className="flex items-center gap-2 text-[14px] text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>{m.label}: <span className="font-semibold text-white">{m.value}</span></span>
+                <li key={m.label} className="flex items-center gap-2 text-[14px] text-foreground/80">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span>{m.label}: <span className="font-semibold text-foreground">{m.value}</span></span>
                 </li>
               ))}
             </ul>
@@ -119,7 +121,7 @@ const RHCaseStudyPage = () => {
             <h2 className="text-[22px] md:text-[26px] font-semibold tracking-tight">Tech stack</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((t) => (
-                <span key={t} className="text-[12.5px] px-3 py-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] text-white/75">{t}</span>
+                <span key={t} className="text-[12.5px] px-3 py-1.5 rounded-md border border-foreground/[0.08] bg-foreground/[0.03] text-foreground/75">{t}</span>
               ))}
             </div>
           </section>

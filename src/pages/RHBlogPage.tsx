@@ -44,18 +44,18 @@ type Post = {
 
 /* ── Gradient map for SEO posts ── */
 const GRAD_BG: Record<string, string> = {
-  "from-indigo-500 to-purple-600": "linear-gradient(135deg, #6366f1, #9333ea)",
-  "from-cyan-500 to-blue-600": "linear-gradient(135deg, #06b6d4, #2563eb)",
-  "from-emerald-500 to-teal-600": "linear-gradient(135deg, #10b981, #0d9488)",
-  "from-yellow-500 to-orange-500": "linear-gradient(135deg, #eab308, #f97316)",
-  "from-blue-500 to-cyan-500": "linear-gradient(135deg, #3b82f6, #06b6d4)",
-  "from-green-500 to-emerald-600": "linear-gradient(135deg, #22c55e, #059669)",
-  "from-violet-500 to-purple-700": "linear-gradient(135deg, #8b5cf6, #7e22ce)",
-  "from-orange-500 to-red-600": "linear-gradient(135deg, #f97316, #dc2626)",
-  "from-indigo-500 to-blue-700": "linear-gradient(135deg, #6366f1, #1d4ed8)",
-  "from-blue-600 to-indigo-700": "linear-gradient(135deg, #2563eb, #4338ca)",
-  "from-pink-500 to-rose-600": "linear-gradient(135deg, #ec4899, #e11d48)",
-  "from-purple-500 to-pink-600": "linear-gradient(135deg, #a855f7, #db2777)",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-violet-500 to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
 };
 
 /* ── Convert blogPosts to unified Post type ── */
@@ -115,16 +115,16 @@ const SEOPostCard = ({ p, i, featured = false }: { p: Post; i: number; featured?
         {/* Gradient header */}
         <div
           className={`relative overflow-hidden flex-shrink-0 ${featured ? "md:w-2/5 min-h-[200px]" : "h-40"}`}
-          style={{ background: GRAD_BG[p.grad || ""] || "linear-gradient(135deg, #6366f1, #9333ea)" }}
+          style={{ background: GRAD_BG[p.grad || ""] || "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))" }}
         >
           {/* Grid pattern overlay */}
           <div className="absolute inset-0 opacity-20"
-            style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.15) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
-          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-[0.15em] text-white font-medium">
+            style={{ backgroundImage: "linear-gradient(hsl(var(--foreground) / 0.15) 1px,transparent 1px),linear-gradient(90deg,hsl(var(--foreground) / 0.15) 1px,transparent 1px)", backgroundSize: "24px 24px" }} />
+          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-foreground/15 backdrop-blur-md border border-foreground/20 text-[10px] uppercase tracking-[0.15em] text-foreground font-medium">
             {p.category}
           </span>
           {/* Bihar badge */}
-          <span className="absolute bottom-3 right-3 flex items-center gap-1 text-[10px] text-white/70">
+          <span className="absolute bottom-3 right-3 flex items-center gap-1 text-[10px] text-foreground/70">
             <MapPin className="w-2.5 h-2.5" /> Bihar
           </span>
         </div>
@@ -134,13 +134,13 @@ const SEOPostCard = ({ p, i, featured = false }: { p: Post; i: number; featured?
             <span>·</span>
             <Clock className="w-3 h-3" /> {p.readTime}
           </div>
-          <h2 className={`font-semibold tracking-tight leading-snug group-hover:text-[#C4B5FD] transition-colors ${featured ? "text-[22px] md:text-[28px]" : "text-[16px]"}`}>
+          <h2 className={`font-semibold tracking-tight leading-snug group-hover:text-primary transition-colors ${featured ? "text-[22px] md:text-[28px]" : "text-[16px]"}`}>
             {p.title}
           </h2>
           <p className="rh-text-muted text-[13px] mt-2 leading-relaxed line-clamp-2 flex-1">{p.excerpt}</p>
-          <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
-            <span className="text-[11px] text-white/50">{p.author}</span>
-            <span className="flex items-center gap-1 text-[12px] font-medium text-[#C4B5FD] group-hover:text-white transition-colors">
+          <div className="mt-4 pt-3 border-t border-foreground/[0.05] flex items-center justify-between">
+            <span className="text-[11px] text-foreground/50">{p.author}</span>
+            <span className="flex items-center gap-1 text-[12px] font-medium text-primary group-hover:text-foreground transition-colors">
               Read <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </span>
           </div>
@@ -157,8 +157,8 @@ const TechPostCard = ({ p, i }: { p: Post; i: number }) => (
       <article className="rh-surface rh-card-hover overflow-hidden h-full flex flex-col cursor-pointer">
         <div className="relative h-44 overflow-hidden">
           <img src={p.image} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D12]/80 via-transparent to-transparent" />
-          <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.15em] text-white">
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 text-[10px] uppercase tracking-[0.15em] text-foreground">
             {p.category}
           </span>
         </div>
@@ -166,13 +166,13 @@ const TechPostCard = ({ p, i }: { p: Post; i: number }) => (
           <div className="flex items-center gap-2 text-[11px] rh-text-dim">
             <Calendar className="w-3 h-3" /> {p.date} · <Clock className="w-3 h-3" /> {p.readTime}
           </div>
-          <h3 className="text-[16px] font-semibold tracking-tight mt-2.5 leading-snug group-hover:text-[#C4B5FD] transition-colors">
+          <h3 className="text-[16px] font-semibold tracking-tight mt-2.5 leading-snug group-hover:text-primary transition-colors">
             {p.title}
           </h3>
           <p className="rh-text-muted text-[13px] mt-2 leading-relaxed line-clamp-2 flex-1">{p.excerpt}</p>
-          <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
-            <span className="text-[12px] text-white/50">{p.author}</span>
-            <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#C4B5FD] group-hover:translate-x-0.5 transition-all" />
+          <div className="mt-4 pt-3 border-t border-foreground/[0.05] flex items-center justify-between">
+            <span className="text-[12px] text-foreground/50">{p.author}</span>
+            <ArrowRight className="w-4 h-4 text-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
           </div>
         </div>
       </article>
@@ -234,8 +234,8 @@ const RHBlogPage = () => {
               <button key={c} onClick={() => setFilter(c)}
                 className={`px-4 py-2 rounded-full text-[13px] font-medium transition-all ${
                   filter === c
-                    ? "bg-white text-[#07070A]"
-                    : "border border-white/[0.1] bg-white/[0.03] text-white/65 hover:text-white hover:border-white/20"
+                    ? "bg-foreground text-background"
+                    : "border border-foreground/[0.1] bg-foreground/[0.03] text-foreground/65 hover:text-foreground hover:border-foreground/20"
                 }`}>
                 {c}
               </button>
@@ -252,7 +252,7 @@ const RHBlogPage = () => {
           {/* Rest of SEO posts grid */}
           {restSEO.length > 0 && (
             <>
-              <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 mb-5 flex items-center gap-2">
+              <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/40 mb-5 flex items-center gap-2">
                 <MapPin className="w-3 h-3" /> Bihar Business Guides
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
@@ -264,7 +264,7 @@ const RHBlogPage = () => {
           {/* Tech posts */}
           {techFiltered.length > 0 && (
             <>
-              <p className="text-[11px] uppercase tracking-[0.15em] text-white/40 mb-5">Engineering Insights</p>
+              <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/40 mb-5">Engineering Insights</p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {techFiltered.map((p, i) => <TechPostCard key={p.slug} p={p} i={i} />)}
               </div>
@@ -277,7 +277,7 @@ const RHBlogPage = () => {
       <section className="py-20 px-6 md:px-10">
         <div className="max-w-4xl mx-auto rh-surface p-10 md:p-14 text-center relative overflow-hidden">
           <div className="absolute inset-0 -z-10 opacity-50"
-            style={{ background: "radial-gradient(600px 280px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
+            style={{ background: "radial-gradient(600px 280px at 50% 0%, hsl(var(--primary) / 0.25), transparent 70%)" }} />
           <h2 className="text-[28px] md:text-[36px] font-semibold tracking-tight">
             Ready to build your Bihar business online?
           </h2>
@@ -288,7 +288,7 @@ const RHBlogPage = () => {
             <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">
               Get Free Quote <ArrowUpRight className="w-4 h-4" />
             </Link>
-            <Link to="/bihar/saharsa/website-development" className="rh-btn border border-white/15 text-white/80 hover:text-white hover:border-white/30 transition-all px-5 py-2.5 rounded-xl text-sm font-medium">
+            <Link to="/bihar/saharsa/website-development" className="rh-btn border border-foreground/15 text-foreground/80 hover:text-foreground hover:border-foreground/30 transition-all px-5 py-2.5 rounded-md text-sm font-medium">
               City Services
             </Link>
           </div>

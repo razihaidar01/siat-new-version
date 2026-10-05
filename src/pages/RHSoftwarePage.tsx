@@ -57,7 +57,7 @@ const SectionHead = ({
     <h2 className="text-[34px] md:text-[44px] leading-[1.05] font-semibold mt-5">
       {title}{" "}
       {accent && (
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
+        <span className="text-primary from-primary via-primary to-primary">
           {accent}
         </span>
       )}
@@ -110,7 +110,7 @@ const BentoMockups = () => {
               <div className="text-[11px] rh-text-dim uppercase tracking-wider">Monthly Revenue</div>
               <div className="text-[26px] md:text-[32px] font-semibold mt-1 tracking-tight">₹ 18,42,500</div>
             </div>
-            <div className="px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 font-medium">
+            <div className="px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-[11px] text-primary font-medium">
               ▲ 24.6%
             </div>
           </div>
@@ -119,8 +119,8 @@ const BentoMockups = () => {
           <svg viewBox="0 0 300 80" className="w-full h-20 mt-4">
             <defs>
               <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
+                <stop offset="0%" stopColor="var(--rh-accent)" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="var(--rh-accent)" stopOpacity="0" />
               </linearGradient>
             </defs>
             <path
@@ -129,7 +129,7 @@ const BentoMockups = () => {
             />
             <path
               d="M0,60 C30,55 50,30 80,35 C110,40 130,15 160,20 C190,25 215,55 240,40 C265,25 285,30 300,18"
-              fill="none" stroke="#A78BFA" strokeWidth="1.5"
+              fill="none" stroke="var(--rh-accent-light)" strokeWidth="1.5"
             />
           </svg>
 
@@ -139,7 +139,7 @@ const BentoMockups = () => {
               { l: "Conversion", v: "4.8%" },
               { l: "MRR growth", v: "+12.1%" },
             ].map((m) => (
-              <div key={m.l} className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-2.5">
+              <div key={m.l} className="rounded-lg border border-foreground/[0.06] bg-foreground/[0.02] p-2.5">
                 <div className="text-[10px] rh-text-dim">{m.l}</div>
                 <div className="text-[13px] font-semibold mt-0.5">{m.v}</div>
               </div>
@@ -154,10 +154,10 @@ const BentoMockups = () => {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="rh-surface col-span-3 row-span-2 p-3 relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
           <div className="relative flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#22D3EE] flex items-center justify-center">
-              <Smartphone className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary flex items-center justify-center">
+              <Smartphone className="w-4 h-4 text-foreground" />
             </div>
             <div>
               <div className="text-[11px] rh-text-dim">Mobile SDK</div>
@@ -166,7 +166,7 @@ const BentoMockups = () => {
           </div>
           <div className="mt-3 flex gap-1.5">
             {[40, 70, 55, 85, 60, 90].map((h, i) => (
-              <div key={i} className="flex-1 rounded-sm bg-white/[0.08]" style={{ height: 4 + h / 4 }} />
+              <div key={i} className="flex-1 rounded-sm bg-foreground/[0.08]" style={{ height: 4 + h / 4 }} />
             ))}
           </div>
         </motion.div>
@@ -179,7 +179,7 @@ const BentoMockups = () => {
           className="rh-surface col-span-3 row-span-2 p-3 relative overflow-hidden"
         >
           <div className="flex items-center gap-2 mb-2">
-            <Terminal className="w-3.5 h-3.5 text-[#22D3EE]" />
+            <Terminal className="w-3.5 h-3.5 text-primary" />
             <span className="text-[11px] rh-text-dim font-mono">deploy.sh</span>
           </div>
           <pre className="rh-code text-[11px] leading-[1.5] m-0">
@@ -207,15 +207,15 @@ const Trust = () => {
     "Cut cloud spend by 42%",
   ];
   return (
-    <section className="py-10 border-y border-white/[0.05] overflow-hidden">
+    <section className="py-10 border-y border-foreground/[0.05] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="text-[11px] rh-text-dim uppercase tracking-[0.18em] mb-6 text-center">
           Outcomes we've delivered for clients
         </div>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
           {items.map((i) => (
-            <div key={i} className="flex items-center gap-2 text-[13px] text-white/70">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+            <div key={i} className="flex items-center gap-2 text-[13px] text-foreground/70">
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
               {i}
             </div>
           ))}
@@ -245,8 +245,8 @@ const Services = () => (
       {services.map((s, i) => (
         <FadeUp key={s.title} delay={i * 0.04} className={s.span}>
           <div className="rh-surface rh-card-hover p-6 h-full">
-            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-5">
-              <s.icon className="w-5 h-5 text-[#A78BFA]" strokeWidth={1.7} />
+            <div className="w-10 h-10 rounded-md bg-foreground/[0.04] border border-foreground/[0.08] flex items-center justify-center mb-5">
+              <s.icon className="w-5 h-5 text-primary" strokeWidth={1.7} />
             </div>
             <h3 className="text-[18px] font-semibold tracking-tight">{s.title}</h3>
             <p className="text-[14px] rh-text-muted mt-2 leading-relaxed">{s.desc}</p>
@@ -267,28 +267,28 @@ const projects = [
     category: "Healthcare SaaS",
     outcome: "Digitized 15+ operational workflows",
     stack: ["Next.js", "Postgres", "Redis", "AWS"],
-    tone: "from-[#7C3AED] to-[#22D3EE]",
+    tone: "from-primary to-primary",
   },
   {
     title: "EduNova LMS",
     category: "EdTech Platform",
     outcome: "Scaled to 10,000 concurrent learners",
     stack: ["React", "Node", "Mux", "Supabase"],
-    tone: "from-[#22D3EE] to-[#10B981]",
+    tone: "from-primary to-[#10B981]",
   },
   {
     title: "FleetIQ Tracker",
     category: "Logistics IoT",
     outcome: "Real-time tracking, 99.9% uptime",
     stack: ["Flutter", "Mapbox", "MQTT", "Go"],
-    tone: "from-[#F59E0B] to-[#7C3AED]",
+    tone: "from-primary to-primary",
   },
   {
     title: "Banking AI Assistant",
     category: "Conversational AI",
     outcome: "Resolved 64% queries without human",
     stack: ["LangChain", "GPT", "FastAPI"],
-    tone: "from-[#10B981] to-[#22D3EE]",
+    tone: "from-[#10B981] to-primary",
   },
 ];
 
@@ -300,21 +300,21 @@ const ProjectCard = ({ p }: { p: typeof projects[number] }) => (
         <div className={`absolute inset-0 bg-gradient-to-br ${p.tone} opacity-30`} />
         <div className="absolute inset-0" style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+            "linear-gradient(hsl(var(--foreground) / 0.05) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground) / 0.05) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
           maskImage: "radial-gradient(ellipse at center, black 50%, transparent 90%)",
         }} />
         {/* Faux app window */}
         <div className="absolute left-6 right-6 bottom-6 rh-surface-elevated p-3">
           <div className="flex items-center gap-1.5 mb-2">
-            <span className="w-2 h-2 rounded-full bg-white/20" />
-            <span className="w-2 h-2 rounded-full bg-white/20" />
-            <span className="w-2 h-2 rounded-full bg-white/20" />
+            <span className="w-2 h-2 rounded-full bg-foreground/20" />
+            <span className="w-2 h-2 rounded-full bg-foreground/20" />
+            <span className="w-2 h-2 rounded-full bg-foreground/20" />
           </div>
           <div className="space-y-1.5">
-            <div className="h-2 rounded bg-white/10 w-2/3" />
-            <div className="h-2 rounded bg-white/[0.06] w-full" />
-            <div className="h-2 rounded bg-white/[0.06] w-5/6" />
+            <div className="h-2 rounded bg-foreground/10 w-2/3" />
+            <div className="h-2 rounded bg-foreground/[0.06] w-full" />
+            <div className="h-2 rounded bg-foreground/[0.06] w-5/6" />
           </div>
         </div>
       </div>
@@ -325,7 +325,7 @@ const ProjectCard = ({ p }: { p: typeof projects[number] }) => (
         <p className="text-[13.5px] rh-text-muted mt-2">{p.outcome}</p>
         <div className="mt-5 flex flex-wrap gap-1.5">
           {p.stack.map((t) => (
-            <span key={t} className="text-[11px] px-2 py-1 rounded-md border border-white/[0.08] bg-white/[0.03] text-white/70">
+            <span key={t} className="text-[11px] px-2 py-1 rounded-md border border-foreground/[0.08] bg-foreground/[0.03] text-foreground/70">
               {t}
             </span>
           ))}
@@ -366,12 +366,12 @@ const Process = () => (
   <Section>
     <SectionHead eyebrow="How we work" title="A process built for" accent="shipping." />
     <div className="relative">
-      <div className="absolute left-0 right-0 top-9 hidden lg:block h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <div className="absolute left-0 right-0 top-9 hidden lg:block h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5">
         {steps.map((s, i) => (
           <FadeUp key={s.n} delay={i * 0.05}>
             <div className="relative">
-              <div className="relative w-9 h-9 rounded-full bg-[#0D0D12] border border-white/[0.12] flex items-center justify-center text-[12px] font-semibold text-[#A78BFA] mx-auto lg:mx-0">
+              <div className="relative w-9 h-9 rounded-full bg-background border border-foreground/[0.12] flex items-center justify-center text-[12px] font-semibold text-primary mx-auto lg:mx-0">
                 {s.n}
               </div>
               <div className="mt-5">
@@ -398,7 +398,7 @@ const EngineeringProof = () => (
           <span className="rh-eyebrow"><span className="dot" />Engineering proof</span>
           <h2 className="text-[34px] md:text-[42px] font-semibold mt-5 tracking-tight leading-[1.1]">
             We write the kind of code we'd{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#A78BFA] to-[#22D3EE]">trust on call.</span>
+            <span className="text-primary from-primary to-primary">trust on call.</span>
           </h2>
           <p className="rh-text-muted mt-5 text-[15px] leading-relaxed max-w-lg">
             Typed end-to-end. Tested where it counts. Observable in production.
@@ -412,8 +412,8 @@ const EngineeringProof = () => (
               { k: "Performance-budgeted", icon: Zap },
             ].map(({ k, icon: I }) => (
               <div key={k} className="rh-surface p-3 flex items-center gap-2.5">
-                <I className="w-4 h-4 text-[#A78BFA]" strokeWidth={1.8} />
-                <span className="text-[13px] text-white/80">{k}</span>
+                <I className="w-4 h-4 text-primary" strokeWidth={1.8} />
+                <span className="text-[13px] text-foreground/80">{k}</span>
               </div>
             ))}
           </div>
@@ -423,7 +423,7 @@ const EngineeringProof = () => (
       <FadeUp delay={0.1}>
         <div className="rh-surface-elevated overflow-hidden">
           {/* Editor header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06]">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-foreground/[0.06]">
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
@@ -450,12 +450,12 @@ const EngineeringProof = () => (
             }}
           />
           {/* Faux terminal */}
-          <div className="border-t border-white/[0.06] px-5 py-4 bg-black/40">
+          <div className="border-t border-foreground/[0.06] px-5 py-4 bg-background/40">
             <div className="rh-code text-[12px]">
               <div className="rh-text-dim">$ pnpm test --filter checkout</div>
-              <div className="text-emerald-300 mt-1">✓ 24 passed · 0 failed · 1.2s</div>
+              <div className="text-primary mt-1">✓ 24 passed · 0 failed · 1.2s</div>
               <div className="rh-text-dim mt-2">$ rh deploy --prod</div>
-              <div className="text-emerald-300 mt-1">✓ live · checkout.api · region: ap-south-1</div>
+              <div className="text-primary mt-1">✓ live · checkout.api · region: ap-south-1</div>
             </div>
           </div>
         </div>
@@ -471,30 +471,30 @@ const EngineeringProof = () => (
 const Founder = () => (
   <Section>
     <FadeUp>
-      <div className="rh-surface p-8 md:p-12 grid md:grid-cols-[220px_1fr] gap-8 md:gap-10 items-center">
-        <div className="relative w-44 h-56 md:w-[220px] md:h-[280px] rounded-2xl overflow-hidden mx-auto md:mx-0 ring-1 ring-white/10">
+      <div className="rh-unframed p-8 md:p-12 grid md:grid-cols-[220px_1fr] gap-8 md:gap-10 items-center">
+        <div className="relative w-44 h-56 md:w-[220px] md:h-[280px] rounded-md overflow-hidden mx-auto md:mx-0 ring-1 ring-foreground/10">
           <img
             src={raziHaidarImg}
             alt="Razi Haidar — Founder & CEO of RH Software (by SIAT), Bihar"
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background/80 to-transparent" />
           <div className="absolute bottom-3 left-3 right-3">
-            <div className="text-[14px] font-semibold text-white leading-tight">Razi Haidar</div>
-            <div className="text-[11px] text-white/70">Founder & CEO</div>
+            <div className="text-[14px] font-semibold text-foreground leading-tight">Razi Haidar</div>
+            <div className="text-[11px] text-foreground/70">Founder & CEO</div>
           </div>
         </div>
         <div>
-          <Quote className="w-6 h-6 text-[#A78BFA]/60" />
-          <p className="text-[18px] md:text-[20px] leading-relaxed mt-4 text-white/85">
+          <Quote className="w-6 h-6 text-primary/60" />
+          <p className="text-[18px] md:text-[20px] leading-relaxed mt-4 text-foreground/85">
             I started RH Software because most agencies hand over a polished demo
             and disappear. We're built differently — small, senior, and accountable
             to outcomes long after launch. If you want a partner who treats your
             product like our own, you'll feel that on day one.
           </p>
           <div className="mt-5 flex items-center gap-2 text-[13px] flex-wrap">
-            <span className="font-semibold text-white">Razi Haidar</span>
+            <span className="font-semibold text-foreground">Razi Haidar</span>
             <span className="rh-text-dim">· Founder & CEO, RH Software (a SIAT engineering studio)</span>
           </div>
         </div>
@@ -519,9 +519,9 @@ const Pricing = () => (
     <div className="grid md:grid-cols-3 gap-5">
       {tiers.map((t) => (
         <FadeUp key={t.name}>
-          <div className={`rh-surface rh-card-hover p-7 h-full relative ${t.highlight ? "ring-1 ring-[#7C3AED]/40" : ""}`}>
+          <div className={`rh-surface rh-card-hover p-7 h-full relative ${t.highlight ? "ring-1 ring-primary/40" : ""}`}>
             {t.highlight && (
-              <span className="absolute -top-3 left-7 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#7C3AED] text-white">
+              <span className="absolute -top-3 left-7 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-primary text-foreground">
                 Recommended
               </span>
             )}
@@ -530,8 +530,8 @@ const Pricing = () => (
             <p className="text-[13.5px] rh-text-muted mt-2 leading-relaxed">{t.desc}</p>
             <ul className="mt-6 space-y-2.5">
               {t.features.map((f) => (
-                <li key={f} className="flex items-center gap-2 text-[13.5px] text-white/80">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" /> {f}
+                <li key={f} className="flex items-center gap-2 text-[13.5px] text-foreground/80">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" /> {f}
                 </li>
               ))}
             </ul>
@@ -552,13 +552,13 @@ const Pricing = () => (
 const CTABand = () => (
   <Section>
     <FadeUp>
-      <div className="relative rh-surface-elevated overflow-hidden p-10 md:p-16 text-center">
+      <div className="relative rh-unframed overflow-hidden p-10 md:p-16 text-center">
         <div aria-hidden className="absolute inset-0 opacity-60"
-          style={{ background: "radial-gradient(600px 240px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
+          style={{ background: "radial-gradient(600px 240px at 50% 0%, hsl(var(--primary) / 0.25), transparent 70%)" }} />
         <div className="relative">
           <h2 className="text-[34px] md:text-[52px] font-semibold tracking-tight leading-[1.05]">
             Have an idea worth building?{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] to-[#22D3EE]">Let's talk.</span>
+            <span className="text-primary from-primary to-primary">Let's talk.</span>
           </h2>
           <p className="rh-text-muted mt-5 max-w-xl mx-auto text-[15px]">
             Tell us where you are. We'll come back with a roadmap, a price, and a clear next step — usually within 24 hours.
