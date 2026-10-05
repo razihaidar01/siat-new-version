@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -49,7 +50,7 @@ const allServices: Service[] = [
     outcomes: ["Sub-1s LCP on real devices", "SEO-ready out of the box", "Component-driven design system"],
     stack: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "Supabase"],
     image: RH_IMAGES.dashboardSaas,
-    accent: "from-[#7C3AED] to-[#22D3EE]",
+    accent: "from-primary to-primary",
   },
   {
     icon: Smartphone,
@@ -59,7 +60,7 @@ const allServices: Service[] = [
     outcomes: ["60fps fluid UI", "Offline-first sync", "App Store submission handled"],
     stack: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
     image: RH_IMAGES.mobileApp1,
-    accent: "from-[#22D3EE] to-[#10B981]",
+    accent: "from-primary to-[#10B981]",
   },
   {
     icon: Brain,
@@ -69,7 +70,7 @@ const allServices: Service[] = [
     outcomes: ["Domain-tuned LLM workflows", "Vector retrieval at scale", "Hallucination guardrails"],
     stack: ["OpenAI", "LangChain", "PyTorch", "FastAPI", "Pinecone"],
     image: RH_IMAGES.dashboardAnalytics,
-    accent: "from-[#A78BFA] to-[#7C3AED]",
+    accent: "from-primary to-primary",
   },
   {
     icon: Code2,
@@ -79,7 +80,7 @@ const allServices: Service[] = [
     outcomes: ["Stripe billing integrated", "RLS-secured tenants", "p95 < 200ms APIs"],
     stack: ["Postgres", "Stripe", "Redis", "Docker", "AWS"],
     image: RH_IMAGES.dashboardCrm,
-    accent: "from-[#10B981] to-[#22D3EE]",
+    accent: "from-[#10B981] to-primary",
   },
   {
     icon: Database,
@@ -89,7 +90,7 @@ const allServices: Service[] = [
     outcomes: ["99.9% uptime SLO", "Cost-tuned infra (-40%)", "One-click rollbacks"],
     stack: ["AWS", "Terraform", "Kubernetes", "Datadog", "Cloudflare"],
     image: RH_IMAGES.serverRoom,
-    accent: "from-[#F59E0B] to-[#EF4444]",
+    accent: "from-primary to-primary",
   },
   {
     icon: Cpu,
@@ -99,43 +100,15 @@ const allServices: Service[] = [
     outcomes: ["Real-time MQTT pipelines", "Edge inference", "Fleet-grade dashboards"],
     stack: ["MQTT", "ESP32", "Node.js", "TimescaleDB", "Mapbox"],
     image: RH_IMAGES.architecture,
-    accent: "from-[#EC4899] to-[#7C3AED]",
+    accent: "from-primary to-primary",
   },
 ];
 
 /* ------------------------------------------------------------------ */
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10 relative">
-    <div className="max-w-7xl mx-auto">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Our services</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-          Six engineering disciplines.{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            One studio shipping outcomes.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-          Strategy, design and engineering live in the same room. No outsourced black box —
-          you talk to the people building your product.
-        </p>
-      </FadeUp>
-      <FadeUp delay={0.18}>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">
-            Book a strategy call <ArrowUpRight className="w-4 h-4" />
-          </Link>
-          <Link to="/rhsoftware/portfolio" className="rh-btn rh-btn-ghost">
-            See our work
-          </Link>
-        </div>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="02 / CAPABILITIES" eyebrow="Our services"
+    title={<> Six engineering disciplines. <span className="rh-cinematic-title-line">One studio shipping outcomes.</span></>}
+    description="Strategy, design and engineering live in the same room. No outsourced black box \u2014 you talk to the people building your product." />
 );
 
 /* ------------------------------------------------------------------ */
@@ -144,12 +117,12 @@ const ServiceBlock = ({ s, i }: { s: Service; i: number }) => {
   return (
     <FadeUp className="group">
       <div
-        className={`grid md:grid-cols-12 gap-6 md:gap-10 items-center rh-surface p-6 md:p-8 ${
+        className={`grid md:grid-cols-12 gap-6 md:gap-10 items-center rh-service-band p-6 md:p-8 ${
           reversed ? "md:[&>*:first-child]:order-2" : ""
         }`}
       >
         {/* Visual */}
-        <div className="md:col-span-6 relative rounded-2xl overflow-hidden border border-white/[0.08] aspect-[16/10]">
+        <div className="md:col-span-6 relative rounded-md overflow-hidden border border-foreground/[0.08] aspect-[16/10]">
           <div className={`absolute inset-0 bg-gradient-to-br ${s.accent} opacity-25 z-10 mix-blend-overlay`} />
           <img
             src={s.image}
@@ -157,12 +130,12 @@ const ServiceBlock = ({ s, i }: { s: Service; i: number }) => {
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07070A]/80 via-transparent to-transparent z-20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-20" />
           <div className="absolute bottom-4 left-4 z-30 flex items-center gap-2.5">
-            <span className="w-9 h-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center justify-center">
-              <s.icon className="w-4 h-4 text-white" strokeWidth={1.8} />
+            <span className="w-9 h-9 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 flex items-center justify-center">
+              <s.icon className="w-4 h-4 text-foreground" strokeWidth={1.8} />
             </span>
-            <span className="text-[11px] uppercase tracking-[0.18em] text-white/85 font-medium">
+            <span className="text-[11px] uppercase tracking-[0.18em] text-foreground/85 font-medium">
               {s.tagline}
             </span>
           </div>
@@ -175,8 +148,8 @@ const ServiceBlock = ({ s, i }: { s: Service; i: number }) => {
 
           <div className="mt-6 space-y-2.5">
             {s.outcomes.map((o) => (
-              <div key={o} className="flex items-start gap-2.5 text-[14px] text-white/80">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+              <div key={o} className="flex items-start gap-2.5 text-[14px] text-foreground/80">
+                <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 {o}
               </div>
             ))}
@@ -186,7 +159,7 @@ const ServiceBlock = ({ s, i }: { s: Service; i: number }) => {
             {s.stack.map((t) => (
               <span
                 key={t}
-                className="text-[11px] px-2 py-1 rounded-md border border-white/[0.08] bg-white/[0.03] text-white/65 font-mono"
+                className="text-[11px] px-2 py-1 rounded-md border border-foreground/[0.08] bg-foreground/[0.03] text-foreground/65 font-mono"
               >
                 {t}
               </span>
@@ -195,7 +168,7 @@ const ServiceBlock = ({ s, i }: { s: Service; i: number }) => {
 
           <Link
             to="/rhsoftware/contact"
-            className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-medium text-[#C4B5FD] hover:text-white transition-colors"
+            className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-medium text-primary hover:text-foreground transition-colors"
           >
             Discuss your {s.title.toLowerCase()} project
             <ArrowRight className="w-4 h-4" />
@@ -221,7 +194,7 @@ const ProcessStrip = () => {
           <span className="rh-eyebrow"><span className="dot" />How we engage</span>
           <h2 className="text-[30px] md:text-[40px] font-semibold mt-5 tracking-tight">
             From first call to{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] to-[#22D3EE]">
+            <span className="text-primary from-primary to-primary">
               shipped product.
             </span>
           </h2>
@@ -247,8 +220,8 @@ const CTABand = () => (
   <section className="py-20 px-6 md:px-10">
     <div className="max-w-5xl mx-auto rh-surface p-10 md:p-14 text-center relative overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-50"
-           style={{ background: "radial-gradient(600px 280px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
-      <Sparkles className="w-6 h-6 text-[#A78BFA] mx-auto mb-4" />
+           style={{ background: "radial-gradient(600px 280px at 50% 0%, hsl(var(--primary) / 0.25), transparent 70%)" }} />
+      <Sparkles className="w-6 h-6 text-primary mx-auto mb-4" />
       <h2 className="text-[30px] md:text-[42px] font-semibold tracking-tight">
         Have a project in mind?
       </h2>

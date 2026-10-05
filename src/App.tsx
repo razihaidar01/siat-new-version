@@ -25,7 +25,6 @@ import VerifyCertificatePage from "./pages/VerifyCertificatePage";
 import GalleryPage from "./pages/GalleryPage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPanelPage from "./pages/AdminPanelPage";
-import RHKageHomePage from "./pages/RHKageHomePage";
 import RHSoftwarePage from "./pages/RHSoftwarePage";
 import RHServicesPage from "./pages/RHServicesPage";
 import RHPricingPage from "./pages/RHPricingPage";
@@ -159,13 +158,13 @@ const App = () => (
           <Route path="/staff" element={<StaffLandingPage />} />
           <Route path="/staff/:employeeId" element={<StaffProfilePage />} />
 
-          {/* RH Software — Kage landing experience (standalone full-screen) */}
-          <Route path="/rhsoftware" element={<RHKageHomePage />} />
+          {/* Legacy RH alias */}
           <Route path="/rh-software" element={<Navigate to="/rhsoftware" replace />} />
 
           {/* RH Software — separate dark-themed layout */}
           <Route element={<RHLayout />}>
-            <Route path="/rhsoftware/studio" element={<RHSoftwarePage />} />
+            <Route path="/rhsoftware" element={<RHSoftwarePage />} />
+            <Route path="/rhsoftware/studio" element={<Navigate to="/rhsoftware" replace />} />
             <Route path="/rhsoftware/services" element={<RHServicesPage />} />
             <Route path="/rhsoftware/website-development-company-bihar" element={<WebDevelopmentPage />} />
             <Route path="/rhsoftware/app-development-company-bihar" element={<AppDevelopmentPage />} />

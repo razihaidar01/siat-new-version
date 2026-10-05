@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -51,7 +52,7 @@ const projects: Project[] = [
       { label: "Daily active staff", value: "180+" },
     ],
     stack: ["Next.js", "Postgres", "Redis", "AWS", "Stripe"],
-    accent: "from-[#7C3AED] to-[#22D3EE]",
+    accent: "from-primary to-primary",
     featured: true,
   },
   {
@@ -68,7 +69,7 @@ const projects: Project[] = [
       { label: "Course completion", value: "+38%" },
     ],
     stack: ["React", "Node.js", "Mux", "Supabase", "WebRTC"],
-    accent: "from-[#22D3EE] to-[#10B981]",
+    accent: "from-primary to-[#10B981]",
     featured: true,
   },
   {
@@ -85,7 +86,7 @@ const projects: Project[] = [
       { label: "Vehicles tracked", value: "80+" },
     ],
     stack: ["Flutter", "Mapbox", "MQTT", "Go", "TimescaleDB"],
-    accent: "from-[#F59E0B] to-[#7C3AED]",
+    accent: "from-primary to-primary",
   },
   {
     title: "Banking AI Assistant",
@@ -101,7 +102,7 @@ const projects: Project[] = [
       { label: "Agent capacity freed", value: "2.3×" },
     ],
     stack: ["LangChain", "OpenAI", "FastAPI", "Pinecone"],
-    accent: "from-[#10B981] to-[#22D3EE]",
+    accent: "from-[#10B981] to-primary",
   },
   {
     title: "Lumora Analytics",
@@ -117,7 +118,7 @@ const projects: Project[] = [
       { label: "Brands onboarded", value: "60+" },
     ],
     stack: ["Next.js", "Python", "Postgres", "ClickHouse"],
-    accent: "from-[#A78BFA] to-[#EC4899]",
+    accent: "from-primary to-primary",
   },
   {
     title: "Kasa Realty",
@@ -133,7 +134,7 @@ const projects: Project[] = [
       { label: "Properties listed", value: "1,200+" },
     ],
     stack: ["Next.js", "Prisma", "Postgres", "Mapbox"],
-    accent: "from-[#10B981] to-[#7C3AED]",
+    accent: "from-[#10B981] to-primary",
   },
   {
     title: "ShopSwift Mobile",
@@ -149,7 +150,7 @@ const projects: Project[] = [
       { label: "Repeat orders", value: "+47%" },
     ],
     stack: ["React Native", "Node.js", "MongoDB", "Razorpay"],
-    accent: "from-[#EC4899] to-[#7C3AED]",
+    accent: "from-primary to-primary",
   },
   {
     title: "InventIQ",
@@ -165,33 +166,15 @@ const projects: Project[] = [
       { label: "Warehouses", value: "12" },
     ],
     stack: ["Vue.js", "Go", "Redis", "AWS"],
-    accent: "from-[#22D3EE] to-[#10B981]",
+    accent: "from-primary to-[#10B981]",
   },
 ];
 
 /* ------------------------------------------------------------------ */
 const Hero = ({ count }: { count: number }) => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10">
-    <div className="max-w-7xl mx-auto">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Selected work</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] max-w-4xl">
-          Real products,{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            real outcomes.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-6 text-[16px] md:text-[17px] rh-text-muted max-w-2xl leading-relaxed">
-          {count}+ shipped products across SaaS, AI, mobile, healthcare, fintech and logistics.
-          Each one built to move a business metric.
-        </p>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="03 / SELECTED WORK" eyebrow="Selected work"
+    title={<> Real products, <span className="rh-cinematic-title-line">real outcomes.</span></>}
+    description={`${count}+ shipped products across SaaS, AI, mobile, healthcare, fintech and logistics. Each one built to move a business metric.`} />
 );
 
 /* ------------------------------------------------------------------ */
@@ -204,21 +187,21 @@ const FeaturedCard = ({ p, onOpen }: { p: Project; onOpen: () => void }) => (
       <div className="relative h-72 md:h-96 overflow-hidden">
         <img src={p.image} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
         <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-25 mix-blend-overlay`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070A] via-[#07070A]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="absolute top-5 left-5 flex gap-2">
-          <span className="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">
+          <span className="px-2.5 py-1 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 text-[10px] uppercase tracking-[0.18em] text-foreground">
             {p.industry}
           </span>
-          <span className="px-2.5 py-1 rounded-md bg-[#7C3AED]/20 border border-[#7C3AED]/40 text-[10px] uppercase tracking-[0.18em] text-[#C4B5FD]">
+          <span className="px-2.5 py-1 rounded-md bg-primary/20 border border-primary/40 text-[10px] uppercase tracking-[0.18em] text-primary">
             Featured
           </span>
         </div>
         <div className="absolute bottom-6 left-6 right-6">
-          <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-white">{p.title}</h3>
-          <p className="text-[14px] text-white/70 mt-2 max-w-xl line-clamp-2">{p.outcome}</p>
+          <h3 className="text-[24px] md:text-[32px] font-semibold tracking-tight text-foreground">{p.title}</h3>
+          <p className="text-[14px] text-foreground/70 mt-2 max-w-xl line-clamp-2">{p.outcome}</p>
         </div>
       </div>
-      <div className="p-6 grid grid-cols-3 gap-4 border-t border-white/[0.06]">
+      <div className="p-6 grid grid-cols-3 gap-4 border-t border-foreground/[0.06]">
         {p.metrics.map((m) => (
           <div key={m.label}>
             <div className="text-[20px] md:text-[22px] font-semibold tracking-tight">{m.value}</div>
@@ -239,8 +222,8 @@ const GridCard = ({ p, onOpen }: { p: Project; onOpen: () => void }) => (
       <div className="relative h-52 overflow-hidden">
         <img src={p.image} alt={p.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
         <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-20 mix-blend-overlay`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07070A]/85 via-transparent to-transparent" />
-        <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent" />
+        <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 text-[10px] uppercase tracking-[0.18em] text-foreground">
           {p.industry}
         </span>
       </div>
@@ -249,7 +232,7 @@ const GridCard = ({ p, onOpen }: { p: Project; onOpen: () => void }) => (
         <p className="text-[13px] rh-text-muted mt-1.5 line-clamp-2">{p.outcome}</p>
         <div className="mt-4 flex flex-wrap gap-1.5">
           {p.stack.slice(0, 3).map((t) => (
-            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] bg-white/[0.03] text-white/60 font-mono">
+            <span key={t} className="text-[10px] px-2 py-0.5 rounded border border-foreground/[0.08] bg-foreground/[0.03] text-foreground/60 font-mono">
               {t}
             </span>
           ))}
@@ -264,7 +247,7 @@ const CaseStudyModal = ({ p, onClose }: { p: Project; onClose: () => void }) => 
   <motion.div
     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
     onClick={onClose}
-    className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-2xl flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto"
+    className="fixed inset-0 z-[100] bg-background/85 backdrop-blur-2xl flex items-start md:items-center justify-center p-4 md:p-6 overflow-y-auto"
   >
     <motion.div
       initial={{ scale: 0.96, y: 20, opacity: 0 }}
@@ -273,20 +256,20 @@ const CaseStudyModal = ({ p, onClose }: { p: Project; onClose: () => void }) => 
       onClick={(e) => e.stopPropagation()}
       className="max-w-4xl w-full rh-surface-elevated relative my-6"
     >
-      <button onClick={onClose} className="absolute top-4 right-4 z-10 w-9 h-9 rounded-lg bg-white/[0.06] border border-white/[0.1] flex items-center justify-center text-white/70 hover:text-white hover:bg-white/[0.1]">
+      <button onClick={onClose} className="absolute top-4 right-4 z-10 w-9 h-9 rounded-lg bg-foreground/[0.06] border border-foreground/[0.1] flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-foreground/[0.1]">
         <X className="w-4 h-4" />
       </button>
 
       <div className="relative h-64 md:h-80 rounded-t-[20px] overflow-hidden">
         <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className={`absolute inset-0 bg-gradient-to-br ${p.accent} opacity-30 mix-blend-overlay`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D12] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="absolute bottom-6 left-6 right-6">
           <div className="flex gap-2 mb-3">
-            <span className="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">{p.industry}</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-[10px] uppercase tracking-[0.18em] text-white">{p.category}</span>
+            <span className="px-2.5 py-1 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 text-[10px] uppercase tracking-[0.18em] text-foreground">{p.industry}</span>
+            <span className="px-2.5 py-1 rounded-md bg-foreground/10 backdrop-blur-md border border-foreground/15 text-[10px] uppercase tracking-[0.18em] text-foreground">{p.category}</span>
           </div>
-          <h2 className="text-[28px] md:text-[36px] font-semibold tracking-tight text-white">{p.title}</h2>
+          <h2 className="text-[28px] md:text-[36px] font-semibold tracking-tight text-foreground">{p.title}</h2>
         </div>
       </div>
 
@@ -295,8 +278,8 @@ const CaseStudyModal = ({ p, onClose }: { p: Project; onClose: () => void }) => 
           {p.metrics.map((m, i) => {
             const Icon = [TrendingUp, Users, Zap][i] || TrendingUp;
             return (
-              <div key={m.label} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4">
-                <Icon className="w-4 h-4 text-[#A78BFA] mb-2" />
+              <div key={m.label} className="rounded-md border border-foreground/[0.08] bg-foreground/[0.02] p-4">
+                <Icon className="w-4 h-4 text-primary mb-2" />
                 <div className="text-[22px] font-semibold tracking-tight">{m.value}</div>
                 <div className="text-[11px] rh-text-dim mt-0.5">{m.label}</div>
               </div>
@@ -311,7 +294,7 @@ const CaseStudyModal = ({ p, onClose }: { p: Project; onClose: () => void }) => 
         ].map((s) => (
           <div key={s.h}>
             <div className="text-[11px] uppercase tracking-[0.18em] rh-text-dim mb-2">{s.h}</div>
-            <p className="text-[15px] text-white/85 leading-relaxed">{s.b}</p>
+            <p className="text-[15px] text-foreground/85 leading-relaxed">{s.b}</p>
           </div>
         ))}
 
@@ -319,12 +302,12 @@ const CaseStudyModal = ({ p, onClose }: { p: Project; onClose: () => void }) => 
           <div className="text-[11px] uppercase tracking-[0.18em] rh-text-dim mb-3">Tech stack</div>
           <div className="flex flex-wrap gap-1.5">
             {p.stack.map((t) => (
-              <span key={t} className="text-[12px] px-2.5 py-1 rounded-md border border-[#7C3AED]/20 bg-[#7C3AED]/10 text-[#C4B5FD] font-mono">{t}</span>
+              <span key={t} className="text-[12px] px-2.5 py-1 rounded-md border border-primary/20 bg-primary/10 text-primary font-mono">{t}</span>
             ))}
           </div>
         </div>
 
-        <div className="pt-4 border-t border-white/[0.06] flex flex-wrap gap-3">
+        <div className="pt-4 border-t border-foreground/[0.06] flex flex-wrap gap-3">
           <Link to="/rhsoftware/contact" className="rh-btn rh-btn-primary">
             Build something similar <ExternalLink className="w-4 h-4" />
           </Link>
@@ -386,8 +369,8 @@ const RHPortfolioPage = () => {
                 onClick={() => setFilter(c)}
                 className={`px-4 py-2 rounded-full text-[13px] font-medium transition-all ${
                   filter === c
-                    ? "bg-white text-[#07070A]"
-                    : "border border-white/[0.1] bg-white/[0.03] text-white/65 hover:text-white hover:border-white/20"
+                    ? "bg-foreground text-background"
+                    : "border border-foreground/[0.1] bg-foreground/[0.03] text-foreground/65 hover:text-foreground hover:border-foreground/20"
                 }`}
               >
                 {c}
@@ -414,7 +397,7 @@ const RHPortfolioPage = () => {
       </section>
 
       {/* Trust strip */}
-      <section className="py-16 px-6 md:px-10 border-t border-white/[0.06]">
+      <section className="py-16 px-6 md:px-10 border-t border-foreground/[0.06]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 text-center">
           {[
             { v: "40+", l: "Products shipped" },
@@ -434,7 +417,7 @@ const RHPortfolioPage = () => {
       <section className="py-20 px-6 md:px-10">
         <div className="max-w-5xl mx-auto rh-surface p-10 md:p-14 text-center relative overflow-hidden">
           <div className="absolute inset-0 -z-10 opacity-50"
-               style={{ background: "radial-gradient(600px 280px at 50% 0%, rgba(124,58,237,0.25), transparent 70%)" }} />
+               style={{ background: "radial-gradient(600px 280px at 50% 0%, hsl(var(--primary) / 0.25), transparent 70%)" }} />
           <h2 className="text-[30px] md:text-[42px] font-semibold tracking-tight">Your project belongs here.</h2>
           <p className="rh-text-muted mt-4 max-w-xl mx-auto">
             Tell us what you're building. We'll respond within a few hours with concrete next steps.
@@ -448,9 +431,9 @@ const RHPortfolioPage = () => {
             </Link>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[12px] rh-text-dim">
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-emerald-400" /> Free 30-min discovery</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-emerald-400" /> Fixed-price proposals</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-emerald-400" /> NDA on request</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-primary" /> Free 30-min discovery</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-primary" /> Fixed-price proposals</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-primary" /> NDA on request</span>
           </div>
         </div>
       </section>

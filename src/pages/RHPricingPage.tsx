@@ -1,3 +1,4 @@
+import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -41,7 +42,7 @@ const plans = [
       ],
       excluded: ["Custom backend", "Mobile apps", "Dedicated team"],
     },
-    accent: "from-[#22D3EE] to-[#10B981]",
+    accent: "from-primary to-[#10B981]",
   },
   {
     name: "Scale",
@@ -65,7 +66,7 @@ const plans = [
       ],
       excluded: ["Native mobile apps (add-on)", "On-call SRE"],
     },
-    accent: "from-[#7C3AED] to-[#A78BFA]",
+    accent: "from-primary to-primary",
   },
   {
     name: "Enterprise",
@@ -88,7 +89,7 @@ const plans = [
       ],
       excluded: [],
     },
-    accent: "from-[#F59E0B] to-[#7C3AED]",
+    accent: "from-primary to-primary",
   },
 ];
 
@@ -114,58 +115,40 @@ const faqs = [
 
 /* ------------------------------------------------------------------ */
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-12 px-6 md:px-10">
-    <div className="max-w-7xl mx-auto text-center">
-      <FadeUp>
-        <span className="rh-eyebrow"><span className="dot" />Pricing</span>
-      </FadeUp>
-      <FadeUp delay={0.06}>
-        <h1 className="mt-5 text-[40px] md:text-[64px] leading-[1.02] font-semibold tracking-[-0.03em] mx-auto max-w-3xl">
-          Honest pricing,{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#A78BFA] to-[#22D3EE]">
-            engineered to scale.
-          </span>
-        </h1>
-      </FadeUp>
-      <FadeUp delay={0.12}>
-        <p className="mt-5 text-[16px] md:text-[17px] rh-text-muted max-w-2xl mx-auto leading-relaxed">
-          Three engagement models. No hidden fees. Pick the one that matches your stage —
-          we'll only recommend up if your roadmap genuinely needs it.
-        </p>
-      </FadeUp>
-    </div>
-  </section>
+  <RHCinematicHero chapter="04 / ENGAGEMENTS" eyebrow="Pricing"
+    title={<> Honest pricing, <span className="rh-cinematic-title-line">engineered to scale.</span></>}
+    description="Three engagement models. No hidden fees. Pick the one that matches your stage \u2014 we'll only recommend up if your roadmap genuinely needs it." />
 );
 
 /* ------------------------------------------------------------------ */
 const PlanCard = ({ p }: { p: typeof plans[number] }) => (
   <FadeUp className={p.popular ? "md:-mt-4" : ""}>
     <div className={`relative h-full rh-surface p-7 md:p-8 transition-all duration-500 ${
-      p.popular ? "border-[#7C3AED]/40 shadow-[0_30px_80px_-20px_rgba(124,58,237,0.5)]" : ""
+      p.popular ? "border-primary/40 shadow-[0_30px_80px_-20px_hsl(var(--primary) / 0.5)]" : ""
     }`}>
       {p.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] text-[10px] font-bold uppercase tracking-[0.16em] flex items-center gap-1 shadow-[0_8px_25px_rgba(124,58,237,0.5)]">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-primary to-primary text-[10px] font-bold uppercase tracking-[0.16em] flex items-center gap-1 shadow-[0_8px_25px_hsl(var(--primary) / 0.5)]">
           <Sparkles className="w-3 h-3" /> Most Popular
         </div>
       )}
-      <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${p.accent} flex items-center justify-center mb-5 opacity-90`}>
-        <p.icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+      <div className={`w-11 h-11 rounded-md bg-gradient-to-br ${p.accent} flex items-center justify-center mb-5 opacity-90`}>
+        <p.icon className="w-5 h-5 text-foreground" strokeWidth={1.8} />
       </div>
       <h3 className="text-[22px] font-semibold tracking-tight">{p.name}</h3>
       <p className="text-[13.5px] rh-text-muted mt-2 leading-relaxed">{p.desc}</p>
       <div className="mt-5 mb-1 flex items-baseline gap-2">
-        <span className="text-[36px] md:text-[42px] font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">{p.price}</span>
+        <span className="text-[36px] md:text-[42px] font-semibold tracking-tight text-primary from-foreground to-foreground/70">{p.price}</span>
         <span className="text-[12px] rh-text-dim">{p.period}</span>
       </div>
       <div className="text-[11px] uppercase tracking-[0.16em] rh-text-dim mt-4 mb-3">For</div>
-      <p className="text-[13px] text-white/75">{p.forWho}</p>
+      <p className="text-[13px] text-foreground/75">{p.forWho}</p>
 
       <Link
         to="/rhsoftware/contact"
-        className={`block mt-7 text-center py-3.5 rounded-xl font-semibold text-[14px] transition-all hover:-translate-y-0.5 ${
+        className={`block mt-7 text-center py-3.5 rounded-md font-semibold text-[14px] transition-all hover:-translate-y-0.5 ${
           p.popular
-            ? "bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] hover:shadow-[0_18px_40px_-14px_rgba(124,58,237,0.85)] text-white"
-            : "border border-white/[0.12] hover:bg-white/[0.05] hover:border-white/25 text-white"
+            ? "bg-gradient-to-r from-primary to-primary hover:shadow-[0_18px_40px_-14px_hsl(var(--primary) / 0.85)] text-foreground"
+            : "border border-foreground/[0.12] hover:bg-foreground/[0.05] hover:border-foreground/25 text-foreground"
         }`}
       >
         {p.cta}
@@ -175,17 +158,17 @@ const PlanCard = ({ p }: { p: typeof plans[number] }) => (
 
       <div className="space-y-2.5">
         {p.features.included.map((f) => (
-          <div key={f} className="flex items-start gap-2.5 text-[13.5px] text-white/80">
-            <span className="w-4 h-4 rounded-full bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <Check className="w-2.5 h-2.5 text-emerald-300" />
+          <div key={f} className="flex items-start gap-2.5 text-[13.5px] text-foreground/80">
+            <span className="w-4 h-4 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <Check className="w-2.5 h-2.5 text-primary" />
             </span>
             {f}
           </div>
         ))}
         {p.features.excluded.map((f) => (
-          <div key={f} className="flex items-start gap-2.5 text-[13.5px] text-white/35">
-            <span className="w-4 h-4 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
-              <X className="w-2.5 h-2.5 text-white/40" />
+          <div key={f} className="flex items-start gap-2.5 text-[13.5px] text-foreground/35">
+            <span className="w-4 h-4 rounded-full bg-foreground/[0.04] border border-foreground/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <X className="w-2.5 h-2.5 text-foreground/40" />
             </span>
             {f}
           </div>
@@ -205,23 +188,23 @@ const ComparisonTable = () => (
       </FadeUp>
       <FadeUp>
         <div className="rh-surface overflow-hidden">
-          <div className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-white/[0.06] text-[12px] uppercase tracking-[0.16em] rh-text-dim">
+          <div className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-foreground/[0.06] text-[12px] uppercase tracking-[0.16em] rh-text-dim">
             <div>Capability</div>
             <div className="text-center">Launch</div>
-            <div className="text-center text-[#C4B5FD]">Scale</div>
+            <div className="text-center text-primary">Scale</div>
             <div className="text-center">Enterprise</div>
           </div>
           {compareRows.map((r) => (
-            <div key={r.label} className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-white/[0.04] text-[14px] items-center hover:bg-white/[0.02] transition-colors">
-              <div className="text-white/85">{r.label}</div>
+            <div key={r.label} className="grid grid-cols-4 gap-4 px-6 py-4 border-b border-foreground/[0.04] text-[14px] items-center hover:bg-foreground/[0.02] transition-colors">
+              <div className="text-foreground/85">{r.label}</div>
               {[r.l, r.s, r.e].map((v, i) => (
                 <div key={i} className="text-center">
                   {v === true ? (
-                    <Check className="w-4 h-4 text-emerald-400 mx-auto" />
+                    <Check className="w-4 h-4 text-primary mx-auto" />
                   ) : v === false ? (
-                    <X className="w-4 h-4 text-white/25 mx-auto" />
+                    <X className="w-4 h-4 text-foreground/25 mx-auto" />
                   ) : (
-                    <span className="text-[12px] px-2 py-0.5 rounded-md bg-[#7C3AED]/15 border border-[#7C3AED]/25 text-[#C4B5FD]">{v}</span>
+                    <span className="text-[12px] px-2 py-0.5 rounded-md bg-primary/15 border border-primary/25 text-primary">{v}</span>
                   )}
                 </div>
               ))}
@@ -237,7 +220,7 @@ const ComparisonTable = () => (
 const FAQItem = ({ f, open, onToggle }: any) => (
   <div className="rh-surface overflow-hidden">
     <button onClick={onToggle} className="w-full flex items-center justify-between gap-4 p-6 text-left">
-      <span className="text-[15px] md:text-[16px] font-medium text-white">{f.q}</span>
+      <span className="text-[15px] md:text-[16px] font-medium text-foreground">{f.q}</span>
       <ChevronDown className={`w-4 h-4 rh-text-dim shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
     </button>
     <AnimatePresence>
@@ -282,7 +265,7 @@ const EnterpriseBand = () => (
   <section className="py-16 px-6 md:px-10">
     <div className="max-w-6xl mx-auto rh-surface p-10 md:p-14 grid md:grid-cols-2 gap-10 items-center relative overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-60"
-           style={{ background: "radial-gradient(700px 320px at 0% 50%, rgba(124,58,237,0.20), transparent 70%)" }} />
+           style={{ background: "radial-gradient(700px 320px at 0% 50%, hsl(var(--primary) / 0.20), transparent 70%)" }} />
       <div>
         <span className="rh-eyebrow"><span className="dot" />Enterprise</span>
         <h2 className="text-[30px] md:text-[40px] font-semibold mt-5 tracking-tight leading-tight">
@@ -308,8 +291,8 @@ const EnterpriseBand = () => (
           { v: "24/7", l: "Incident response" },
           { v: "1:1", l: "Founder access" },
         ].map((s) => (
-          <div key={s.l} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-5">
-            <MessageCircle className="w-4 h-4 text-[#A78BFA] mb-3" />
+          <div key={s.l} className="rounded-md border border-foreground/[0.08] bg-foreground/[0.02] p-5">
+            <MessageCircle className="w-4 h-4 text-primary mb-3" />
             <div className="text-[24px] font-semibold tracking-tight">{s.v}</div>
             <div className="text-[11px] rh-text-dim mt-1 uppercase tracking-[0.18em]">{s.l}</div>
           </div>

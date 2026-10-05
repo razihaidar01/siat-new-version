@@ -33,19 +33,19 @@ const CITY_LINKS = [
 
 /* ─── Gradient map ─── */
 const GRAD_MAP: Record<string, string> = {
-  "from-blue-500 to-indigo-600": "linear-gradient(135deg, #3b82f6, #4f46e5)",
-  "from-purple-500 to-pink-600": "linear-gradient(135deg, #a855f7, #db2777)",
-  "from-emerald-500 to-teal-600": "linear-gradient(135deg, #10b981, #0d9488)",
-  "from-orange-500 to-red-500": "linear-gradient(135deg, #f97316, #ef4444)",
-  "from-yellow-500 to-orange-500": "linear-gradient(135deg, #eab308, #f97316)",
-  "from-indigo-500 to-purple-600": "linear-gradient(135deg, #6366f1, #9333ea)",
-  "from-blue-500 to-cyan-500": "linear-gradient(135deg, #3b82f6, #06b6d4)",
-  "from-pink-500 to-rose-600": "linear-gradient(135deg, #ec4899, #e11d48)",
-  "from-green-500 to-emerald-600": "linear-gradient(135deg, #22c55e, #059669)",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
+  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
 };
 
 const getGrad = (grad: string) =>
-  GRAD_MAP[grad] || "linear-gradient(135deg, #6366f1, #8b5cf6)";
+  GRAD_MAP[grad] || "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))";
 
 /* ══════════════════════════════════════════════════════ */
 
@@ -129,37 +129,36 @@ const PostContent = ({ post }: { post: BlogPost }) => {
   const shareUrl = `https://www.siat.in/rhsoftware/blog/${post.slug}`;
 
   return (
-    <div className="min-h-screen" style={{ background: "#050816" }}>
+    <div className="min-h-screen" >
 
       {/* ─── HERO BANNER ─── */}
       <div
-        className="relative py-20 md:py-28 px-6 md:px-10 overflow-hidden"
-        style={{ background: getGrad(post.grad) }}
+        className="relative px-6 md:px-10 rh-detail-intro"
       >
         {/* subtle pattern overlay */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground) / 0.1) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
         <div className="max-w-4xl mx-auto relative z-10">
 
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-white/60 text-xs mb-6 flex-wrap">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-foreground/60 text-xs mb-6 flex-wrap">
+            <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link to="/rhsoftware" className="hover:text-white transition-colors">RH Software</Link>
+            <Link to="/rhsoftware" className="hover:text-foreground transition-colors">RH Software</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link to="/rhsoftware/blog" className="hover:text-white transition-colors">Blog</Link>
+            <Link to="/rhsoftware/blog" className="hover:text-foreground transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-white/80 truncate max-w-[200px]">{post.category}</span>
+            <span className="text-foreground/80 truncate max-w-[200px]">{post.category}</span>
           </nav>
 
           {/* Category badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/20 text-white text-xs font-semibold mb-5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/15 border border-foreground/20 text-foreground text-xs font-semibold mb-5 backdrop-blur-sm">
             <Tag className="w-3 h-3" />
             {post.category}
           </div>
@@ -169,14 +168,14 @@ const PostContent = ({ post }: { post: BlogPost }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5"
+            className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-5"
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
             {post.title}
           </motion.h1>
 
           {/* Meta row */}
-          <div className="flex flex-wrap items-center gap-4 text-white/70 text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-foreground/70 text-sm">
             <div className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {post.date}
@@ -186,7 +185,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               {post.readTime}
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="font-semibold text-white/90">{post.author}</span>
+              <span className="font-semibold text-foreground/90">{post.author}</span>
               <span>·</span>
               <span>{post.authorRole}</span>
             </div>
@@ -198,7 +197,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/70 text-xs"
+                  className="px-3 py-1 rounded-full bg-foreground/10 border border-foreground/15 text-foreground/70 text-xs"
                 >
                   #{tag}
                 </span>
@@ -220,9 +219,9 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl border border-indigo-400/20 bg-indigo-500/5 p-6 mb-10"
+              className="rounded-md border border-primary/20 bg-primary/5 p-6 mb-10"
             >
-              <p className="text-white/75 text-lg leading-relaxed">
+              <p className="text-foreground/75 text-lg leading-relaxed">
                 {post.content.intro}
               </p>
             </motion.div>
@@ -238,12 +237,12 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                   transition={{ duration: 0.6, delay: i * 0.05 }}
                 >
                   <h2
-                    className="text-xl md:text-2xl font-bold text-white mb-3"
+                    className="text-xl md:text-2xl font-bold text-foreground mb-3"
                     style={{ fontFamily: "'Outfit', sans-serif" }}
                   >
                     {section.heading}
                   </h2>
-                  <p className="text-white/65 leading-relaxed text-base">
+                  <p className="text-foreground/65 leading-relaxed text-base">
                     {section.body}
                   </p>
                 </motion.section>
@@ -255,12 +254,12 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-12 rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-6"
+              className="mt-12 rounded-md border border-primary/20 bg-primary/5 p-6"
             >
-              <h3 className="text-lg font-bold text-emerald-300 mb-2 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5" /> Conclusion
               </h3>
-              <p className="text-white/70 leading-relaxed">{post.content.conclusion}</p>
+              <p className="text-foreground/70 leading-relaxed">{post.content.conclusion}</p>
             </motion.div>
 
             {/* CTA Box */}
@@ -268,14 +267,14 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="mt-8 rounded-2xl p-8 text-center"
+              className="mt-8 rounded-md p-8 text-center"
               style={{ background: getGrad(post.grad) }}
             >
-              <p className="text-white/80 text-sm mb-2 uppercase tracking-widest font-semibold">
+              <p className="text-foreground/80 text-sm mb-2 uppercase tracking-widest font-semibold">
                 Ready to get started?
               </p>
               <h3
-                className="text-2xl font-extrabold text-white mb-5"
+                className="text-2xl font-extrabold text-foreground mb-5"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
                 {post.content.cta}
@@ -283,7 +282,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
               <div className="flex flex-wrap justify-center gap-3">
                 <Link
                   to="/rhsoftware/contact"
-                  className="px-6 py-3 bg-white text-indigo-700 font-bold rounded-xl hover:bg-indigo-50 transition-colors text-sm"
+                  className="px-6 py-3 bg-foreground text-primary font-bold rounded-md hover:bg-primary transition-colors text-sm"
                 >
                   Get Free Quote
                 </Link>
@@ -291,7 +290,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                   href="https://wa.me/919999999999"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors text-sm"
+                  className="flex items-center gap-2 px-6 py-3 bg-primary text-foreground font-bold rounded-md hover:bg-primary transition-colors text-sm"
                 >
                   <MessageCircle className="w-4 h-4" /> WhatsApp Now
                 </a>
@@ -302,7 +301,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
             {post.faqs?.length > 0 && (
               <div className="mt-12">
                 <h2
-                  className="text-2xl font-extrabold text-white mb-6"
+                  className="text-2xl font-extrabold text-foreground mb-6"
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
                   अक्सर पूछे जाने वाले सवाल (FAQs)
@@ -315,10 +314,10 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
-                      className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-5"
+                      className="rounded-md border border-foreground/[0.08] bg-foreground/[0.03] p-5"
                     >
-                      <h3 className="font-bold text-white mb-2 text-sm">❓ {faq.q}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">✅ {faq.a}</p>
+                      <h3 className="font-bold text-foreground mb-2 text-sm">❓ {faq.q}</h3>
+                      <p className="text-foreground/60 text-sm leading-relaxed">✅ {faq.a}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -327,8 +326,8 @@ const PostContent = ({ post }: { post: BlogPost }) => {
 
             {/* City links — SEO internal linking */}
             {post.relatedCities && post.relatedCities.length > 0 && (
-              <div className="mt-10 rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                <p className="text-white/50 text-xs uppercase tracking-widest font-semibold mb-3 flex items-center gap-2">
+              <div className="mt-10 rounded-md border border-foreground/[0.06] bg-foreground/[0.02] p-5">
+                <p className="text-foreground/50 text-xs uppercase tracking-widest font-semibold mb-3 flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5" /> We serve these cities
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -336,7 +335,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                     <Link
                       key={slug}
                       to={`/bihar/${slug}/website-developer`}
-                      className="px-3 py-1.5 rounded-full text-xs border border-indigo-400/20 text-indigo-300 hover:bg-indigo-500/10 transition-colors"
+                      className="px-3 py-1.5 rounded-full text-xs border border-primary/20 text-primary hover:bg-primary/10 transition-colors"
                     >
                       {city}
                     </Link>
@@ -347,14 +346,14 @@ const PostContent = ({ post }: { post: BlogPost }) => {
 
             {/* Share */}
             <div className="mt-8 flex items-center gap-4">
-              <span className="text-white/40 text-sm flex items-center gap-2">
+              <span className="text-foreground/40 text-sm flex items-center gap-2">
                 <Share2 className="w-4 h-4" /> Share:
               </span>
               <a
                 href={`https://wa.me/?text=${encodeURIComponent(post.title + " " + shareUrl)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-lg bg-green-600/20 border border-green-500/30 text-green-400 text-xs font-semibold hover:bg-green-600/30 transition-colors"
+                className="px-4 py-2 rounded-lg bg-primary/20 border border-primary/30 text-primary text-xs font-semibold hover:bg-primary/30 transition-colors"
               >
                 WhatsApp
               </a>
@@ -362,7 +361,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                 href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(post.title)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 rounded-lg bg-blue-600/20 border border-blue-500/30 text-blue-400 text-xs font-semibold hover:bg-blue-600/30 transition-colors"
+                className="px-4 py-2 rounded-lg bg-primary/20 border border-primary/30 text-primary text-xs font-semibold hover:bg-primary/30 transition-colors"
               >
                 LinkedIn
               </a>
@@ -374,32 +373,32 @@ const PostContent = ({ post }: { post: BlogPost }) => {
 
             {/* Quick CTA */}
             <div
-              className="rounded-2xl p-6 text-white"
+              className="rounded-md p-6 text-foreground"
               style={{ background: getGrad(post.grad) }}
             >
               <h3 className="font-extrabold text-lg mb-2" style={{ fontFamily: "'Outfit', sans-serif" }}>
                 Free Consultation
               </h3>
-              <p className="text-white/80 text-sm mb-4">
+              <p className="text-foreground/80 text-sm mb-4">
                 Get expert advice for your project in Bihar. Response in 2 hours.
               </p>
               <Link
                 to="/rhsoftware/contact"
-                className="block text-center py-2.5 bg-white text-indigo-700 font-bold rounded-xl text-sm hover:bg-indigo-50 transition-colors"
+                className="block text-center py-2.5 bg-foreground text-primary font-bold rounded-md text-sm hover:bg-primary transition-colors"
               >
                 Get Free Quote →
               </Link>
             </div>
 
             {/* City services box */}
-            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5">
-              <h3 className="font-bold text-white text-sm mb-4">Services by City</h3>
+            <div className="rounded-md border border-foreground/[0.06] bg-foreground/[0.03] p-5">
+              <h3 className="font-bold text-foreground text-sm mb-4">Services by City</h3>
               <div className="space-y-2">
                 {CITY_LINKS.map(({ city, slug }) => (
                   <Link
                     key={slug}
                     to={`/bihar/${slug}/website-developer`}
-                    className="flex items-center justify-between py-1.5 text-white/60 hover:text-indigo-300 text-xs transition-colors"
+                    className="flex items-center justify-between py-1.5 text-foreground/60 hover:text-primary text-xs transition-colors"
                   >
                     <span>Website Dev in {city}</span>
                     <ChevronRight className="w-3 h-3" />
@@ -410,8 +409,8 @@ const PostContent = ({ post }: { post: BlogPost }) => {
 
             {/* Related Posts */}
             {related.length > 0 && (
-              <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5">
-                <h3 className="font-bold text-white text-sm mb-4">Related Posts</h3>
+              <div className="rounded-md border border-foreground/[0.06] bg-foreground/[0.03] p-5">
+                <h3 className="font-bold text-foreground text-sm mb-4">Related Posts</h3>
                 <div className="space-y-3">
                   {related.map((rp) => (
                     <Link
@@ -423,10 +422,10 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                         className="h-1.5 rounded-full mb-2 w-8"
                         style={{ background: getGrad(rp.grad) }}
                       />
-                      <p className="text-white/70 group-hover:text-white text-xs leading-snug transition-colors">
+                      <p className="text-foreground/70 group-hover:text-foreground text-xs leading-snug transition-colors">
                         {rp.title}
                       </p>
-                      <p className="text-white/30 text-[10px] mt-1">{rp.date} · {rp.readTime}</p>
+                      <p className="text-foreground/30 text-[10px] mt-1">{rp.date} · {rp.readTime}</p>
                     </Link>
                   ))}
                 </div>
@@ -438,10 +437,10 @@ const PostContent = ({ post }: { post: BlogPost }) => {
 
       {/* ─── RELATED POSTS (mobile + extra) ─── */}
       {related.length > 0 && (
-        <section className="border-t border-white/[0.06] py-14 px-6 md:px-10">
+        <section className="border-t border-foreground/[0.06] py-14 px-6 md:px-10">
           <div className="max-w-4xl mx-auto">
             <h2
-              className="text-xl font-extrabold text-white mb-8"
+              className="text-xl font-extrabold text-foreground mb-8"
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               More from {post.category}
@@ -457,20 +456,20 @@ const PostContent = ({ post }: { post: BlogPost }) => {
                 >
                   <Link
                     to={`/rhsoftware/blog/${rp.slug}`}
-                    className="group block rounded-2xl border border-white/[0.06] bg-white/[0.03] overflow-hidden hover:border-indigo-400/30 transition-all"
+                    className="group block rounded-md border border-foreground/[0.06] bg-foreground/[0.03] overflow-hidden hover:border-primary/30 transition-all"
                   >
                     <div
                       className="h-20"
                       style={{ background: getGrad(rp.grad) }}
                     />
                     <div className="p-5">
-                      <span className="text-[10px] uppercase tracking-widest text-indigo-300 font-semibold">
+                      <span className="text-[10px] uppercase tracking-widest text-primary font-semibold">
                         {rp.category}
                       </span>
-                      <h3 className="text-white group-hover:text-indigo-200 font-bold text-sm mt-1.5 leading-snug transition-colors line-clamp-2">
+                      <h3 className="text-foreground group-hover:text-primary font-bold text-sm mt-1.5 leading-snug transition-colors line-clamp-2">
                         {rp.title}
                       </h3>
-                      <p className="text-white/40 text-xs mt-2">
+                      <p className="text-foreground/40 text-xs mt-2">
                         {rp.date} · {rp.readTime}
                       </p>
                     </div>
@@ -483,7 +482,7 @@ const PostContent = ({ post }: { post: BlogPost }) => {
             <div className="text-center mt-10">
               <Link
                 to="/rhsoftware/blog"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-semibold"
+                className="inline-flex items-center gap-2 text-foreground/50 hover:text-foreground transition-colors text-sm font-semibold"
               >
                 <ArrowLeft className="w-4 h-4" /> Back to all posts
               </Link>
