@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import RHCinematicHero from "@/components/rh/RHCinematicHero";
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -195,13 +196,13 @@ const RHContactPage = () => {
 
                   {errorMsg && <p className="text-[13px] text-primary">{errorMsg}</p>}
 
-                  <button
+                  <Button
                     type="submit"
                     disabled={loading}
                     className="w-full py-3.5 rounded-md font-semibold bg-gradient-to-r from-primary to-primary text-foreground hover:shadow-[0_18px_40px_-14px_hsl(var(--primary) / 0.85)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:hover:translate-y-0"
                   >
                     <Send className="w-4 h-4" /> {loading ? "Sending..." : "Send project brief"}
-                  </button>
+                  </Button>
 
                   <p className="text-[11.5px] rh-text-dim text-center pt-1">
                     By submitting you agree to be contacted about your inquiry. We never share details with third parties.

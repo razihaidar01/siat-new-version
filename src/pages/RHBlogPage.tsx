@@ -43,20 +43,7 @@ type Post = {
 };
 
 /* ── Gradient map for SEO posts ── */
-const GRAD_BG: Record<string, string> = {
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-violet-500 to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-};
+const GRAD_BG: Record<string, string> = {};
 
 /* ── Convert blogPosts to unified Post type ── */
 const seoPosts: Post[] = blogPosts.map((p) => ({
