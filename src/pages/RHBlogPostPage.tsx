@@ -32,17 +32,7 @@ const CITY_LINKS = [
 ];
 
 /* ─── Gradient map ─── */
-const GRAD_MAP: Record<string, string> = {
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-  "from-primary to-primary": "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))",
-};
+const GRAD_MAP: Record<string, string> = {};
 
 const getGrad = (grad: string) =>
   GRAD_MAP[grad] || "linear-gradient(135deg, var(--rh-elevated), var(--rh-accent))";
