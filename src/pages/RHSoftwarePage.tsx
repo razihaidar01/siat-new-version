@@ -508,8 +508,8 @@ const Founder = () => (
    ============================================================ */
 
 const tiers = [
-  { name: "Starter", price: "₹ 60k+", desc: "Marketing sites, MVPs, landing systems.", features: ["Up to 2 weeks", "Design + dev", "1 round of revisions"] },
-  { name: "Growth", price: "₹ 2.5L+", desc: "Web apps, SaaS MVPs, internal tools.", features: ["6–8 week build", "Auth, DB, payments", "30-day post-launch"], highlight: true },
+  { name: "Launch", price: "₹14,999", desc: "Marketing sites, MVPs, landing systems.", features: ["Up to 2 weeks", "Design + dev", "1 round of revisions"] },
+  { name: "Scale", price: "₹49,999", desc: "Web apps, SaaS MVPs, internal tools.", features: ["6–8 week build", "Auth, DB, payments", "30-day post-launch"], highlight: true },
   { name: "Enterprise", price: "Custom", desc: "Long-term product partnerships.", features: ["Dedicated team", "Custom architecture", "SLAs & on-call"] },
 ];
 
@@ -605,7 +605,7 @@ const RHSoftwarePage = () => {
         },
         {
           q: "How much does a website or app cost from RH Software?",
-          a: "Marketing sites start from ₹60,000. SaaS MVPs and web apps typically range ₹2.5L–₹10L. Long-term enterprise engagements are custom-scoped. Book a free strategy call for an exact quote.",
+          a: "Marketing sites start from ₹14,999 (Launch plan). SaaS MVPs and web apps start from ₹49,999 (Scale plan). Long-term enterprise engagements are custom-scoped. Book a free strategy call for an exact quote.",
         },
         {
           q: "Do you offer AI development services in Bihar?",
