@@ -3,9 +3,10 @@
 ## Active: Kage-inspired RH motion — approval gates
 - [x] Inspect existing RH screen and local Kage reference; prepare section-by-section plan
 - [x] Implement homepage WebGL hero only; scope remains exclusively RH Software
-- [ ] Show hero for review (after hero implementation)
+- [x] Show homepage hero for review in preview
 - [ ] Apply approved motion to remaining RH sections and pages (waiting for hero approval)
-- [ ] Verify mobile, reduced motion, fallbacks and non-RH isolation
+- [x] Verify hero rendering, cursor/scroll motion, portfolio navigation, mobile, reduced motion and non-RH isolation
+- [ ] Verify forced WebGL failure fallback before final rollout
 
 ## Active: Correct RH redesign across the whole silo
 - [x] Remove standalone Kyoto demo from the RH homepage; restore RH content at /rhsoftware
