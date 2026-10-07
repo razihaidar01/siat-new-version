@@ -1,492 +1,59 @@
-# RH Software — Premium Studio Redesign (Phase 1 First) + Future Scoped Video Manager
-
-This is a large two-phase effort on a **live production site**.
-
-For now, the ONLY priority is transforming RH Software into a premium international-level engineering studio experience.
-
-All changes must remain strictly scoped to:  
-`/rhsoftware/*`
-
-SIAT main site, public gallery, staff portal, auth system, payment/credit-card flows, and all non-RH routes must remain untouched.
-
-The redesign should feel:
-
-- handcrafted
-- cinematic
-- premium
-- technically believable
-- startup-grade
-- globally competitive
-
-The final result must impress:
-
-1. founders/business owners
-2. senior developers/designers
-
-The website should immediately communicate:
-
-> “These developers build serious production-grade software.”
-
----
-
-# IMPORTANT EXECUTION ORDER
-
-We are NOT starting the RH video manager yet.
-
-The redesign comes FIRST.
-
-Execution order:
-
-1. Part A → RH Premium Redesign (Highest Priority)
-2. Part B → RH Scoped Video Manager (Later Phase)
-
-Do NOT begin Part B until the redesign is approved.
-
----
-
-# Part A — RH Software Premium Redesign (ONLY `/rhsoftware/*`)
-
-## Main Goal
-
-Transform RH Software from:
-
-- a modern-looking agency site
-
-into:
-
-- a high-end product engineering studio website.
-
-The site must NOT feel:
-
-- AI generated
-- template based
-- crypto styled
-- gaming styled
-- overly futuristic
-- cluttered
-
-Avoid:
-
-- excessive neon
-- floating random shapes
-- overloaded glassmorphism
-- noisy gradients
-- crowded 3D scenes
-
-Everything must feel:
-
-- intentional
-- art directed
-- restrained
-- elegant
-- performance-conscious
-
----
-
-# Design System (Scoped)
-
-Create a new:  
-`src/styles/rh-theme.css`
-
-Imported ONLY inside RH layout/components.
-
-DO NOT leak styles into SIAT pages.
-
-### RH Design Tokens
-
-Backgrounds:
-
-- `#07070A`
-- `#0D0D12`
-- `#111118`
-
-Accent Colors:
-
-- Violet → `#7C3AED`
-- Cyan → `#22D3EE`
-- Emerald → `#10B981`
-
-Text:
-
-- `#FFFFFF`
-- `#B4B4C7`
-- `#7A7A92`
-
-Typography:
-
-- Inter / General Sans for body
-- Clash Display / Satoshi for headings
-
-Motion:
-
-- smooth cubic-bezier easing
-- subtle premium animations
-- respect `prefers-reduced-motion`
-
----
-
-# Layout / Navigation
-
-Rebuild `RHLayout`.
-
-Navbar must feel:
-
-- premium
-- minimal
-- sticky
-- blurred
-- elegant
-
-Navigation:
-
-- Home
-- Services
-- Portfolio
-- Process
-- About
-- Contact
-
-IMPORTANT:  
-The current:  
-“SIAT Home” + “Home”  
-creates brand confusion.
-
-Fix this by:
-
-- making RH navigation primary
-- converting SIAT return button into a small secondary chip button
-
-Add:
-
-- magnetic CTA interactions
-- subtle hover glow
-- smooth transitions
-
----
-
-# Homepage (`RHSoftwarePage.tsx`) — Full Premium Rebuild
-
-This is the MOST IMPORTANT part.
-
-Current issue:  
-The existing hero feels overcrowded with overlapping 3D objects.
-
-Completely REMOVE the current heavy 3D hero.
-
-Do NOT keep it behind a toggle.
-
-Replace it with:
-
-- a premium Bento-style composition
-- cleaner layout
-- more whitespace
-- realistic product visuals
-- believable SaaS/product engineering feel
-
-NO fake floating shapes.
-
-NO random futuristic objects.
-
----
-
-# Homepage Sections
-
-## 1. Hero (Bento Composition)
-
-LEFT:
-
-- powerful headline
-- concise subheading
-- 2 CTA buttons
-
-RIGHT:
-
-- realistic dashboard UI
-- analytics cards
-- mobile app preview
-- engineering/code panels
-- product mockups
-
-Use:
-
-- subtle aurora lighting
-- soft cinematic gradients
-- restrained depth
-
-The hero should feel inspired by:
-
-- Linear
-- Vercel
-- Stripe
-- Framer
-
-But still unique.
-
----
-
-## 2. Trust Strip
-
-Replace generic avatars with:
-
-- measurable outcomes
-- real metrics
-- partner/tech logos
-
-Examples:
-
-- “Reduced manual operations by 70%”
-- “Scaled platforms to 10k+ users”
-- “Improved workflow speed by 3x”
-
-Keep it clean and restrained.
-
----
-
-## 3. Services Bento
-
-Create elegant bento cards for:
-
-- Web Development
-- App Development
-- AI Development
-- SaaS Engineering
-- Automation Systems
-- UI/UX Systems
-
-Each card should include:
-
-- minimal iconography
-- outcome-focused copy
-- subtle hover interactions
-
-Avoid generic AI-agency card designs.
-
----
-
-## 4. Featured Portfolio
-
-This section must become the strongest trust-builder.
-
-IMPORTANT:  
-Do NOT use simple gradient cards with icons.
-
-Each project card must include:
-
-- real UI preview
-- device mockups
-- product screenshots
-- tech stack pills
-- category labels
-- measurable outcomes
-
-Examples:
-
-- “Digitized 15+ operational workflows”
-- “Built scalable video-learning infrastructure”
-
-Portfolio should feel:
-
-- Dribbble quality
-- Behance quality
-- real SaaS products
-
-Use:
-
-- subtle parallax
-- scroll reveal
-- premium hover depth
-
----
-
-## 5. Process Timeline
-
-Create a premium process flow:
-
-1. Discovery
-2. Strategy
-3. Design
-4. Development
-5. Launch
-6. Scale
-
-Use:
-
-- cinematic transitions
-- elegant timeline visuals
-- scroll interactions
-
----
-
-## 6. Engineering Proof
-
-Add a lightweight engineering credibility section.
-
-Include:
-
-- syntax-highlighted code block
-- faux terminal
-- API response card
-- deployment/infrastructure visuals
-
-Purpose:  
-prove real engineering capability.
-
-This section should feel:
-
-- authentic
-- technical
-- elite developer quality
-
-NOT gimmicky.
-
----
-
-## 7. Founder Note
-
-Add a premium founder section.
-
-Include:
-
-- professional portrait
-- short founder message
-- calm confident tone
-
-Example direction:  
-“I founded RH Software to bring world-class engineering standards to businesses that need more than just a basic website.”
-
-This section should build:
-
-- trust
-- authenticity
-- human connection
-
----
-
-## 8. Pricing Teaser
-
-Create:
-
-- 3 premium pricing cards
-- Enterprise highlighted
-
-Enterprise tier should feel:
-
-- high-end
-- scalable
-- architecture-focused
-
-Add:
-
-- “Book Consultation”
-- “Dedicated Engineering Team”
-- “Custom Software Architecture”
-
----
-
-## 9. CTA Footer Band
-
-Strong premium closing section:  
-“Book a Strategy Call”
-
-Minimal but impactful.
-
----
-
-# Other RH Pages (Light Premium Re-skin)
-
-Apply the same design system to:
-
-- RHServicesPage
-- RHPortfolioPage
-- RHPricingPage
-- RHContactPage
-- RHBlogPage
-
-Goals:
-
-- cleaner hierarchy
-- calmer surfaces
-- better spacing
-- improved typography
-- reduced visual noise
-- better mobile UX
-
-Do NOT overcomplicate these pages.
-
----
-
-# Performance Requirements
-
-CRITICAL:  
-The site must remain extremely optimized.
-
-Requirements:
-
-- 90+ Lighthouse score
-- optimized images
-- WebP assets
-- lazy loading
-- responsive everywhere
-- smooth animations
-- no laggy heavy effects
-
-Mobile experience must feel:
-
-- custom designed
-- premium
-- native-like
-
-NOT desktop squeezed into mobile.
-
----
-
-# Part B — RH Scoped Video Manager (LATER PHASE)
-
-DO NOT start this yet.
-
-This will happen only AFTER redesign approval.
-
-Future scope:
-
-- dedicated RH-only video manager
-- `category='rh-software'`
-- RH showreel section
-- ffmpeg compression pipeline
-- admin upload flow
-
-But this is NOT the current priority.
-
----
-
-# Things You MUST NOT Touch
-
-- SIAT homepage
-- public gallery
-- staff portal
-- auth system
-- RLS
-- DB schema
-- edge functions
-- payment/credit-card flows
-- non-RH styling
-
-Everything must remain isolated to RH routes only.
-
----
-
-# FINAL CREATIVE DIRECTION
-
-The final website should feel like:
-
-- a premium product engineering studio
-- not a freelancer portfolio
-- not a flashy template
-- not an AI-generated landing page
-
-Clients should feel:
-
-> “These developers can build scalable production systems.”
-
-Developers should feel:
-
-> “This was designed with real product taste and engineering maturity.”
+# RH Software — Kage-inspired motion, hero first
+
+## Scope and safeguards
+- Change only the visual and animation layer of `/rhsoftware/*`.
+- Preserve every existing heading, paragraph, logo, price, project, photo, button destination, page, route, SEO setting and form behavior.
+- Do not change SIAT pages, certificates, gallery, authentication or Lovable Cloud.
+- Keep current RH near-black, pale sage-white and vermilion colors and Onest typography.
+- No full Kage iframe, Kyoto text, temple branding or separate demo page. Keep the canonical reference assets unchanged.
+- Preview only. Publishing requires separate explicit approval.
+
+## Stage 1 — Homepage hero only, after this plan is approved
+Keep the existing RH Software title, supporting text, two buttons and three metrics in their current reading order.
+
+Add a full-bleed, live WebGL background with the existing cinematic gateway composition as its visual reference: restrained depth, textured surfaces and vermilion edge lighting, not random floating shapes. The scene must remain visible behind a readable text scrim.
+
+**Effects:**
+- Small, smoothly eased camera movement following the pointer; no cursor replacement or pointer lock.
+- A restrained change in perspective as the opening section scrolls out of view.
+- Staggered chapter label, title, supporting copy, buttons and metrics entering with slow easing.
+- Keep a glimpse of the following section visible rather than forcing an oversized opening screen.
+
+**Review checkpoint:** Show the working homepage hero in preview. Stop here for your feedback; do not animate the remaining sections yet.
+
+## Stage 2 — Homepage sections, only after hero approval
+| Existing section | Planned effect |
+| --- | --- |
+| Trust outcomes | Calm staggered reveal; no automatic marquee or changes to metrics. |
+| Services | Chapter-style heading reveal, staggered cards and a subtle pointer-following border highlight. |
+| Featured portfolio | Reveal each existing project visual and caption in sequence; slight visual-only parallax without changing previews, text or links. |
+| Process | Draw the existing connecting line as the section enters; reveal the six existing steps progressively. |
+| Engineering proof | Separate reveals for the heading and existing editor; no fake live output or changes to code text. |
+| Founder | Gentle portrait parallax and a slower reveal for the existing message; photo remains non-interactive. |
+| Pricing | Stagger existing plans with a quiet border emphasis; prices and features stay identical. |
+| Closing call to action and footer | Slow reveal, restrained button response and existing progress styling; destinations unchanged. |
+
+Avoid long pinned sections, scroll hijacking, repeated WebGL canvases and exaggerated tilting.
+
+## Stage 3 — Other RH pages
+After the homepage motion is reviewed, reuse the approved effects on Services, Portfolio, Pricing, Blog, Contact and existing service, city, article and case-study pages. Keep their current content and reading order. Use restrained introduction reveals and section transitions; no separate scene engine for every card.
+
+## Mobile, accessibility and speed
+- Touch/mobile uses the existing static cinematic background rather than continuous 3D rendering; no cursor effects.
+- Reduced-motion preference disables parallax, animated entrances and continuous rendering; all content stays visible.
+- WebGL failure or loading keeps a static fallback visible and never blocks navigation or reading.
+- Pause rendering when the hero is offscreen or the tab is hidden; limit pixel ratio and scene complexity.
+- Keep native scrolling, keyboard focus, clickable buttons and readable contrast.
+
+## Technical approach
+- Reference inspected: local `public/landing-pages/kage.html` and its assets. The requested `src/shaders/landing-pages/` and `src/shaders/threeui.css` are absent; the existing ThreeUI package supplies the embedding implementation. No recreation of missing canonical files is needed for the RH motion layer.
+- Reimplement the useful scroll/cursor/scene patterns as RH-owned React behavior, not copied iframe content.
+- Use existing React 18-compatible React Three Fiber/Three.js for the scene and Motion for text/section transitions.
+- Put colors, lighting roles and appearance values in scoped RH tokens. Keep the scene lazy-loaded with a static fallback.
+- Before implementation, read the matching 3D scene, geometry/model-sourcing, camera and animation guidance. If recognizable 3D objects are needed, source suitable models rather than primitive stand-ins.
+
+## Checks before each review
+Verify the real scene renders, pointer movement affects it, scrolling remains normal, and buttons still navigate correctly. Check desktop, mobile, reduced-motion and fallback states; confirm SIAT pages remain unchanged and check current build/runtime errors. No inquiry will be submitted and nothing will be published.
+
+## Approval requested
+Approve **Stage 1 only** now. The remaining stages describe the intended rollout, not permission to implement them before the hero review.
