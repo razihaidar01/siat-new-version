@@ -29,8 +29,14 @@ export default function RHCinematicHero({ chapter, eyebrow, title, description, 
       setReady(false);
       if (!media.matches) { setPalette(null); return; }
       const styles = getComputedStyle(element);
-      const token = (name: string) => styles.getPropertyValue(name).trim();
+      const probe = document.createElement("span");
+      element.appendChild(probe);
+      const token = (name: string) => {
+        probe.style.color = styles.getPropertyValue(name).trim();
+        return getComputedStyle(probe).color;
+      };
       setPalette({ background: token("--rh-scene-bg"), metal: token("--rh-scene-metal"), floor: token("--rh-scene-floor"), accent: token("--rh-scene-accent"), light: token("--rh-scene-light") });
+      probe.remove();
     };
     let inView = true;
     const updateActivity = () => setActive(inView && !document.hidden);

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, type MutableRefObject } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
-import { Color, DataTexture, RepeatWrapping, RGBAFormat, Vector3 } from "three";
+import { DataTexture, RepeatWrapping, RGBAFormat, Vector3 } from "three";
 import type { MotionValue } from "framer-motion";
 
 export type GatewayPalette = { background: string; metal: string; floor: string; accent: string; light: string };
