@@ -2,7 +2,7 @@
 
 ## Active: Kage-inspired RH motion — approval gates
 - [x] Inspect existing RH screen and local Kage reference; prepare section-by-section plan
-- [ ] Implement homepage WebGL hero only (waiting for plan approval)
+- [x] Implement homepage WebGL hero only; scope remains exclusively RH Software
 - [ ] Show hero for review (after hero implementation)
 - [ ] Apply approved motion to remaining RH sections and pages (waiting for hero approval)
 - [ ] Verify mobile, reduced motion, fallbacks and non-RH isolation

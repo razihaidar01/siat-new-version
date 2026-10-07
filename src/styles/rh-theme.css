@@ -14,6 +14,8 @@
  --rh-hero-scrim: linear-gradient(90deg,hsl(var(--background)/.93),hsl(var(--background)/.70) 40%,hsl(var(--background)/.05) 76%),linear-gradient(0deg,hsl(var(--background)),transparent 36%);
  --rh-code-key: hsl(3 80% 69%); --rh-code-str: hsl(143 26% 67%); --rh-code-num: hsl(37 60% 75%);
  --rh-glass: hsl(var(--background) / .90); --rh-editor-grid: linear-gradient(var(--rh-line) 1px,transparent 1px),linear-gradient(90deg,var(--rh-line) 1px,transparent 1px);
+ --rh-scene-bg: hsl(210 17% 3%); --rh-scene-metal: hsl(210 8% 22%); --rh-scene-floor: hsl(210 8% 12%);
+ --rh-scene-accent: hsl(2 78% 49%); --rh-scene-light: hsl(140 12% 89%);
  background:var(--rh-bg); color:var(--rh-text); font-family:var(--rh-font-body); -webkit-font-smoothing:antialiased;
 }
 .rh-root * { letter-spacing:0; }
@@ -50,6 +52,13 @@
 .rh-mobile-nav {background:var(--rh-bg);border-top:1px solid var(--rh-line);padding:20px 24px;display:grid;gap:4px;} .rh-mobile-nav a {padding:12px 0;color:var(--rh-text-muted);}
 .rh-cinematic-hero {position:relative;min-height:650px;padding:150px 48px 84px;overflow:hidden;display:flex;align-items:center;border-bottom:1px solid var(--rh-line);}
 .rh-cinematic-home {min-height:min(900px,calc(100svh - 64px));padding-top:150px;}
+.rh-cinematic-home {isolation:isolate;}
+.rh-cinematic-home .rh-cinematic-media {z-index:0;pointer-events:none;}
+.rh-gateway-scene {position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.2s var(--rh-ease);}
+.rh-gateway-scene.is-ready {opacity:1;}
+.rh-cinematic-home .rh-cinematic-scrim {z-index:1;pointer-events:none;}
+.rh-cinematic-home .rh-cinematic-inner,.rh-cinematic-home .rh-cinematic-bottom {position:relative;z-index:2;}
+.rh-cinematic-home .rh-cinematic-bottom {position:absolute;}
 .rh-cinematic-media {position:absolute;inset:0;z-index:-2;} .rh-cinematic-media img {width:100%;height:100%;object-fit:cover;object-position:68% center;}
 .rh-cinematic-scrim {position:absolute;inset:0;z-index:-1;background:var(--rh-hero-scrim);}
 .rh-cinematic-inner {width:100%;max-width:1344px;margin:auto;}
